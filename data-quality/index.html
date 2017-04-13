@@ -1,28 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Clear theme for Shower</title>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="../styles/screen-16x10.css">
+  <title>Data models</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <link rel="stylesheet" href="../_shared/styles/shower-clear.css">
+  <link rel="stylesheet" href="../_shared/styles/web-fundamentals.css">
 </head>
 <body class="shower list">
-	<header class="caption">
-		<h1>Presentation Title</h1>
-		<p><a href="">Yours Truly</a>, Famous Inc.</p>
-	</header>
+  <header class="caption">
+    <h1>
+      <a class="series" href="../">Linked Data for Librarians</a><br>
+      <a class="module" href="#title">Data quality</a>
+    </h1>
+    <p>
+      <a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a>,
+      <a href="https://ruben.verborgh.org/">Ruben Verborgh</a>
+    </p>
+    <ul class="links">
+      <li class="prev">Previous topic: <a href="../rdf/">Possibilities and limits of RDF</a></li>
+      <li class="next">Next topic: <a href="../cleaning/">Cleaning</a></li>
+    </ul>
+  </header>
 
-	<div class="title slide">
-		<h2>This is the title slide<br>of the presentation</h2>
-		<p class="author">Yours Truly</p>
-		<p class="affiliation">Famous Inc.</p>
-	</div>
+  <div class="title slide" id="title">
+    <h2>
+      <a class="series" href="../">Linked Data for Librarians</a><br>
+      <a class="module" href="#title">Data quality</a>
+    </h2>
+    <p class="tweets"><a href="https://twitter.com/FreeMetadata">@FreeMetadata</a></p>
+    <p class="author"><a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a></p>
+    <p class="author"><a href="https://ruben.verborgh.org/">Ruben Verborgh</a></p>
+    <p class="license">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="../_shared/images/cc-by.svg" /></a>
+      Except where otherwise noted, the content of these slides is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </p>
+  </div>
 
-	<div class="progress"></div>
-	<footer>
-		<p>Copyright © 2016 <a href="#">Yours Truly, Famous Inc.</a></p>
-	</footer>
-	<script src="../scripts/shower.min.js"></script>
+<div class="slide" id="party">
+    <figure class="cover width">
+        <img src="images/party.jpg"
+             alt="[The Open-World Assumption can have a dramatic impact.]">
+      <figcaption>
+        ©2016 <a href="http://www.theherald.com.au/story/1836907/landlord-faces-15000-bill-after-party/">The Examiner</a>
+      </figcaption>
+    </figure>
+    <footer>
+      <p>Putting the open-world assumption in practice implies you loose control over the 
+      quality of the data you're using. It's like publishing your birthday party as a public-event on social media.
+      You don't know who will show up...</p>
+    </footer>
+  </div>
+
+
+  <div class="slide" id="data-quality">
+    <h2>The Achilles Heel of Linked Data</h2>
+  	<ul>
+  	<li>As automated re-use of data rises, so does our dependency on their quality</li>
+  	<li>Anyone interested in Linked Data should first of all come to terms with
+  	the quality of data :
+  	<ul>
+  		<li>how can you check the quality of data you want to re-use ?</li>
+  		<li>how to audit your own data ?</li> 
+  	</ul>
+  	</li>
+  	</ul>
+  </div>
+  
+  <div class="slide" id="overview_books">
+    <figure class="cover width">
+        <img src="images/quality.jpg"
+             alt="[Book overview.]">
+    </figure>
+    <footer>
+      <p>A lot of books have been published on the topic, and professional and academic
+      organisations have been launched to tackle the topic, but often badly...</p>
+    </footer>
+  </div>
+
+  <div class="slide" id="blooming_field">
+    <h2>Complex Topic to deal with in Practice and in Theory</h2>
+  	<ul>
+  	<li>Want to find a job? Become a data quality auditor!</li>
+  	<li>Blooming but problematic new field</li>
+  	<li>Examples :
+  	<ul>
+  		<li>Interpretation of climate change data : the data which indicated holes in the ozon-layer were considered at first as errouneous data</li>
+  		<li>Information Quality Act (2000) : extremely complex to put in practice</li> 
+  	</ul>
+  	</li>
+  	</ul>
+  </div>  
+  
+ <div class="slide" id="definition">
+    <h2>
+      How can we define Data Quality ?
+    </h2>
+    <blockquote class="next">
+      <p>The totality of features and characteristics<br>of a product, process or service that bears<br>
+      on its ability to statisfy stated or implicit needs.</p>
+      <cite><a href="https://www.iso.org/standard/42180.html">ISO, 2005</a></cite>
+    </blockquote>
+    <p>Commonly referred to in the literature as the "fitness for purpose" definition</p>
+  </div>
+ 
+  <div class="slide" id="impact_time">
+    <figure class="cover width">
+        <img src="images/time.jpg"
+             alt="[Impact of time.]">
+    </figure>
+    <footer>
+      <p>A key characteristic of data quality is that we live in 
+      an empirical world, which continously changes...</p>
+    </footer>
+  </div>
+  
+  <div class="slide" id="implications">
+    <h2>Implications of living in an Empirical World</h2>
+  	<ul>
+  	<li>We can not assert a direct correspondance between the empirical, ever-changing world
+  	and the metadata and database schema representing it</li>
+  	<li>Defining data quality in a deterministic manner (e.g. MIT Total Data Quality Program)
+  	makes no sense for empirical application domains</li>
+  	</ul>
+  </div>  
+  
+  <div class="slide" id="empirical_deterministic">
+    <h2>Difference between deterministic & empirical data</h2>
+  	<ul>
+  	<li>Deterministic data:
+  		<ul>
+  		<li>Existence of a persistent theory makes it possible to decide whether or not a value is correct</li>
+  		<li>Example: algebra</li> 
+  		</ul>
+  	</li>
+  	<li>Empirical data:
+  		<ul>
+  		<li>Absence of a direct frame of reference to validate data, subject to human interpretation and evolution
+  		through time</li>
+  		<li>Example: medicine, cultural heritage sector</li> 
+  		</ul>
+  	</li>
+  	</ul>
+  </div>
+  
+<div class="slide" id="hermeneutics">
+    <h2>
+      We can make use of Hermeneutics as a Tool to make Sense of Quality
+    </h2>
+    <blockquote class="next">
+      <p>Process of understanding moving from parts of a whole
+      to a global understanding of the whole and back
+      to individual parts in an iterative manner.</p>
+      <cite><a href="http://www.jstor.org/stable/249410">Klein et al, 1999</a></cite>
+    </blockquote>
+    <p>Isabelle Boydens re-used Fernand Braudel's <em>stratified time</em> concept as a
+    hermeneutical approach to audit the quality of social security databases</p>
+  </div> 
+  
+  <div class="slide" id="boydens">
+    <figure class="cover width">
+        <img src="images/boydens.jpg"
+             alt="[Hermeneutics]">
+    </figure>
+    <footer>
+      <p>Two key publications to understand how we can make use of hermeneutics to evaluate
+      the quality of data.</p>
+    </footer>
+  </div>
+
+    <div class="slide" id="emirical">
+    <h2>Implications of living in an Empirical World</h2>
+  	<ul>
+  	<li>We can not assert a direct correspondance between the empirical, ever-changing world
+  	and the metadata and database schema representing it</li>
+  	<li>Defining data quality in a deterministic manner (e.g. MIT Total Data Quality Program)
+  	makes no sense for empirical application domains</li>
+  	</ul>
+  </div> 
+  
+   <div class="slide" id="stratified">
+    <h2>Stratified time applied on social security databases</h2>
+  	<ul>
+  	<li>Long term
+  	<ul><li>Evolution of policies and legislation</li></ul>
+  	</li>
+  	<li>Intermediate term
+  	<ul><li>Evolution of technologies and standards</li></ul>
+  	</li>
+  	<li>Short term
+  	<ul><li>Evolution of the objects the database documents</li></ul>
+  	</li>
+  	</ul>
+  </div>
+  
+  <div class="slide" id="theory_practice">
+    <h2>From Theory to Practice</h2>
+  	<ul>
+  	<li>Change is a fundamental notion to deal with...
+  		<ul>
+  		<li>Incorporate tools which help to monitor change</li>
+  		<li>If values do not correspond to the schema, the schema itself may have
+  		to be questioned - see identification of hole in the ozone layer</li>
+  		<li>Practice of data-profiling helps to develop data auditing skills</li>
+  		</ul>
+  	</li>
+  	</ul>
+  </div>
+  
+  <div class="slide" id="profiling">
+    <h2>
+      Getting to Grips with Data Profiling
+    </h2>
+    <blockquote class="next">
+      <p>The use of analytical techniques to discover the true structure, content
+      and quality of a collection of data.</p>
+      <cite><a href="http://www.worldcat.org/title/data-quality-the-accuracy-dimension/oclc/52356695">Olson, 2003</a></cite>
+    </blockquote>
+    <p>"There are no metadata police" <a href="http://managemetadata.com/">Diane Hillman</a> once famously said,
+    but data profiling will allow you to become an investigator who can effeciently perform a data quality audit.</p>
+  </div> 
+  
+    <div class="slide" id="theory_practice">
+    <h2>Recipe for any Data Quality Audit </h2>
+  	<ul>
+  	<li>We will focus on the following ingredients :
+  		<ul>
+  		<li>Flattening data</li>
+  		<li>Column names</li>
+  		<li>Empty columns</li>
+  		<li>Data types</li>
+  		<li>Lenght of entries</li>
+  		<li>Value properties</li>
+  		<li>Dates</li>
+  		<li>Empty fields</li>
+  		<li>Field overloading</li>
+  		</ul>
+  	</li>
+  	</ul>
+  </div>
+  
+   <div class="slide" id="flattening">
+    <h2>Flattening data</h2>
+  	<ul>
+  	<li>Data profiling and cleaning techniques are applied outside the information system itself</li>
+  	<li>These applications mostly ingest <em>flat files</em> so a conversion process might be needed</li> 
+  	</ul>
+  </div>
+  
+     <div class="slide" id="columns">
+    <h2>Columns as a starting point</h2>
+  	<ul>
+  	<li>Simple SQL command to create a column of a table :
+  		<ul><li><code>ALTER TABLE artwork ADD title VARCHAR;</code></li></ul>
+  	</li>
+  	<li>It is suprising how much can go wrong with
+  		<ul>
+  		<li>Name of the column</li>
+  		<li>Data type</li>
+  		<li>Lenght</li>
+  		</ul>
+  	</li>
+  	</ul>
+  </div>
+  
+  <div class="slide" id="names">
+    <h2>Interpretation of <code>Title</code> field</h2>
+  	<ul>
+  	<li>Seems simple to interpret in the context of our art catalogue but
+  	this is not always the case</li>
+  	<li>Download and open the Schoenberg Database of Manuscripts
+  		<ul> 
+  			<li>what to expect from a field entitled <code>Sold</code>?</li> 
+  			<li>what is the difference between <code>Seller</code> and <code>Seller2</code>?</li>
+  		</ul>
+  	<li>Often unused columns are re-used without renaming them</li>	
+  	</li>
+  	</ul>
+  </div>
+  
+    <div class="slide" id="empty">
+    <h2>What's the Fuss with Empty Columns ? </h2>
+  	<ul>
+  	<li>Appear everywhere, often due to pre-configured settings
+ 	of databases which never are modified</li>
+ 	<li>Used columns can loose their meaning at some point, but are rarely
+ 	removed from the system</li>
+ 	<li>Fear of losing data results in systems with lots of unused columns</li>
+ 	</ul>
+  	</div>
+  
+    <div class="slide" id="data_types">
+    <h2>Data types</h2>
+  	<ul>
+  	<li>In our SQL example, <code>VARCHAR</code> was mentioned as a data type</li>
+ 	<li>Other common data types include Text, Number, Boolean or Date</li>
+ 	<li>All data types can be easily encoded with Text, makes you loose less time but things
+ 	can get very messy over time</li>
+ 	</ul>
+  	</div>
+  	
+  	<div class="slide" id="lenght">
+    <h2>Lenght of entries</h2>
+  	<ul>
+  	<li>Seems to have losts its pertinence with decreasing storage costs</li>
+ 	<li>Text lenght of entries can be a very interesting parameter to analyse</li>
+ 	<ul><li>If you expect the name of an individual in a field and the average text lenght is 250 characters, there might be an issue</li></ul>
+ 	</ul>
+  	</div>
+  
+   <footer>
+    <p class="badge"><a href="https://github.com/RubenVerborgh/WebFundamentals">View on GitHub</a></p>
+    <p class="license">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="../_shared/images/cc-by-small.svg" /></a>
+      Except where otherwise noted, the content of these slides is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </p>
+  </footer>
+  <script src="../_shared/scripts/shower.min.js"></script>
+  <script src="../_shared/scripts/enhancements.js"></script>
+  <script async src="//platform.twitter.com/widgets.js"></script>
+  <script>ga=function(){ga.q.push(arguments)};ga.q=[['create','UA-6142365-12','auto'],['require','autotrack'],['send','pageview']];ga.l=1*new Date</script>
+  <script async src="//www.google-analytics.com/analytics.js"></script>
+  <script async src="../_shared/scripts/autotrack.js"></script>
 </body>
 </html>
