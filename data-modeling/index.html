@@ -416,7 +416,7 @@
       <li>Internet bubble + browser war in the late 1990s => markup was corrupted into makeup</li>
   </div>
 
-<div class="full slide" id="aaron-is-dead">
+<div class="full slide" id="boiko">
     <blockquote class="long">
       <p>SGML became like those backwoods blues players of old
       to whom the pop stars gave honor but no money.</p>
@@ -519,7 +519,8 @@
 	   <code>&lt;/Art&gt;</code><br>
      </p> 
     <footer>This leaves maximum flexibility to extend the document at any point.
-    However, this also comes at a cost: the hierarchy 
+    However, this also comes at a cost: the hierarchy is now relatively deep to express simple concepts,
+    even for straightforward properties such as the year of creation.
     </footer>
   </div>
 
@@ -528,7 +529,7 @@
     <h2>
       Let's go for a compromise !
     </h2>
-    <p>
+    <p>			
        <code>&lt;Art title="Modern art"/&gt;</code><br>
        <code>&lt;Work title="Guernica" year="1937"&gt;</code><br>
        <code>&lt;Creator firstName="Pablo" lastName="Picasso"/&gt;</code><br>
@@ -541,12 +542,249 @@
     does not require further description, but we could add additional information to <code>creator</code>,
     such as a date and place of birth.</footer>
   </div>
-    
-    
-   
-    
-  
 
+<div class="slide" id="xsd">
+    <h2>
+      Schema's
+    </h2>
+    <ul>
+    <li>Different languages exist to express schema's (DTD, RELAX NG)
+    but XML Schema (XSD) is the most popular</li>
+    <li>Example for our catalog:
+    <ul>
+    <li>		
+       <code>&lt;xsd:element name="Work"/&gt;</code><br>
+       <code>&lt;xsd:complexType&gt;</code><br>
+       <code>&lt;xsd:sequence&gt;</code><br>
+       <code>&lt;xsd:element name="CreatorRef" maxOccurs="unbounded"/&gt;</code><br>
+       <code>&lt;xsd:attribute name="title" type="xsd:string"/&gt;</code>
+       <code>&lt;attribute name="year" type="xsd:gYear"/&gt;</code><br>
+       <code>&lt;attribute name="collectionId" type="xsd:IDREF"/&gt;</code><br>
+       <code>&lt;/xsd:complexType&gt;</code><br>
+       <code>&lt;/xsd:element&gt;</code><br>
+     </li>
+     </ul>
+     </li>
+     </ul> 
+  </div>    
+    
+<div class="slide" id="namespaces">
+    <h2>
+      Namespaces
+    </h2>
+    <ul>
+    <li>Mechanism to disambiguate the meaning of elements and attributes across schemas</li>
+    <li>Namespaces are indicated with the help of the reserved XML attribute <code>xmlns</code>:
+    <ul>
+    <li>		
+       <code>&lt;Art title="Modern art"</code><br>
+       <code>xmlns:dc="http://purl.org/dc/terms/"</code><br>
+       <code>xmlns:vra="http://www.vraweb.org/vracore4.htm"</code><br>
+       <code>&lt;Work&gt;</code><br>
+       <code>&lt;dc:creator&gt;Pablo Picasso&lt;/dc:creator&gt;</code>
+       <code>&lt;dc:title&gt;Guernica&lt;/dc:title&gt;</code><br>
+       <code>&lt;vra:technique&gt;Oil painting&lt;/vra:technique&gt;</code><br>
+       <code>&lt;/Work&gt;</code><br>
+       <code>&lt;/Art&gt;</code><br>
+     </li>
+     </ul>
+     </li>
+     </ul> 
+  </div>       
+    
+<div class="slide" id="xpath">
+    <h2>
+      Search and retrieval 
+    </h2>
+    <ul>
+    <li>XML has its own query language : XPATH</li>
+    <li>Allows to traverse XML trees and collect element and attribute values</li> 
+    <li>Examples:
+    <ul>
+    <li>		
+       <code>/Art/Work/Creator</code><br>
+       <code>Creator/LastName</code><br>
+       <code>Work/descendent::LastName</code><br>
+       <code>Work/@year</code><br>
+     </li>
+     </ul>
+     </li>
+     </ul> 
+  </div>         
+
+<div class="slide" id="db_xml">
+    <h2>
+      When to use a database or XML ? 
+    </h2>
+    <ul>
+    <li>The quick answer is: it depends on the context</li>
+    <li>In reality, people often rely on the tools and methods they are acquinted with</li> 
+    <li>The big XML hype is over, mainly due to the prohibitive time needed for the encoding</li>
+     </ul> 
+  </div>    
+
+<div class="slide" id="limits_xml">
+    <h2>
+      Limits ? 
+    </h2>
+    <ul>
+    <li>Inconsistencies</li>
+    <li>Search and retrieval</li> 
+    <li>Updates - change</li>
+    <li>Distribution</li>
+     </ul> 
+  </div> 
+
+<div class="slide" id="rdf">
+    <h2>
+      Fourth model : RDF 
+    </h2>
+    <ul>
+    <li>Resource Description Framework (RDF)</li>
+    <li>Worldview consisting of a gigantic ever-expanding graph of triples</li> 
+    <li>Triple consists of a subject, object and predicate</li>
+    <li>Any resource (the subject) can have a relationship (the predicate) to any other resource (the object)</li>
+     </ul> 
+  </div> 
+  
+  <div class="slide" id="graph">
+    <figure class="cover width">
+      <img src="images/graph.jpg"
+           alt="[Graph]">
+      <figcaption>
+        ©2014 <a href="http://book.freeyourmetadata.org">Seth van Hooland and Ruben Verborgh</a>
+      </figcaption>
+    </figure>
+    <footer>Our art catalog represented in RDF triples. Notice how easy it is to integrate information and 
+    create links in between resources. Picasso influenced Jeff Koons, about which we also have some metadata.</footer>
+  </div>
+
+<div class="slide" id="rdf">
+    <h2>
+      Model 
+    </h2>
+    <ul>
+    <li>Through a radically simplified data model, the semantics are made explicit by the triple itself</li>
+    <li>Both databases and XML are based on the principle that only data conform to a locally defined schema
+    may exist => closed world assumption</li> 
+    <li>RDF sails under the AAA (Anyone can say Anything about Anything) flag</li>
+     </ul> 
+  </div> 
+  
+  <div class="slide" id="rdf-serialization">
+    <h2>
+      Serialization 
+    </h2>
+    <ul>
+    <li>RDF/XML</li>
+    <ul>
+    	<li>Developed in 2001 at the beginning of the XML omnipresence</li>
+    	<li>Now considered to be too verbose and hard to parse</li>
+    </ul>
+    <li>Turtle</li>
+    	<li>Allows to express RDF triples in a compact and natural text form</li>
+    	<li>Each of the components (subject, predicate, object) are seperated by whitespace and a triple
+    	ends with a dot</li> 
+    </ul> 
+  </div> 
+  
+  <div class="slide" id="turtle-1">
+    <h2>
+      Turtle example   
+    </h2>
+    <p>		
+       <code>@prefix gh:&lt;http://www.guggenheim.org/new-york/collections/collection-online/artwork/&gt;.</code><br>
+       <code>@prefix dc:&lt;http://purl.org/dc/terms/&gt;.</code><br>
+       <code>@prefix viaf:&lt;http://viaf.org/viaf/&gt;.</code><br>
+       <code>gh:48 dc:creator viaf:5035739</code><br>
+     </p>
+  </div>   
+  
+  <div class="slide" id="turtle-2">
+    <h2>
+      Let's continue with our Turtle example   
+    </h2>
+    <p>Multiple statements about the same object can be written
+    tersely by using a semicolon if the subject is repeated, and a comma
+    if the subject and predicate are repeated</p>
+    <p>		
+       <code>gh:48 dc:creator viaf:5035739;</code><br>
+       <code>dc:title "Puppy".</code><br>
+       <code>viaf:5035739 :influencedBy viaf:15873,</code><br>
+       <code>viaf:95794725.</code><br>
+     </p>
+  </div>
+
+  <div class="slide" id="turtle-3">
+    <h2>
+      Let's continue with our Turtle example   
+    </h2>
+    <p>RDF includes literal values ("Puppy") in its model as well, as some properties
+    eventually do not point at another object but rather at a non-decomposable value</p>
+    <p><code>:influencedBy</code> has an empty namespace prefix, which indicates that it
+    is locally defined :
+    <p>		
+       <code>gh:48 dc:creator viaf:5035739;</code><br>
+       <code>dc:title "Puppy".</code><br>
+       <code>viaf:5035739 :influencedBy viaf:15873,</code><br>
+       <code>viaf:95794725.</code><br>
+     </p>
+  </div>
+  	
+  	  <div class="slide" id="sparql">
+    <h2>
+      Search and retrieval in RDF   
+    </h2>
+	<ul>
+	<li>SPARQL: recursive acronym for SPARQL Protocol and RDF Query Language</li>
+	<li>Example: let's retrieve all triples which have Picasso as the subject:
+	<ul><li><code>SELECT ?predicate ?object WHERE {</code><br>
+	<code>&lt;http://dpbedia.org/resource/Pablo_Picasso&gt;</code><br>
+	<code>?predicate ?object.</code><br>
+	<code>}</code>
+	</li>
+	</ul>
+	</li>
+	</ul>
+  	</div>
+  	
+  	  
+  <div class="slide" id="limits-rdf">
+    <h2>Limits of RDF ?</h2>
+    <ul>
+      <li>Inconsistencies</li>
+      <li>Search and retrieval</li>
+      <li>Updates - change</li>
+      <li>Distribution</li>	
+      </li>
+    </ul>
+  </div>
+  	
+  	<div class="slide" id="table">
+    <figure class="cover width">
+      <img src="images/table.jpg"
+           alt="[Table]">
+      <figcaption>
+        ©2014 <a href="http://book.freeyourmetadata.org">Seth van Hooland and Ruben Verborgh</a>
+      </figcaption>
+    </figure>
+    <footer>This module explained the differences between the different models. Depending on the
+    context and what you need, we hope you now understand when to opt for which type of model.</footer>
+  </div>
+
+<div class="slide" id="boy">
+    <figure class="cover width">
+      <img src="images/boy.jpg"
+           alt="[Table]">
+      <figcaption>
+        ©1915 <a href="https://www.flickr.com/photos/jhsum-commons/4418727909">Jewish Historical Society</a>
+      </figcaption>
+    </figure>
+    <footer>Don't be the boy with the hammer! Once people develop experience with one tool and model,
+    they tend to use it for everything. For example, it takes some time to develop skills to master the XML 
+    suite (XSD, XPATH, XQUERY, etc) so after a while people squeze everything into hierarchical trees
+    to be processed as XML, even if it's not a natural fit.</footer>
+  </div>	
 
 	<footer>
 		<p>Copyright © 2017 <a href="#">Yours Truly, Famous Inc.</a></p>
