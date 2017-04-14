@@ -318,21 +318,75 @@
   	the majority of the values are hardly used, and a small number are over-used</li></ul>
   	</li>
  	<li>Text lenght of entries can be a very interesting parameter to analyse</li>
+ 	<li>Especially the outlier values, being the very short or long ones, can
+ 	be a good data quality indicator</li>
  	</ul>
   	</div>
   
+  <div class="slide" id="dates">
+    <h2>Biggest metadata horror: dates!</h2>
+  	<ul>
+  	<p>There is an incredible range of possibilities to express dates</p>
+  	<table>
+  	<tr>
+    	<th>Pattern</th>
+    	<th>Example</th> 
+   	</tr>
+  	<tr>
+    <td>empty</td>
+    <td></td> 
+    </tr>
+  	<tr>
+    <td>9999-9999</td>
+    <td>1891-1912</td> 
+  	</tr>
+	<tr>
+    <td>9999</td>
+    <td>1912</td> 
+  	</tr>
+  	<tr>
+    <td>99-99/9999</td>
+    <td>09-10/1912</td> 
+  	</tr>
+  	<tr>
+    <td>99/9999</td>
+    <td>01-1912</td> 
+  	</tr>
+  	<tr>
+    <td>99/99/99</td>
+    <td>04/08/12</td> 
+  	</tr>
+  	<tr>
+    <td>AAA 9999</td>
+    <td>May 1912</td> 
+  	</tr>
+	</table>
+ 	</ul>
+  	</div>
+  	
+  	<div class="slide" id="empty">
+    <h2>Empty fields</h2>
+  	<p>Variety of options to express that a field is empty: 
+  	no value, encoding "null", "no value" etc</p>
+  	<p>Diversity of reasons: value is not (yet) known, not applicable, lack of resources</p>
+  	<p>Rarely possible to document this</p>
+  	<p>Specific case: trailing white spaces</p>
+  	</div>
+  	
+  	<div class="slide" id="overloading">
+    <h2>Field overloading</h2>
+  	<p>Encoding in one field of values which should be split out over multiple fields, due to
+  	<ul>
+  	<li>repeating values</li>
+ 	<li>different realities adressed by a generic field</li>
+ 	</ul>
+ 	</p>
+ 	<p>Impacts search and retrieval but also limits data analysis and cleaning</p>
+  	</div>
+  
    <footer>
-    <p class="badge"><a href="https://github.com/RubenVerborgh/WebFundamentals">View on GitHub</a></p>
-    <p class="license">
-      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="../_shared/images/cc-by-small.svg" /></a>
-      Except where otherwise noted, the content of these slides is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-    </p>
-  </footer>
-  <script src="../_shared/scripts/shower.min.js"></script>
-  <script src="../_shared/scripts/enhancements.js"></script>
-  <script async src="//platform.twitter.com/widgets.js"></script>
-  <script>ga=function(){ga.q.push(arguments)};ga.q=[['create','UA-6142365-12','auto'],['require','autotrack'],['send','pageview']];ga.l=1*new Date</script>
-  <script async src="//www.google-analytics.com/analytics.js"></script>
-  <script async src="../_shared/scripts/autotrack.js"></script>
+		<p>Copyright © 2017 <a href="#">Yours Truly, Famous Inc.</a></p>
+	</footer>
+	<script src="../scripts/shower.min.js"></script>
 </body>
 </html>
