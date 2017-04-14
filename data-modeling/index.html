@@ -476,8 +476,80 @@
     </ul>
   </div>
 
+ <div class="slide" id="adding_work">
+    <h2>
+      Let's add a work to our XML catalog of art objects !
+    </h2>
+    <ul>
+      <li>Notice how we can model all of the metadata as attributes :
+        <ul>
+          <li>
+          <code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code><br>
+          <code>&lt;Art title="Modern art"/&gt;</code><br>
+          <code>&lt;Work title="Guernica" year="1937" creator="Pablo Picasso"</code><br>
+          <code>collection="Reina Sofia" location="Madrid"/&gt;</code><br>
+          <code>&lt;/Art&gt;</code>
+          </li>		
+        </ul>
+    </ul>
+    <footer>The hierarchical structure of XML now becomes apparent:
+    the <code>Work</code> element is a child of the <code>Art</code> element. However, 
+    note how we've choosen to model the metadata of works as attributes. Is this a wise option ?
+    </footer>
+  </div>
+
+ <div class="slide" id="elements">
+    <h2>
+      Let's model everything as child elements !
+    </h2>
+    <p>
+       <code>&lt;Art title="Modern art"/&gt;</code><br>
+       <code>&lt;Work&gt;</code><br>
+       <code>&lt;Title&gt;Guernica&lt;/Title&gt;</code><br>
+       <code>&lt;CreationDate&gt;&lt;Year&gt;1937&lt;/Year&gt;&lt;/CreationDate&gt;</code><br>
+       <code>&lt;Creator&gt;</code><br>
+       <code>&lt;FirstName&gt;Pablo&lt/FirstName&gt;</code><br>
+       <code>&lt;LastName&gt;Picasso&lt/LastName&gt;</code><br>
+	   <code>&lt;/Creator&gt;</code><br>
+	   <code>&lt;Collection&gt;</code><br>
+	   <code>&lt;Name&gt;Reina Sofia&lt;/Name&gt;</code><br>
+	   <code>&lt;Location&gt;Madrid&lt;/Location&gt;</code><br>
+	   <code>&lt;/Collection&gt;</code><br>	
+	   <code>&lt;/Work&gt;</code><br>
+	   <code>&lt;/Art&gt;</code><br>
+     </p> 
+    <footer>This leaves maximum flexibility to extend the document at any point.
+    However, this also comes at a cost: the hierarchy 
+    </footer>
+  </div>
+
+
+<div class="slide" id="compromise">
+    <h2>
+      Let's go for a compromise !
+    </h2>
+    <p>
+       <code>&lt;Art title="Modern art"/&gt;</code><br>
+       <code>&lt;Work title="Guernica" year="1937"&gt;</code><br>
+       <code>&lt;Creator firstName="Pablo" lastName="Picasso"/&gt;</code><br>
+       <code>&lt;Collection name="Reina Sofia" location="Madrid"/&gt;</code><br>
+       <code>&lt;/Work&gt;</code><br>
+       <code>&lt;/Art&gt;</code>
+     </p> 
+      <footer>In this example we've choosen to model all values that will not be decomposed
+    or require further properties as attributes. For instance, a work's <code>title</code>
+    does not require further description, but we could add additional information to <code>creator</code>,
+    such as a date and place of birth.</footer>
+  </div>
+    
+    
+   
+    
+  
+
+
 	<footer>
-		<p>Copyright © 2016 <a href="#">Yours Truly, Famous Inc.</a></p>
+		<p>Copyright © 2017 <a href="#">Yours Truly, Famous Inc.</a></p>
 	</footer>
 	<script src="../scripts/shower.min.js"></script>
 </body>
