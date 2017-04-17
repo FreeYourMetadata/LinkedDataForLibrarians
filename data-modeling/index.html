@@ -77,13 +77,13 @@
       	Implementation and serialization formats ?
       </li>
       <li>
-        How does the model address 
+        How does the model address
         <ul class="next">
           <li>Search and retrieval ?</li>
           <li>Updates ?</li>
           <li>Distribution ? </li>
-         </ul> 
-       </li>  	   
+         </ul>
+       </li>
   </div>
 
   <div class="slide" id="models-formats">
@@ -123,15 +123,14 @@
       	Represents a flat worldview, devoid of relations and hierarchy
       </li>
       <li>
-        Consists of columns and rows, their intersection gives meaning to the data 
-       </li>  	   
+        Consists of columns and rows, their intersection gives meaning to the data
+       </li>
   </div>
-  
+
  <div class="slide" id="tabular-data">
     <h2>
-      Tabular Data - Example 
-    </h2>
-   
+      Tabular Data - Example
+    </h2> 
   	<table>
   	<tr>
     	<th>Title</th>
@@ -193,12 +192,12 @@
       <li>Inconsistencies</li>
       <li>Search and retrieval</li>
       <li>Updates - change</li>
-      <li>Distribution</li>	
+      <li>Distribution</li>
       </li>
     </ul>
     <pa>How do we overcome these issues with tabular data?</pa>
   </div>
-  
+
    <div class="slide" id="relational-model">
     <h2>Second Model: Relational Model</h2>
    	<ul>
@@ -227,12 +226,12 @@
     <h2>
       Mapping reality to a database
     </h2>
-    Worldview consisting of 
+    Worldview consisting of
     <ul>
       <li>Entities: group of information that varies independently from other groups</li>
       <li>Attributes: describe properties of entities</li>
       <li>Relationships: create connections in between entities</li>
-     </ul>   
+     </ul>
   </div>
   <div class="slide" id="design">
   <h2>
@@ -244,8 +243,8 @@
   	<li>Establish the relationships in between the tables</li>
   </ol>
   Is sometimes more an art than a science !
-  </div>		
-  
+  </div>
+
   <div class="slide" id="design_pic">
     <h2>Redesigning our catalog</h2>
     <figure>
@@ -263,16 +262,16 @@
     <ul>
     <li>Relational Database Management System (RDBMS) software used to implement the model</li>
     <li>Common RDBMS tools/software vendors are MySQL, Oracle, SQLServer</li>
-    <li>Other more complex software, such as Integrated Library Systems (ILS) or collection management systems, are build on top of a RDBMS   
+    <li>Other more complex software, such as Integrated Library Systems (ILS) or collection management systems, are build on top of a RDBMS
     </ul>
   </div>
-  
+
     <div class="slide" id="SQL">
     <h2>SQL</h2>
     <ul>
     <li>Structured Query Language</li>
     <li>Used to insert, query, update and delete data, for schema creation and data access control</li>
-    <li>Standardized in theory (ISO/IEC 9075) but not so much in pratice   
+    <li>Standardized in theory (ISO/IEC 9075) but not so much in pratice
     </ul>
   </div>
 
@@ -290,7 +289,7 @@
     	<code>);</code> <br></div>
     </code>
   </div>
-  
+
     <div class="slide" id="creating_query">
     <h2>
       Encoding data into a table with SQL
@@ -308,7 +307,7 @@
     <li>End-users interact with a GUI but it can be useful to know some basic SQL queries</li>
     </ul>
     For example: find all the titles of the works by Picasso :<br>
-    <code>SELECT title FROM Work WHERE creator=43</code>  
+    <code>SELECT title FROM Work WHERE creator=43</code>
   </div>
 
   <div class="slide" id="change">
@@ -320,7 +319,7 @@
       <li>Apart from ensuring the normalization of the modified schema, the modifications
       might also affect public front-ends</li>
       <li>Informal and ad-hoc solutions often
-      are taken, which can have disastrous consequences over time   
+      are taken, which can have disastrous consequences over time
       </li>
     </ul>
   </div>
@@ -347,10 +346,10 @@
       coupled to a specific software</li>
       <li>Leaving aside the technical issues of migrating and integrating
       databases, the main complexity resides in the <em>semantics</em>:
-      a database schema is rarely well documented in practice</li>         
+      a database schema is rarely well documented in practice</li>
     </ul>
   </div>
-  
+
   <div class="slide" id="db_island">
     <figure class="cover width">
       <img src="images/island.jpg"
@@ -402,10 +401,10 @@
       <li>Problem: each application domain has different structural elements
       within their document</li>
       <li>Solution: meta-markup, giving users the possibility to define the tags
-      they need</li>         
+      they need</li>
     </ul>
   </div>
-  
+
    <div class="slide" id="meta_markup">
     <h2>
       HTML detour
@@ -471,7 +470,7 @@
        	<ul>
         <code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code><br>
         <code>&lt;Art title="Modern art"/&gt;</code>
-        </ul>   
+        </ul>
       </li>
     </ul>
   </div>
@@ -489,11 +488,11 @@
           <code>&lt;Work title="Guernica" year="1937" creator="Pablo Picasso"</code><br>
           <code>collection="Reina Sofia" location="Madrid"/&gt;</code><br>
           <code>&lt;/Art&gt;</code>
-          </li>		
+          </li>
         </ul>
     </ul>
     <footer>The hierarchical structure of XML now becomes apparent:
-    the <code>Work</code> element is a child of the <code>Art</code> element. However, 
+    the <code>Work</code> element is a child of the <code>Art</code> element. However,
     note how we've choosen to model the metadata of works as attributes. Is this a wise option ?
     </footer>
   </div>
@@ -514,10 +513,10 @@
 	   <code>&lt;Collection&gt;</code><br>
 	   <code>&lt;Name&gt;Reina Sofia&lt;/Name&gt;</code><br>
 	   <code>&lt;Location&gt;Madrid&lt;/Location&gt;</code><br>
-	   <code>&lt;/Collection&gt;</code><br>	
+	   <code>&lt;/Collection&gt;</code><br>
 	   <code>&lt;/Work&gt;</code><br>
 	   <code>&lt;/Art&gt;</code><br>
-     </p> 
+     </p>
     <footer>This leaves maximum flexibility to extend the document at any point.
     However, this also comes at a cost: the hierarchy is now relatively deep to express simple concepts,
     even for straightforward properties such as the year of creation.
@@ -529,14 +528,14 @@
     <h2>
       Let's go for a compromise !
     </h2>
-    <p>			
+    <p>
        <code>&lt;Art title="Modern art"/&gt;</code><br>
        <code>&lt;Work title="Guernica" year="1937"&gt;</code><br>
        <code>&lt;Creator firstName="Pablo" lastName="Picasso"/&gt;</code><br>
        <code>&lt;Collection name="Reina Sofia" location="Madrid"/&gt;</code><br>
        <code>&lt;/Work&gt;</code><br>
        <code>&lt;/Art&gt;</code>
-     </p> 
+     </p>
       <footer>In this example we've choosen to model all values that will not be decomposed
     or require further properties as attributes. For instance, a work's <code>title</code>
     does not require further description, but we could add additional information to <code>creator</code>,
@@ -552,7 +551,7 @@
     but XML Schema (XSD) is the most popular</li>
     <li>Example for our catalog:
     <ul>
-    <li>		
+    <li>
        <code>&lt;xsd:element name="Work"/&gt;</code><br>
        <code>&lt;xsd:complexType&gt;</code><br>
        <code>&lt;xsd:sequence&gt;</code><br>
@@ -565,9 +564,9 @@
      </li>
      </ul>
      </li>
-     </ul> 
-  </div>    
-    
+     </ul>
+  </div>
+
 <div class="slide" id="namespaces">
     <h2>
       Namespaces
@@ -576,7 +575,7 @@
     <li>Mechanism to disambiguate the meaning of elements and attributes across schemas</li>
     <li>Namespaces are indicated with the help of the reserved XML attribute <code>xmlns</code>:
     <ul>
-    <li>		
+    <li>
        <code>&lt;Art title="Modern art"</code><br>
        <code>xmlns:dc="http://purl.org/dc/terms/"</code><br>
        <code>xmlns:vra="http://www.vraweb.org/vracore4.htm"</code><br>
@@ -589,19 +588,19 @@
      </li>
      </ul>
      </li>
-     </ul> 
-  </div>       
-    
+     </ul>
+  </div>
+
 <div class="slide" id="xpath">
     <h2>
-      Search and retrieval 
+      Search and retrieval
     </h2>
     <ul>
     <li>XML has its own query language : XPATH</li>
-    <li>Allows to traverse XML trees and collect element and attribute values</li> 
+    <li>Allows to traverse XML trees and collect element and attribute values</li>
     <li>Examples:
     <ul>
-    <li>		
+    <li>
        <code>/Art/Work/Creator</code><br>
        <code>Creator/LastName</code><br>
        <code>Work/descendent::LastName</code><br>
@@ -609,44 +608,44 @@
      </li>
      </ul>
      </li>
-     </ul> 
-  </div>         
+     </ul>
+  </div>
 
 <div class="slide" id="db_xml">
     <h2>
-      When to use a database or XML ? 
+      When to use a database or XML ?
     </h2>
     <ul>
     <li>The quick answer is: it depends on the context</li>
-    <li>In reality, people often rely on the tools and methods they are acquinted with</li> 
+    <li>In reality, people often rely on the tools and methods they are acquinted with</li>
     <li>The big XML hype is over, mainly due to the prohibitive time needed for the encoding</li>
-     </ul> 
-  </div>    
+     </ul>
+  </div>
 
 <div class="slide" id="limits_xml">
     <h2>
-      Limits ? 
+      Limits ?
     </h2>
     <ul>
     <li>Inconsistencies</li>
-    <li>Search and retrieval</li> 
+    <li>Search and retrieval</li>
     <li>Updates - change</li>
     <li>Distribution</li>
-     </ul> 
-  </div> 
+     </ul>
+  </div>
 
 <div class="slide" id="rdf">
     <h2>
-      Fourth model : RDF 
+      Fourth model : RDF
     </h2>
     <ul>
     <li>Resource Description Framework (RDF)</li>
-    <li>Worldview consisting of a gigantic ever-expanding graph of triples</li> 
+    <li>Worldview consisting of a gigantic ever-expanding graph of triples</li>
     <li>Triple consists of a subject, object and predicate</li>
     <li>Any resource (the subject) can have a relationship (the predicate) to any other resource (the object)</li>
-     </ul> 
-  </div> 
-  
+     </ul>
+  </div>
+
   <div class="slide" id="graph">
     <figure class="cover width">
       <img src="images/graph.jpg"
@@ -655,25 +654,25 @@
         ©2014 <a href="http://book.freeyourmetadata.org">Seth van Hooland and Ruben Verborgh</a>
       </figcaption>
     </figure>
-    <footer>Our art catalog represented in RDF triples. Notice how easy it is to integrate information and 
+    <footer>Our art catalog represented in RDF triples. Notice how easy it is to integrate information and
     create links in between resources. Picasso influenced Jeff Koons, about which we also have some metadata.</footer>
   </div>
 
 <div class="slide" id="rdf">
     <h2>
-      Model 
+      Model
     </h2>
     <ul>
     <li>Through a radically simplified data model, the semantics are made explicit by the triple itself</li>
     <li>Both databases and XML are based on the principle that only data conform to a locally defined schema
-    may exist => closed world assumption</li> 
+    may exist => closed world assumption</li>
     <li>RDF sails under the AAA (Anyone can say Anything about Anything) flag</li>
-     </ul> 
-  </div> 
-  
+     </ul>
+  </div>
+
   <div class="slide" id="rdf-serialization">
     <h2>
-      Serialization 
+      Serialization
     </h2>
     <ul>
     <li>RDF/XML</li>
@@ -684,30 +683,30 @@
     <li>Turtle</li>
     	<li>Allows to express RDF triples in a compact and natural text form</li>
     	<li>Each of the components (subject, predicate, object) are seperated by whitespace and a triple
-    	ends with a dot</li> 
-    </ul> 
-  </div> 
-  
+    	ends with a dot</li>
+    </ul>
+  </div>
+
   <div class="slide" id="turtle-1">
     <h2>
-      Turtle example   
+      Turtle example
     </h2>
-    <p>		
+    <p>
        <code>@prefix gh:&lt;http://www.guggenheim.org/new-york/collections/collection-online/artwork/&gt;.</code><br>
        <code>@prefix dc:&lt;http://purl.org/dc/terms/&gt;.</code><br>
        <code>@prefix viaf:&lt;http://viaf.org/viaf/&gt;.</code><br>
        <code>gh:48 dc:creator viaf:5035739</code><br>
      </p>
-  </div>   
-  
+  </div>
+
   <div class="slide" id="turtle-2">
     <h2>
-      Let's continue with our Turtle example   
+      Let's continue with our Turtle example
     </h2>
     <p>Multiple statements about the same object can be written
     tersely by using a semicolon if the subject is repeated, and a comma
     if the subject and predicate are repeated</p>
-    <p>		
+    <p>
        <code>gh:48 dc:creator viaf:5035739;</code><br>
        <code>dc:title "Puppy".</code><br>
        <code>viaf:5035739 :influencedBy viaf:15873,</code><br>
@@ -717,23 +716,23 @@
 
   <div class="slide" id="turtle-3">
     <h2>
-      Let's continue with our Turtle example   
+      Let's continue with our Turtle example
     </h2>
     <p>RDF includes literal values ("Puppy") in its model as well, as some properties
     eventually do not point at another object but rather at a non-decomposable value</p>
     <p><code>:influencedBy</code> has an empty namespace prefix, which indicates that it
     is locally defined :
-    <p>		
+    <p>
        <code>gh:48 dc:creator viaf:5035739;</code><br>
        <code>dc:title "Puppy".</code><br>
        <code>viaf:5035739 :influencedBy viaf:15873,</code><br>
        <code>viaf:95794725.</code><br>
      </p>
   </div>
-  	
+
   	  <div class="slide" id="sparql">
     <h2>
-      Search and retrieval in RDF   
+      Search and retrieval in RDF
     </h2>
 	<ul>
 	<li>SPARQL: recursive acronym for SPARQL Protocol and RDF Query Language</li>
@@ -747,19 +746,19 @@
 	</li>
 	</ul>
   	</div>
-  	
-  	  
+
+
   <div class="slide" id="limits-rdf">
     <h2>Limits of RDF ?</h2>
     <ul>
       <li>Inconsistencies</li>
       <li>Search and retrieval</li>
       <li>Updates - change</li>
-      <li>Distribution</li>	
+      <li>Distribution</li>
       </li>
     </ul>
   </div>
-  	
+
   	<div class="slide" id="table">
     <figure class="cover width">
       <img src="images/table.jpg"
@@ -781,10 +780,10 @@
       </figcaption>
     </figure>
     <footer>Don't be the boy with the hammer! Once people develop experience with one tool and model,
-    they tend to use it for everything. For example, it takes some time to develop skills to master the XML 
+    they tend to use it for everything. For example, it takes some time to develop skills to master the XML
     suite (XSD, XPATH, XQUERY, etc) so after a while people squeze everything into hierarchical trees
     to be processed as XML, even if it's not a natural fit.</footer>
-  </div>	
+  </div>
 
 	<footer>
 		<p>Copyright © 2017 <a href="#">Yours Truly, Famous Inc.</a></p>

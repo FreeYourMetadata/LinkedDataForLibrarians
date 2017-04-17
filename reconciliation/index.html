@@ -1,23 +1,451 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Clear theme for Shower</title>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="../styles/screen-16x10.css">
+  <title>Reconciliation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="../styles/screen-16x10.css">
 </head>
 <body class="shower list">
-	<header class="caption">
-		<h1>Presentation Title</h1>
-		<p><a href="">Yours Truly</a>, Famous Inc.</p>
-	</header>
+  <header class="caption">
+    <h1>
+      <a class="series" href="../">Linked Data for Librarians</a><br>
+      <a class="module" href="#title">Reconciliation</a>
+    </h1>
+    <p>
+      <a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a>,
+      <a href="https://ruben.verborgh.org/">Ruben Verborgh</a>
+    </p>
+    <ul class="links">
+      <li class="prev">Previous topic: <a href="../cleaning/">Data cleaning</a></li>
+      <li class="next">Next topic: <a href="../enrichment/">Enrichment</a></li>
+    </ul>
+  </header>
 
-	<div class="title slide">
-		<h2>This is the title slide<br>of the presentation</h2>
-		<p class="author">Yours Truly</p>
-		<p class="affiliation">Famous Inc.</p>
-	</div>
+  <div class="title slide" id="title">
+    <h2>
+      <a class="series" href="../">Linked Data for Librarians</a><br>
+      <a class="module" href="#title">Reconciliation</a>
+    </h2>
+    <p class="tweets"><a href="https://twitter.com/FreeMetadata">@FreeMetadata</a></p>
+    <p class="author"><a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a></p>
+    <p class="author"><a href="https://ruben.verborgh.org/">Ruben Verborgh</a></p>
+    <p class="license">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="../_shared/images/cc-by.svg" /></a>
+      Except where otherwise noted, the content of these slides is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </p>
+  </div>
+
+  <div class="slide" id="ld-principles">
+    <h2>Linked Data and Controlled Vocabularies</h2>
+  	<ul>
+      <li>Let us come back to the 3rd and 4th LD principle, which stipulate that :
+  	<ul>
+  	<li>when someone looks up an URI, to provide useful information using standards</li>
+  	<li>to include links to other URIs so that more information can be discovered</li>
+  	</ul>
+  </li>
+  	<li>Controlled vocabularies can play a pivotal role to address these two principles !</li>
+  </ul>
+  </div>
+
+  <div class="slide" id="lcsh-screenshot">
+      <figure class="cover width">
+          <img src="images/lcsh.jpg"
+               alt="[LCSH screenshot]">
+        <figcaption>
+          ©2017 <a href="http://id.loc.gov/authorities/subjects/sh85034652.html">LCSH</a>
+        </figcaption>
+      </figure>
+      <footer>
+        <p>The URI <a href="http://id.loc.gov/authorities/subjects/sh85034652.html">
+          http://id.loc.gov/authorities/subjects/sh85034652.html</a> allows us to
+          look up more generic and specific terms related to cubism, but also includes
+          pointers to other vocabularies in other languages, illustrated by the link at the
+          bottom of the page, which refers to the French subject heading RAMEAU.</p>
+      </footer>
+    </div>
+
+<div class="slide" id="underwear">
+  <blockquote class="long">
+    <p>Controlled vocabularies are like underwear. Everyone thinks they are a good idea
+    but no one wants to use someone else's</p>
+    <cite>Traditional Library and Information Science joke, author unknown</cite>
+  </blockquote>
+</div>
+
+ <div class="slide" id="vocabs">
+    <h2>Role of Controlled Vocabularies</h2>
+  	<ul>
+  	<li>Subset of natural language</li>
+  	<ul>
+  	<li>Created to avoid the problems which rise with the use of natural language
+  	for indexing and retrieval</li>
+  	</ul>
+  	<li>Improving precision and recall</li>
+	<ul>
+	<li>By providing synonymy control, controlled vocabularies improve recall,
+  which is the proportion of the documents relevant to the search that
+  were successfully retrieved. Greater precision, which is the proportion of retrieved documents
+  relevant to the search, can be achieved through the control of polysemy.
+	</li>
+	</ul>
+  	<li>Been critized but always survived</li>
+  	<ul>
+  	<li>Controlled vocabularies are terribly expensive to develop and maintain, but they
+  	continue to prove their value, especially now in the Linked Data community
+  	</ul>
+  	</ul>
+  </div>
+
+ <div class="slide" id="ld-vocabs">
+    <h2>Controlled Vocabularies come in different flavours</h2>
+  	<ul>
+  	<li>Crown jewels of the information and library science community</li>
+  	<li>Important to distinguish three types</li>
+  	<ul>
+  	<li>Classification schemes : for example DDC</li>
+  	<li>Subject headings : for example LCSH</li>
+  	<li>Thesauri : for example AAT</li>
+  	</ul>
+  	<li>Essential to understand their differences before using them as Linked Data</li>
+  	</ul>
+  </div>
+
+  <div class="slide" id="classification-schemes">
+     <h2>Classification schemes</h2>
+   	<ul>
+    <li>Propose systematically arranged classes, offering placeholders to cluster documents
+      on the same subject content (Broughton, 2004) </li>
+    <li>Dewey's Decimal Classification (DDC) is the most wellknown example</li>
+   	</ul>
+   </div>
+
+<div class="slide" id="classification-pic">
+    <figure class="cover width">
+        <img src="images/classification.jpg"
+             alt="[Library]">
+      <figcaption>
+        ©2015 <a href="https://flic.kr/p/rnfqwA">Michael D. Beckwith</a>
+      </figcaption>
+    </figure>
+    <footer>
+      <p>Classification schemes were the first controlled vocabularies to be
+      developed within the newly established field of library and documentation sciences
+      at the end of the nineteenth century.
+      The gradual evolution at that time from a closed to an open access policy in libraries
+      implied that users were increasingly allowed to browse through the book shelves themselves,
+      instead of having a librarian delivering the books upon request.
+      Libraries therefore needed a method to physically organize their books by subject,
+      allowing patrons to find their way to the book of their interest.</p>
+    </footer>
+  </div>
+
+  <div class="slide" id="classification-example">
+    <h2>DDC example</h2>
+    <p>Classes are represented by <em>notations</em> and <em>captions</em>
+    provide a human-readable description of the scope of the class</p>
+    <table>
+    <tr>
+      <td>7</td>
+      <td>Art and recreation</td>
+    </tr>
+    <tr>
+      <td>70</td>
+      <td>Arts</td>
+    </tr>
+    <tr>
+      <td>709</td>
+      <td>History, geographic treatment, biography</td>
+    </tr>
+    <tr>
+      <td>709.04</td>
+      <td>20th Century, 1900-1999</td>
+    </tr>
+    <tr>
+      <td>709.0403</td>
+      <td>Cubism and futurism</td>
+    </tr>
+    <tr>
+      <td>709.04032</td>
+      <td>Cubism</td>
+    </tr>
+  </table>
+   </div>
+
+   <div class="slide" id="subject-heading">
+     <h2>Subject headings</h2>
+     <p>Examples: LCSH, RAMEAU, GND)</p>
+     <p>Single words or phrases which describe the subject of resources to facilitate
+     their intellectual access</p>
+     <p>Alphabetically organized, with cross-references</p>
+     <p>Complex composition of headings in a pre-coordinated manner</p>
+    </div>
+
+    <div class="slide" id="lcsh-example">
+      <h2>LCSH - Example</h2>
+      <p><b>Cubism (May Subd Geog)</b>
+        <table>
+          <tr><td>BT</td><td>Aesthetics</td></tr>
+          <tr><td>BT</td><td>Art</td></tr>
+          <tr><td>BT</td><td>Art, Modern - 20th Century</td></tr>
+          <tr><td>BT</td><td>Modernism (Art)</td></tr>
+          <tr><td>BT</td><td>Painting</td></tr>
+          <tr><td>RT</td><td>Post-impressionism (Art)</td></tr>
+          <tr><td>NT</td><td>Decoration and ornament - Cubism</td></tr>
+          <tr><td>NT</td><td>Drawing, Cubist</td></tr>
+          <tr><td>NT</td><td>Purism (Art)</td></tr>
+        </table>
+      </p>
+      </div>
+
+      <div class="slide" id="thesauri">
+        <h2>Thesauri</h2>
+        <p>Examples: <a href="http://www.getty.edu/research/tools/vocabularies/aat/">AAT</a>,
+           <a href="https://eric.ed.gov/">ERIC</a></p>
+        <p>Lists all te concepts available for indexing for a domain and labels
+        each of them with a preferred term, as well as any synonyms. Relationships between
+      concepts and between terms are indicated</p>
+        <p>Fundamental aspect: it is the only type of controlled vocabulary for which
+        a formal standard (ISO 25964-1) exists, allowing to enforce compliance</p>
+       </div>
+
+       <div class="slide" id="thesaurus-example">
+         <h2>Thesaurus - Example</h2>
+         <p><b>Cubist</b>
+           <table>
+             <tr><td>BT</td><td>Modernism</td></tr>
+             <tr><td>BT</td><td>Painting</td></tr>
+             <tr><td>BT</td><td>Purist</td></tr>
+             <tr><td>RT</td><td>Post-impressionism</td></tr>
+             <tr><td>UF</td><td>Cubism</td></tr>
+           </table>
+         </p>
+         <footer>This simple example allows to illustrate and discuss some complexities of
+         thesaurus construction.
+         First of all, it is not an exact science.
+         As with the modelisation of a database,
+         which is also an exercise of making abstraction from reality,
+         people have different views of the same reality.
+         For example, our small thesaurus mentions that "Purist"
+         is considered here as a narrower term of "Cubist",
+         which is in line with how the LCSH describes it.
+         However, the French Rameau subject headings consider "Purist" to be a
+         related term to "Cubist". The question here is not to know
+         how is right, but it is just a small illustration of the inconsistencies
+         in between controlled vocabularies, even inside the same application domain.</footer>
+         </div>
+
+         <div class="slide" id="voc-comp">
+             <figure class="cover width">
+                 <img src="images/comp_vocab.jpg"
+                      alt="[Comparison DDC, LCSH and AAT]">
+               <figcaption>
+                 ©2014 <a href="http://book.freeyourmetadata.org">Seth van Hooland and Ruben Verborgh</a>
+               </figcaption>
+             </figure>
+             <footer>
+               <p>On first sight, the mapping across the three vocabularies seems straightforward.
+               If one has a closer look, it can be noted that the DDC and LCSH consider Cubism as
+               an art form from 20th century, independently from a geographical area.
+               However, the AAT puts Cubism in a specific European context.
+               More importantly, the LCSH brings "Purism (Art)" as a narrower term under "Cubism".
+               In the AAT, this term sits independently from Cubism under "Modern French fine arts".
+               These are subtle but important differences in between the three vocabularies.</p>
+             </footer>
+           </div>
+
+         <div class="slide" id="little-semantics">
+           <h2>A little Semantics go a long way</h2>
+           <p>Difficulties to implement the full-blown Semantic Web stirred new
+           interest in controlled vocabularies</p>
+           <p>Inferencing capabilities are limited but awareness grew to re-use
+           existing vocabularies</p>
+           <p>This evolution spurred interest in the development of SKOS ...</p>
+          </div>
+
+          <div class="slide" id="skos">
+          <h2>Simple Knowledge Organization System (SKOS)</h2>
+          <p>Data model to represent controlled vocabularies on the Web</p>
+          <p>Confusing relation with ontologies - what is the difference for
+            example between <code>skos:narrower</code> and <code>rdfs:subClassOf</code>?</p>
+          <p>Controlled vocabularies are hierarchically and associatively structured
+            but they do not have the same rigor as formal axioms or facts about the world</p>
+          </div>
+
+          <div class="slide" id="svenonius">
+            <blockquote class="long">
+              <p>Subject language terms differ referentially from words used in ordinary language.
+              The former do not refer to objects in the real world or concepts in a mentalistic world
+              but to subjects. As a name of a subject, the term Butterflies refers not to actual butterflies
+              but rather to the set of all indexed documents about butterflies.
+              In a natural language the extension, or extensional meaning, of a word is the class of entities
+              denoted by that word, such as the class consisting of all butterflies.
+              In a subject language the extension of a term is the class of all documents about
+              what the term denotes, such as all documents about butterflies.</p>
+              <cite>Elaine Svenonius, 2000</cite>
+            </blockquote>
+          </div>
+
+          <div class="slide" id="concepts">
+          <h2>SKOS properties</h2>
+          <p>Concepts are the basis of SKOS and are expressed through concrete terms
+            and may have three properties:
+            <ul>
+              <li>Labeling properties : <code>skos:prefLabel</code>, <code>skos:altLabel</code></li>
+              <li>Semantic properties : <code>skos:narrower</code>, <code>skos:broader</code>, <code>skos:related</code>,
+                <code>skos:narrowMatch</code>, etc
+              </li>
+              <li>Documentation properties: <code>skos:scopeNote</code>, <code>skos:definition</code>, <code>skos:historyNote</code></li>
+            </ul>
+          </p>
+          </div>
+
+          <div class="slide" id="skos-example">
+            <h2>SKOS example from LCSH</h2>
+            <pre class="scroll"><code>
+              @prefix : &lt;http://id.loc.gov/authorities/subjects/&gt;.
+              @prefix ch: &lt;http://purl.org/vocab/changeset/schema#&gt;.
+              @prefix org: &lt;http://id.loc.gov/vocabulary/organizations/&gt;.
+              @prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;.
+              @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;.
+
+              :sh85034652 a skos:Concept;
+                skos:inScheme &lt;http://id.loc.gov/authorities/subjects&gt;;
+                skos:prefLabel "Cubism"@en;
+                skos:broader :sh85001441, :sh85007461, :sh85007805,
+                             :sh85086445, :sh85096661;
+                skos:narrower :sh85036235, :sh85039437, :sh85109192;
+                skos:related :sh2001008665, :sh85105416;
+                skos:closeMatch &lt;http://d-nb.info/gnd/4165855-3&gt;;
+                skos:exactMatch &lt;http://stitch.cs.vu.nl/vocabularies/rameau/ark:/12148/cb119361753&gt;;
+                skos:changeNote [
+                     a ch:ChangeSet;
+                     ch:changeReason "new"^^xsd:string;
+                     ch:createdDate "2001-06-22T00:00:00"^^xsd:dateTime;
+                     ch:creatorName org:dl;
+                     ch:subjectOfChange :sh85034652
+                   ],
+                   [
+                     a ch:ChangeSet;
+                     ch:changeReason "revised"^^xsd:string;
+                     ch:createdDate "2001-07-19T13:07:56"^^xsd:dateTime;
+                     ch:creatorName org:dlc;
+                     ch:subjectOfChange :sh85034652
+                  ].
+            </code></pre>
+            <footer>
+              Let us look at a concrete example. Point your browser to
+              http://id.loc.gov/authorities/subjects/sh85034652.html
+              and see how the authority file for "Cubism" is structured
+              and displayed for human consumption on the HTML page.
+              Please scroll all the way down to the bottom of the page,
+              click on the button to download the SKOS - N-Triples
+              representation, and open up the file. Here you find all
+              of the same information as on the HTML representation,
+              but in a more structured and therefore machine-processable
+              format.
+
+              In order to make the SKOS data more readable,
+              we have slightly reworked the example by adding prefixes,
+              appearing at the beginning and which allow to reduce the length
+              of the file.
+            </footer>
+          </div>
+
+          <div class="slide" id="thesaurus-creation">
+            <h2>Let's create our own thesaurus in SKOS !</h2>
+            <ul>
+              <li>Domain analysis<ul><li>We can make use of the text
+              available on http://en.wikipedia.org/wiki/Art_periods#Modern-art
+            to collect terms</li></ul>
+              </li>
+              <li>Hierarchy<ul><li>Once we made a list with the different terms
+                (modern art, neo-impressionism, cubism, purism etc) we need to establish
+                a hierarchy in between them</li></ul>
+              </li>
+              <li>Tools<ul><li>Several tools can be used to create thesauri, such
+              as <a href="http://www.vocabularyserver.com/">Tematres</a> for example. However, here we'll just encode a Turtle
+            file by making use of a text editor</li></ul>
+            </li>
+              </li>
+            </ul>
+          </div>
+
+      <div class="slide" id="skos-file">
+        <h2>Coding out thesaurus ... </h2>
+        <ul>
+          <li>Create a new file called <code>modern-art-skos.ttl</code> (pay attention to the .ttl extension)
+          <li>Add prefixes:
+            <ul>
+              <li><code>@prefix art:&lt;http://example.org/art/#&gt;.</code></li>
+              <li><code>@prefix skos:&lt;http://www.w3.org/2004/02skos/core#&gt;.</code></li>
+              <li><code>@prefix dc:&lt;http://purl.org/dc/terms/&gt;.</code></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    <div class="slide" id="top-concept">
+      <h2>We need to add a title and a top concept</h2>
+      <p>For convenience, stick to ASCII characters and avoid whitespaces or any
+        special tokens :</p>
+      <pre><code>
+        art:ModernArtPeriodsThesaurus a skos:ConceptScheme;
+          dc:title "Modern art periods thesaurus"@en;
+          skos:hasTopConcept art:ModernArt.
+      </code></pre>
+    </div>
+
+  <div class="slide" id="adding-concepts">
+    <h2>Adding concepts</h2>
+    <p>Adding the top concept :</p>
+    <pre><code>
+      art:ModernArt a skos:Concept;
+        skos:prefLabel "Modern art"@en;
+        skos:inScheme art:ModernArtPeriodsThesaurus.
+    </code></pre>
+    <p>Adding multilingual labels :</p>
+    <pre><code>
+      art:ModernArt a skos:Concept;
+        skos:prefLabel "Modern art"@en;
+        skos:prefLabel "Art moderne"@fr;
+        skos:prefLabel "Moderne Kunst"@de;
+        skos:inScheme art:ModernArtPeriodsThesaurus.
+    </code></pre>
+    <p>Encoding alternative names</p>
+    <pre><code>
+    art:ModernArt skos:altLabel "Modern art (1860-1945)"@en.
+  </code></pre>
+  </div>
+
+<div class="slide" id="extra-concepts">
+<h2>Now we can add some supplementary genres and subgenres</h2>
+<pre><code>
+  art:HeidelbergSchool a skos:Concept;
+    skos:prefLabel "Heidelberg School"@en;
+    skos:broader art:Impressionism;
+    skos:inScheme art:ModernArtPeriodsThesaurus.
+
+  art:DieBrucke a skos:Concept;
+    skos:prefLabel "Die Brücke"@en;
+    skos:broader art:Expressionism;
+    skos:inScheme art:ModernArtPeriodsThesaurus.
+</code></pre>
+</div>
+
+<div class="slide" id="validation">
+<h2>Validation</h2>
+<p>Continue to develop your mini-thesaurus or download the one
+developed on http://book.freeyourmetadata.org/chapters/3/modern-art-skos.ttl</p>
+<p>Validation and visualization tools :
+<ul>
+  <li><a href="http://www.rdfabout.com/demo/validator">http://www.rdfabout.com/demo/validator</a></li>
+  <li><a href="http://labs.sparna.fr/skos-play/">http://labs.sparna.fr/skos-play/</a></li>
+</uL>
+</p>
+</div>
 
 	<div class="progress"></div>
 	<footer>
