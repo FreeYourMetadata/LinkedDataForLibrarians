@@ -1,23 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Clear theme for Shower</title>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="../styles/screen-16x10.css">
+  <title>Enrichment</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<link rel="stylesheet" href="../styles/screen-16x10.css">
 </head>
 <body class="shower list">
-	<header class="caption">
-		<h1>Presentation Title</h1>
-		<p><a href="">Yours Truly</a>, Famous Inc.</p>
-	</header>
+  <header class="caption">
+    <h1>
+      <a class="series" href="../">Linked Data for Librarians</a><br>
+      <a class="module" href="#title">Enrichment</a>
+    </h1>
+    <p>
+      <a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a>,
+      <a href="https://ruben.verborgh.org/">Ruben Verborgh</a>
+    </p>
+    <ul class="links">
+      <li class="prev">Previous topic: <a href="../reconciliation/">Reconciliation</a></li>
+      <li class="next">Next topic: <a href="../rest/">REST</a></li>
+    </ul>
+  </header>
 
-	<div class="title slide">
-		<h2>This is the title slide<br>of the presentation</h2>
-		<p class="author">Yours Truly</p>
-		<p class="affiliation">Famous Inc.</p>
+  <div class="title slide" id="title">
+    <h2>
+      <a class="series" href="../">Linked Data for Librarians</a><br>
+      <a class="module" href="#title">Enrichment</a>
+    </h2>
+    <p class="tweets"><a href="https://twitter.com/FreeMetadata">@FreeMetadata</a></p>
+    <p class="author"><a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a></p>
+    <p class="author"><a href="https://ruben.verborgh.org/">Ruben Verborgh</a></p>
+    <p class="license">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="../_shared/images/cc-by.svg" /></a>
+      Except where otherwise noted, the content of these slides is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </p>
+  </div>
+
+<div class="slide" id="mining">
+    <figure class="cover width">
+        <img src="images/goldmining.jpg"
+             alt="[Mining for semantics.]">
+      <figcaption>
+        ©2015 <a href="https://flic.kr/p/R4aNys">Bureau of Land Management Oregon and Washington State</a>
+      </figcaption>
+    </figure>
+    <footer>
+      <p>Large-scale digitization efforts are producing digital resources at a massive scale. Traditional
+				manual cataloging practices can't keep up with this pace, so we have to think about how to use
+				algorithms which can assist us to gold mine for semantics within ever-increasing corpora</p>
+    </footer>
+  </div>
+
+	<div class="slide" id="options">
+    <h2>Strategies for metadata creation</h2>
+  	<p>The LIS community has to fundamentally rethink how to create added-value
+			metadata in contexts where it is impossible to continue with a traditional
+			<em>manual</em> cataloging approach</p>
+		<p>Other communities have illustrated over the last decade how algorithms, crowdsourcing
+			or outsourcing via micro-payments can provide alternative strategies
+  </div>
+
+	<div class="slide" id="tag">
+	 <iframe class="cover width height" src="https://www.youtube.com/embed/Sjimio45vrE"></iframe>
+	 <footer>Companies such as <a href="https://www.tagasauris.com/">Tagasauris</a>
+		 for example are integrating machine learning for visual recognition and micro-tasks
+		 outsourced via Amazon's Mechanical Turk to provide metadata in a cheap and quick manner
+		 for the media industry.</footer>
+ </div>
+
+  <div class="slide" id="embracing-scale">
+    <h2>Digital Humanities are embracing scale</h2>
+		<p>DH community in particular can inspire LIS to embrace large corpora not as a <em>problem</em>,
+			but as an <em>opportunity</em></p>
+		<p>Methods and tools developed by the DH community to make sense out of very big volumes
+		of non-structured text can also be re-used for automated metadata creation</p>
+  </div>
+
+	<div class="slide" id="moretti">
+	 <iframe class="cover width height" src="https://www.youtube.com/embed/zEkfr7Idrw4"></iframe>
+	 <footer>Franco Moretti has been the leading thinker to elaborate the
+		 notion of <em>distant reading</em>. His book <a href="https://www.versobooks.com/books/261-graphs-maps-trees">
+			 Maps, graphs and trees</a> gives an excellent introduction to the topic of using statistics to
+	 analyze very large volumes of non-structured text and how the outcomes can help
+ to answer research questions from the humanities.</footer>
+ </div>
+
+ <div class="slide" id="tm-ner">
+	 <h2>Information extraction tools</h2>
+	<p>Low hanging fruits from the information extraction field:
+		<ul>
+			<li>Named-Entity Recognition (NER)</li>
+			<li>Topic Modeling (TM)</li>
+		</ul>
+	</p>
+	<p>Both methods can be used with a minimum of resources and technical
+	experience. This module will give you the opportunity to experiment with both</p>
+ </div>
+
+	<div class="slide" id="defining-ner">
+	<h2>Named-Entity Recognition (NER)</h2>
+	<p>Consider the sentence :"On 25 September 2006, we visited Washington
+		to see the White House"</p>
+	<ul>
+		<li>First step => identification of entities
+		<ul>
+			<li>25 September 2005</li>
+			<li>Washington</li>
+			<li>White Houwe</li>
+		</ul></li>
+		<li>Second step => disambiguation
+		<ul><li>Washington: the state, the city, the jazz musician, etc ?</li></ul></li>
+	</ul>
 	</div>
+
+	<div class="slide" id="uri-disambiguation">
+	<h2>Disambiguate through URIs</h2>
+	<ul>
+		<li>Each entity is associated with a meaning :
+			<ul>
+				<li><a href="http://dbpedia.org/page/White_House">http://dbpedia.org/page/White_House</li>
+				<li><a href="http://dbpedia.org/page/Washington,_D.C.">http://dbpedia.org/page/Washington,_D.C.</a></li>
+			</ul></li>
+		<li>Distinguish recognition and disambiguation :
+				<ul><li>Recognition is about <em>finding</em> the entities in a text fragment,
+				whereas disambiguation is about <em>mapping</em> those entities to a universal identifier</li>
+				</ul>
+	</ul>
+</div>
+
+	<div class="slide" id="ner-services">
+	<h2>NER services</h2>
+	<ul>
+		<li>Rapidly evolving marketspace :
+			<ul>
+				<li><a href="http://dbpedia.org/page/White_House">http://dbpedia.org/page/White_House</li>
+				<li><a href="http://dbpedia.org/page/Washington,_D.C.">http://dbpedia.org/page/Washington,_D.C.</a></li>
+			</ul></li>
+		<li>Distinguish recognition and disambiguation :
+				<ul><li>Recognition is about <em>finding</em> the entities in a text fragment,
+				whereas disambiguation is about <em>mapping</em> those entities to a universal identifier</li>
+				</ul>
+	</ul>
+	</div>
+
+	<div class="slide" id="box">
+	    <figure class="cover width">
+	        <img src="images/box.jpg"
+	             alt="[Mining for semantics.]">
+	      <figcaption>
+	        ©1998 <a href="http://goldberg.berkeley.edu/art/big-images/">Ken Goldberg</a>
+	      </figcaption>
+	    </figure>
+	    <footer>
+	      <p>NER services, especially the commercial services,
+					remain very much <em>black boxes</em>: we throw content at them
+				and they send back URIs with entities. From a LIS perspective, it's
+			essential to know how to evaluate the quality of these services.</p>
+	    </footer>
+	  </div>
 
 	<div class="progress"></div>
 	<footer>

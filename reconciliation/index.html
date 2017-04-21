@@ -78,102 +78,82 @@
         <footer>
           Within the LIS community, we think of controlled vocabularies as our
           crown jewels. However, the outside world does not share our enthusiasm.
-          Often one gets either suspicious looks, rolling eyes or deep sighs when
+          Often one gets rolling eyes when
           the development and use of a controlled vocabulary is proposed.
-          Creating and maintaining a thesaurus for example combines the drawbacks
-          of both a short and long term investment:
-          it is a risky enterprise which requires deep pockets.
           To managers or funding agencies who think in terms of a return on investment
           over the course of one to three years,
           subsidizing the development of a controlled vocabulary often
           is tantamount for throwing money into a black hole. This module will demonstrate
-          how Linked Data can make controlled vocabularies more relevant than ever. 
+          how Linked Data can make controlled vocabularies more relevant than ever.
         </footer>
       </div>
-
-
-
-
-<div class="slide" id="underwear">
-  <blockquote class="long">
-    <p>Controlled vocabularies are like underwear. Everyone thinks they are a good idea
-    but no one wants to use someone else's</p>
-    <cite>Traditional Library and Information Science joke, author unknown</cite>
-  </blockquote>
-  <footer></footer>
-</div>
 
  <div class="slide" id="vocabs">
     <h2>Role of Controlled Vocabularies</h2>
   	<ul>
-  	<li>Subset of natural language</li>
+  	<li>Subset of natural language
   	<ul>
   	<li>Created to avoid the problems which rise with the use of natural language
   	for indexing and retrieval</li>
-  	</ul>
-  	<li>Improving precision and recall</li>
-	<ul>
-	<li>By providing synonymy control, controlled vocabularies improve recall,
-  which is the proportion of the documents relevant to the search that
-  were successfully retrieved. Greater precision, which is the proportion of retrieved documents
-  relevant to the search, can be achieved through the control of polysemy.
-	</li>
-	</ul>
-  	<li>Been critized but always survived</li>
-  	<ul>
-  	<li>Controlled vocabularies are terribly expensive to develop and maintain, but they
-  	continue to prove their value, especially now in the Linked Data community
-  	</ul>
-  	</ul>
+    </ul></li>
+  	<li>Improving precision and recall
+	  <ul>
+	  <li>By providing synonymy control, controlled vocabularies improve recall,
+      which is the proportion of the documents relevant to the search that
+      were successfully retrieved. Greater precision, which is the proportion of retrieved documents
+      relevant to the search, can be achieved through the control of polysemy</li>
+    </ul></li></li>
   </div>
 
  <div class="slide" id="ld-vocabs">
-    <h2>Controlled Vocabularies come in different flavours</h2>
+    <h2>Come in different flavours</h2>
   	<ul>
-  	<li>Crown jewels of the information and library science community</li>
-  	<li>Important to distinguish three types</li>
+  	<li>Within the LIS community we can distinguish three different types :
   	<ul>
-  	<li>Classification schemes : for example DDC</li>
-  	<li>Subject headings : for example LCSH</li>
-  	<li>Thesauri : for example AAT</li>
-  	</ul>
-  	<li>Essential to understand their differences before using them as Linked Data</li>
+  	<li>Classification schemes : for example the <a href="https://www.oclc.org/en/dewey.html">
+      Dewey Decimal Classification</a></li>
+  	<li>Subject headings : for example the <a href="http://id.loc.gov/authorities/subjects.html">
+      Library of Congress Subject Headings</a></li>
+  	<li>Thesauri : for example <a href="http://www.getty.edu/research/tools/vocabularies/aat/">
+      Arts and Architecture Thesaurus</a></li>
+  	</ul></li>
+  	<li>Essential to understand their differences before using them as Linked Data ! </li>
   	</ul>
   </div>
+
+  <div class="slide" id="classification-pic">
+      <figure class="cover width">
+          <img src="images/classification.jpg"
+               alt="[Library]">
+        <figcaption>
+          ©2015 <a href="https://flic.kr/p/rnfqwA">Michael D. Beckwith</a>
+        </figcaption>
+      </figure>
+      <footer>
+        <p>Classification schemes were the first controlled vocabularies to be
+        developed within the newly established field of library and documentation sciences
+        at the end of the nineteenth century.
+        The gradual evolution at that time from a closed to an open access policy in libraries
+        implied that users were increasingly allowed to browse through the book shelves themselves,
+        instead of having a librarian delivering the books upon request.
+        Libraries therefore needed a method to physically organize their books by subject,
+        allowing patrons to find their way to the book of their interest.</p>
+      </footer>
+    </div>
 
   <div class="slide" id="classification-schemes">
-     <h2>Classification schemes</h2>
-   	<ul>
-    <li>Propose systematically arranged classes, offering placeholders to cluster documents
-      on the same subject content (Broughton, 2004) </li>
-    <li>Dewey's Decimal Classification (DDC) is the most wellknown example</li>
-   	</ul>
-   </div>
-
-<div class="slide" id="classification-pic">
-    <figure class="cover width">
-        <img src="images/classification.jpg"
-             alt="[Library]">
-      <figcaption>
-        ©2015 <a href="https://flic.kr/p/rnfqwA">Michael D. Beckwith</a>
-      </figcaption>
-    </figure>
-    <footer>
-      <p>Classification schemes were the first controlled vocabularies to be
-      developed within the newly established field of library and documentation sciences
-      at the end of the nineteenth century.
-      The gradual evolution at that time from a closed to an open access policy in libraries
-      implied that users were increasingly allowed to browse through the book shelves themselves,
-      instead of having a librarian delivering the books upon request.
-      Libraries therefore needed a method to physically organize their books by subject,
-      allowing patrons to find their way to the book of their interest.</p>
-    </footer>
-  </div>
-
-  <div class="slide" id="classification-example">
-    <h2>DDC example</h2>
+    <h2>Classification schemes</h2>
+   	<p>Propose systematically arranged classes to arrange documents
+    regarding the same topic together</p>
     <p>Classes are represented by <em>notations</em> and <em>captions</em>
     provide a human-readable description of the scope of the class</p>
+    <p>Dewey's Decimal Classification (DDC) is the most wellknown example</p>
+   </div>
+
+  <div class="slide" id="classification-example">
+    <h2>Example - Dewey Decimal Classification</h2>
+    <p>We can systematically drill down the DCC in order to locate the class for
+      <b>Cubism</b> : </p>
     <table>
     <tr>
       <td>7</td>
@@ -204,15 +184,25 @@
 
    <div class="slide" id="subject-heading">
      <h2>Subject headings</h2>
-     <p>Examples: LCSH, RAMEAU, GND)</p>
      <p>Single words or phrases which describe the subject of resources to facilitate
      their intellectual access</p>
      <p>Alphabetically organized, with cross-references</p>
      <p>Complex composition of headings in a pre-coordinated manner</p>
+      <p>LCSH are used world-wide to describe the topics
+      of resources during cataloging</p>
     </div>
 
+    <div class="slide" id="lcsh-video">
+     <iframe class="cover width height" src="https://www.youtube.com/embed/gCgA5ZHUkN4"></iframe>
+     <footer>The LIS community has a love-hate relationship with the LCSH,
+       which is actuallly the biggest controlled vocabulary in English. It is
+     incredibly rich, but also contains a lot of inconsistencies and the rules to
+   formalize headings can become really complex. Jeffrey Pomerantz gives a good introduction
+ in this video to the topic.</footer>
+   </div>
+
     <div class="slide" id="lcsh-example">
-      <h2>LCSH - Example</h2>
+      <h2>Example - Library of Congress Subject Headings</h2>
       <p><b>Cubism (May Subd Geog)</b>
         <table>
           <tr><td>BT</td><td>Aesthetics</td></tr>
@@ -230,39 +220,47 @@
 
       <div class="slide" id="thesauri">
         <h2>Thesauri</h2>
+        <p>Represents all the concepts available for indexing for a domain and labels
+        each of them with a preferred term, as well as synonyms. Relationships between
+      concepts and between terms are indicated</p>
+        <p>The only type of controlled vocabulary for which
+        a formal standard (ISO 25964-1) exists, allowing to enforce compliance</p>
         <p>Examples: <a href="http://www.getty.edu/research/tools/vocabularies/aat/">AAT</a>,
            <a href="https://eric.ed.gov/">ERIC</a></p>
-        <p>Lists all te concepts available for indexing for a domain and labels
-        each of them with a preferred term, as well as any synonyms. Relationships between
-      concepts and between terms are indicated</p>
-        <p>Fundamental aspect: it is the only type of controlled vocabulary for which
-        a formal standard (ISO 25964-1) exists, allowing to enforce compliance</p>
        </div>
 
+       <div class="slide" id="black-hole">
+           <figure class="cover width">
+               <img src="images/horse.jpg"
+                    alt="[Draft horses]">
+             <figcaption>
+               ©2010 <a href="https://flic.kr/p/di7oQc">Bernard Spragg</a>
+             </figcaption>
+           </figure>
+           <footer>
+             A well-designed thesaurus, respecting the ISO norm, can really be considered as a working horse from an information
+             architecture and metadata point of view.
+             Well mastered, they can become a very powerfull and reliable tool for
+             efficient information retrieval.
+           </footer>
+         </div>
+
        <div class="slide" id="thesaurus-example">
-         <h2>Thesaurus - Example</h2>
+         <h2>Example - Arts and Architecture Thesaurus</h2>
          <p><b>Cubist</b>
-           <table>
-             <tr><td>BT</td><td>Modernism</td></tr>
-             <tr><td>BT</td><td>Painting</td></tr>
-             <tr><td>BT</td><td>Purist</td></tr>
-             <tr><td>RT</td><td>Post-impressionism</td></tr>
-             <tr><td>UF</td><td>Cubism</td></tr>
-           </table>
+           <ul>
+             <li>Styles and periods
+               <ul><li>European
+                 <ul><li>Modern European styles and movements
+                   <ul><li>Cubist
+                     <ul><li>Analytical cubist</li>
+                       <li>Synthetic cubist</li></ul>
+                   </li></ul>
+                 </li></ul>
+              </li></ul>
+            </li>
+          </ul>
          </p>
-         <footer>This simple example allows to illustrate and discuss some complexities of
-         thesaurus construction.
-         First of all, it is not an exact science.
-         As with the modelisation of a database,
-         which is also an exercise of making abstraction from reality,
-         people have different views of the same reality.
-         For example, our small thesaurus mentions that "Purist"
-         is considered here as a narrower term of "Cubist",
-         which is in line with how the LCSH describes it.
-         However, the French Rameau subject headings consider "Purist" to be a
-         related term to "Cubist". The question here is not to know
-         how is right, but it is just a small illustration of the inconsistencies
-         in between controlled vocabularies, even inside the same application domain.</footer>
          </div>
 
          <div class="slide" id="voc-comp">
@@ -297,37 +295,23 @@
           <h2>Simple Knowledge Organization System (SKOS)</h2>
           <p>Data model to represent controlled vocabularies on the Web</p>
           <p>Confusing relation with ontologies - what is the difference for
-            example between <code>skos:narrower</code> and <code>rdfs:subClassOf</code>?</p>
+            example between <code>skos:narrower</code> and <code>rdfs:subClassOf</code> ?</p>
           <p>Controlled vocabularies are hierarchically and associatively structured
             but they do not have the same rigor as formal axioms or facts about the world</p>
           </div>
 
-          <div class="slide" id="svenonius">
-            <blockquote class="long">
-              <p>Subject language terms differ referentially from words used in ordinary language.
-              The former do not refer to objects in the real world or concepts in a mentalistic world
-              but to subjects. As a name of a subject, the term Butterflies refers not to actual butterflies
-              but rather to the set of all indexed documents about butterflies.
-              In a natural language the extension, or extensional meaning, of a word is the class of entities
-              denoted by that word, such as the class consisting of all butterflies.
-              In a subject language the extension of a term is the class of all documents about
-              what the term denotes, such as all documents about butterflies.</p>
-              <cite>Elaine Svenonius, 2000</cite>
-            </blockquote>
-          </div>
-
           <div class="slide" id="concepts">
           <h2>SKOS properties</h2>
-          <p>Concepts are the basis of SKOS and are expressed through concrete terms
+          <ul><li>Concepts are expressed through concrete terms
             and may have three properties:
-            <ul>
+            <ol>
               <li>Labeling properties : <code>skos:prefLabel</code>, <code>skos:altLabel</code></li>
               <li>Semantic properties : <code>skos:narrower</code>, <code>skos:broader</code>, <code>skos:related</code>,
                 <code>skos:narrowMatch</code>, etc
               </li>
               <li>Documentation properties: <code>skos:scopeNote</code>, <code>skos:definition</code>, <code>skos:historyNote</code></li>
-            </ul>
-          </p>
+            </ol>
+          </li></ul>
           </div>
 
           <div class="slide" id="skos-example">
@@ -385,24 +369,25 @@
           <div class="slide" id="thesaurus-creation">
             <h2>Let's create our own thesaurus in SKOS !</h2>
             <ul>
-              <li>Domain analysis<ul><li>We can make use of the text
-              available on http://en.wikipedia.org/wiki/Art_periods#Modern-art
-            to collect terms</li></ul>
+              <li>Domain analysis<ul><li>Analyze the Wikipedia page
+                on <a href="http://en.wikipedia.org/wiki/Art_periods#Modern-art">
+            modern art</a> to collect terms</li></ul>
               </li>
               <li>Hierarchy<ul><li>Once we made a list with the different terms
-                (modern art, neo-impressionism, cubism, purism etc) we need to establish
-                a hierarchy in between them</li></ul>
+                (modern art, cubism, purism etc) we need to establish
+                a hierarchy</li></ul>
               </li>
               <li>Tools<ul><li>Several tools can be used to create thesauri, such
-              as <a href="http://www.vocabularyserver.com/">Tematres</a> for example. However, here we'll just encode a Turtle
-            file by making use of a text editor</li></ul>
+              as <a href="http://www.vocabularyserver.com/">Tematres</a>.
+              However, lets encode a Turtle
+            file manually</li></ul>
             </li>
               </li>
             </ul>
           </div>
 
       <div class="slide" id="skos-file">
-        <h2>Coding out thesaurus ... </h2>
+        <h2>Coding our thesaurus in a text editor</h2>
         <ul>
           <li>Create a new file called <code>modern-art-skos.ttl</code> (pay attention to the .ttl extension)
           <li>Add prefixes:
