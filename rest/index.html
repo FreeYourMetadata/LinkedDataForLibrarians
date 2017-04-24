@@ -50,6 +50,633 @@
     </p>
 	</div>
 
+  <div class="slide" id="definition">
+    <h2>
+      A Web API is an interface on the server<br>
+      to expose data &amp; functionality to clients.
+    </h2>
+    <ul>
+      <li>
+        The world of Web APIs and technologies<br>
+        is highly heterogeneous.
+        <ul>
+          <li>
+            While the human Web reuses many technologies,<br>
+            Web APIs suffer from a high rate of reinvention.
+          </li>
+        </ul>
+      </li>
+      <li>
+        We will discuss about <a href="#rest">principles</a>,<br>
+        <a href="#sustainability">consequences</a>,
+        and <a href="#technologies">technologies</a><br>
+        to build and interact with Web APIs.
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="web-architectural-style">
+    <h2>
+      Why does the Web scale the way it does?<br>
+      How should we build for the Web?
+    </h2>
+    <ul>
+      <li>
+        <a href="http://roy.gbiv.com/">Roy Fielding</a> analysed the Web<br>
+        to derive its architectural properties.
+      </li>
+      <li>
+        The <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">REST architectural style</a> captures a set of<br>
+        <em>constraints</em> for distributed hypermedia systems.
+      </li>
+      <li>
+        REST has guided protocol decisions<br>
+        and can guide Web applications.
+        <ul>
+          <li>Being <a href="#web-rest">on the Web</a> doesn’t imply following REST.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="constraints">
+    <h2>
+      The REST architectural style consists of<br>
+      5 types of mandatory constraints.
+    </h2>
+    <ol>
+      <li><a href="#client-server">client–server constraints</a></li>
+      <li><a href="#stateless">statelessness constraint</a></li>
+      <li><a href="#cache">cache constraints</a></li>
+      <li><a href="#layered-system">layered system constraints</a></li>
+      <li><a href="#uniform-interface">uniform interface constraints</a></li>
+    </ol>
+  </div>
+
+  <div class="slide" id="client-server">
+    <h2>
+      REST architectures inherit<br>
+      the <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_1_2">client–server constraints</a>.
+    </h2>
+    <ul>
+      <li>
+        Servers respond to requests from clients.
+        <ul>
+          <li>typical for network-based applications</li>
+          <li>
+            alternatives:
+            <ul class="inline">
+              <li>peer-to-peer</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        This separates the user interface<br> from the data storage.
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="stateless">
+    <h2>
+      REST architectures constrain<br>
+      communication to be <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_1_3">stateless</a>.
+    </h2>
+    <ul>
+      <li>
+        Each client request must contain all information<br>
+        necessary for the server to understand it.
+        <ul>
+          <li>The server does not remember the client.</li>
+          <li>The server does not remember previous requests.</li>
+        </ul>
+      </li>
+      <li>
+        Stateless requests can be interpreted<br>independently of each other.
+        <ul>
+          <li>
+            <em>stateful:</em>
+            <ol class="inline">
+              <li>“show laptops”</li>
+              <li>“show page 2”</li>
+            </ol>
+          </li>
+          <li>
+            <em>stateless:</em>
+            <ol class="inline">
+              <li>“show laptops”</li>
+              <li>“show page 2 of laptops”</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="application-resource-state">
+    <h2>
+      Statelessness applies to <em>application</em> state.<br>
+      <span>Servers still maintain <em>resource</em> state.</span>
+    </h2>
+    <ul>
+      <li>
+        <strong>Application state</strong> captures the position of a <em>client</em><br>
+        in the interaction, and differs per client.
+        <ul>
+          <li><em>This client is currently looking at page 2 of laptops.</em></li>
+        </ul>
+      </li>
+      <li>
+        <strong>Resource state</strong> captures properties of data entities<br>
+        on the <em>server</em>, and are the same for all clients.
+        <ul>
+          <li><em>There are currently 230 laptop models for sale.</em></li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+      This <a href="https://ruben.verborgh.org/blog/2012/08/24/rest-wheres-my-state/" title="REST where’s my state">blog post</a>
+      discusses the difference.
+    </p>
+  </div>
+
+  <div class="slide" id="cache">
+    <h2>
+      The REST architectural style<br>
+      imposes <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_1_4">cache constraints</a>.
+    </h2>
+    <ul>
+      <li>
+        A server response indicates explicitly<br>
+        whether or not it is cacheable.
+        <ul>
+          <li>
+            Cacheable responses may be <em>reused</em> later on<br>
+            by clients and/or proxy servers.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="layered-system">
+    <h2>
+      The <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_1_6">layered system</a> constraints<br>
+      allow for flexible hierarchical layers.
+    </h2>
+    <ul>
+      <li>
+        Intermediaries can be inserted transparently,<br>
+        shielding off complexity and inner details.
+        <ul>
+          <li>proxies</li>
+          <li>caches</li>
+          <li>load balancers</li>
+          <li>firewalls</li>
+          <li>…</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="uniform-interface">
+    <h2>
+      The <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_1_5">uniform interface</a> constraints are<br>
+      unique to the REST architectural style.
+    </h2>
+    <p>REST introduces 4 uniform interface constraints:</p>
+    <ol>
+      <li><a href="#resources">identification of resources</a></li>
+      <li><a href="#representations">resource manipulation through representations</a></li>
+      <li><a href="#self-descriptive-messages">self-descriptive messages</a></li>
+      <li><a href="#hateoas">hypermedia as the engine of application state</a></li>
+    </ol>
+  </div>
+
+  <div class="slide" id="resources">
+    <h2>
+      A <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_2_1_1">resource</a> is the main information unit.<br>
+      An identifier points to at most 1 resource.
+    </h2>
+    <ul>
+      <li>
+        Anything that can be named is a <em>resource</em>.
+        <ul>
+          <li>
+            <em>Information resources</em> can be represented in binary code:
+            <ul class="inline">
+              <li>documents</li>
+              <li>images</li>
+              <li>video</li>
+              <li>software</li>
+              <li>…</li>
+            </ul>
+          </li>
+          <li>
+            <em>Non-information resources</em> cannot be represented as bits:
+            <ul class="inline">
+              <li>people</li>
+              <li>phenomena</li>
+              <li>concepts</li>
+              <li>ideas</li>
+              <li>…</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        A valid identifier corresponds to a unique resource.
+        <ul>
+          <li>Any resource can have multiple identifiers.</li>
+          <li>One identifier for two resources creates a <a href="https://www.w3.org/TR/2004/REC-webarch-20041215/#URI-collision">collision</a>.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="conceptual-resource">
+    <h2>
+      A resource is a <em>conceptual</em> relationship:<br>
+      its value might change over time.
+    </h2>
+    <ul>
+      <li>
+        A resource is a <em>function</em> of time<br>
+        that associates a definition with a value.
+        <ul>
+          <li>
+            <em>“today’s most read book in Ghent”</em>
+            <ul>
+              <li>current value: <em>“top book on <time datetime="2016-02-15" class="today">15 February 2016</time>”</em></li>
+              <li>tomorrow’s value: <em>“the top book on <time datetime="2016-02-16" class="tomorrow">16 February 2016</time>”</em></li>
+            </ul>
+          </li>
+          <li>
+            <em>“the most read book on <time datetime="2016-02-15" class="today">15 February 2016</time>”</em>
+            <ul>
+              <li>remains constant, even tomorrow</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        This allows late binding.
+        <ul>
+          <li>Refer to the <em>concept</em>, whether or not it exists and is final.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    (function () {
+      updateDate('today', 0);
+      updateDate('tomorrow', 1);
+      function updateDate(className, dayOffset) {
+        var els = document.getElementsByClassName(className),
+            date = new Date(1 * new Date() + dayOffset * 24 * 60 * 60 * 1000);
+            text = date.getDate() + ' ' +
+                   ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+                    'August', 'September', 'October', 'November', 'December'][date.getMonth()] +
+                   ' ' + date.getFullYear();
+        for (var i = 0; i < els.length; i++) {
+          els[i].innerText = text;
+          els[i].setAttribute('datetime', date.toISOString());
+        }
+      }
+    })();
+  </script>
+
+  <div class="slide" id="representations">
+    <h2>
+      Information resources can have<br>
+      zero or more <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_2_1_2">representations</a>.
+    </h2>
+    <ul>
+      <li>
+        Depending on the needs of a client,<br>
+        a resource can be represented differently.
+        <ul>
+          <li>
+            <em>“metadata about today’s most read book in Ghent”</em>
+            <ul>
+              <li>…in English or Dutch?</li>
+              <li>…in HTML or JSON?</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Representations can also have an identifier.
+        <ul>
+          <li><em>“English HTML document about today’s top book in Ghent”</em></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="self-descriptive-messages">
+    <h2>
+      Each message in a REST interaction<br>
+      should be self-descriptive.
+    </h2>
+    <ul>
+      <li>
+        Intermediaries can interpret messages.
+        <ul>
+          <li>limited number of <em>standardized operations</em></li>
+        </ul>
+      </li>
+      <li>
+        All representations are expressed<br>
+        in explicit, agreed-upon <em>media types</em>.
+        <ul>
+          <li>all semantics are <em>inside</em> of the message</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="hateoas">
+    <h2>
+      The interaction is driven by<br>
+      <em>hypermedia controls</em> inside of responses.
+    </h2>
+    <ul>
+      <li>
+        Responses contain hypermedia controls<br>
+        such as hyperlinks and forms.
+        <ul>
+          <li>indicate <em>what</em> possible steps are</li>
+          <li>explain <em>how</em> to take such steps</li>
+        </ul>
+      </li>
+      <li>
+        Rather than executing a pre-defined script,<br>
+        the client follows the server’s lead.
+      </li>
+    </ul>
+    <footer>
+      <p>This is of course the <em>Web</em> aspect of REST.</p>
+    </footer>
+  </div>
+
+  <div class="slide" id="rest-constraints-http">
+    <h2>
+      How does the Web implement REST using<br>
+      its core technologies URL, HTTP &amp; HTML?
+    </h2>
+    <ol>
+      <li><a href="#web-client-server">client-server constraints</a></li>
+      <li><a href="#web-stateless">statelessness constraint</a></li>
+      <li><a href="#web-cache">cache constraints</a></li>
+      <li><a href="#web-layered-system">layered system constraints</a></li>
+      <li><a href="#web-uniform-interface">uniform interface constraints</a></li>
+    </ol>
+  </div>
+
+  <div class="slide" id="web-client-server">
+    <h2>
+      Obviously, the Web consists<br>
+      of <a href="#client-server">clients and servers</a>.
+    </h2>
+    <ul>
+      <li>
+        Clients make HTTP requests.
+      </li>
+      <li>
+        Servers listen and respond to HTTP requests.
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="web-stateless">
+    <h2>
+      The HTTP protocol is designed<br>
+      in a <a href="#stateless">stateless</a> way.
+    </h2>
+    <ul>
+      <li>
+        Servers don’t remember clients between requests.
+      </li>
+      <li>
+        Each HTTP request must contain all headers,<br>
+        even those that remain the same.
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="web-cache">
+    <h2>
+      HTTP provides <a href="#cache">caching</a> through<br>
+      explicit caching headers.
+    </h2>
+    <ul>
+      <li>
+        HTTP responses explicitly indicate <a href="../architecture/#http-transparency">cacheability</a>.
+        <ul>
+          <li><code>Cache-Control: max-age=3600</code></li>
+          <li><code>ETag: UniqueHash456</code></li>
+        </ul>
+      </li>
+      <li>
+        HTTP method semantics define caching influences.
+        <ul>
+          <li><a href="../architecture/#http-methods"><code>GET</code></a> does not change a resource.</li>
+          <li><a href="../architecture/#http-methods"><code>POST</code></a> can change a resource.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="web-layered-system">
+    <h2>
+      HTTP allows transparent insertion<br>
+      of <a href="#layered-system">layers</a> of proxies.
+    </h2>
+    <ul>
+      <li>
+        <a href="../architecture/#forward-reverse-proxies">Reverse proxies</a>
+        act as a gateway<br>
+        to application servers.
+      </li>
+      <li>
+        There is no stateful client–server connection,<br>
+        so intermediaries can transparently answer.
+      </li>
+      <li>
+        HTTP can wrap legacy systems.
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="web-uniform-interface">
+    <h2>
+      The <a href="#uniform-interface">uniform interface</a> is implemented<br>
+      through URLs, HTTP, and HTML.
+    </h2>
+    <p>The Web supports all 4 constraints:</p>
+    <ol>
+      <li><a href="#web-resources">identification of resources</a></li>
+      <li><a href="#web-representations">resource manipulation through representations</a></li>
+      <li><a href="#web-self-descriptive-messages">self-descriptive messages</a></li>
+      <li><a href="#web-hateoas">hypermedia as the engine of application state</a></li>
+    </ol>
+  </div>
+
+  <div class="slide" id="web-resources">
+    <h2>
+      Web <a href="#resources">resources</a> are conceptual relations<br>
+      uniquely identified by HTTP URLs.
+    </h2>
+    <ul>
+      <li>
+        An HTTP URL points to at most one resource.
+        <ul>
+          <li>The URL <a href="../architecture/#identification-location">identifies</a> the resource.</li>
+          <li>If it is an in <a href="#resources">information resource</a>,<br>
+              HTTP allows clients to retrieve a representation of it.</li>
+        </ul>
+      </li>
+      <li>
+        The concept an URL points to shouldn’t change.
+        <ul>
+          <li>Tim Berners-Lee calls such identifiers <a href="https://www.w3.org/Provider/Style/URI.html">“Cool URIs”</a>.</li>
+          <li>
+            The value and representations might change over time.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="web-resources-image">
+    <h2>
+      Web <a href="#resources">resources</a> are conceptual relations<br>
+      uniquely identified by HTTP URLs.
+    </h2>
+    <object data="images/resources.svg">Schema visualizing REST resources on the Web</object>
+  </div>
+
+  <div class="slide" id="web-representations">
+    <h2>
+      Clients obtain different <a href="#representations">representations</a><br>
+      through HTTP <em>content negotiation</em>.
+    </h2>
+    <ul>
+      <li>
+        If a URL identifies a resource, clients need<br>
+        a mechanism to obtain a representation.
+      </li>
+      <li>
+        With <a href="https://tools.ietf.org/html/rfc7231#section-3.4">content negotiation</a>,
+        a client and server agree<br>
+        on the best mutually understandable media type.
+      </li>
+      <li>
+        The client indicates its preferences with <a href="https://tools.ietf.org/html/rfc7231#section-5.3.2"><code>Accept</code></a>,<br>
+        the server advertises its choice with
+        <a href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5"><code>Content-Type</code></a>.
+        <ul>
+          <li><code>Accept: application/json,text/html;q=0.6</code></li>
+          <li>Maybe the server likes its HTML better, or has no JSON.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="web-representations-image">
+    <h2>
+      Clients obtain different <a href="#representations">representations</a><br>
+      through HTTP <em>content negotiation</em>.
+    </h2>
+    <object data="images/representations.svg">Schema visualizing REST representations on the Web</object>
+  </div>
+
+  <div class="slide" id="web-self-descriptive-messages">
+    <h2>
+      Well-defined HTTP methods &amp; headers<br>
+      and media types enable self-description.
+    </h2>
+    <ul>
+      <li>
+        HTTP provides a <a href="../architecture/#http-methods">limited number of methods</a>.
+        <ul>
+          <li>
+            Intermediaries can know the semantics of <em>all</em> methods<br>
+            (which would be hard if a server could choose its own).
+          </li>
+        </ul>
+      </li>
+      <li>
+        HTTP provides an extensible set of headers.
+        <ul>
+          <li>Intermediaries forward headers they do not understand.</li>
+        </ul>
+      </li>
+      <li>
+        The <a href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5"><code>Content-Type</code></a> header
+        details the media type.
+        <ul>
+          <li>
+            <em>generic:</em>
+            <ul class="inline">
+              <li>text/html</li>
+              <li>application/json</li>
+              <li>application/xml</li>
+              <li>…</li>
+            </ul>
+          </li>
+          <li>
+            <em>specific:</em>
+            <ul class="inline">
+              <li>application/atom+xml</li>
+              <li>application/rss+xml</li>
+              <li>…</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="web-hateoas">
+    <h2>
+      HTML and other hypermedia documents<br>
+      can contain hypermedia controls.
+    </h2>
+    <ul>
+      <li>
+        In HTML documents, links can be marked up.
+        <ul>
+          <li>
+            <code>&lt;em&gt;http://perdu.com/&lt;/em&gt;</code>
+            <ul>
+              <li><em>http://perdu.com/</em> is not a link.</li>
+            </ul>
+          </li>
+          <li>
+            <code>&lt;a href="http://perdu.com/"&gt;Perdu?&lt;/a&gt;</code>
+            <ul>
+              <li>
+                <a href="http://perdu.com/">Perdu?</a> is,
+                because the HTML media type <a href="https://www.w3.org/TR/html5/text-level-semantics.html#the-a-element">defines</a><br>
+                the <a href="https://www.w3.org/TR/html5/dom.html#represents">semantics</a> of this element as a <a href="https://www.w3.org/TR/html5/links.html#hyperlink">hyperlink</a>.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        As a consequence, users almost never<br>
+        have to touch the address bar.
+        <ul>
+          <li>If they do, the action is not afforded by hypermedia.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
 	<div class="progress"></div>
 	<footer>
 		<p>Copyright © 2016 <a href="#">Yours Truly, Famous Inc.</a></p>
