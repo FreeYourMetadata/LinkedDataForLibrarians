@@ -5,8 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-  <link rel="stylesheet" href="../_shared/styles/shower-clear.css">
-  <link rel="stylesheet" href="../_shared/styles/web-fundamentals.css">
+  <link rel="stylesheet" href="../styles/screen-16x10.css">
 </head>
 <body class="shower list">
   <header class="caption">
@@ -238,7 +237,7 @@
     but data profiling will allow you to become an investigator who can effeciently perform a data quality audit.</p>
   </div> 
   
-    <div class="slide" id="theory_practice">
+    <div class="slide" id="quality-audit">
     <h2>Recipe for any Data Quality Audit </h2>
   	<ul>
   	<li>We will focus on the following ingredients :
@@ -247,7 +246,7 @@
   		<li>Column names</li>
   		<li>Empty columns</li>
   		<li>Data types</li>
-  		<li>Lenght of entries</li>
+  		<li>Length of entries</li>
   		<li>Value properties</li>
   		<li>Dates</li>
   		<li>Empty fields</li>
@@ -292,7 +291,6 @@
   			<li>what is the difference between <code>Seller</code> and <code>Seller2</code>?</li>
   		</ul>
   	<li>Often unused columns are re-used without renaming them</li>	
-  	</li>
   	</ul>
   </div>
   
@@ -320,9 +318,10 @@
   	<div class="slide" id="lenght">
     <h2>Lenght of entries</h2>
   	<ul>
-  	<li>Seems to have losts its pertinence with decreasing storage costs</li>
- 	<li>Text lenght of entries can be a very interesting parameter to analyse</li>
- 	<ul><li>If you expect the name of an individual in a field and the average text lenght is 250 characters, there might be an issue</li></ul>
+  	<li>Seems to have lost its pertinence with decreasing storage costs</li>
+ 	<li>Text length of entries can be a very interesting parameter to analyse
+    <ul><li>If you expect the name of an individual in a field and the average text lenght is 250 characters, there might be an issue</li></ul>
+  </li>
  	</ul>
   	</div>
   
@@ -341,7 +340,6 @@
   
   <div class="slide" id="dates">
     <h2>Biggest metadata horror: dates!</h2>
-  	<ul>
   	<p>There is an incredible range of possibilities to express dates</p>
   	<table>
   	<tr>
@@ -377,10 +375,9 @@
     <td>May 1912</td> 
   	</tr>
 	</table>
- 	</ul>
   	</div>
   	
-  	<div class="slide" id="empty">
+  	<div class="slide" id="empty-fields">
     <h2>Empty fields</h2>
   	<p>Variety of options to express that a field is empty: 
   	no value, encoding "null", "no value" etc</p>
@@ -394,9 +391,8 @@
   	<p>Encoding in one field of values which should be split out over multiple fields, due to
   	<ul>
   	<li>repeating values</li>
- 	<li>different realities adressed by a generic field</li>
+ 	<li>different realities addressed by a generic field</li>
  	</ul>
- 	</p>
  	<p>Impacts search and retrieval but also limits data analysis and cleaning</p>
   	</div>
   
