@@ -1,0 +1,57 @@
+/* Do and dont's */
+.do, .dont {
+  width: 48%;
+  float: left;
+}
+.dont {
+  margin-right: 4%;
+}
+.do h3 {
+  color: #08719C;
+  margin-bottom: 0;
+}
+.dont h3 {
+  color: #CC4320;
+  margin-bottom: 0;
+}
+.do *, .dont * {
+  margin-left:  0 !important;
+  padding-left: 0 !important;
+}
+.do code {
+  width: auto !important;
+  text-align: left;
+}
+.do .example, .dont .example {
+  min-height: 210px;
+}
+.do ul li, .dont ul li {
+  margin: 0;
+  font-weight: normal;
+  font-style: italic;
+  color: #979A9E;
+}
+
+/* Browser window */
+.browser {
+  background: url(../images/browser.jpg) top center / 100% no-repeat;
+  height: 500px;
+  border-radius: 12px;
+  box-shadow:  5px  5px 10px rgba(0, 0, 0, .4),
+              -2px  5px 10px rgba(0, 0, 0, .4);
+}
+.browser .address-bar {
+  position: relative;
+  top: 59px;
+  left: 116px;
+  font-size: 26px;
+}
+.browser .body {
+  position: relative;
+  top: 83px;
+  height: 400px;
+  text-align: center;
+}
+.browser .body * {
+  margin-left: 0;
+}

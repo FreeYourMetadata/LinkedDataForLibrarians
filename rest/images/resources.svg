@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="900" height="400">
+<style>
+@font-face{
+ font-family: 'Merriweather Sans';
+ src: url(../fonts/MerriweatherSans.woff2) format('woff2')
+}
+@font-face{
+ font-style: italic;
+ font-family: 'Merriweather Sans';
+ src: url(../fonts/MerriweatherSans-Italic.woff2) format('woff2')
+}
+@font-face{
+ font-weight: 700;
+ font-family: 'Merriweather Sans';
+ src: url(../fonts/MerriweatherSans-Bold.woff2) format('woff2')
+}
+
+rect {
+  fill: #979A9E;
+}
+.resource {
+  fill: #08719C !important;
+}
+
+text {
+  font: 22px 'Merriweather Sans';
+  fill: white;
+}
+.type, .label {
+  font-weight: bold;
+}
+.url {
+  fill: black;
+  font-style: italic;
+}
+.label {
+  fill: black;
+  fill: #979A9E;
+}
+
+line {
+  stroke: #08719C;
+  stroke-width: 3px;
+  marker-end: url(#triangle);
+}
+path {
+  fill: #08719C;
+}
+.dashed {
+  stroke-dasharray: 5, 5;
+}
+</style>
+
+  <marker id="triangle" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="6" orient="auto">
+    <path d="M 0 0 L 10 5 L 0 10 z" />
+  </marker>
+
+  <rect x="155" y="0" width="280" height="130" rx="30"/>
+  <text x="268" y="48" class="type">Book</text>
+  <text x="164" y="83">“The Catcher in the Rye”</text>
+  <rect x="465" y="0" width="280" height="130" rx="30"/>
+  <text x="578" y="48" class="type">Book</text>
+  <text x="520" y="83">“War and Peace”</text>
+
+  <rect class="resource" x="0"   y="230" width="280" height="130"/>
+  <text x="113" y="282" class="type">Book</text>
+  <text x="9"  y="317">“The Catcher in the Rye”</text>
+  <text x="0"   y="386" class="url">/books/1663464/</text>
+  <rect class="resource" x="310" y="230" width="280" height="130"/>
+  <text x="422" y="282" class="type">Book</text>
+  <text x="380" y="317">most popular</text>
+  <text x="310" y="386" class="url">/books/top/</text>
+  <rect class="resource" x="620" y="230" width="280" height="130"/>
+  <text x="733" y="282" class="type">Book</text>
+  <text x="671" y="317">“War and Peace”</text>
+  <text x="619" y="386" class="url">/books/6357881/</text>
+
+  <line x1="760" y1="230" x2="700" y2="132"/>
+  <line x1="140" y1="230" x2="200" y2="132"/>
+  <line x1="450" y1="230" x2="350" y2="192" class="dashed"/>
+  <line x1="450" y1="230" x2="390" y2="132" class="dashed"/>
+  <line x1="450" y1="230" x2="510" y2="132" class="dashed"/>
+  <line x1="450" y1="230" x2="550" y2="192" class="dashed"/>
+
+  <text x="815" y="60"  class="label">entities</text>
+  <text x="790" y="210" class="resource label">resources</text>
+</svg>

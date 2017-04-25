@@ -1,23 +1,701 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Clear theme for Shower</title>
+	<title>REST</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="../styles/screen-16x10.css">
+	<link rel="stylesheet" href="../styles/custom.css">
 </head>
 <body class="shower list">
 	<header class="caption">
-		<h1>Presentation Title</h1>
-		<p><a href="">Yours Truly</a>, Famous Inc.</p>
+    <h1>
+      <a class="series" href="../">Linked Data for Librarians</a><br>
+      <a class="module" href="#title">REST</a>
+    </h1>
+    <p>
+      <a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a>,
+      <a href="https://ruben.verborgh.org/">Ruben Verborgh</a>
+    </p>
+    <ul class="links">
+      <li class="prev">Previous topic: <a href="../enrichment/">Metadata enriching</a></li>
+      <li class="next">Next topic: <a href="../decentralisation-federation/">Decentralization and federation</a></li>
+    </ul>
 	</header>
 
-	<div class="title slide">
-		<h2>This is the title slide<br>of the presentation</h2>
-		<p class="author">Yours Truly</p>
-		<p class="affiliation">Famous Inc.</p>
+  <nav>
+		<h2>Navigation</h2>
+		<ul>
+			<li><a href="../introduction/">Introduction</a></li>
+			<li><a href="../data-modeling/">Understanding data models</a></li>
+			<li><a href="../possibilities-rdf/">Possibilities and limitations of RDF</a></li>
+			<li><a href="../data-quality/">Data quality</a></li>
+			<li><a href="../cleaning/">Data profiling and cleaning</a></li>
+			<li><a href="../reconciliation/">Vocabulary reconciliation</a></li>
+			<li><a href="../enrichment/">Metadata enriching</a></li>
+			<li><a href="../rest/">REST</a></li>
+			<li><a href="../decentralisation-federation/">Decentralization and federation</a></li>
+			<li><a href="../conclusions/">Conclusions</a></li>
+		</ul>
+	</nav>
+
+	<div class="title slide" id="cover">
+		<h2>Representational State Transfer</h2>
+    <p class="tweets"><a href="https://twitter.com/FreeMetadata">@FreeMetadata</a></p>
+    <p class="author"><a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a></p>
+    <p class="author"><a href="https://ruben.verborgh.org/">Ruben Verborgh</a></p>
+    <p class="license">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="../_shared/images/cc-by.svg" /></a>
+      Except where otherwise noted, the content of these slides is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </p>
 	</div>
+
+  <div class="slide" id="definition">
+    <h2>
+      A Web API is an interface on the server<br>
+      to expose data &amp; functionality to clients.
+    </h2>
+    <ul>
+      <li>
+        The world of Web APIs and technologies<br>
+        is highly heterogeneous.
+        <ul>
+          <li>
+            While the human Web reuses many technologies,<br>
+            Web APIs suffer from a high rate of reinvention.
+          </li>
+        </ul>
+      </li>
+      <li>
+        We will discuss about <a href="#rest">principles</a>,<br>
+        <a href="#sustainability">consequences</a>,
+        and <a href="#technologies">technologies</a><br>
+        to build and interact with Web APIs.
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="web-architectural-style">
+    <h2>
+      Why does the Web scale the way it does?<br>
+      How should we build for the Web?
+    </h2>
+    <ul>
+      <li>
+        <a href="http://roy.gbiv.com/">Roy Fielding</a> analyzed the Web<br>
+        to derive its architectural properties.
+      </li>
+      <li>
+        He created the <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">Representational State Transfer (REST)</a> architectural style as a set of<br>
+        <em>constraints</em> for distributed hypermedia systems.
+      </li>
+      <li>
+        REST has guided protocol decisions<br>
+        and can guide Web applications.
+        <ul>
+          <li>Being <a href="#web-rest">on the Web</a> doesn’t imply following REST.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="constraints">
+    <h2>
+      The REST architectural style consists of<br>
+      5 types of mandatory constraints.
+    </h2>
+    <ol>
+      <li>client–server constraints</li>
+      <li>statelessness constraint</li>
+      <li>cache constraints</li>
+      <li>layered system constraints</li>
+      <li>uniform interface constraints</li>
+    </ol>
+  </div>
+
+  <div class="slide" id="uniform-interface">
+    <h2>
+      The <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_1_5">uniform interface constraints</a> are<br>
+      unique to the REST architectural style.
+    </h2>
+    <p>REST introduces 4 uniform interface constraints:</p>
+    <ol>
+      <li><a href="#resources">identification of resources</a></li>
+      <li><a href="#representations">resource manipulation through representations</a></li>
+      <li><a href="#self-descriptive-messages">self-descriptive messages</a></li>
+      <li><a href="#hateoas">hypermedia as the engine of application state</a></li>
+    </ol>
+  </div>
+
+  <div class="slide" id="resources">
+    <h2>
+      A <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_2_1_1">resource</a> is the main information unit.<br>
+      An identifier points to at most 1 resource.
+    </h2>
+    <ul>
+      <li>
+        Anything that can be named is a <em>resource</em>.
+        <ul>
+          <li>
+            <em>Information resources</em> can be represented in binary code:
+            <ul class="inline">
+              <li>documents</li>
+              <li>images</li>
+              <li>video</li>
+              <li>software</li>
+              <li>…</li>
+            </ul>
+          </li>
+          <li>
+            <em>Non-information resources</em> cannot be represented as bits:
+            <ul class="inline">
+              <li>people</li>
+              <li>phenomena</li>
+              <li>concepts</li>
+              <li>ideas</li>
+              <li>…</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        A valid identifier corresponds to a unique resource.
+        <ul>
+          <li>Any resource can have multiple identifiers.</li>
+          <li>One identifier for two resources creates a <a href="https://www.w3.org/TR/2004/REC-webarch-20041215/#URI-collision">collision</a>.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="conceptual-resource">
+    <h2>
+      A resource is a <em>conceptual</em> relationship:<br>
+      its value might change over time.
+    </h2>
+    <ul>
+      <li>
+        A resource is a <em>function</em> of time<br>
+        that associates a definition with a value.
+        <ul>
+          <li>
+            <em>“today’s most read book in Ghent”</em>
+            <ul>
+              <li>current value: <em>“top book on <time datetime="2016-02-15" class="today">15 February 2016</time>”</em></li>
+              <li>tomorrow’s value: <em>“the top book on <time datetime="2016-02-16" class="tomorrow">16 February 2016</time>”</em></li>
+            </ul>
+          </li>
+          <li>
+            <em>“the most read book on <time datetime="2016-02-15" class="today">15 February 2016</time>”</em>
+            <ul>
+              <li>remains constant, even tomorrow</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        This allows late binding.
+        <ul>
+          <li>Refer to the <em>concept</em>, whether or not it exists and is final.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    (function () {
+      updateDate('today', 0);
+      updateDate('tomorrow', 1);
+      function updateDate(className, dayOffset) {
+        var els = document.getElementsByClassName(className),
+            date = new Date(1 * new Date() + dayOffset * 24 * 60 * 60 * 1000);
+            text = date.getDate() + ' ' +
+                   ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+                    'August', 'September', 'October', 'November', 'December'][date.getMonth()] +
+                   ' ' + date.getFullYear();
+        for (var i = 0; i < els.length; i++) {
+          els[i].innerText = text;
+          els[i].setAttribute('datetime', date.toISOString());
+        }
+      }
+    })();
+  </script>
+
+  <div class="slide" id="representations">
+    <h2>
+      Information resources can have<br>
+      zero or more <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_2_1_2">representations</a>.
+    </h2>
+    <ul>
+      <li>
+        Depending on the needs of a client,<br>
+        a resource can be represented differently.
+        <ul>
+          <li>
+            <em>“metadata about today’s most read book in Ghent”</em>
+            <ul>
+              <li>…in English or Dutch?</li>
+              <li>…in HTML or JSON?</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Representations can also have an identifier.
+        <ul>
+          <li><em>“English HTML document about today’s top book in Ghent”</em></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="self-descriptive-messages">
+    <h2>
+      Each message in a REST interaction<br>
+      should be self-descriptive.
+    </h2>
+    <ul>
+      <li>
+        Intermediaries can interpret messages.
+        <ul>
+          <li>limited number of <em>standardized operations</em></li>
+        </ul>
+      </li>
+      <li>
+        All representations are expressed<br>
+        in explicit, agreed-upon <em>media types</em>.
+        <ul>
+          <li>all semantics are <em>inside</em> of the message</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="hateoas">
+    <h2>
+      The interaction is driven by<br>
+      <em>hypermedia controls</em> inside of responses.
+    </h2>
+    <ul>
+      <li>
+        Responses contain hypermedia controls<br>
+        such as hyperlinks and forms.
+        <ul>
+          <li>indicate <em>what</em> possible steps are</li>
+          <li>explain <em>how</em> to take such steps</li>
+        </ul>
+      </li>
+      <li>
+        Rather than executing a pre-defined script,<br>
+        the client follows the server’s lead.
+      </li>
+    </ul>
+    <footer>
+      <p>This is of course the <em>Web</em> aspect of REST.</p>
+    </footer>
+  </div>
+
+  <div class="slide" id="web-uniform-interface">
+    <h2>
+      The Web implements a <a href="#uniform-interface">uniform interface</a><br>
+      through URLs, HTTP, and HTML.
+    </h2>
+    <p>The Web supports all 4 uniform interface constraints:</p>
+    <ol>
+      <li><a href="#web-resources">identification of resources</a></li>
+      <li><a href="#web-representations">resource manipulation through representations</a></li>
+      <li><a href="#web-self-descriptive-messages">self-descriptive messages</a></li>
+      <li><a href="#web-hateoas">hypermedia as the engine of application state</a></li>
+    </ol>
+  </div>
+
+  <div class="slide" id="web-resources">
+    <h2>
+      Web <a href="#resources">resources</a> are conceptual relations<br>
+      uniquely identified by HTTP URLs.
+    </h2>
+    <ul>
+      <li>
+        An HTTP URL points to at most one resource.
+        <ul>
+          <li>The URL <a href="../architecture/#identification-location">identifies</a> the resource.</li>
+          <li>If it is an in <a href="#resources">information resource</a>,<br>
+              HTTP allows clients to retrieve a representation of it.</li>
+        </ul>
+      </li>
+      <li>
+        The concept an URL points to shouldn’t change.
+        <ul>
+          <li>Tim Berners-Lee calls such identifiers <a href="https://www.w3.org/Provider/Style/URI.html">“Cool URIs”</a>.</li>
+          <li>
+            The value and representations might change over time.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="web-resources-image">
+    <h2>
+      Web <a href="#resources">resources</a> are conceptual relations<br>
+      uniquely identified by HTTP URLs.
+    </h2>
+    <object data="images/resources.svg">Schema visualizing REST resources on the Web</object>
+  </div>
+
+  <div class="slide" id="web-representations">
+    <h2>
+      Clients obtain different <a href="#representations">representations</a><br>
+      through HTTP <em>content negotiation</em>.
+    </h2>
+    <ul>
+      <li>
+        If a URL identifies a resource, clients need<br>
+        a mechanism to obtain a representation.
+      </li>
+      <li>
+        With <a href="https://tools.ietf.org/html/rfc7231#section-3.4">content negotiation</a>,
+        a client and server agree<br>
+        on the best mutually understandable media type.
+      </li>
+      <li>
+        The client indicates its preferences,<br>
+        the server advertises its choice.
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="web-representations-image">
+    <h2>
+      Clients obtain different <a href="#representations">representations</a><br>
+      through HTTP <em>content negotiation</em>.
+    </h2>
+    <object data="images/representations.svg">Schema visualizing REST representations on the Web</object>
+  </div>
+
+  <div class="slide" id="web-self-descriptive-messages">
+    <h2>
+      Well-defined HTTP methods &amp; headers<br>
+      and media types enable self-description.
+    </h2>
+    <ul>
+      <li>
+        HTTP provides a <a href="../architecture/#http-methods">limited number of methods</a>.
+      </li>
+      <li>
+        HTTP provides an extensible set of headers.
+      </li>
+      <li>
+        The <a href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5"><code>Content-Type</code></a> header
+        details the media type.
+        <ul>
+          <li>
+            <em>generic:</em>
+            <ul class="inline">
+              <li>text/html</li>
+              <li>application/json</li>
+              <li>application/xml</li>
+              <li>…</li>
+            </ul>
+          </li>
+          <li>
+            <em>specific:</em>
+            <ul class="inline">
+              <li>application/atom+xml</li>
+              <li>application/rss+xml</li>
+              <li>…</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="web-hateoas">
+    <h2>
+      HTML and other hypermedia documents<br>
+      can contain hypermedia controls.
+    </h2>
+    <ul>
+      <li>
+        In HTML documents, links can be marked up.
+        <ul>
+          <li>
+            <code>&lt;em&gt;http://perdu.com/&lt;/em&gt;</code>
+            <ul>
+              <li><em>http://perdu.com/</em> is not a link.</li>
+            </ul>
+          </li>
+          <li>
+            <code>&lt;a href="http://perdu.com/"&gt;Perdu?&lt;/a&gt;</code>
+            <ul>
+              <li>
+                <a href="http://perdu.com/">Perdu?</a> is a link.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        As a consequence, users almost never<br>
+        have to touch the address bar.
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="web-rest">
+    <h2>
+      The Web is <em>one</em> implementation of REST.
+      Not every website follows the style.
+    </h2>
+    <ul>
+      <li>
+        Many Web APIs labeled “REST” are just HTTP APIs.
+        <ul>
+          <li>
+            The overall architecture <em>enables</em> and <em>encourages</em> REST,<br>
+            but cannot <em>enforce</em> it—many people misunderstand it.
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+      <em>An urban architect cannot control individual buildings.</em>
+    </p>
+  </div>
+
+  <div class="slide" id="schaapstal">
+    <figure class="cover width">
+      <img src="images/schaapstal.jpg" alt="[the Ghent city pavilion]">
+      <figcaption>
+        ©2014 <a href="https://visit.gent.be/en/datatafel/architecture">City of Ghent</a>
+      </figcaption>
+    </figure>
+    <footer>
+      <p>Despite an overall architecture, individuals can still do as they please.</p>
+    </footer>
+  </div>
+
+  <div class="slide" id="no-api">
+    <h2>
+      A REST API is a collection of resources.<br>
+      Any regular website is in fact a REST API.
+    </h2>
+    <ul>
+      <li>
+        Most websites follow the REST principles.
+        <ul>
+          <li>
+            Usually there is only one representation per resource.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Some websites invent proprietary interactions.
+        <ul>
+          <li>
+            URLs do not correspond to resources.
+          </li>
+          <li>
+            A typical symptom is a <a href="https://www.nngroup.com/articles/the-top-ten-web-design-mistakes-of-1999/">broken <em>back</em> button</a>.
+          </li>
+        </ul>
+      </li>
+      <li>
+        A REST API means having <em>no</em>—additional—API.
+        <ul>
+          <li class="opinion">
+            <a href="https://ruben.verborgh.org/blog/2013/11/29/the-lie-of-the-api/">Your website <em>is</em> the API.</a>
+          </li>
+          <li>
+            All you need are additional representations.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="resources-do-dont">
+    <h2>
+      A resource should relate<br>
+      an URL to a concept.
+    </h2>
+    <div class="dont">
+      <h3>Don’t.</h3>
+      <div class="example">
+        <p><em>http://&#8203;example.org/&#8203;songs/&#8203;showDetails.php</em></p>
+      </div>
+      <ul>
+        <li>What is this?</li>
+        <li>Can I bookmark this?</li>
+        <li>Can I share this?</li>
+      </ul>
+    </div>
+    <div class="do">
+      <h3>Do.</h3>
+      <div class="example">
+        <p><em>http://&#8203;example.org/&#8203;songs/&#8203;3563642</em></p>
+      </div>
+    </div>
+    <footer>
+      <p>
+        You cannot tell by a URL whether the underlying Web API follows the REST principles.
+        The way in which those URLs are <em>used</em> matters.
+      </p>
+    </footer>
+  </div>
+
+  <div class="slide" id="representations-do-dont">
+    <h2>
+      Resources allow many representations<br>
+      under a single URL.
+    </h2>
+    <div class="dont">
+      <h3>Don’t.</h3>
+      <div class="example">
+        <p><em>http://&#8203;example.org/&#8203;songs/&#8203;3563642</em>
+           results in HTML.</p>
+        <p><em>http://&#8203;api.example.org/&#8203;getObjectJson.php?id=18353113 </em>
+           results in JSON.</p>
+      </div>
+      <ul>
+        <li>Can I bookmark this?</li>
+        <li>Can I share this?</li>
+      </ul>
+    </div>
+    <div class="do">
+      <h3>Do.</h3>
+      <div class="example">
+        <p><em>http://&#8203;example.org/&#8203;songs/&#8203;3563642</em>
+           results in HTML.</p>
+         <p>And results in JSON.</p>
+         <p>And results in XML.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" id="self-descriptive-do-dont">
+    <h2>
+      Each message should be self-descriptive<br>
+      and stand on its own.
+    </h2>
+    <div class="dont">
+      <h3>Don’t.</h3>
+      <div class="example">
+        <p><em>/songs?artist=5521</em></p>
+        <p><em>/?page=2</em></p>
+        <p><em>/?page=3</em></p>
+      </div>
+      <ul>
+        <li>What is this?</li>
+        <li>Can I bookmark this?</li>
+        <li>Can I share this?</li>
+      </ul>
+    </div>
+    <div class="do">
+      <h3>Do.</h3>
+      <div class="example">
+        <p><em>/songs?artist=5521</em></p>
+        <p><em>/songs?artist=5521&amp;page=2</em></p>
+        <p><em>/songs?artist=5521&amp;page=3</em></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" id="hypermedia-do-dont">
+    <h2>
+      The interaction should be<br>
+      driven by hypermedia.
+    </h2>
+    <div class="dont">
+      <h3>Don’t.</h3>
+      <pre class="example"><code>{
+  "title": "War and Peace",
+  "artist": {
+    "id": 5521
+
+  }
+}</code></pre>
+      <ul>
+        <li>Can I act upon this?</li>
+      </ul>
+</div>
+    <div class="do">
+      <h3>Do.</h3>
+      <pre class="example"><code>{
+  "title": "War and Peace",
+  "artist": {
+    "id": "http://example.org/
+           artists/5521"
+  }
+}</code></pre>
+    </div>
+  </div>
+
+  <div class="slide" id="follow-your-nose">
+    <h2>
+      Servers offering a hypermedia API<br>
+      enable the <em>follow your nose</em> principle.
+    </h2>
+    <ul>
+      <li>
+        The term “hypermedia API” is sometimes used<br>
+        to indicate APIs that follow all REST principles.
+        <ul>
+          <li>The “REST” label is often used incorrectly.</li>
+          <li>Hypermedia is the distinguishing characteristic.</li>
+        </ul>
+      </li>
+      <li>
+        A client should be able to follow its nose<br>
+        around the API from any starting point.
+        <ul>
+          <li>
+            This requires a pre-coded understanding of<br>
+            the hypermedia content type and its link/form types.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="web-without-hypermedia">
+    <h2>
+      To understand hypermedia’s importance,<br>
+      imagine using any website without it.
+    </h2>
+    <div class="browser">
+      <p class="address-bar">http://google.com/</p>
+      <div class="body">
+        <object data="images/google.svg">Google logo</object>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" id="web-with-documentation">
+    <h2>
+      You’d need to read the documentation,<br>
+      and hard-code it.
+    </h2>
+    <div class="browser">
+      <p class="address-bar">http://google.com/documentation.html</p>
+      <div class="body">
+        <p>
+          To use this site,<br>
+          enter your search term as follows:
+          <em>http://www.google.com/search?q=search+term</em>
+        </p>
+      </div>
+    </div>
+    <footer>
+      <p>
+        This is essentially what you ask from a machine
+        when you do not provide hypermedia controls
+        in machine-targeted representations.
+      </p>
+    </footer>
+  </div>
 
 	<div class="progress"></div>
 	<footer>

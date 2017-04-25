@@ -23,6 +23,22 @@
     </ul>
   </header>
 
+  <nav>
+		<h2>Navigation</h2>
+		<ul>
+			<li><a href="../introduction/">Introduction</a></li>
+			<li><a href="../data-modeling/">Understanding data models</a></li>
+			<li><a href="../possibilities-rdf/">Possibilities and limitations of RDF</a></li>
+			<li><a href="../data-quality/">Data quality</a></li>
+			<li><a href="../cleaning/">Data profiling and cleaning</a></li>
+			<li><a href="../reconciliation/">Vocabulary reconciliation</a></li>
+			<li><a href="../enrichment/">Metadata enriching</a></li>
+			<li><a href="../rest/">REST</a></li>
+			<li><a href="../decentralisation-federation/">Decentralization and federation</a></li>
+			<li><a href="../conclusions/">Conclusions</a></li>
+		</ul>
+	</nav>
+
   <div class="title slide" id="title">
     <h2>
       <a class="series" href="../">Linked Data for Librarians</a><br>
@@ -84,6 +100,7 @@
           <li>Distribution ? </li>
          </ul>
        </li>
+     </ul>
   </div>
 
   <div class="slide" id="models-formats">
@@ -125,9 +142,10 @@
       <li>
         Consists of columns and rows, their intersection gives meaning to the data
        </li>
+     </ul>
   </div>
 
- <div class="slide" id="tabular-data">
+ <div class="slide" id="tabular-data-example">
     <h2>
       Tabular Data - Example
     </h2> 
@@ -193,9 +211,8 @@
       <li>Search and retrieval</li>
       <li>Updates - change</li>
       <li>Distribution</li>
-      </li>
     </ul>
-    <pa>How do we overcome these issues with tabular data?</pa>
+    <p>How do we overcome these issues with tabular data?</p>
   </div>
 
    <div class="slide" id="relational-model">
@@ -279,15 +296,14 @@
     <h2>
       Creating a Table with SQL
     </h2>
-    <code>CREATE TABLE Work (</code> <br>
-    	<code>id INT AUTO_INCREMENT PRIMARY KEY,</code> <br>
-    	<code>title VARCHAR(100),</code> <br>
-    	<code>creator INT,</code> <br>
-    	<code>collection INT,</code> <br>
-    	<code>year CHAR(4),</code> <br>
-    	<code>style VARCHAR(40),</code> <br>
-    	<code>);</code> <br></div>
-    </code>
+<pre><code>CREATE TABLE Work (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(100),
+  creator INT,
+  collection INT,
+  year CHAR(4),
+  style VARCHAR(40),
+);</code></pre>
   </div>
 
     <div class="slide" id="creating_query">
@@ -296,8 +312,8 @@
     </h2>
     <code>INSERT INTO Work (title, creator, collection, year, style)</code> <br>
     <code>VALUES ('Guernica',43, 20, 1937,'Cubism')</code> <br>
-    <pa>Please note that the values 43 and 20 refer to the primary keys from the tables <code>Creator</code> and
-    <code>Collection</code>.</pa>
+    <p>Please note that the values 43 and 20 refer to the primary keys from the tables <code>Creator</code> and
+    <code>Collection</code>.</p>
   	</div>
 
   <div class="slide" id="search-retrieval">
@@ -369,11 +385,11 @@
     <ul>
       <li>Origins in the typesetting world and the management of large volumes of non-structured data</li>
       <li>Understand shift from <em>make-up</em>:<br>
-      <code><font size="20"><b>Introduction to Linked Data</b></font></code></li>
+      <code>&lt;font size&#61;&#34;20&#34;&gt;&lt;b&gt;Introduction to Linked Data&lt;&#47;b&gt;&lt;&#47;font&gt;&lt;&#47;code&gt;</code></li>
       <li>and <em>markup</em>:<br>
       <code>h1 {font-size: 20pt; font-weight: bold}</code><br>
       <code>...</code><br>
-      <code><h1>Introduction to Linked Data</h1></code></li>
+      <code>lt;h1&gt;Introduction to Linked Data&lt;&#47;h1&gt;</code></li>
     </ul>
   </div>
 
@@ -405,14 +421,15 @@
     </ul>
   </div>
 
-   <div class="slide" id="meta_markup">
+   <div class="slide" id="html-detour">
     <h2>
       HTML detour
     </h2>
     <ul>
       <li>1989: Tim Berners-Lee was inspired by <a href="https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language">SGML</a> but simplified it by proposing a fixed set
-      of tags to represent the structural components of a Web page (e.g.<code><head></code>, <code><body></code> </li>
+      of tags to represent the structural components of a Web page (e.g.<code>&lt;head&gt;</code>, <code>&gt;body&lt;</code> </li>
       <li>Internet bubble + browser war in the late 1990s => markup was corrupted into makeup</li>
+    </ul>
   </div>
 
 <div class="full slide" id="boiko">
@@ -454,6 +471,7 @@
       <li>Effort was made to maintain 80% of SGML's functionality
       with only 20% of its complexity</li>
       <li>Big impact: open standard which is platform and application independent</li>
+    </ul>
   </div>
 
   <div class="slide" id="modeling_xml">
@@ -461,15 +479,16 @@
       Modeling XML
     </h2>
     <ul>
-      <li>Structure documents with</li>
+      <li>Structure documents with
         <ul>
           <li>elements: serialized as tags surrounded by angle brackets</li>
           <li>attribute: key/value modifiers of a tag</li>
         </ul>
-       <li>Each document starts with a declaration:</li>
+      </li>
+      <li>Each document starts with a declaration:
        	<ul>
-        <code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code><br>
-        <code>&lt;Art title="Modern art"/&gt;</code>
+          <li><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code></li>
+          <li><code>&lt;Art title="Modern art"/&gt;</code></li>
         </ul>
       </li>
     </ul>
@@ -501,22 +520,20 @@
     <h2>
       Let's model everything as child elements !
     </h2>
-    <p>
-       <code>&lt;Art title="Modern art"/&gt;</code><br>
-       <code>&lt;Work&gt;</code><br>
-       <code>&lt;Title&gt;Guernica&lt;/Title&gt;</code><br>
-       <code>&lt;CreationDate&gt;&lt;Year&gt;1937&lt;/Year&gt;&lt;/CreationDate&gt;</code><br>
-       <code>&lt;Creator&gt;</code><br>
-       <code>&lt;FirstName&gt;Pablo&lt/FirstName&gt;</code><br>
-       <code>&lt;LastName&gt;Picasso&lt/LastName&gt;</code><br>
-	   <code>&lt;/Creator&gt;</code><br>
-	   <code>&lt;Collection&gt;</code><br>
-	   <code>&lt;Name&gt;Reina Sofia&lt;/Name&gt;</code><br>
-	   <code>&lt;Location&gt;Madrid&lt;/Location&gt;</code><br>
-	   <code>&lt;/Collection&gt;</code><br>
-	   <code>&lt;/Work&gt;</code><br>
-	   <code>&lt;/Art&gt;</code><br>
-     </p>
+<pre><code>&lt;Art title="Modern art"/&gt;
+&lt;Work&gt;
+&lt;Title&gt;Guernica&lt;/Title&gt;
+&lt;CreationDate&gt;&lt;Year&gt;1937&lt;/Year&gt;&lt;/CreationDate&gt;
+&lt;Creator&gt;
+&lt;FirstName&gt;Pablo&lt;/FirstName&gt;
+&lt;LastName&gt;Picasso&lt;/LastName&gt;
+&lt;/Creator&gt;
+&lt;Collection&gt;
+&lt;Name&gt;Reina Sofia&lt;/Name&gt;
+&lt;Location&gt;Madrid&lt;/Location&gt;
+&lt;/Collection&gt;
+&lt;/Work&gt;
+&lt;/Art&gt;</code></pre>
     <footer>This leaves maximum flexibility to extend the document at any point.
     However, this also comes at a cost: the hierarchy is now relatively deep to express simple concepts,
     even for straightforward properties such as the year of creation.
@@ -658,7 +675,7 @@
     create links in between resources. Picasso influenced Jeff Koons, about which we also have some metadata.</footer>
   </div>
 
-<div class="slide" id="rdf">
+<div class="slide" id="rdf-model">
     <h2>
       Model
     </h2>
@@ -675,15 +692,19 @@
       Serialization
     </h2>
     <ul>
-    <li>RDF/XML</li>
-    <ul>
-    	<li>Developed in 2001 at the beginning of the XML omnipresence</li>
-    	<li>Now considered to be too verbose and hard to parse</li>
-    </ul>
-    <li>Turtle</li>
-    	<li>Allows to express RDF triples in a compact and natural text form</li>
-    	<li>Each of the components (subject, predicate, object) are seperated by whitespace and a triple
-    	ends with a dot</li>
+      <li>RDF/XML
+        <ul>
+          <li>Developed in 2001 at the beginning of the XML omnipresence</li>
+          <li>Now considered to be too verbose and hard to parse</li>
+        </ul>
+      </li>
+      <li>Turtle
+        <ul>
+          <li>Allows to express RDF triples in a compact and natural text form</li>
+          <li>Each of the components (subject, predicate, object) are separated by whitespace and a triple
+          ends with a dot</li>
+        </ul>
+      </li>
     </ul>
   </div>
 
@@ -755,7 +776,6 @@
       <li>Search and retrieval</li>
       <li>Updates - change</li>
       <li>Distribution</li>
-      </li>
     </ul>
   </div>
 
