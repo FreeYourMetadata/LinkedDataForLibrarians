@@ -62,7 +62,7 @@
       </figcaption>
     </figure>
     <footer>
-      <p>Putting the open-world assumption in practice implies you loose control over the 
+      <p>Putting the open-world assumption in practice implies you loose control over the
       quality of the data you're using. It's like publishing your birthday party as a public-event on social media.
       You don't know who will show up...</p>
     </footer>
@@ -74,15 +74,12 @@
   	<ul>
   	<li>As automated re-use of data rises, so does our dependency on their quality</li>
   	<li>Anyone interested in Linked Data should first of all come to terms with
-  	the quality of data :
-  	<ul>
-  		<li>how can you check the quality of data you want to re-use ?</li>
-  		<li>how to audit your own data ?</li> 
-  	</ul>
-  	</li>
+  	the quality of data</li>
+    <li>Aggregating data on such a massive scale as with Linked Data has
+    put the topic of data quality high on the agenda</li>
   	</ul>
   </div>
-  
+
   <div class="slide" id="overview_books">
     <figure class="cover width">
         <img src="images/quality.jpg"
@@ -95,19 +92,21 @@
   </div>
 
   <div class="slide" id="blooming_field">
-    <h2>Complex Topic to deal with in Practice and in Theory</h2>
+    <h2>Complex Topic</h2>
   	<ul>
-  	<li>Want to find a job? Become a data quality auditor!</li>
   	<li>Blooming but problematic new field</li>
   	<li>Examples :
   	<ul>
-  		<li>Interpretation of climate change data : the data which indicated holes in the ozon-layer were considered at first as errouneous data</li>
-  		<li>Information Quality Act (2000) : extremely complex to put in practice</li> 
+  		<li>Interpretation of climate change data : the data which indicated holes in the
+        ozon-layer were considered at first as erroneous data</li>
+  		<li>Information Quality Act (2000) : extremely complex to put in practice,
+      as it is hard to precisely define what good quality data are</li>
   	</ul>
   	</li>
+    <li>Want to find a job? Become a data quality auditor !</li>
   	</ul>
-  </div>  
-  
+  </div>
+
  <div class="slide" id="definition">
     <h2>
       How can we define Data Quality ?
@@ -119,18 +118,24 @@
     </blockquote>
     <p>Commonly referred to in the literature as the "fitness for purpose" definition</p>
   </div>
- 
+
   <div class="slide" id="impact_time">
     <figure class="cover width">
         <img src="images/time.jpg"
              alt="[Impact of time.]">
+             <figcaption>
+               ©2009 <a href="https://commons.wikimedia.org/wiki/File:Furcifer_pardalis_-Z%C3%BCrich_Zoo-8a.jpg">
+                 Marc Staub</a>
+             </figcaption>
     </figure>
     <footer>
-      <p>A key characteristic of data quality is that we live in 
-      an empirical world, which continously changes...</p>
-    </footer>
+      <p>A key characteristic of data quality is that we live in
+      an empirical world, which continously changes... Imagine you
+    have to catalog this chameleon. You describe all of its colors in detail. Then
+  it moves into a different setting and it changes color ! Are you metadata still correct?</p>
+  </footer>
   </div>
-  
+
   <div class="slide" id="implications">
     <h2>Implications of living in an Empirical World</h2>
   	<ul>
@@ -139,27 +144,41 @@
   	<li>Defining data quality in a deterministic manner (e.g. MIT Total Data Quality Program)
   	makes no sense for empirical application domains</li>
   	</ul>
-  </div>  
-  
+  </div>
+
   <div class="slide" id="empirical_deterministic">
     <h2>Difference between deterministic & empirical data</h2>
   	<ul>
   	<li>Deterministic data:
   		<ul>
   		<li>Existence of a persistent theory makes it possible to decide whether or not a value is correct</li>
-  		<li>Example: algebra</li> 
+  		<li>Example: algebra</li>
   		</ul>
   	</li>
   	<li>Empirical data:
   		<ul>
   		<li>Absence of a direct frame of reference to validate data, subject to human interpretation and evolution
   		through time</li>
-  		<li>Example: medicine, cultural heritage sector</li> 
+  		<li>Example: medicine, cultural heritage sector</li>
   		</ul>
   	</li>
   	</ul>
   </div>
-  
+
+  <div class="slide" id="impact_time">
+    <figure class="cover width">
+        <img src="images/truck.jpg"
+             alt="[Crushed fire truck]">
+             <figcaption>
+               ©2014 <a href="http://www.mirror.co.uk/incoming/gallery/world-trade-center-museum-3547091">
+                 Menelik Simpson</a>
+             </figcaption>
+    </figure>
+    <footer>
+      <p>Story about 9/11 Museum.</p>
+  </footer>
+  </div>
+
 <div class="slide" id="hermeneutics">
     <h2>
       We can make use of Hermeneutics as a Tool to make Sense of Quality
@@ -172,8 +191,8 @@
     </blockquote>
     <p>Isabelle Boydens re-used Fernand Braudel's <em>stratified time</em> concept as a
     hermeneutical approach to audit the quality of social security databases</p>
-  </div> 
-  
+  </div>
+
   <div class="slide" id="boydens">
     <figure class="cover width">
         <img src="images/boydens.jpg"
@@ -193,8 +212,8 @@
   	<li>Defining data quality in a deterministic manner (e.g. MIT Total Data Quality Program)
   	makes no sense for empirical application domains</li>
   	</ul>
-  </div> 
-  
+  </div>
+
    <div class="slide" id="stratified">
     <h2>Stratified time applied on social security databases</h2>
   	<ul>
@@ -209,7 +228,7 @@
   	</li>
   	</ul>
   </div>
-  
+
   <div class="slide" id="theory_practice">
     <h2>From Theory to Practice</h2>
   	<ul>
@@ -223,7 +242,7 @@
   	</li>
   	</ul>
   </div>
-  
+
   <div class="slide" id="profiling">
     <h2>
       Getting to Grips with Data Profiling
@@ -235,8 +254,8 @@
     </blockquote>
     <p>"There are no metadata police" <a href="http://managemetadata.com/">Diane Hillman</a> once famously said,
     but data profiling will allow you to become an investigator who can effeciently perform a data quality audit.</p>
-  </div> 
-  
+  </div>
+
     <div class="slide" id="quality-audit">
     <h2>Recipe for any Data Quality Audit </h2>
   	<ul>
@@ -255,15 +274,15 @@
   	</li>
   	</ul>
   </div>
-  
+
    <div class="slide" id="flattening">
     <h2>Flattening data</h2>
   	<ul>
   	<li>Data profiling and cleaning techniques are applied outside the information system itself</li>
-  	<li>These applications mostly ingest <em>flat files</em> so a conversion process might be needed</li> 
+  	<li>These applications mostly ingest <em>flat files</em> so a conversion process might be needed</li>
   	</ul>
   </div>
-  
+
      <div class="slide" id="columns">
     <h2>Columns as a starting point</h2>
   	<ul>
@@ -279,21 +298,21 @@
   	</li>
   	</ul>
   </div>
-  
+
   <div class="slide" id="names">
     <h2>Interpretation of <code>Title</code> field</h2>
   	<ul>
   	<li>Seems simple to interpret in the context of our art catalogue but
   	this is not always the case</li>
   	<li>Download and open the Schoenberg Database of Manuscripts
-  		<ul> 
-  			<li>what to expect from a field entitled <code>Sold</code>?</li> 
+  		<ul>
+  			<li>what to expect from a field entitled <code>Sold</code>?</li>
   			<li>what is the difference between <code>Seller</code> and <code>Seller2</code>?</li>
   		</ul>
-  	<li>Often unused columns are re-used without renaming them</li>	
+  	<li>Often unused columns are re-used without renaming them</li>
   	</ul>
   </div>
-  
+
     <div class="slide" id="empty">
     <h2>What's the Fuss with Empty Columns ? </h2>
   	<ul>
@@ -304,7 +323,7 @@
  	<li>Fear of losing data results in systems with lots of unused columns</li>
  	</ul>
   	</div>
-  
+
     <div class="slide" id="data_types">
     <h2>Data types</h2>
   	<ul>
@@ -314,7 +333,7 @@
  	can get very messy over time</li>
  	</ul>
   	</div>
-  	
+
   	<div class="slide" id="lenght">
     <h2>Lenght of entries</h2>
   	<ul>
@@ -324,7 +343,7 @@
   </li>
  	</ul>
   	</div>
-  
+
   <div class="slide" id="value_properties">
     <h2>Distribution of the frequency of entries</h2>
   	<ul>
@@ -337,55 +356,55 @@
  	be a good data quality indicator</li>
  	</ul>
   	</div>
-  
+
   <div class="slide" id="dates">
     <h2>Biggest metadata horror: dates!</h2>
   	<p>There is an incredible range of possibilities to express dates</p>
   	<table>
   	<tr>
     	<th>Pattern</th>
-    	<th>Example</th> 
+    	<th>Example</th>
    	</tr>
   	<tr>
     <td>empty</td>
-    <td></td> 
+    <td></td>
     </tr>
   	<tr>
     <td>9999-9999</td>
-    <td>1891-1912</td> 
+    <td>1891-1912</td>
   	</tr>
 	<tr>
     <td>9999</td>
-    <td>1912</td> 
+    <td>1912</td>
   	</tr>
   	<tr>
     <td>99-99/9999</td>
-    <td>09-10/1912</td> 
+    <td>09-10/1912</td>
   	</tr>
   	<tr>
     <td>99/9999</td>
-    <td>01-1912</td> 
+    <td>01-1912</td>
   	</tr>
   	<tr>
     <td>99/99/99</td>
-    <td>04/08/12</td> 
+    <td>04/08/12</td>
   	</tr>
   	<tr>
     <td>AAA 9999</td>
-    <td>May 1912</td> 
+    <td>May 1912</td>
   	</tr>
 	</table>
   	</div>
-  	
+
   	<div class="slide" id="empty-fields">
     <h2>Empty fields</h2>
-  	<p>Variety of options to express that a field is empty: 
+  	<p>Variety of options to express that a field is empty:
   	no value, encoding "null", "no value" etc</p>
   	<p>Diversity of reasons: value is not (yet) known, not applicable, lack of resources</p>
   	<p>Rarely possible to document this</p>
   	<p>Specific case: trailing white spaces</p>
   	</div>
-  	
+
   	<div class="slide" id="overloading">
     <h2>Field overloading</h2>
   	<p>Encoding in one field of values which should be split out over multiple fields, due to
@@ -395,7 +414,93 @@
  	</ul>
  	<p>Impacts search and retrieval but also limits data analysis and cleaning</p>
   	</div>
-  
+
+
+      <div class="slide" id="eval1">
+    <h2>Self-assessment 1</h2>
+    <ul>
+      <li>Why is it important to distinguish deterministic from empirical data when
+        talking about metadata quality?
+        <ul>
+          <li>Contrary to deterministic data, there exist no formal theories
+          to validate empirical data</li>
+          <!-- Yes! For deterministic data there are fixed theories which no longer
+          evolve, such as is the case with algebra. 1 + 1 will always equal 2.  -->
+          <li>There are more issues with deterministic data.</li>
+          <!-- No, irrelevant answer.  -->
+          <li>Because empirical data can not be cleaned.</li>
+          <!-- No, it is not because we can not establish a direct correspondance
+        between the observable and the data that one can not clean data.  -->
+        </ul>
+      </li>
+    </ul>
+      </div>
+
+      <div class="slide" id="eval2">
+    <h2>Self-assessment 2</h2>
+    <ul>
+      <li>How to decide to represent something as an entity or as an
+        attribute within a database schema  ?
+        <ul>
+          <li>Opt for an attribute if it is an important aspect of the reality
+          you are modeling</li>
+          <!-- No! In that case an entity would be a better choice as you then can
+        further document the entity with the help of attributes -->
+          <li>It depends on how important that part of reality is within the
+          database. If you want to give additional information about something,
+        it will be better to model it as an entity, as you can attach extra information
+      to an entity with attributes.</li>
+          <!-- Yes! -->
+          <li>It depends on the amount of data you want to store in the database</li>
+          <!-- No, this is an irrelevant argument -->
+        </ul>
+      </li>
+    </ul>
+      </div>
+
+      <div class="slide" id="eval3">
+    <h2>Self-assessment 3</h2>
+    <ul>
+      <li>Why is XML interesting from a digital preservation point of view ?
+        <ul>
+          <li>XML files are non-binary files</li>
+          <!-- Yes, XML files are text files which can be opened and modified
+          by using a simple text editor and are independent of any particular software,
+          when compared for example with databases.
+         -->
+          <li>XML is self-describing</li>
+          <!-- Yes and no : XML tags allow to explicitely state the role of a specific
+        part of a document, but the interpretation of the name of a tag might be
+      problematic. The name of tag might quickly loose its meaning after a couple
+    of years, especially when acronyms are used -->
+          <li>XML files take up less space then JSON</li>
+          <!-- No, JSON was actually developed as a reaction to the verbous
+        nature of XML and drastically reduces the amount of characters used to
+      represent data -->
+        </ul>
+      </li>
+    </ul>
+      </div>
+
+      <div class="slide" id="eval4">
+    <h2>Self-assessment 4</h2>
+    <ul>
+      <li> How is XML related to HTML ?
+        <ul>
+          <li>XML is a subset of HTML</li>
+          <!-- No, XML is a meta-markup language whereas HTML is simply a markup language -->
+          <li>Both are examples of a markup language</li>
+          <!-- The precise answer is no, as XML is a meta-markup language : you
+        have the possibility to define your own tags. HTML is simply a markup language
+      with pre-defined tags. -->
+          <li>XML was developed as a reaction to the evolution of HTML from markup to makeup</li>
+          <!-- Yes! Towards the end of the 1990s, browsers proposed tags such as <blink> which
+        merely had an esthetical role, undermining the potential for a smarter Web -->
+        </ul>
+      </li>
+    </ul>
+      </div>
+
    <footer>
 		<p>Copyright © 2017 <a href="#">Yours Truly, Famous Inc.</a></p>
 	</footer>
