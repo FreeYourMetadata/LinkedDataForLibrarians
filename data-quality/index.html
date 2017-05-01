@@ -87,12 +87,14 @@
     </figure>
     <footer>
       <p>A lot of books have been published on the topic, and professional and academic
-      organisations have been launched to tackle the topic, but often badly...</p>
+      organisations have been launched to tackle the topic. One of the best
+    references out there is without a doubt Jack Olson's book "Data quality - The
+    Accuracy Dimension".</p>
     </footer>
   </div>
 
   <div class="slide" id="blooming_field">
-    <h2>Complex Topic</h2>
+    <h2>Relevant but Complex Topic</h2>
   	<ul>
   	<li>Blooming but problematic new field</li>
   	<li>Examples :
@@ -103,7 +105,7 @@
       as it is hard to precisely define what good quality data are</li>
   	</ul>
   	</li>
-    <li>Want to find a job? Become a data quality auditor !</li>
+
   	</ul>
   </div>
 
@@ -119,6 +121,16 @@
     <p>Commonly referred to in the literature as the "fitness for purpose" definition</p>
   </div>
 
+  <div class="slide" id="implications">
+    <h2>Implications of living in an Empirical World</h2>
+  	<ul>
+  	<li>We can not assert a direct correspondance between the empirical, ever-changing world
+  	and the metadata and database schema representing it</li>
+  	<li>Defining data quality in a deterministic manner (e.g. MIT Total Data Quality Program)
+  	makes no sense for empirical application domains</li>
+  	</ul>
+  </div>
+
   <div class="slide" id="impact_time">
     <figure class="cover width">
         <img src="images/time.jpg"
@@ -132,18 +144,8 @@
       <p>A key characteristic of data quality is that we live in
       an empirical world, which continously changes... Imagine you
     have to catalog this chameleon. You describe all of its colors in detail. Then
-  it moves into a different setting and it changes color ! Are you metadata still correct?</p>
+  it moves into a different setting and it changes color! Are you metadata still correct?</p>
   </footer>
-  </div>
-
-  <div class="slide" id="implications">
-    <h2>Implications of living in an Empirical World</h2>
-  	<ul>
-  	<li>We can not assert a direct correspondance between the empirical, ever-changing world
-  	and the metadata and database schema representing it</li>
-  	<li>Defining data quality in a deterministic manner (e.g. MIT Total Data Quality Program)
-  	makes no sense for empirical application domains</li>
-  	</ul>
   </div>
 
   <div class="slide" id="empirical_deterministic">
@@ -175,7 +177,13 @@
              </figcaption>
     </figure>
     <footer>
-      <p>Story about 9/11 Museum.</p>
+      <p>The image represents one of the trucks which is now on display in the 9/11
+      Museum and Memorial. As a collection holder, the museum had to permanently re-adpt
+      the metadata schema it was using in the database to document its collection, as you
+      can not describe a truck in the same manner one would create metadata for a photograhp
+      for example. This illustrates how, based on the evolving nature of its collection,
+      a heritage institution has to incorporate changes and update its metadata schema.
+      </p>
   </footer>
   </div>
 
@@ -189,7 +197,7 @@
       to individual parts in an iterative manner.</p>
       <cite><a href="http://www.jstor.org/stable/249410">Klein et al, 1999</a></cite>
     </blockquote>
-    <p>Isabelle Boydens re-used Fernand Braudel's <em>stratified time</em> concept as a
+    <p><a href="http://www.emeraldinsight.com/doi/abs/10.1108/00220411111109476">Isabelle Boydens</a> re-used Fernand Braudel's <em>stratified time</em> concept as a
     hermeneutical approach to audit the quality of social security databases</p>
   </div>
 
@@ -229,6 +237,19 @@
   	</ul>
   </div>
 
+  <div class="slide" id="malevich">
+    <figure class="cover width">
+        <img src="images/jod.jpg"
+             alt="[Paper Isabelle Boydens and Seth van Hooland]">
+    </figure>
+    <footer>
+      <p>This <a href="http://www.emeraldinsight.com/doi/abs/10.1108/00220411111109476">paper</a>
+      by Boydens and van Hooland presents in detail the usage of the hermeneutical framework
+      of Braudel to evaluate the quality of databases.
+      </p>
+  </footer>
+  </div>
+
   <div class="slide" id="theory_practice">
     <h2>From Theory to Practice</h2>
   	<ul>
@@ -252,8 +273,21 @@
       and quality of a collection of data.</p>
       <cite><a href="http://www.worldcat.org/title/data-quality-the-accuracy-dimension/oclc/52356695">Olson, 2003</a></cite>
     </blockquote>
-    <p>"There are no metadata police" <a href="http://managemetadata.com/">Diane Hillman</a> once famously said,
-    but data profiling will allow you to become an investigator who can effeciently perform a data quality audit.</p>
+    <p>The next module will explain in detail how a tool such as OpenRefine
+      can help you to spot data quality issues.</p>
+  </div>
+
+  <div class="slide" id="police">
+    <figure class="cover width">
+        <img src="images/police.jpg"
+             alt="[Police]">
+             ©2009 <a href="https://en.wikipedia.org/wiki/Victoria_Police">
+               Wikipedia</a>
+    </figure>
+    <footer>
+      <p>"There are no metadata police" <a href="http://managemetadata.com/">Diane Hillman</a> once famously said,
+      but data profiling will allow you to become an investigator who can effeciently perform a data quality audit.</p>
+    </footer>
   </div>
 
     <div class="slide" id="quality-audit">
@@ -266,8 +300,6 @@
   		<li>Empty columns</li>
   		<li>Data types</li>
   		<li>Length of entries</li>
-  		<li>Value properties</li>
-  		<li>Dates</li>
   		<li>Empty fields</li>
   		<li>Field overloading</li>
   		</ul>
@@ -279,7 +311,8 @@
     <h2>Flattening data</h2>
   	<ul>
   	<li>Data profiling and cleaning techniques are applied outside the information system itself</li>
-  	<li>These applications mostly ingest <em>flat files</em> so a conversion process might be needed</li>
+  	<li>These applications mostly ingest <em>flat files</em> so an export process from your
+      information system to CSV or TSV files will be needed</li>
   	</ul>
   </div>
 
@@ -300,27 +333,31 @@
   </div>
 
   <div class="slide" id="names">
-    <h2>Interpretation of <code>Title</code> field</h2>
+    <h2>Interpretation of the title of a field</h2>
   	<ul>
   	<li>Seems simple to interpret in the context of our art catalogue but
   	this is not always the case</li>
-  	<li>Download and open the Schoenberg Database of Manuscripts
+  	<li>Generic, ambiguous or polysemic names can create a lot of confusion :
   		<ul>
-  			<li>what to expect from a field entitled <code>Sold</code>?</li>
-  			<li>what is the difference between <code>Seller</code> and <code>Seller2</code>?</li>
+  			<li>What to expect from a field entitled <code>Sold</code>
+          ? A binary yes/no, the name of the seller, the amount ?</li>
   		</ul>
   	<li>Often unused columns are re-used without renaming them</li>
   	</ul>
   </div>
 
     <div class="slide" id="empty">
-    <h2>What's the Fuss with Empty Columns ? </h2>
+    <h2>Issues with Empty Columns</h2>
   	<ul>
-  	<li>Appear everywhere, often due to pre-configured settings
- 	of databases which never are modified</li>
- 	<li>Used columns can loose their meaning at some point, but are rarely
+  	<li>Appear everywhere, due to  a variety of reasons :
+      <ul><li>Pre-configured settings
+ 	of databases resulting in a series of irrelevant columns which are never used</li>
+ 	<li>Data can loose their relevance and be deleted at some point, but the columns
+    as such are rarely
  	removed from the system</li>
- 	<li>Fear of losing data results in systems with lots of unused columns</li>
+      </ul>
+  <li>Fear of losing data prevents people from removing them, but
+    results in systems with lots of unused columns</li>
  	</ul>
   	</div>
 
@@ -334,66 +371,60 @@
  	</ul>
   	</div>
 
+    <div class="slide" id="dates">
+      <h2>Biggest metadata horror: dates!</h2>
+    	<p>There is an incredible range of possibilities to express dates. Here
+      are just a few examples :</p>
+    	<table>
+    	<tr>
+      	<th>Pattern</th>
+      	<th>Example</th>
+     	</tr>
+    	<tr>
+      <td>empty</td>
+      <td></td>
+      </tr>
+    	<tr>
+      <td>9999-9999</td>
+      <td>1891-1912</td>
+    	</tr>
+  	<tr>
+      <td>9999</td>
+      <td>1912</td>
+    	</tr>
+    	<tr>
+      <td>99-99/9999</td>
+      <td>09-10/1912</td>
+    	</tr>
+    	<tr>
+      <td>99/9999</td>
+      <td>01-1912</td>
+    	</tr>
+    	<tr>
+      <td>99/99/99</td>
+      <td>04/08/12</td>
+    	</tr>
+    	<tr>
+      <td>AAA 9999</td>
+      <td>May 1912</td>
+    	</tr>
+  	</table>
+    	</div>
+
+
   	<div class="slide" id="lenght">
     <h2>Lenght of entries</h2>
   	<ul>
   	<li>Seems to have lost its pertinence with decreasing storage costs</li>
  	<li>Text length of entries can be a very interesting parameter to analyse
-    <ul><li>If you expect the name of an individual in a field and the average text lenght is 250 characters, there might be an issue</li></ul>
+    <ul><li>If you expect the name of an individual in a field and the average
+      text lenght is 250 characters, there might be an issue...</li>
+      <li>Especially the outlier values, being the very short or long ones, can
+     be a good data quality indicator</li>
+    </ul>
   </li>
- 	</ul>
-  	</div>
 
-  <div class="slide" id="value_properties">
-    <h2>Distribution of the frequency of entries</h2>
-  	<ul>
-  	<li>Power law distribution
-  	<ul><li>Values based on controlled input often take up a power-law distribution :
-  	the majority of the values are hardly used, and a small number are over-used</li></ul>
-  	</li>
- 	<li>Text lenght of entries can be a very interesting parameter to analyse</li>
- 	<li>Especially the outlier values, being the very short or long ones, can
- 	be a good data quality indicator</li>
  	</ul>
-  	</div>
-
-  <div class="slide" id="dates">
-    <h2>Biggest metadata horror: dates!</h2>
-  	<p>There is an incredible range of possibilities to express dates</p>
-  	<table>
-  	<tr>
-    	<th>Pattern</th>
-    	<th>Example</th>
-   	</tr>
-  	<tr>
-    <td>empty</td>
-    <td></td>
-    </tr>
-  	<tr>
-    <td>9999-9999</td>
-    <td>1891-1912</td>
-  	</tr>
-	<tr>
-    <td>9999</td>
-    <td>1912</td>
-  	</tr>
-  	<tr>
-    <td>99-99/9999</td>
-    <td>09-10/1912</td>
-  	</tr>
-  	<tr>
-    <td>99/9999</td>
-    <td>01-1912</td>
-  	</tr>
-  	<tr>
-    <td>99/99/99</td>
-    <td>04/08/12</td>
-  	</tr>
-  	<tr>
-    <td>AAA 9999</td>
-    <td>May 1912</td>
-  	</tr>
-	</table>
   	</div>
 
   	<div class="slide" id="empty-fields">
@@ -405,6 +436,26 @@
   	<p>Specific case: trailing white spaces</p>
   	</div>
 
+    <div class="slide" id="malevich">
+      <figure class="cover width">
+          <img src="images/malevich.jpg"
+               alt="[Malevich painting]">
+               <figcaption>
+                 ©2014 <a href="http://www.independent.co.uk/arts-entertainment/art/features/kasimir-malevichs-black-square-what-does-it-say-to-you-9608316.html">
+                   Micha Theiner</a>
+               </figcaption>
+      </figure>
+      <footer>
+        <p>The iconic "Black Square" by Kazimir Malevich, of which he did a first
+          version in 1905, is a good illustration of the complexity behind the representation
+          and interpretation of the actual absence of something. Malevich himself said about
+          the painting that "it is from zero, in zero, that the true
+          movement of being begins". Across application domains, it has been demonstrated
+          how difficult it is to document the absence of a value.
+        </p>
+    </footer>
+    </div>
+
   	<div class="slide" id="overloading">
     <h2>Field overloading</h2>
   	<p>Encoding in one field of values which should be split out over multiple fields, due to
@@ -415,12 +466,37 @@
  	<p>Impacts search and retrieval but also limits data analysis and cleaning</p>
   	</div>
 
-
       <div class="slide" id="eval1">
     <h2>Self-assessment 1</h2>
     <ul>
+      <li>Why is the topic of data quality is so relevant in the context of
+        Linked Data ?
+        <ul>
+          <li>The introduction of Linked Data will boost
+          the quality of library catalogs.</li>
+          <!-- It depends! Using data coming from very diverse and heterogeneous
+        sources might seriously undermine the quality of catalogs.  -->
+          <li>The closed-world assumption underlying the Linked Data paradigm limits
+            the amount of data available.</li>
+          <!-- No, Linked Data are based on the open world assumption, implying that no
+          one at a certain moment knows exactly what type of data are available and the type of
+          constraints they respect.  -->
+          <li>Linked Data holds the potential danger of introducing erroneous and conflicting
+            data on the Web.</li>
+          <!-- Yes, without specific efforts to clean original data sources and ensuring
+          standardised methods and tools to evaluate and compare data set published as
+          Linked Data, the issue of data quality might seriously undermine the potential
+          of Linked Data for libraries.  -->
+        </ul>
+      </li>
+    </ul>
+      </div>
+
+      <div class="slide" id="eval2">
+    <h2>Self-assessment 2</h2>
+    <ul>
       <li>Why is it important to distinguish deterministic from empirical data when
-        talking about metadata quality?
+        talking about metadata quality ?
         <ul>
           <li>Contrary to deterministic data, there exist no formal theories
           to validate empirical data</li>
@@ -435,9 +511,8 @@
       </li>
     </ul>
       </div>
-
-      <div class="slide" id="eval2">
-    <h2>Self-assessment 2</h2>
+      <div class="slide" id="eval3">
+    <h2>Self-assessment 3</h2>
     <ul>
       <li>How to decide to represent something as an entity or as an
         attribute within a database schema  ?
@@ -458,25 +533,25 @@
     </ul>
       </div>
 
-      <div class="slide" id="eval3">
-    <h2>Self-assessment 3</h2>
+      <div class="slide" id="eval4">
+    <h2>Self-assessment 4</h2>
     <ul>
-      <li>Why is XML interesting from a digital preservation point of view ?
+      <li>What is the issue of field overloading and why is it problematic ?
         <ul>
-          <li>XML files are non-binary files</li>
-          <!-- Yes, XML files are text files which can be opened and modified
-          by using a simple text editor and are independent of any particular software,
-          when compared for example with databases.
+          <li>The issue rises when you go beyond the number of characters which
+          may be encoded in a field.</li>
+          <!-- No ! The lenght of an entry can definitively be an interesting
+        data quality indicator, but field overloading is not linked to the lenght
+        of an entry.
          -->
-          <li>XML is self-describing</li>
-          <!-- Yes and no : XML tags allow to explicitely state the role of a specific
-        part of a document, but the interpretation of the name of a tag might be
-      problematic. The name of tag might quickly loose its meaning after a couple
-    of years, especially when acronyms are used -->
-          <li>XML files take up less space then JSON</li>
-          <!-- No, JSON was actually developed as a reaction to the verbous
-        nature of XML and drastically reduces the amount of characters used to
-      represent data -->
+          <li>This issue mainly rises when you transfer data from a flat file to a database.</li>
+          <!-- No, it tends to be the other way around. Moving from a well-structured database,
+        with clear definitions of fields, to a flat file might result in packing together
+      related but different (e.g. surname and family name) fields.   -->
+          <li>Field overloading occurs when related (but different) data are put
+          together in the same field, which lowers the possibilities to clearly define
+        encoding constraints and structured search.</li>
+          <!-- Yes, this answer clearly defines field overloading. -->
         </ul>
       </li>
     </ul>
@@ -485,17 +560,18 @@
       <div class="slide" id="eval4">
     <h2>Self-assessment 4</h2>
     <ul>
-      <li> How is XML related to HTML ?
+      <li> Why is it important to think about how we communicate about absent values ?
         <ul>
-          <li>XML is a subset of HTML</li>
-          <!-- No, XML is a meta-markup language whereas HTML is simply a markup language -->
-          <li>Both are examples of a markup language</li>
-          <!-- The precise answer is no, as XML is a meta-markup language : you
-        have the possibility to define your own tags. HTML is simply a markup language
-      with pre-defined tags. -->
-          <li>XML was developed as a reaction to the evolution of HTML from markup to makeup</li>
-          <!-- Yes! Towards the end of the 1990s, browsers proposed tags such as <blink> which
-        merely had an esthetical role, undermining the potential for a smarter Web -->
+          <li>In order to save space.</li>
+          <!-- No, this is not a relevant answer ! -->
+          <li>An empty field can be there for a large variety of reasons. Knowing
+          the reason can be important in order to know how to interpret the absence.</li>
+          <!-- Yes! A value might not be known or not applicable, or there simply might
+          not be enough resources to fill it in... -->
+          <li>In order to avoid them at all times.</li>
+          <!-- No ! Both for conceptual and operational reasons, it is impossible to avoid
+        empty fields. The important aspect is to document the reason behind the absence
+      of a value. -->
         </ul>
       </li>
     </ul>
