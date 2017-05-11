@@ -55,9 +55,7 @@
 
   <div class="slide" id="intro-vid">
   <h2>Intro video Seth</h2>
-    <p>Describing beer or chocolate in order to win them, would do you?
-    With every approach/model developped, ask yourself, how does it impact
-  search, updates and sharing of data</p>
+
   </div>
 
 <div class="slide" id="gallery">
@@ -70,7 +68,8 @@
     </figure>
     <footer>
       <p>Now forget about the Belgian beer or the chocolate.
-        Imagine walking into a gallery and you can take everything you want. One rule: you first need to catalog the objects...</p>
+        Imagine walking into a gallery and you can take everything you want.
+        One rule: you first need to catalog the objects...</p>
     </footer>
   </div>
 
@@ -84,31 +83,36 @@
       </figcaption>
     </figure>
     <footer>
-      <p>Conceptually, we can distinguish four different data-models which can be used to create metadata.
-      Each one has its avantages and inconveniences. This module will give an overview of each model.</p>
+      <p>Let us now go through the four data models we announced in the video at a slower pace,
+      taking into account the possibilities and limits of each model. From top to bottom,
+      left to right, this image represents tabular data, relational databases, XML
+      and RDF. For each model, we'll ask ourselves the same set of questions, so that
+      you understand the characteristics of each model. </p>
     </footer>
   </div>
 
   <div class="slide" id="data-models-questions">
     <h2>
-      Data Modeling
+      Comparing data models on different levels
     </h2>
     <ul>
       <li>
         What world view does the model express ?
         <ul>
-          <li>Representing reality as lists, linked tables, trees or graphs</li>
+          <li>Models helps us to make abstraction of reality. You may think of a data model as a
+            particular pair of glasses, influencing the way in which you see the world</li>
          </ul>
       </li>
       <li>
-      	Implementation and serialization formats ?
+      	Implementation and serialization formats
+        <ul>
+          <li>Models are made concrete through file formats, query languages and software</li>
+         </ul>
       </li>
       <li>
         How does the model address
         <ul class="next">
-          <li>Search and retrieval ?</li>
-          <li>Updates ?</li>
-          <li>Sharing ? </li>
+          <li>Search and retrieval, updates and sharing ? </li>
          </ul>
        </li>
      </ul>
@@ -148,7 +152,7 @@
         Intuitive approach to organize data
       </li>
       <li>
-      	Represents a flat worldview, devoid of relations and hierarchy
+      	Represents a flat worldview, absence of relations and hierarchy
       </li>
       <li>
         Consists of columns and rows, their intersection gives meaning to the data
@@ -214,7 +218,13 @@
     </figure>
     <footer>
       <p>Well, tabular data are super easy to use!!! Really? This is the face a librarian would probably make if you propose
-      to manage the library catalog with a CSV or TSV file...</p>
+      to manage the library catalog with a CSV file. Flat files are bound to introduce
+    inconsistencies in your metadata. Each time you want to represent a value which
+  was already previsously encoded (e.g. name of an artist or a place),
+  you have to enter it again manually, leading to errors over time when updating
+  the metadata. Also, search is ineffective as you have to query the entire file.
+  However, sharing and distributing tabular data is very easy. A simple text-editor
+allows other people to read and re-use the data.</p>
     </footer>
   </div>
 
@@ -249,7 +259,7 @@
       </figcaption>
     </figure>
     <footer>
-      <p>Rethinking tabular data as a relational database.</p>
+      <p></p>
     </footer>
   </div>
 
@@ -284,7 +294,15 @@
         ©2014 <a href="http://book.metadata.org">Seth van Hooland and Ruben Verborgh</a>
       </figcaption>
     </figure>
-    <footer>Note how the data which were packed together in one flat file are now represented in three distinct tables: Creator, Work and Collection.
+    <footer>Note how the data which were packed together in one flat file are now represented
+      in three distinct tables: Creator, Work and Collection.
+      Relational databases allow us to move away from having simply one table with
+      a set of columns, and split out the values in seperate tables. Each table
+      groups together a set of attributes which define an entity. With the help of
+      unique identifiers, relations are created in between the different tables.
+    Now, we only need to encode once the values for the artist Pablo Picasso. If we
+  describe a second work of his, we just need to refer to the ID of the record created
+previously. By doing so, we can ensure more consistency in our metadata.
     </footer>
   </div>
 
