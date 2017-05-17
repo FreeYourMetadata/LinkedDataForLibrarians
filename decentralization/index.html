@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Clear theme for Shower</title>
+	<title>Decentralization and federation</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="../styles/screen-16x10.css">
 </head>
 <body class="shower list">
-	<header class="caption">
-		<h1>Presentation Title</h1>
-		<p><a href="">Yours Truly</a>, Famous Inc.</p>
-	</header>
+  <header class="caption">
+    <h1>
+      <a class="series" href="../">Linked Data for Librarians</a><br>
+      <a class="module" href="#title">Decentralization and federation</a>
+    </h1>
+    <p>
+      <a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a>,
+      <a href="https://ruben.verborgh.org/">Ruben Verborgh</a>
+    </p>
+    <ul class="links">
+      <li class="prev">Previous topic: <a href="../rest/">REST</a></li>
+      <li class="next">Next topic: <a href="../conclusions/">Conclusions</a></li>
+    </ul>
+  </header>
 
   <nav>
 		<h2>Navigation</h2>
@@ -29,14 +39,273 @@
 		</ul>
 	</nav>
 
-	<div class="title slide">
-		<h2>This is the title slide<br>of the presentation</h2>
-		<p class="author">Yours Truly</p>
-		<p class="affiliation">Famous Inc.</p>
-	</div>
+  <div class="title slide" id="title">
+    <h2>
+      <a class="series" href="../">Linked Data for Librarians</a><br>
+      <a class="module" href="#title">Decentralization and federation</a>
+    </h2>
+    <p class="tweets"><a href="https://twitter.com/FreeMetadata">@FreeMetadata</a></p>
+    <p class="author"><a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a></p>
+    <p class="author"><a href="https://ruben.verborgh.org/">Ruben Verborgh</a></p>
+    <p class="license">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="../_shared/images/cc-by.svg" /></a>
+      Except where otherwise noted, the content of these slides is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </p>
+  </div>
 
   <div class="slide" id="intro">
     <iframe class="cover width height" src="https://www.youtube.com/embed/oLlli2eNyoE?hl=en&amp;color=white&amp;iv_load_policy=3&amp;disablekb=1&amp;rel=0&amp;showinfo=0&amp;autohide=1"></iframe>
+  </div>
+
+  <div class="slide" id="why-linked-data">
+    <h2>
+      Why are we publishing<br>
+      <em>Linked Data</em> again?
+    </h2>
+    <ul>
+      <li>
+        Linked Data provides a <em>flexible</em> data model.
+        <ul>
+          <li>no more field overloading</li>
+        </ul>
+      </li>
+      <li>
+        Linked Data facilitates metadata <em>integration</em>.
+        <ul>
+          <li>preserving semantics</li>
+        </ul>
+      </li>
+      <li>
+        Linked Data <em>connects</em> metadata across the Web.
+        <ul>
+          <li>no single source of truth</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="why-us">
+    <h2>
+      Why are <em>we</em> publishing<br>
+      Linked Data again?
+    </h2>
+    <ul>
+      <li>
+        We demand metadata ownership.
+        <ul>
+          <li>Aggregators get access—we remain the authority.</li>
+        </ul>
+      </li>
+      <li>
+        We have our own metadata priorities.
+        <ul>
+          <li>We choose the vocabularies.</li>
+        </ul>
+      </li>
+      <li>
+        We cannot maintain all metadata ourselves.
+        <ul>
+          <li>We link to other authorities.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="why-publishing">
+    <h2>
+      Why are we <em>publishing</em><br>
+      Linked Data again?
+    </h2>
+    <ul>
+      <li>
+        Consumers can browse metadata.
+        <ul>
+          <li>Show metadata for a specific subject.</li>
+        </ul>
+      </li>
+      <li>
+        Consumers can query metadata.
+        <ul>
+          <li>Show a custom selection of metadata.</li>
+        </ul>
+      </li>
+      <li>
+        Aggregators can harvest metadata.
+        <ul>
+          <li>Why is this still necessary?</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="data-decentralized">
+    <h2>
+      Linked Data is decentralized.<br>
+      There’s no single source of truth.
+    </h2>
+    <ul>
+      <li>
+        Data diversity is highly important<br>
+        in an increasingly centralized landscape.
+      </li>
+      <li>
+        Linked Data does it the right way.
+        <ul>
+          <li>No disconnected silos, but a connected knowledge graph.</li>
+        </ul>
+      </li>
+      <li>
+        We can browse easily across nodes…<br>
+        <span>but how do we query?</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="europeana">
+    <figure class="cover">
+      <img src="images/europeana.png" alt="[screenshot of “The Night Watch” on the Europeana website]" />
+    </figure>
+    <footer>
+      <p>
+        Europeana is an aggregator of metadata.
+      </p>
+    </footer>
+  </div>
+
+  <div class="slide" id="google">
+    <figure class="cover">
+      <img src="images/google.png" alt="[screenshot of “The Night Watch” on Google]" />
+    </figure>
+    <footer>
+      <p>
+        Google is also an aggregator of metadata.
+      </p>
+    </footer>
+  </div>
+
+  <div class="slide" id="aggregation">
+    <h2>
+      Aggregators merge multiple collections<br>
+      into a single centralized view.
+    </h2>
+    <ul>
+      <li>
+        They facilitate exploration across datasets.
+      </li>
+      <li>
+        Although currently a technical necessity,<br>
+        aggregation comes with drawbacks.
+        <ul>
+          <li>Are records up-to-date and complete?</li>
+          <li>
+            Can/should every dataset be included?
+            <ul>
+              <li>If so, how to guarantee quality?</li>
+            </ul>
+          </li>
+          <li>Where is the benefit for individual publishers?</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="for-the-happy-few">
+    <h2>
+      Are we publishing Linked Data<br>
+      only for the happy few?
+    </h2>
+    <ul>
+      <li>
+        If aggregation is a necessity for querying,<br>
+        then only those with large infrastructures<br>
+        can make sense of the Web’s Linked Data.
+        <ul>
+          <li>They offer intelligence as a service.</li>
+        </ul>
+      </li>
+      <li>
+        We own (our part of) the data,<br>
+        but not the intelligence around it.
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="better-servers">
+    <h2>
+      Building better clients starts<br>
+      with building better servers.
+    </h2>
+    <ul>
+      <li>
+        Web APIs do too much,<br>
+        and too much in their own way.
+      </li>
+      <li>
+        We don’t need intelligent servers,<br>
+        but servers that <em>enable</em> intelligence.
+      </li>
+      <li>
+        Client-side intelligence enables use cases<br>
+        we cannot foresee yet.
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="better-apis">
+    <h2>
+      Web APIs essentially need<br>
+      what Linked Data did for data.
+    </h2>
+    <ul>
+      <li>
+        interoperable
+        <ul>
+          <li>different clients for different purposes</li>
+        </ul>
+      </li>
+      <li>
+        flexible
+        <ul>
+          <li>not one API to rule them all</li>
+        </ul>
+      </li>
+      <li>
+        across silos
+        <ul>
+          <li>inherently distributed</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="serendipity">
+    <h2>
+      Reusing API building blocks<br>
+      enables serendipity in clients.
+    </h2>
+    <ul>
+      <li>
+        With <a href="http://linkeddatafragments.org/">Linked Data Fragments</a>,<br>
+        we search for interesting building blocks.
+      </li>
+      <li>
+        Clients can query different APIs simultaneously.
+        <ul>
+          <li>
+            <a href="http://bit.ly/harvard-the-hague">
+              <em>Which books in Harvard Library<br>
+                were written by people born in The Hague?</em>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Decentralization is crucial for making this work.
+        <ul>
+          <li>select your own sources</li>
+        </ul>
+      </li>
+    </ul>
   </div>
 
 	<div class="progress"></div>
