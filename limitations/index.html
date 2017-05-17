@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Clear theme for Shower</title>
+	<title>Possibilities and limitations of RDF</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="../styles/screen-16x10.css">
 </head>
 <body class="shower list">
-	<header class="caption">
-		<h1>Presentation Title</h1>
-		<p><a href="">Yours Truly</a>, Famous Inc.</p>
-	</header>
+  <header class="caption">
+    <h1>
+      <a class="series" href="../">Linked Data for Librarians</a><br>
+      <a class="module" href="#title">Possibilities and limitations of RDF</a>
+    </h1>
+    <p>
+      <a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a>,
+      <a href="https://ruben.verborgh.org/">Ruben Verborgh</a>
+    </p>
+    <ul class="links">
+      <li class="prev">Previous topic: <a href="../modeling/">Understanding data models</a></li>
+      <li class="next">Next topic: <a href="../quality/">Data quality</a></li>
+    </ul>
+  </header>
 
   <nav>
 		<h2>Navigation</h2>
@@ -29,14 +39,210 @@
 		</ul>
 	</nav>
 
-	<div class="title slide">
-		<h2>This is the title slide<br>of the presentation</h2>
-		<p class="author">Yours Truly</p>
-		<p class="affiliation">Famous Inc.</p>
-	</div>
+  <div class="title slide" id="title">
+    <h2>
+      <a class="series" href="../">Linked Data for Librarians</a><br>
+      <a class="module" href="#title">Possibilities and limitations of RDF</a>
+    </h2>
+    <p class="tweets"><a href="https://twitter.com/FreeMetadata">@FreeMetadata</a></p>
+    <p class="author"><a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a></p>
+    <p class="author"><a href="https://ruben.verborgh.org/">Ruben Verborgh</a></p>
+    <p class="license">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="../_shared/images/cc-by.svg" /></a>
+      Except where otherwise noted, the content of these slides is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </p>
+  </div>
 
   <div class="slide" id="intro">
     <iframe class="cover width height" src="https://www.youtube.com/embed/pq1ugXMTLwk?hl=en&amp;color=white&amp;iv_load_policy=3&amp;disablekb=1&amp;rel=0&amp;showinfo=0&amp;autohide=1"></iframe>
+  </div>
+
+  <div class="slide" id="heterogeneity">
+    <figure class="cover">
+      <img src="images/cars.jpg" alt="[cars in rainbow colors]" />
+      <figcaption>
+        by <a href="https://www.flickr.com/photos/picturewendy/5922921099/">PictureWendy</a>
+        – <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="slide" id="heterogeneity-levels">
+    <h2>
+      Heterogeneity exists on multiple levels<br>
+      across metadata collections.
+    </h2>
+    <ul>
+      <li>
+        Heterogeneity exists on the <em>data</em> level.
+        <ul>
+          <li>We can choose our own vocabularies.</li>
+          <li>How do we ensure they align?</li>
+        </ul>
+      </li>
+      <li>
+        Heterogeneity exists on the <em>interface</em> level.
+        <ul>
+          <li>We can choose how consumers can query our data.</li>
+          <li>How can clients consume multiple datasets easily?</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="heterogeneity-friend-enemy">
+    <h2>
+      Heterogeneity is our best friend<br>
+      and our largest enemy.
+    </h2>
+    <ul>
+      <li>
+        Anybody on the Web is free<br>
+        to publish however they want.
+        <ul>
+          <li>This works great for <em>people</em>—sometimes.</li>
+          <li>It often doesn’t work great for <em>machines</em>.</li>
+        </ul>
+      </li>
+      <li>
+        Standardization helps us align.
+        <ul>
+          <li>delicate balance between flexibility and interoperability</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="good-bad">
+    <figure class="cover">
+      <img src="images/kunsthal.jpg" alt="[sad and smiley face]" />
+      <figcaption>
+        <a href="https://www.flickr.com/photos/picturewendy/5922958197/">Kunsthal by PictureWendy</a>
+        – <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a>
+      </figcaption>
+    </figure>
+    <footer>
+      <p>Heterogeneity is one of the main challenges for data on the Web.</p>
+    </footer>
+  </div>
+
+  <div class="slide" id="standardization">
+    <h2>
+      Standardization and agreement<br>
+      have provided us with foundations.
+    </h2>
+    <ul>
+      <li>
+        the Semantic Web family of standards
+        <ul class="inline">
+          <li>RDF</li>
+          <li>SPARQL</li>
+          <li>RDFS</li>
+          <li>OWL</li>
+          <li>…</li>
+        </ul>
+      </li>
+      <li>
+        ontologies and vocabularies
+        <ul class="inline">
+          <li>Dublin Core</li>
+          <li>DBpedia ontology</li>
+          <li>Wikidata ontology</li>
+          <li>Schema.org</li>
+          <li>…</li>
+        </ul>
+      </li>
+      <li>
+        <del>Web APIs</del> not yet
+        <ul class="inline">
+          <li>Linked Data Platform</li>
+          <li>OAI-ORE</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="beyond-standardization">
+    <h2>
+      The current level of standardization<br>
+      still leaves some areas uncovered.
+    </h2>
+    <ul>
+      <li>
+        vocabulary usage
+        <ul>
+          <li>examples and guidance</li>
+        </ul>
+      </li>
+      <li>
+        vocabulary agreement
+        <ul>
+          <li>the right terms for the right clients</li>
+        </ul>
+      </li>
+      <li>
+        Web APIs
+        <ul>
+          <li>stop reinventing the wheel</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="vocabularies">
+    <h2>
+      Which vocabularies should we use<br>
+      to describe our metadata, and how?
+    </h2>
+    <ul>
+      <li>
+        We need to develop examples and guidance.
+        <ul class="inline">
+          <li>vocabulary usage</li>
+          <li>URL strategy</li>
+          <li>…</li>
+        </ul>
+      </li>
+      <li>
+        Reasoning can fill vocabulary gaps.
+        <ul>
+          <li>I <a href="https://ruben.verborgh.org/articles/queryable-research-data/">apply this</a> to my own metadata.</li>
+        </ul>
+      </li>
+      <li>
+        We can never cover <em>all</em> vocabularies.
+        <ul>
+          <li>Negotiate content <a href="https://ruben.verborgh.org/articles/fine-grained-content-negotiation/">through profiles</a>.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="web-apis">
+    <h2>
+      Web APIs are the Achilles’ heel<br>
+      of interoperability on the Web.
+    </h2>
+    <ul>
+      <li>
+        Shall we all have our SPARQL endpoints?
+        <ul>
+          <li>Who is going to pay?</li>
+        </ul>
+      </li>
+      <li>
+        Shall we all support the Linked Data Platform?
+        <ul>
+          <li>That doesn’t solve querying…</li>
+        </ul>
+      </li>
+      <li>
+        Shall we all have our own custom APIs?
+        <ul>
+          <li>That’s not a sustainable way.</li>
+        </ul>
+      </li>
+    </ul>
   </div>
 
 	<div class="progress"></div>
