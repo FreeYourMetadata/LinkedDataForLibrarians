@@ -222,20 +222,20 @@
   was already previsously encoded (e.g. name of an artist or a place),
   you have to enter it again manually, leading to errors over time when updating
   the metadata. Also, search is ineffective as you have to query the entire file.
-  However, sharing and distributing tabular data is very easy. A simple text-editor
-allows other people to read and re-use the data.</p>
+  On the upside, sharing, distributing and updating tabular data is very easy.
+  A simple text-editor allows other people to read and re-use the data.</p>
     </footer>
   </div>
 
   <div class="slide" id="limits-tabular">
-    <h2>Limits ? </h2>
+    <h2>Limits and possibilities of tabular data ?</h2>
     <ul>
-      <li>Inconsistencies</li>
-      <li>Search and retrieval</li>
-      <li>Updates - change</li>
-      <li>Distribution</li>
+      <li>Inconsistencies !</li>
+      <li>Search and retrieval : ineffective</li>
+      <li>Updates - change : easy</li>
+      <li>Distribution : easy</li>
     </ul>
-    <p>How do we overcome these issues with tabular data?</p>
+    <p>How do we overcome the inconsistencies and poor search within tabular data?</p>
   </div>
 
    <div class="slide" id="relational-model">
@@ -266,9 +266,10 @@ allows other people to read and re-use the data.</p>
     <h2>
       Mapping reality to a database
     </h2>
-    Worldview consisting of
+    Worldview consisting of three building blocks :
     <ul>
-      <li>Entities: group of information that varies independently from other groups</li>
+      <li>Entities: group of information which share properties and which vary
+        independently from other groups</li>
       <li>Attributes: describe properties of entities</li>
       <li>Relationships: create connections in between entities</li>
      </ul>
@@ -309,8 +310,9 @@ previously. By doing so, we can ensure more consistency in our metadata.
     <h2>Implementation</h2>
     <ul>
     <li>Relational Database Management System (RDBMS) software used to implement the model</li>
-    <li>Common RDBMS tools/software vendors are MySQL, Oracle, SQLServer</li>
-    <li>Other more complex software, such as Integrated Library Systems (ILS) or collection management systems, are build on top of a RDBMS
+    <li>Common RDBMS tools/software vendors include for example MySQL, Oracle or SQLServer</li>
+    <li>Cataloging software or Integrated Library Systems (ILS) add a visual interface
+      on top of a RDBMS
     </ul>
   </div>
 
@@ -343,8 +345,8 @@ previously. By doing so, we can ensure more consistency in our metadata.
     </h2>
     <code>INSERT INTO Work (title, creator, collection, year, style)</code> <br>
     <code>VALUES ('Guernica',43, 20, 1937,'Cubism')</code> <br>
-    <p>Please note that the values 43 and 20 refer to the primary keys from the tables <code>Creator</code> and
-    <code>Collection</code>.</p>
+    Please note that the values 43 and 20 refer to the primary keys from the tables <code>Creator</code> and
+    <code>Collection</code>.
   	</div>
 
   <div class="slide" id="search-retrieval">
@@ -357,6 +359,16 @@ previously. By doing so, we can ensure more consistency in our metadata.
     <code>SELECT title FROM Work WHERE creator=43</code>
   </div>
 
+  <div class="slide" id="sql-exercice">
+    <h2>Practice on your own !</h2>
+    <ul><li>As a librarian, it can be useful to have a basic knowledge of SQL</li>
+      <li>Websites such as <a href="http://sqlfiddle.com/">http://sqlfiddle.com</a>
+      allow you to experiment on your own !</li>
+      <li>Copy/paste the SQL code from the previous slides in order to create
+        a table, insert metadata and query them</li>
+    </ul>
+
+  </div>
   <div class="slide" id="change">
     <h2>
       Dealing with Change
@@ -380,7 +392,14 @@ previously. By doing so, we can ensure more consistency in our metadata.
       </figcaption>
     </figure>
     <footer>Using ductape to McGyver yourself out of a problem can be used as a methaphor for many
-    of the adhoc solutions found not to tamper with the schema of a database.</footer>
+    of the adhoc solutions found not to tamper with the schema of a database.
+  For example, if there is a need to encode new information in the database, but
+there's no time to redesign the database schema to accomodate the new data, people
+often rely on external flat files, managed in excel for example, to keep track of
+new reference data in a quick and easy manner, based on the assumption that they will
+be integrated into the database in the future. However, in practice the ad-hoc solution
+often is used for a long period of time, leading to inconsistencies between the centralized
+reference data in the database and the local reference data in the spreadsheet. </footer>
   </div>
 
   <div class="slide" id="sharing_db">
@@ -406,23 +425,101 @@ previously. By doing so, we can ensure more consistency in our metadata.
       </figcaption>
     </figure>
     <footer>Relational databases are the working horses of our information economy. However,
-    they tend to keep both the data and the schema hostage.</footer>
+    they tend to keep both the data and the schema as a <em>hostage</em>.
+    Even if the party with whom you want to share your database has exactly the same
+    version of the DBMS you are using, there is still a <em>semantic</em> barrier to
+    overcome. Using someone else's database implies that you understand how tables are
+    constructed and interconnected. ILS and metadata management software often contains hundreds
+    of tables, so understanding how the data are structured might take days or weeks...
+  </footer>
   </div>
 
-  <div class="slide" id="mark_up">
+  <div class="slide" id="tim-picture">
+    <figure class="cover width">
+      <img src="images/tim.jpg"
+           alt="[Tim Berners-Lee at his desk in CERN, 1994]">
+      <figcaption>
+        ©1994 <a href="http://home.cern/images/2013/12/tim-berners-lee-cern">CERN</a>
+      </figcaption>
+    </figure>
+    <footer>
+      <p>The development of the Web by Tim Berners-Lee in december 1989 at CERN
+        and its rapid uptake in the 1990s underlined the importance of sharing and distributing data
+        on the Web. The difficulty of sharing structured data from relational databases and the
+      explosion of non-structured content on the Web in the second half of the nineties finally
+    led to the development of XML, which became a W3C Recommendation in 1998. In order to understand
+  the rationale of XML, we need to go back a bit in time to see how markup was developed as a data
+model.</p>
+    </footer>
+  </div>
+
+  <div class="slide" id="markup">
     <h2>
-      Markup
+      Third Model : Markup
     </h2>
     <ul>
-      <li>Origins in the typesetting world and the management of large volumes of non-structured data</li>
-      <li>Understand shift from <em>make-up</em>:<br>
-      <code>&lt;font size&#61;&#34;20&#34;&gt;&lt;b&gt;Introduction to Linked Data&lt;&#47;b&gt;&lt;&#47;font&gt;&lt;&#47;code&gt;</code></li>
-      <li>and <em>markup</em>:<br>
-      <code>h1 {font-size: 20pt; font-weight: bold}</code><br>
-      <code>...</code><br>
-      <code>lt;h1&gt;Introduction to Linked Data&lt;&#47;h1&gt;</code></li>
+      <li>Origins of markup lie in the tradition of the typesetting world,
+        where an author marks up
+        a manuscript in order to explain how it should be printed</li>
+      <li>Certain passages, such as the titles of chapters, should be printed in bold,
+        whereas footnotes should be printed in a smaller font than the normal
+        paragraphs</li>
+      <li>Two options : either you apply <em>makeup</em> or <em>markup</em> ...</li>
     </ul>
   </div>
+
+  <div class="slide" id="makeup">
+    <h2>Applying makeup</h2>
+    <ul>
+      <li>The easiest and quickest approach to format a document is to define
+        the lay-out of each specific instance
+        of a document</li>
+      <li>In the context of HTML, applying <em>makeup</em> would imply the following :
+      <ul><li>
+      <code>&lt;font size&#61;&#34;20&#34;&gt;&lt;b&gt;Linked Data for
+        librarians&lt;&#47;b&gt;&lt;&#47;font&gt;</code></li>
+      </ul>
+      <li>We simply indicate how that specific string
+      of characters should be displayed - it's makeup !</li>
+    </ul>
+  </div>
+
+<div class="slide" id="markup2">
+<h2>Applying markup</h2>
+<ul>
+  <li>Indicate the <em>role</em> a specific part of a document
+  plays and define seperately the aesthetics of that role</li>
+  <li>Lets use markup on our HTML example :
+    <ul><li>
+  <code>h1 {font-size: 20pt; font-weight: bold}</code><br>
+  <code>...</code><br>
+  <code>&lt;h1&gt;Linked Data for librarians&lt;&#47;h1&gt;</code></li>
+</ul>
+<li>Defining the lay-out of structural elements of a document (e.g. h1),
+  opens a new world of possibilities</li>
+</ul>
+</div>
+
+<div class="slide" id="pills">
+  <figure class="cover width">
+    <img src="images/pills.jpg"
+         alt="[Pharma industry]">
+    <figcaption>
+      ©2007 <a href="https://upload.wikimedia.org/wikipedia/commons/5/55/VariousPills.jpg">
+        Wikipedia</a>
+    </figcaption>
+  </figure>
+  <footer>
+    <p>Highly regulated sectors such as the pharma, military or aeronautics industry already had to
+      manage very large sets of documentation in the 1970s. In order to manage these big volumes of full-text,
+      the idea of markup was developed. However, how could one potentially predefine and standardize
+      all potentially needed tags across different application domains? In order to give
+      each domain the potential to have the tags it needs, the concept of a meta-markup language
+      was developed with the Standardized General Markup Language (SGML) throughout the 1980s.
+      By using a standardized (but complex!) grammar and syntax, each domain can define its own tags
+      and seperate the structure and semantics of a document from its lay-out.</p>
+  </footer>
+</div>
 
   <div class="slide" id="worldview_mark_up">
     <figure class="cover width">
@@ -433,23 +530,16 @@ previously. By doing so, we can ensure more consistency in our metadata.
       </figcaption>
     </figure>
     <footer>
-      <p>Worldview of markup can be expressed in the form of trees or russian puppets,
-      consisting of a root element, parents, children and siblings.</p>
+      <p>The worldview of markup can be expressed in the form of trees or russian puppets,
+      in the sense that we always have one root element, which then contains
+      a collection of parents, children and siblings. A child node inherits by default the
+    characteristics of its parent node, but one can overwrite these characteristics
+  by specifying other features, which are then propagated on the more specific levels.
+This hierarchical worldview matches very well the reality of archival collections,
+where the root element is the <em>fonds</em>, consisting of series, subseries, files and
+finally items. The Encoded Archival Description (EAD) is for example an XML application
+based on this hierarchical view.</p>
     </footer>
-  </div>
-
-  <div class="slide" id="meta_markup">
-    <h2>
-      Meta-markup
-    </h2>
-    <ul>
-      <li>Markup specifies the <em>role</em> a string plays within a document</li>
-      <li>Need: define a set of tags to markup documents</li>
-      <li>Problem: each application domain has different structural elements
-      within their document</li>
-      <li>Solution: meta-markup, giving users the possibility to define the tags
-      they need</li>
-    </ul>
   </div>
 
    <div class="slide" id="html-detour">
@@ -457,27 +547,37 @@ previously. By doing so, we can ensure more consistency in our metadata.
       HTML detour
     </h2>
     <ul>
-      <li>1989: Tim Berners-Lee was inspired by <a href="https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language">SGML</a> but simplified it by proposing a fixed set
-      of tags to represent the structural components of a Web page (e.g.<code>&lt;head&gt;</code>, <code>&gt;body&lt;</code> </li>
-      <li>Internet bubble + browser war in the late 1990s => markup was corrupted into makeup</li>
+      <li>1989: Tim Berners-Lee was inspired by <a href="https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language">SGML</a>
+        but simplified it radically by proposing a fixed set
+      of tags to represent the structural components of a Web page</li>
+      <li>Examples : <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>,
+    <code>&lt;h1&gt;</code>, etc</li>
+      <li>Most people forgot all about SGML, but its influence has been
+      enormous ...</li>
     </ul>
-  </div>
-
-<div class="full slide" id="boiko">
-    <blockquote class="long">
-      <p>SGML became like those backwoods blues players of old
-      to whom the pop stars gave honor but no money.</p>
-
-      <cite><a href="http://eu.wiley.com/WileyCDA/WileyTitle/productCd-0764583646.html">Bob Boiko</a></cite>
-    </blockquote>
-    <footer>
-      <p>Something?</p>
-    </footer>
   </div>
 
   <div class="slide" id="clapton">
     <figure class="cover width">
       <img src="images/clapton.jpg"
+           alt="[SGML and HTML relationship]">
+      <figcaption>
+        ©2004 <a href="https://en.wikipedia.org/wiki/Me_and_Mr._Johnson">Eric Clapton</a>
+      </figcaption>
+    </figure>
+    <footer>
+      <p>Bob Boiko compared the relationship between SGML and HTML by using the metaphore
+      of Eric Clapton and Robert Johnson : Johnson did all the hard work to define the blues genre,
+      while Clapton reaped commercial success with an easy-lisening version of Johnson's work.
+      SGML was difficult to use and hardly a success story, but it defined
+      many of the conceptual building blocks of the Web. HTML reused some of its concepts in a radically
+      simplified manner, and resulted in the success story we all know.</p>
+    </footer>
+  </div>
+
+  <div class="slide" id="clapton">
+    <figure class="cover width">
+      <img src="images/mozilla.jpg"
            alt="[SGML and HTML relationship]">
       <figcaption>
         ©2004 <a href="https://en.wikipedia.org/wiki/Me_and_Mr._Johnson">Eric Clapton</a>
