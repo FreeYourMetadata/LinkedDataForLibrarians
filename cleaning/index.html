@@ -399,6 +399,70 @@
   <div class="slide" id="screencast-facets">
   </div>
 
+  <div class="slide" id="multi-valued-fields">
+    <h2>
+      The <em>Author</em> column has multiple values<br>
+      for some of its records.
+    </h2>
+    <ul>
+      <li>
+        Multi-valued fields are harder to deal with.
+        <ul>
+          <li>
+            OpenRefine considers <em>Guillaume de Lorris|Jean de Meun</em><br>
+            a single value, even though there are two names.
+          </li>
+          <li>
+            We want facets to treat them individually!
+          </li>
+        </ul>
+      </li>
+      <li>
+        We need to split the multiple field values<br>
+        across multiple rows.
+        <ul>
+          <li>
+            <em>Author</em>, <em>Edit cells</em>,
+            <em>Split multi-valued cells</em>.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="rows-records">
+    <h2>
+      Rows mode: all lines are individual.<br>
+      Records mode: group values per record.
+    </h2>
+    <ul>
+      <li>
+        If we switch to <em>Records mode</em>, actions apply<br>
+        to all rows belonging to a single record.
+        <ul>
+          <li>
+            When split, multiple values of a multi-valued cell
+            belong to <em>different</em> rows but the <em>same</em> record.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Filter for a certain author name.
+        <ul>
+          <li>
+            rows mode: only rows with a matching author
+          </li>
+          <li>
+            records mode: all records where at least one row matches
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="screencast-multi-valued-fields">
+  </div>
+
 	<div class="progress"></div>
 	<footer>
 		<p>Copyright © 2016 <a href="#">Yours Truly, Famous Inc.</a></p>
