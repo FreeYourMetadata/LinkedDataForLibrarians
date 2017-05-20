@@ -55,3 +55,15 @@
 .browser .body * {
   margin-left: 0;
 }
+
+/* Full-screen navigation for touch */
+.handle::before {
+  display: block;
+  content: " ";
+  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  width: 100%;
+  height: 25%;
+  left: 0;
+  bottom: 10%;
+}
