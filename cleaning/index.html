@@ -252,6 +252,153 @@
     </ul>
   </div>
 
+  <div class="slide" id="filters-facets">
+    <h2>
+      Get to know the data <em>inside</em> of columns<br>
+      through <em>filters</em> and <em>facets</em>.
+    </h2>
+    <ul>
+      <li>
+        Filters and facets allow you to<br>
+        only see a specific subset of all rows.
+      </li>
+      <li>
+        <a href="#filters"><em>Filters</em></a> are selections based on<br>
+        <em>user-created</em> conditions.
+      </li>
+      <li>
+        <a href="#facets"><em>Facets</em></a> are selections based on<br>
+        <em>automatically created</em> conditions.
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="filters">
+    <h2>
+      With a filter, the user is responsible<br>
+      for coming up with relevant values.
+    </h2>
+    <ul>
+      <li>
+        Click the <em>Seller</em> column triangle<br>
+        and create a <em>text filter</em>.
+        <ul>
+          <li>A filter box appears on the left.</li>
+        </ul>
+      </li>
+      <li>
+        Type into the filter box to only show<br>
+        rows containing that text for <em>Seller</em>.
+        <ul>
+          <li>
+            Type <code>us</code> to only see rows
+            with sellers that contain <em>us</em>.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Remove a filter by clicking the cross<br>
+        in its top left corner.
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="filters-effect">
+    <h2>
+      When a filter or facet is active,<br>
+      actions apply <em>only</em> to matching rows.
+    </h2>
+    <ul>
+      <li>
+        With the <code>us</code> text filter on <em>Seller</em> still active,<br>
+        let’s delete “all” rows.
+      </li>
+      <li>
+        Click the special <em>All</em> column triangle,<br>
+        <em>Edit rows</em>, <em>Remove all matching rows</em>.
+      </li>
+      <li>
+        All rows seem to have disappeared!
+        <ul>
+          <li>It only seems so because the filter is still on.</li>
+          <li>Remove it by clicking its cross.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="screencast-filters">
+  </div>
+
+  <div class="slide" id="undo-redo">
+    <h2>
+      With OpenRefine, you can never<br>
+      destruct your original data.
+    </h2>
+    <ol>
+      <li>
+        You are always working
+        on a <em>copy</em> of the data.
+        <ul>
+          <li>Your original dataset remains unaltered.</li>
+        </ul>
+      </li>
+      <li>
+        OpenRefine keeps an undo history of all actions.
+        <ul>
+          <li>
+            Go to <em>Undo / Redo</em>
+            and pick the step you want to revert to.
+          </li>
+        </ul>
+      </li>
+    </ol>
+    <p>
+      Use OpenRefine effectively:
+      <em>first do</em>, then think.<br>
+      No need to think upfront:
+      when wrong, you can undo.
+    </p>
+  </div>
+
+  <div class="slide" id="screencast-undo">
+  </div>
+
+  <div class="slide" id="facets">
+    <h2>
+      With a facet, OpenRefine <em>automatically</em><br>
+      comes up with relevant values.
+    </h2>
+    <ul>
+      <li>
+        Not all questions can be answered by filters.
+        <ul>
+          <li>What if you don’t know values to look for?</li>
+          <li>What other values besides <code>us</code> should we try?</li>
+          <li>How do <em>Primary</em> and <em>Secondary seller</em> differ?
+        </ul>
+      </li>
+      <li>
+        Create a facet:
+        <em>Primary seller</em>, <em>Facets</em>, <em>Text facet</em>.
+        <ul>
+          <li>
+            OpenRefine lets you select possible values on the left.
+          </li>
+        </ul>
+      </li>
+      <li>
+        You can combine multiple filters and facets.
+        <ul>
+          <li><em>Remove all</em> when confused.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="screencast-facets">
+  </div>
+
 	<div class="progress"></div>
 	<footer>
 		<p>Copyright © 2016 <a href="#">Yours Truly, Famous Inc.</a></p>
