@@ -66,8 +66,13 @@
       </figcaption>
     </figure>
     <footer>
-      <p>Putting the open-world assumption in practice implies you loose control over the
-      quality of the data you're using. It's like publishing your birthday party as a public-event on social media.
+      <p>Linked Data have put data quality high on the agenda, especially for librarians.
+        Putting the open-world assumption in practice implies you loose control over the
+      quality of the data one is drawing in. Consuming and re-using data in a decentralised manner
+      undermines a lot of the traditional practices from the library community. For example,
+      the practice of copy cataloging always has been based on the assumption of a centralised
+      quality control. By design, Linked Data brings together information from various sources.
+      It's like publishing your birthday party as a public-event on social media.
       You don't know who will show up...</p>
     </footer>
   </div>
@@ -78,8 +83,8 @@
   	<ul>
   	<li>As automated re-use of data rises, so does our dependency on their quality</li>
   	<li>Anyone interested in Linked Data should first of all come to terms with
-  	the quality of data</li>
-    <li>Aggregating data on such a massive scale as with Linked Data has
+  	the quality of their own and other organisation's data</li>
+    <li>Aggregating data on a massive scale has
     put the topic of data quality high on the agenda</li>
   	</ul>
   </div>
@@ -90,10 +95,10 @@
              alt="[Book overview.]">
     </figure>
     <footer>
-      <p>A lot of books have been published on the topic, and professional and academic
+      <p>A lot of books have been published on the theme of data quality, and professional and academic
       organisations have been launched to tackle the topic. One of the best
-    references out there is without a doubt Jack Olson's book "Data quality - The
-    Accuracy Dimension".</p>
+    references out there is without a doubt Jack Olson's book <a href="https://www.amazon.com/Data-Quality-Accuracy-Dimension-Management/dp/1558608915">
+      "Data quality - The Accuracy Dimension"</a>.</p>
     </footer>
   </div>
 
@@ -104,8 +109,9 @@
   	<li>Examples :
   	<ul>
   		<li>Interpretation of climate change data : the data which indicated holes in the
-        ozon-layer were considered at first as erroneous data</li>
-  		<li>Information Quality Act (2000) : extremely complex to put in practice,
+        ozon-layer were considered at first as errors</li><br>
+  		<li><a href="https://en.wikipedia.org/wiki/Data_Quality_Act">Data Quality Act</a> :
+        extremely complex to put in practice,
       as it is hard to precisely define what good quality data are</li>
   	</ul>
   	</li>
@@ -125,13 +131,22 @@
     <p>Commonly referred to in the literature as the "fitness for purpose" definition</p>
   </div>
 
-  <div class="slide" id="implications">
-    <h2>Implications of living in an Empirical World</h2>
+  <div class="slide" id="empirical_deterministic">
+    <h2>Differentiate Deterministic & Empirical Data</h2>
   	<ul>
-  	<li>We can not assert a direct correspondance between the empirical, ever-changing world
-  	and the metadata and database schema representing it</li>
-  	<li>Defining data quality in a deterministic manner (e.g. MIT Total Data Quality Program)
-  	makes no sense for empirical application domains</li>
+  	<li>Deterministic data:
+  		<ul>
+  		<li>Existence of a persistent theory makes it possible to decide whether or not a value is correct</li>
+  		<li>Example: algebra - 1+1 will always be 2</li>
+  		</ul>
+  	</li>
+  	<li>Empirical data:
+  		<ul>
+  		<li>Absence of a direct frame of reference to validate data, subject to human interpretation and evolution
+  		through time</li>
+  		<li>Example: medical field - new illnesses constantly appear</li>
+  		</ul>
+  	</li>
   	</ul>
   </div>
 
@@ -148,27 +163,10 @@
       <p>A key characteristic of data quality is that we live in
       an empirical world, which continously changes... Imagine you
     have to catalog this chameleon. You describe all of its colors in detail. Then
-  it moves into a different setting and it changes color! Are you metadata still correct?</p>
+  it moves into a different setting and it changes color! Are you metadata still correct ?
+How can you constantly check whether metadata correspond to an ever evolving
+reality ?</p>
   </footer>
-  </div>
-
-  <div class="slide" id="empirical_deterministic">
-    <h2>Difference between deterministic & empirical data</h2>
-  	<ul>
-  	<li>Deterministic data:
-  		<ul>
-  		<li>Existence of a persistent theory makes it possible to decide whether or not a value is correct</li>
-  		<li>Example: algebra</li>
-  		</ul>
-  	</li>
-  	<li>Empirical data:
-  		<ul>
-  		<li>Absence of a direct frame of reference to validate data, subject to human interpretation and evolution
-  		through time</li>
-  		<li>Example: medicine, cultural heritage sector</li>
-  		</ul>
-  	</li>
-  	</ul>
   </div>
 
   <div class="slide" id="impact_time">
@@ -182,9 +180,9 @@
     </figure>
     <footer>
       <p>The image represents one of the trucks which is now on display in the 9/11
-      Museum and Memorial. As a collection holder, the museum had to permanently re-adpt
+      Museum and Memorial. As a collection holder, the museum had to permanently re-adapt
       the metadata schema it was using in the database to document its collection, as you
-      can not describe a truck in the same manner one would create metadata for a photograhp
+      can not describe a truck in the same manner one would create metadata for a photographe
       for example. This illustrates how, based on the evolving nature of its collection,
       a heritage institution has to incorporate changes and update its metadata schema.
       </p>
@@ -212,14 +210,17 @@
     </figure>
     <footer>
       <p>Two key publications to understand how we can make use of hermeneutics to evaluate
-      the quality of data.</p>
+      the quality of data. In his seminal work <a href="https://en.wikipedia.org/wiki/Fernand_Braudel#La_M.C3.A9diterran.C3.A9e">
+      The Mediterranean</a>, Fernand Braudel developed his hermeneutical framework of the
+    stratified time to analyse the history of the Mediterranean area at the time of Philips II.
+  Isabelle Boydens re-used his thinking </p>
     </footer>
   </div>
 
     <div class="slide" id="emirical">
     <h2>Implications of living in an Empirical World</h2>
   	<ul>
-  	<li>We can not assert a direct correspondance between the empirical, ever-changing world
+  	<li>The work of Boydens demonstrates we can not assert a direct correspondance between the empirical, ever-changing world
   	and the metadata and database schema representing it</li>
   	<li>Defining data quality in a deterministic manner (e.g. MIT Total Data Quality Program)
   	makes no sense for empirical application domains</li>
@@ -227,7 +228,7 @@
   </div>
 
    <div class="slide" id="stratified">
-    <h2>Stratified time applied on social security databases</h2>
+    <h2>Stratified time applied on social security databases by Boydens</h2>
   	<ul>
   	<li>Long term
   	<ul><li>Evolution of policies and legislation</li></ul>
@@ -241,7 +242,7 @@
   	</ul>
   </div>
 
-  <div class="slide" id="malevich">
+  <div class="slide" id="paper">
     <figure class="cover width">
         <img src="images/jod.jpg"
              alt="[Paper Isabelle Boydens and Seth van Hooland]">
@@ -255,14 +256,16 @@
   </div>
 
   <div class="slide" id="theory_practice">
-    <h2>From Theory to Practice</h2>
+    <h2>From Theory to Practice ...</h2>
   	<ul>
-  	<li>Change is a fundamental notion to deal with...
+  	<li>Change is a fundamental notion to deal with ... </li>
+    <li>Boydens underlined that we should not ask "Are the metadata correct ?"
+      but "How do they evolve through time ?"
   		<ul>
   		<li>Incorporate tools which help to monitor change</li>
   		<li>If values do not correspond to the schema, the schema itself may have
-  		to be questioned - see identification of hole in the ozone layer</li>
-  		<li>Practice of data-profiling helps to develop data auditing skills</li>
+  		to be questioned</li>
+  		<li>Practice of <em>data-profiling</em> helps to develop data auditing skills</li>
   		</ul>
   	</li>
   	</ul>
@@ -424,7 +427,7 @@
     <ul><li>If you expect the name of an individual in a field and the average
       text lenght is 250 characters, there might be an issue...</li>
       <li>Especially the outlier values, being the very short or long ones, can
-     be a good data quality indicator</li>
+     be a good place to start your analysis</li>
     </ul>
   </li>
 
@@ -462,7 +465,8 @@
 
   	<div class="slide" id="overloading">
     <h2>Field overloading</h2>
-  	<p>Encoding in one field of values which should be split out over multiple fields, due to
+  	<p>Encoding in one field of values which should be split out over multiple fields,
+      due to :
   	<ul>
   	<li>repeating values</li>
  	<li>different realities addressed by a generic field</li>
@@ -473,7 +477,7 @@
       <div class="slide" id="eval1">
     <h2>Self-assessment 1</h2>
     <ul>
-      <li>Why is the topic of data quality is so relevant in the context of
+      <li>Why is the topic of data quality so relevant in the context of
         Linked Data ?
         <ul>
           <li>The introduction of Linked Data will boost
@@ -486,7 +490,7 @@
           one at a certain moment knows exactly what type of data are available and the type of
           constraints they respect.  -->
           <li>Linked Data holds the potential danger of introducing erroneous and conflicting
-            data on the Web.</li>
+            data.</li>
           <!-- Yes, without specific efforts to clean original data sources and ensuring
           standardised methods and tools to evaluate and compare data set published as
           Linked Data, the issue of data quality might seriously undermine the potential
@@ -510,7 +514,7 @@
           <!-- No, irrelevant answer.  -->
           <li>Because empirical data can not be cleaned.</li>
           <!-- No, it is not because we can not establish a direct correspondance
-        between the observable and the data that one can not clean data.  -->
+        between the observable and the data that one can not identify errors and rectify them.  -->
         </ul>
       </li>
     </ul>

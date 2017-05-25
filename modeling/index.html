@@ -575,21 +575,28 @@ based on this hierarchical view.</p>
     </footer>
   </div>
 
-  <div class="slide" id="clapton">
+  <div class="slide" id="Mozilla">
     <figure class="cover width">
       <img src="images/mozilla.jpg"
-           alt="[SGML and HTML relationship]">
+           alt="[Browser war]">
       <figcaption>
-        ©2004 <a href="https://en.wikipedia.org/wiki/Me_and_Mr._Johnson">Eric Clapton</a>
+        ©1997 <a href="http://home.snafu.de/tilman/mozilla/stomps.html">Carlos Avila Gonzalvez</a>
       </figcaption>
     </figure>
     <footer>
-      <p>Bob Boiko compared the relationship between SGML and HTML by using the metaphore
-      of Eric Clapton and Robert Johnson : Johnson did all the hard work to define the blues genre,
-      while Clapton reaped commercial success with an easy-lisening version of Johnson's work.
-      SGML was difficult to use and hardly a success story, but it defined
-      many of the conceptual building blocks of the Web. HTML reused some of its concepts in a radically
-      simplified manner, and resulted in the success story we all know.</p>
+      <p>The rapid uptake of the Web throughout the 1990s was accompanied with rising
+        commercial interests. Around 1995, Netscape's Navigator was the most popular browser
+        but Microsoft aggressively marketed their Internet Explorer (IE) in order to gain
+        the biggest market share. Both browser constructors created custom tags
+        in order to satisfy the growing base of graphic designers interested in the Web.
+        The <code>&lt;blink&gt;</code> element, introduced by Netscape, was for example not
+        supported by IE, who developed their own custom tags such as
+        <code>&lt;marquee&gt;</code>. The picture from 1997, at the height of the
+        so-called <a href="https://en.wikipedia.org/wiki/Browser_wars">browser war</a> illustrates how, after the launch
+        of IE4, employees of Microsoft put the IE logo on the lawn in front of Netscape's
+        offices. In turn, their employees flipped the logo and put Mozilla's dinosaur logo
+        on top of IE.
+        </p>
     </footer>
   </div>
 
@@ -598,6 +605,8 @@ based on this hierarchical view.</p>
       XML
     </h2>
     <ul>
+      <li>End of the 1990s => desire to focus again on the structure and not the lay-out
+      of the Web</li>
       <li>XML 1.0 : W3C recommendation in 1998</li>
       <li>Effort was made to maintain 80% of SGML's functionality
       with only 20% of its complexity</li>
@@ -651,7 +660,7 @@ based on this hierarchical view.</p>
     <h2>
       Let's model everything as child elements !
     </h2>
-<pre><code>&lt;Art title="Modern art"/&gt;
+<pre class="scroll"><code>&lt;Art title="Modern art"/&gt;
 &lt;Work&gt;
 &lt;Title&gt;Guernica&lt;/Title&gt;
 &lt;CreationDate&gt;&lt;Year&gt;1937&lt;/Year&gt;&lt;/CreationDate&gt;
@@ -700,19 +709,36 @@ based on this hierarchical view.</p>
     <li>Example for our catalog:
     <ul>
     <li>
-       <code>&lt;xsd:element name="Work"/&gt;</code><br>
-       <code>&lt;xsd:complexType&gt;</code><br>
-       <code>&lt;xsd:sequence&gt;</code><br>
-       <code>&lt;xsd:element name="CreatorRef" maxOccurs="unbounded"/&gt;</code><br>
+      <pre class="scroll">
+       <code>&lt;xsd:element name="Work"/&gt;</code>
+       <code>&lt;xsd:complexType&gt;</code>
+       <code>&lt;xsd:sequence&gt;</code>
+       <code>&lt;xsd:element name="CreatorRef" maxOccurs="unbounded"/&gt;</code>
        <code>&lt;xsd:attribute name="title" type="xsd:string"/&gt;</code>
-       <code>&lt;attribute name="year" type="xsd:gYear"/&gt;</code><br>
-       <code>&lt;attribute name="collectionId" type="xsd:IDREF"/&gt;</code><br>
-       <code>&lt;/xsd:complexType&gt;</code><br>
-       <code>&lt;/xsd:element&gt;</code><br>
+       <code>&lt;attribute name="year" type="xsd:gYear"/&gt;</code>
+       <code>&lt;attribute name="collectionId" type="xsd:IDREF"/&gt;</code>
+       <code>&lt;/xsd:complexType&gt;</code>
+       <code>&lt;/xsd:element&gt;</code>
+     </pre>
      </li>
      </ul>
      </li>
      </ul>
+  </div>
+
+  <div class="slide" id="example">
+<h2>Try on your own ! </h2>
+<ul>
+  <li>Download this <a href="data/works.xml">XML file</a> and open it with
+  a text editor (e.g. Notepad)</li>
+  <li>The XML document starts off by defining a scheme</li>
+  <li>Try adding an extra child element to <code>&lt;book&gt;</code>,
+    such as for example <code>&lt;publication_year&gt;</code></li>
+  <li>First adapt the scheme, and then add for the two examples the file already contains
+    the new metadata element <code>&lt;publication_year&gt;</code></li>
+  <li>Check whether your file is correct by using an <a href="http://www.xmlvalidation.com/">
+    XML validor</a></li>
+</ul>
   </div>
 
 <div class="slide" id="namespaces">
