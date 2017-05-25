@@ -60,10 +60,10 @@
   <div class="slide" id="ld-principles">
     <h2>Linked Data and Controlled Vocabularies</h2>
   	<ul>
-      <li>Let us come back to the 3rd and 4th LD principle :
+      <li>Let us come back to the 3rd and 4th Linked Data principle :
   	<ul>
-  	<li>when someone looks up an URI, to provide useful information using standards</li>
-  	<li>to include links to other URIs so that more information can be discovered</li>
+  	<li>When someone looks up an URI, to provide useful information using standards</li>
+  	<li>Include links to other URIs so that more information can be discovered</li>
   	</ul>
   </li>
   	<li>Controlled vocabularies can play a pivotal role to address these two principles !</li>
@@ -79,11 +79,13 @@
         </figcaption>
       </figure>
       <footer>
-        <p><a href="http://id.loc.gov/authorities/subjects/sh85034652.html">
+        <p>The Library of Congress Subject Headings (LCSH) are without a doubt
+          one of the biggest controlled vocabularies world wide. The LoC has published
+          them as Linked Data. Why is this relevant to you ? For example, <a href="http://id.loc.gov/authorities/subjects/sh85034652.html">
           http://id.loc.gov/authorities/subjects/sh85034652.html</a> allows us to
           look up more generic and specific terms related to cubism, but also includes
           pointers to other vocabularies in other languages, illustrated by the link at the
-          bottom of the page, which refers to the French subject heading RAMEAU.</p>
+          bottom of the page, refering for example to the French subject heading RAMEAU.</p>
       </footer>
     </div>
 
@@ -100,9 +102,8 @@
           crown jewels. However, the outside world does not share our enthusiasm.
           Often one gets rolling eyes when
           the development and use of a controlled vocabulary is proposed.
-          To managers or funding agencies who think in terms of a return on investment
-          over the course of one to three years,
-          subsidizing the development of a controlled vocabulary often
+          To managers or funding agencies who insist of short-term returns on investment,
+          the development of a controlled vocabulary often
           is tantamount for throwing money into a black hole. This module will demonstrate
           how Linked Data can make controlled vocabularies more relevant than ever.
         </footer>
@@ -118,10 +119,10 @@
     </ul></li>
   	<li>Improving precision and recall
 	  <ul>
-	  <li>By providing synonymy control, controlled vocabularies improve recall,
+	  <li>By providing synonymy control, controlled vocabularies improve <em>recall</em>,
       which is the proportion of the documents relevant to the search that
-      were successfully retrieved. Greater precision, which is the proportion of retrieved documents
-      relevant to the search, can be achieved through the control of polysemy</li>
+      were successfully retrieved. Greater <em>precision</em>, the proportion of retrieved documents
+      relevant to the search, is achieved through the control of polysemy</li>
     </ul></li>
     </ul>
   </div>
@@ -129,7 +130,8 @@
  <div class="slide" id="ld-vocabs">
     <h2>Come in different flavours</h2>
   	<ul>
-  	<li>Within the LIS community we can distinguish three different types :
+  	<li>Within the LIS community we can distinguish between three different types
+      of controlled vocabularies :
   	<ul>
   	<li>Classification schemes : for example the <a href="https://www.oclc.org/en/dewey.html">
       Dewey Decimal Classification</a></li>
@@ -154,7 +156,7 @@
         <p>Classification schemes were the first controlled vocabularies to be
         developed within the newly established field of library and documentation sciences
         at the end of the nineteenth century.
-        The gradual evolution at that time from a closed to an open access policy in libraries
+        The gradual evolution at that time from a closed to an open rack policy in libraries
         implied that users were increasingly allowed to browse through the book shelves themselves,
         instead of having a librarian delivering the books upon request.
         Libraries therefore needed a method to physically organize their books by subject,
@@ -215,10 +217,9 @@
 
     <div class="slide" id="lcsh-video">
      <iframe class="cover width height" src="https://www.youtube.com/embed/gCgA5ZHUkN4"></iframe>
-     <footer>The LIS community has a love-hate relationship with the LCSH,
-       which is actuallly the biggest controlled vocabulary in English. It is
+     <footer>The LIS community has a love-hate relationship with the LCSH. It is
      incredibly rich, but also contains a lot of inconsistencies and the rules to
-   formalize headings can become really complex. Jeffrey Pomerantz gives a good introduction
+   formalize headings can become extremely complex. Jeffrey Pomerantz gives a good introduction
  in this video to the topic.</footer>
    </div>
 
@@ -240,13 +241,15 @@
 
       <div class="slide" id="thesauri">
         <h2>Thesauri</h2>
-        <p>Represents all the concepts available for indexing for a domain and labels
-        each of them with a preferred term, as well as synonyms. Relationships between
-      concepts and between terms are indicated</p>
+        <p>Represents all the concepts for a specific domain in a consistant manner
+          and labels each concept with a preferred term, as well as synonyms.
+        Hierarchical relationships between concepts are expressed.</p>
         <p>The only type of controlled vocabulary for which
-        a formal standard (ISO 25964-1) exists, allowing to enforce compliance</p>
-        <p>Examples: <a href="http://www.getty.edu/research/tools/vocabularies/aat/">AAT</a>,
-           <a href="https://eric.ed.gov/">ERIC</a></p>
+        a formal standard (<a href="https://en.wikipedia.org/wiki/ISO_25964">
+          ISO 25964</a>) exists, allowing to enforce compliance</p>
+        <p>Examples: <a href="http://www.getty.edu/research/tools/vocabularies/aat/">
+          Arts and Architecture Thesaurus (AAT)</a>,
+           <a href="https://eric.ed.gov/">Education Resources Information Center thesaurus (ERIC)</a></p>
        </div>
 
        <div class="slide" id="horse">
@@ -258,7 +261,7 @@
              </figcaption>
            </figure>
            <footer>
-             A well-designed thesaurus, respecting the ISO norm, can really be considered as a working horse from an information
+             Thesauri can be considered as the working horses from an information
              architecture and metadata point of view.
              Well mastered, they can become a very powerful and reliable tool for
              efficient information retrieval.
@@ -282,37 +285,31 @@
           </ul>
          </div>
 
-         <div class="slide" id="voc-comp">
-             <figure class="cover width">
-                 <img src="images/comp_vocab.jpg"
-                      alt="[Comparison DDC, LCSH and AAT]">
-               <figcaption>
-                 ©2014 <a href="http://book.freeyourmetadata.org">Seth van Hooland and Ruben Verborgh</a>
-               </figcaption>
-             </figure>
-             <footer>
-               <p>On first sight, the mapping across the three vocabularies seems straightforward.
-               If one has a closer look, it can be noted that the DDC and LCSH consider Cubism as
-               an art form from 20th century, independently from a geographical area.
-               However, the AAT puts Cubism in a specific European context.
-               More importantly, the LCSH brings "Purism (Art)" as a narrower term under "Cubism".
-               In the AAT, this term sits independently from Cubism under "Modern French fine arts".
-               These are subtle but important differences in between the three vocabularies.</p>
-             </footer>
-           </div>
+           <div class="slide" id="disadvantages">
+             <h2>Drawbacks of Controlled Vocabularies</h2>
+             <p>Despite their obvious advantages, controlled vocabularies also represent
+             a number of problems :</p>
+             <ul>
+               <li>Money : terribly expensive to develop and maintain</li>
+               <li>Complexity : end-users have trouble using them</li>
+               <li>Evolve slowly : updating takes time</li>
+              <li>Subjectivity : express always a certain worldview</li>
+             </uL>
+            </div>
 
          <div class="slide" id="little-semantics">
-           <h2>A little Semantics go a long way</h2>
-           <p>Difficulties to implement the full-blown Semantic Web stirred new
+           <h2>However, a Little Semantics go a Long Way</h2>
+           <p>Difficulties to implement the full-blown Semantic Web and the move
+             to the more pragmatic Linked Data approach stirred new
            interest in controlled vocabularies</p>
            <p>Inferencing capabilities are limited but awareness grew to re-use
-           existing vocabularies</p>
-           <p>This evolution spurred interest in the development of SKOS ...</p>
+           existing vocabularies to establish connections between data</p>
+           <p>This evolution spurred interest in the development of SKOS</p>
           </div>
 
           <div class="slide" id="skos">
           <h2>Simple Knowledge Organization System (SKOS)</h2>
-          <p>Data model to represent controlled vocabularies on the Web</p>
+          <p>Data format to represent controlled vocabularies on the Web</p>
           <p>Confusing relation with ontologies - what is the difference for
             example between <code>skos:narrower</code> and <code>rdfs:subClassOf</code> ?</p>
           <p>Controlled vocabularies are hierarchically and associatively structured
@@ -368,7 +365,8 @@
             </code></pre>
             <footer>
               Let us look at a concrete example. Point your browser to
-              http://id.loc.gov/authorities/subjects/sh85034652.html
+              <a href="http://id.loc.gov/authorities/subjects/sh85034652.html">
+              http://id.loc.gov/authorities/subjects/sh85034652.html</a>
               and see how the authority file for "Cubism" is structured
               and displayed for human consumption on the HTML page.
               Please scroll all the way down to the bottom of the page,
@@ -437,7 +435,10 @@
         skos:prefLabel "Modern art"@en;
         skos:inScheme art:ModernArtPeriodsThesaurus.
     </code></pre>
-    <p>Adding multilingual labels :</p>
+  </div>
+
+  <div class="slide" id="multi-ling">
+    <h2>Adding multilingual labels and alternative names</h2>
     <pre><code>
       art:ModernArt a skos:Concept;
         skos:prefLabel "Modern art"@en;
@@ -445,7 +446,6 @@
         skos:prefLabel "Moderne Kunst"@de;
         skos:inScheme art:ModernArtPeriodsThesaurus.
     </code></pre>
-    <p>Encoding alternative names</p>
     <pre><code>
     art:ModernArt skos:altLabel "Modern art (1860-1945)"@en.
   </code></pre>
@@ -467,15 +467,36 @@
 </div>
 
 <div class="slide" id="validation">
-<h2>Validation</h2>
-<p>Continue to develop your mini-thesaurus or download the one
-developed on http://book.freeyourmetadata.org/chapters/3/modern-art-skos.ttl</p>
+<h2>Play on your own !</h2>
+<p>Download our <a href="http://book.freeyourmetadata.org/chapters/3/modern-art-skos.ttl">
+  mini-thesaurus</a> in SKOS/Turtle and add some extra concepts ! Keep the file,
+you'll need it later on! </p>
 <p>Validation and visualization tools :
 <ul>
   <li><a href="http://www.rdfabout.com/demo/validator">http://www.rdfabout.com/demo/validator</a></li>
   <li><a href="http://labs.sparna.fr/skos-play/">http://labs.sparna.fr/skos-play/</a></li>
 </ul>
 </div>
+
+<div class="slide" id="black-hole">
+    <figure class="cover width">
+        <img src="images/connections.jpg"
+             alt="[Connections]">
+      <figcaption>
+        ©2012 <a href="https://www.flickr.com/photos/deargdoom57/8145864985/">deargdoom57</a>
+      </figcaption>
+    </figure>
+    <footer>
+      Within the LIS community, we think of controlled vocabularies as our
+      crown jewels. However, the outside world does not share our enthusiasm.
+      Often one gets rolling eyes when
+      the development and use of a controlled vocabulary is proposed.
+      To managers or funding agencies who insist of short-term returns on investment,
+      the development of a controlled vocabulary often
+      is tantamount for throwing money into a black hole. This module will demonstrate
+      how Linked Data can make controlled vocabularies more relevant than ever.
+    </footer>
+  </div>
 
 	<div class="progress"></div>
 	<footer>

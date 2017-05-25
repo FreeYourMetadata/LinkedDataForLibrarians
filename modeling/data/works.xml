@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="book_catalog">
+<xs:complexType>
+    <xs:sequence>
+        <xs:element name="book" minOccurs="1" maxOccurs="unbounded">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="author" type="xs:string"/>
+                    <xs:element name="title" type="xs:string"/>
+                    <xs:element name="abstract" type="xs:string"/>
+                    <xs:element name="keyword">
+  					<xs:simpleType>
+    				<xs:restriction base="xs:string">
+      					<xs:enumeration value="non-fiction"/>
+      					<xs:enumeration value="fiction"/>
+      					<xs:enumeration value="press"/>
+    				</xs:restriction>
+  					</xs:simpleType>
+					</xs:element>
+                </xs:sequence>
+                <xs:attribute name="nr_id" type="xs:ID" use="required"/>
+            </xs:complexType>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+<book_catalog>
+    <book nr_id="_001">
+        <author>John Smith</author>
+        <title>First Look at RockMelt, a Browser Built For Facebook Freaks</title>
+        <abstract>The rumor mill has been buzzing for months about the imminent arrival of a new “Facebook browser” called RockMelt. Well, it really does exist, and it’s here. RockMelt is being released as a limited public beta Sunday. Anyone can sign up to test it out, but the release will be throttled so as not to overload the cloud-based components of the app. RockMelt will be doling out download links as quickly as it can manage on a first-come, first-served basis. The two founders, CEO Eric Vishria and CTO Tim Howes, demonstrated RockMelt to Wired a few days before Sunday’s launch.
+        It’s based on Chromium, so it inherits Google Chrome’s speed, looks, and basic functionality on both Mac and Windows.</abstract>
+    </book>
+
+    <book nr_id="_002">
+        <author>Jean Dupont</author>
+        <title>Report: Banking Apps for Android, iPhone Expose Sensitive Info</title>
+        <abstract>A number of wireless banking applications for iPhone and Android phone users contain privacy and security flaws that cause the phones to store sensitive information in cleartext that could be gleaned by hackers, according to a report.
+        The applications distributed by such top banks and financial institutions as Wells Fargo and Bank of America placed various types of information at varying degrees of risk. But at least one Android application, distributed by Wells Fargo, stored an account holder’s user name and password on the phone in cleartext. The application also stored account balances on the phone, according to a security researcher who spoke with the Wall Street Journal.</abstract>
+    </book>
+</book_catalog>
