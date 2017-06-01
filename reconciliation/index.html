@@ -487,15 +487,105 @@ you'll need it later on! </p>
       </figcaption>
     </figure>
     <footer>
-      Within the LIS community, we think of controlled vocabularies as our
-      crown jewels. However, the outside world does not share our enthusiasm.
-      Often one gets rolling eyes when
-      the development and use of a controlled vocabulary is proposed.
-      To managers or funding agencies who insist of short-term returns on investment,
-      the development of a controlled vocabulary often
-      is tantamount for throwing money into a black hole. This module will demonstrate
-      how Linked Data can make controlled vocabularies more relevant than ever.
+      Let us now create connections ! In the previous slides, we explained how to
+      create a controlled vocabulary by using SKOS. Now we'll see how we can use
+      such a file as a <em>reconciliation source</em> in order to create automated
+      connections between free-text keywords and the thesaurus. Obviously, our
+      mini-thesaurus we developed isn't exactly the most interesting controlled
+      vocabulary to work with. That's why we'll demonstrate in a second step how
+      to add LCSH as a reconciliation source in OpenRefine.
     </footer>
+  </div>
+
+  <div class="slide" id="rdf-extension">
+    <h2>Install the RDF extension</h2>
+    <ul>
+      <li><a href="http://refine.deri.ie/">Download</a> the extension and place it in the
+        extensions folder (accessible by clicking on "Browse workspace directory" from
+        the home page of OpenRefine)</li>
+      <li>A new RDF button appears after the installation</li>
+      <li>Detailed instructions can be found on <a href="http://refine.deri.ie/installlationDocs">
+       http://refine.deri.ie/installlationDocs</li>
+    </ul>
+  </div>
+
+  <div class="slide" id="dataset">
+    <h2>Creating a project with a dataset</h2>
+    <ul>
+      <li>You can either create your own metadata, or download our
+        <a href="http://book.freeyourmetadata.org/chapters/3/modern-art-collection.csv">test
+      file</a> on modern art</li>
+      <li>After importing the file, OpenRefine's preview will show headers such
+      as <em>Title</em>, <em>Artist</em>, <em>Year</em> etc</li>
+      <li>As you'll see some corrupted accents, don't forget to set the
+        encoding to UTF-8 by clicking on the <em>Encoding</em> field in Preview mode
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="m-a">
+      <figure class="cover width">
+          <img src="images/modern-art.jpg"
+               alt="[OpenRefine interface]">
+        <figcaption>
+          ©2017 OpenRefine
+        </figcaption>
+      </figure>
+      <footer>
+        This screenshots showcases the test metadata we have uploaded in order
+        to experiment with the mini-thesaurus on modern art we have downloaded
+        previously. We'll therefore focus on the field <em>Genre</em>. Notice how
+        this is very much an <em>artificial</em> excercice, in the sense that we
+        have both created the test metadata and test thesaurus, but we hope you
+        understand the pedagogical value of this step !
+      </footer>
+    </div>
+
+  <div class="slide" id="adding-thesaurus">
+    <figure class="cover width">
+        <img src="images/adding-thesaurus.jpg"
+             alt="[OpenRefine interface]">
+      <figcaption>
+        ©2017 OpenRefine
+      </figcaption>
+    </figure>
+    <footer>This screenshot demonstrates shows the pop-up allowing to identify a
+      local reconciliation file in RDF, for which we'll point out to our mini-thesaurus
+      available at
+      http://book.freeyourmetadata.org/chapters/3/modern-art-skos.ttl.
+      It is of utmost importance to tick the <code>!skos:prefLabel!</code> checkbox,
+      as we have modeled the thesaurus using SKOS.
+      The <em>Label properties</em> are used to tell OpenRefine
+      for which values it should look inside the thesaurus.
+      Since we did not use <code>!rdfs:label!</code>,
+      the reconciliation process would not work with it.
+      Once those settings are made, click the OK button.
+      The thesaurus can now be used for reconciliation.
+    </footer>
+  </div>
+
+      <div class="slide" id="ph">
+          <figure class="cover width">
+              <img src="images/powerhouse.jpg"
+                   alt="[Powerhouse Museum]">
+            <figcaption>
+              ©2017 <a href="https://maas.museum/powerhouse-museum/">Powerhouse Museum</a>
+            </figcaption>
+          </figure>
+          <footer>
+            For the reconciliation of keywords with the LCSH, we'll experiment
+            with the metadata from the Powerhouse Museum. They have published their
+            metadata online, which allows
+          </footer>
+        </div>
+
+  <div class="slide" id="powerhouse-config">
+    <h2>Reconciling the Powerhouse museum with the LCSH</h2>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </div>
 
 	<div class="progress"></div>
