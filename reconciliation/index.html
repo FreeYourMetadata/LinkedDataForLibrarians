@@ -499,28 +499,24 @@ you'll need it later on! </p>
 
   <div class="slide" id="rdf-extension">
     <h2>Install the RDF extension</h2>
-    <ul>
-      <li><a href="http://refine.deri.ie/">Download</a> the extension and place it in the
+      <p><a href="http://refine.deri.ie/">Download</a> the extension and place it in the
         extensions folder (accessible by clicking on "Browse workspace directory" from
-        the home page of OpenRefine)</li>
-      <li>A new RDF button appears after the installation</li>
-      <li>Detailed instructions can be found on <a href="http://refine.deri.ie/installlationDocs">
-       http://refine.deri.ie/installlationDocs</li>
-    </ul>
+        the home page of OpenRefine)</p>
+      <p>A new RDF button appears after the installation</p>
+      <p>Detailed instructions can be found on <a href="http://refine.deri.ie/installlationDocs">
+       http://refine.deri.ie/installlationDocs</p>
   </div>
 
   <div class="slide" id="dataset">
     <h2>Creating a project with a dataset</h2>
-    <ul>
-      <li>You can either create your own metadata, or download our
+      <p>You can either create your own metadata, or download our
         <a href="http://book.freeyourmetadata.org/chapters/3/modern-art-collection.csv">test
-      file</a> on modern art</li>
-      <li>After importing the file, OpenRefine's preview will show headers such
-      as <em>Title</em>, <em>Artist</em>, <em>Year</em> etc</li>
-      <li>As you'll see some corrupted accents, don't forget to set the
+      file</a> on modern art</p>
+      <p>After importing the file, OpenRefine's preview will show headers such
+      as <em>Title</em>, <em>Artist</em>, <em>Year</em> etc</p>
+      <p>As you'll see some corrupted accents, don't forget to set the
         encoding to UTF-8 by clicking on the <em>Encoding</em> field in Preview mode
-      </li>
-    </ul>
+      </p>
   </div>
 
   <div class="slide" id="m-a">
@@ -564,29 +560,196 @@ you'll need it later on! </p>
     </footer>
   </div>
 
-      <div class="slide" id="ph">
-          <figure class="cover width">
-              <img src="images/powerhouse.jpg"
-                   alt="[Powerhouse Museum]">
-            <figcaption>
-              ©2017 <a href="https://maas.museum/powerhouse-museum/">Powerhouse Museum</a>
-            </figcaption>
-          </figure>
-          <footer>
-            For the reconciliation of keywords with the LCSH, we'll experiment
-            with the metadata from the Powerhouse Museum. They have published their
-            metadata online, which allows
-          </footer>
+        <div class="slide" id="import">
+          <h2>Reconciling the Powerhouse Museum metadata with the LCSH</h2>
+          <p>After we played with our own mini-thesaurus and some dummy data,
+              let's work on a real-life case !</p>
+            <p>We have used the metadata set of the museum extensively for various
+            cleaning and linking operations</p>
+            <p>For this exercice, make sure to download either the
+              <a href="http://data.freeyourmetadata.org/powerhouse-museum/phm-collection-cleaned.google-refine.tar.gz">
+                cleaned OpenRefine project</a> or create a new project
+              using the <a href="http://data.freeyourmetadata.org/powerhouse-museum/phm-collection-cleaned.tsv">
+                cleaned metadata</a></p>
         </div>
 
+        <div class="slide" id="ph">
+            <figure class="cover width">
+                <img src="images/powerhouse.jpg"
+                     alt="[Powerhouse Museum]">
+              <figcaption>
+                ©2017 <a href="https://maas.museum/powerhouse-museum/">Powerhouse Museum</a>
+              </figcaption>
+            </figure>
+            <footer>
+              For the reconciliation of keywords with the LCSH, we'll experiment
+              with the metadata from the Powerhouse Museum, a big science and technology
+              museum in Sydney
+            </footer>
+          </div>
+
+        <div class="slide" id="preprocess">
+          <h2>Issues with LCSH we first need to solve</h2>
+          <p>OpenRefine can not make a choice if there's a match with different headings.
+            If one concept uses a label as its preferred term, and another uses
+            the same label to designate a non-preferred term, OpenRefine can not choose</p>
+            <p>For example, skating is an alternative label of the term with preferred label
+            Ice skating (sj96005713), but a seperate term with the preferred label Skating
+          (sj85123105) also exists !</p>
+        </div>
+
+        <div class="slide" id="lcsh2">
+            <figure class="cover width">
+                <img src="images/lcsh2.jpg"
+                     alt="[Powerhouse Museum]">
+              <figcaption>
+                ©2017 <a href="https://maas.museum/powerhouse-museum/">Powerhouse Museum</a>
+              </figcaption>
+            </figure>
+            <footer>
+              Subdivision also negatively impact the reconciliation process.
+              This example demonstrates how the keyword "Specimen" from the Powerhouse
+              Museum can not be reconciled with
+              the LCSH, because OpenRefine can not choose between the two labels which appear
+              actually both in the LCSH : once as a concept and once as a subdivision, which
+              help to create more complex headings
+            </footer>
+          </div>
+
+        <div class="slide" id="preprocess2">
+          <h2>Preprocessing of the LCSH</h2>
+          <p>Some changes were made in our version of the LCSH :</p>
+            <ul><li>Subdivisions are only present if they do not conflict with
+            an existing main heading with the same label</li>
+            <li>Alternate labels were only added to the extent that they do not
+            cause clashes with other labels</li></ul>
+        </div>
+
+
+
   <div class="slide" id="powerhouse-config">
-    <h2>Reconciling the Powerhouse museum with the LCSH</h2>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    <h2>Configuring the LCSH as a reconciliation source</h2>
+    <p>To add the new endpoint, click the RDF button,
+    select Add reconciliation service, Based on SPARQL endpoint.
+    Its parameters are :</p>
+    <pre class="scroll">
+    <dl>
+      <dt>Name</dt> <dd>LCSH (preprocessed)</dd>
+      <dt>Endpoint URL</dt> <dd>http://sparql.freeyourmetadata.org/</dd>
+      <dt>Graph URI</dt> <dd>http://sparql.freeyourmetadata.org/authorities-processed/</dd>
+      <dt>Type</dt> <dd>Virtuoso</dd>
+      <dt>Label properties</dt> <dd>check only <code>skos:prefLabel</code></dd>
+    </dl>
+  </pre>
   </div>
+
+  <div class="slide" id="powerhouse-config">
+    <h2>Now let's reconcile !</h2>
+  <p>Start the reconciliation process for the Categories column with
+  this new endpoint (Reconcile, Start reconciling, LCSH [preprocessed],
+  Start Reconciling)</p>
+  <p>IMPORTANT ! Experiment first with a very little subset of the records,
+    as in below 100. The process takes a lot of time and if you launch it on
+    the entire data set, it will take at least a day on your laptop.
+    Create for example a filter on Record ID with "123" so that you have
+  results after a couple of seconds</p>
+  </div>
+
+  <div class="slide" id="ph">
+      <figure class="cover width">
+          <img src="images/jasist.jpg"
+               alt="[JASIST]">
+        <figcaption>
+          ©2013 <a href="http://onlinelibrary.wiley.com/doi/10.1002/asi.22763/abstract;jsessionid=21540F2CA3CED222C3FC542673D1A4F6.f03t01">
+            Journal for the American Society of Information Science and Technology (JASIST)</a>
+        </figcaption>
+      </figure>
+      <footer>
+        Those who wish to go deeper into the details of the pre-processing and
+        the evaluation of the reconciliation results, you can read a
+        <a href="http://freeyourmetadata.org/publications/freeyourmetadata.pdf">pre-print</a>
+        of our JASIST paper.
+      </footer>
+    </div>
+
+
+         <div class="slide" id="eval1">
+       <h2>Self-assessment 1</h2>
+       <ul>
+         <li>What key aspect distinguishes thesauri from other forms of
+           controlled vocabularies ?
+           <ul>
+             <li>A formal standard exists to verify their well-formedness</li>
+             <!-- Yes, the ISO 25964 standard defines exactly how a thesaurus
+           should be constructed  -->
+             <li>A thesaurus provides description at a more granular level</li>
+             <!-- No, this does not depend on the type of vocabulary  -->
+             <li>Thesauri can be represented in SKOS</li>
+             <!-- Thesauri can indeed be represented in SKOS, but so can
+           other types of vocabularies, as illustrated by the LCSH -->
+           </ul>
+         </li>
+       </ul>
+         </div>
+
+         <div class="slide" id="eval2">
+       <h2>Self-assessment 2</h2>
+       <ul>
+         <li>What is the advantage of adding non-preferred terms to a vocabulary ?
+           <ul>
+             <li>You can increase the success rate of the reconciliation process</li>
+             <!-- Yes ! That is, if you have configured the process to include the non-
+           preferred terms -->
+             <li>It reduces the negative effect of synonymy on search results</li>
+             <!-- Yes ! Even if an end-user performs a search on a synonym encoded as a non-preferred
+             term in regards to the preferred term used for indexing, the results are the same -->
+             <li>It reduces the negative effect of polysymy on search results</li>
+             <!-- No ! Adding too many and potentially even irrelevant non-preferred
+           terms will increase the negative impact of polysemy  -->
+           </ul>
+         </li>
+       </ul>
+         </div>
+
+         <div class="slide" id="eval3">
+       <h2>Self-assessment 3</h2>
+       <ul>
+         <li>Why is it important to distinguish information and non-information
+           resources on the Web ?
+           <ul>
+             <li>They have different metadata !</li>
+             <!-- Yes ! For example, a Web page about a person (=information resource)
+             has a different creation date than the date of creation of the actual
+             individual (=non-information resource), which would be his or her date of birth
+            -->
+             <li>It is actually not so important </li>
+             <!-- Yes it is really important ! If not it becomes really difficult to refer
+           to actual objects, people, idea's etc on the Web -->
+             <li>It has an important impact on the design of URLs</li>
+             <!-- Yes, the URL has to allow to differentiate between the actual thing
+           and documentation about the thing -->
+           </ul>
+         </li>
+       </ul>
+         </div>
+
+         <div class="slide" id="eval4">
+       <h2>Self-assessment 4</h2>
+       <ul>
+         <li>When is Topic Modeling particulary relevant for librarians ?
+           <ul>
+             <li>To extract key terms from metadata fields such as "description"</li>
+             <!-- No, TM requires a substantial volume of text and does not work
+           for a couple of paragraphs-->
+             <li>When you want to give end-users an overview of recurring theme's
+             in a collection of scanned literature for example</li>
+             <!-- Yes, this would potentially be a good application for TM -->
+             <li>When you want to identify all place names from a corpus</li>
+             <!-- No ! NER is the application you need for this type of task -->
+           </ul>
+         </li>
+       </ul>
+         </div>
 
 	<div class="progress"></div>
 	<footer>
