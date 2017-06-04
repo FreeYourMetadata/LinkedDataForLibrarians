@@ -318,7 +318,7 @@
 
           <div class="slide" id="concepts">
           <h2>SKOS properties</h2>
-          <ul><li>Concepts are expressed through concrete terms
+          <ul><li>Concepts are expressed through concrete terms (=labels)
             and may have three properties:
             <ol>
               <li>Labeling properties : <code>skos:prefLabel</code>, <code>skos:altLabel</code></li>
@@ -714,20 +714,18 @@ you'll need it later on! </p>
          <div class="slide" id="eval3">
        <h2>Self-assessment 3</h2>
        <ul>
-         <li>Why is it important to distinguish information and non-information
-           resources on the Web ?
+         <li>How do labels and concepts relate to each other in a SKOS vocabulary ?
            <ul>
-             <li>They have different metadata !</li>
-             <!-- Yes ! For example, a Web page about a person (=information resource)
-             has a different creation date than the date of creation of the actual
-             individual (=non-information resource), which would be his or her date of birth
+             <li>Labels allow to define the structure whereas concepts can express
+             the specific terms used</li>
+             <!-- No ! Completely wrong.
             -->
-             <li>It is actually not so important </li>
-             <!-- Yes it is really important ! If not it becomes really difficult to refer
-           to actual objects, people, idea's etc on the Web -->
-             <li>It has an important impact on the design of URLs</li>
-             <!-- Yes, the URL has to allow to differentiate between the actual thing
-           and documentation about the thing -->
+             <li>Concepts are abstract units of thought and labels are strings of characters
+             that are associated with a concept.</li>
+             <!-- Yes !-->
+             <li>Labels are used to express semantic relations between concepts</li>
+             <!-- No, semantic relations are expressed by using properties such
+           as broader or narrower -->
            </ul>
          </li>
        </ul>
