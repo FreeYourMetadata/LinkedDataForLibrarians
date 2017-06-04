@@ -672,6 +672,42 @@ you'll need it later on! </p>
       </footer>
     </div>
 
+    <div class="slide" id="uni-dir">
+      <h2>Impact of reconciliation</h2>
+    <p>Creating a link between your catalog record and an entry of the LCSH
+    unfortunately does not allow you to be connected automatically with all
+  other records which link to that heading !</p>
+    <p>Always keep in mind that URLs are <em>uni-directional</em> : you point to the LCSH,
+    but the LoC is <em>agnostic</em> of the fact that you point to them</p>
+    </div>
+
+    <div class="slide" id="uni-dir-2">
+     <blockquote class="long">
+      <p>I wanted the act of adding a link to be trivial. So long
+      as I didn't introduce some central link database, everything
+    would scale nicely.</p>
+      <cite><a href="https://www.w3.org/People/Berners-Lee/Weaving/Overview.html">
+        Tim Berners-Lee</a>, Weaving the Web, 1999</cite>
+     </blockquote>
+     <p>The uni-directionality of links was an explicit design choice. Asking the
+       the linked entity to confirm the link would create too much of a bottleneck
+       for the Web to grow. Imagine someone at LoC who's job it is to check each link created to the
+       LCSH ... However, alternatives
+     exist, such as <a href="https://en.wikipedia.org/wiki/Project_Xanadu">
+       Xanadu</a> by <a href="https://en.wikipedia.org/wiki/Ted_Nelson">Ted Nelson</a>.</p>
+    </div>
+
+    <div class="slide" id="intro">
+      <iframe class="cover width height" src="https://www.youtube.com/embed/yMjPqr1s-cg"></iframe>
+      <footer>This video introduces you to two people who played a central role in the
+        history of information technology in the 20st century. During this speech, Ted Nelson
+        honours his deceased friend <a href="https://en.wikipedia.org/wiki/Douglas_Engelbart">
+          Douglas Engelbart</a>. Pay attention to what Nelson says around 0:57: "I continue Doug's
+        work by keeping the links outside the document." One of the base principles of Nelson's
+        Xanadu project was that "Links are visible and can be followed from all endpoints."
+        This design choice theoretically allows to add a lot more semantics and value with
+      links, but this complexity also explains why the project has never been implemented successfully.</footer>
+    </div>
 
          <div class="slide" id="eval1">
        <h2>Self-assessment 1</h2>
@@ -734,16 +770,18 @@ you'll need it later on! </p>
          <div class="slide" id="eval4">
        <h2>Self-assessment 4</h2>
        <ul>
-         <li>When is Topic Modeling particulary relevant for librarians ?
+         <li>Why is it important to acknowledge uni-directionality when creating URLs ?
            <ul>
-             <li>To extract key terms from metadata fields such as "description"</li>
-             <!-- No, TM requires a substantial volume of text and does not work
-           for a couple of paragraphs-->
-             <li>When you want to give end-users an overview of recurring theme's
-             in a collection of scanned literature for example</li>
-             <!-- Yes, this would potentially be a good application for TM -->
-             <li>When you want to identify all place names from a corpus</li>
-             <!-- No ! NER is the application you need for this type of task -->
+             <li>In order to prevent the creation of dead links</li>
+             <!-- No, but understanding uni-directionality helps us to realize why
+           dead links are unavoidable. -->
+             <li>It explains why we don't need SPARQL </li>
+             <!-- No, it's the opposite ! SPARQL exactly allows us to traverse links
+           in both ways across a graph.  -->
+             <li>It helps to understand why it isn't that straightforward to connect
+             all records together which point out to a central authority file</li>
+             <!-- Exactly! It's not because you link to the LCSH, that the LCSH, or other
+           people refering to the same heading, are made aware of its existence.-->
            </ul>
          </li>
        </ul>
