@@ -178,6 +178,418 @@
     </ul>
   </div>
 
+  <div class="slide" id="linked-data-reuse">
+    <h2>
+      An immense amount of Linked Data<br>
+      is available on the Web for reuse.
+    </h2>
+    <ul>
+      <li>
+        On the <em>structural</em> level, <a href="http://lov.okfn.org/">hundreds of vocabularies</a><br>
+        can provide building blocks to model your data.
+        <ul>
+          <li>
+            They provide <a href="#rdf-property">properties</a>
+            and <a href="#rdfs-class">classes</a> to reuse.
+          </li>
+          <li>
+            Although not always counted as Linked Data<br>
+            because of their small size, most follow all 4 principles.
+          </li>
+        </ul>
+      </li>
+      <li>
+        On the <em>content</em> level, <a href="https://datahub.io/">thousands of datasets</a><br>
+        provide identifiers and data of <a href="#rdfs-resource">individuals</a>.
+        <ul>
+          <li>Strive to reuse identifiers rather than to mint new ones.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="open-world">
+    <h2>
+      No Linked Data set is ever complete.<br>
+      We make the <em>open-world</em> assumption.
+    </h2>
+    <ul>
+      <li>
+        Relational databases use highly rigid structures.<br>
+        They strive for complete data.
+        <ul>
+          <li>
+            A <code>NULL</code> value can signal missing data,<br>
+            but this is typically an undesired situation.
+          </li>
+        </ul>
+      </li>
+      <li>
+        With Linked Data, no source has all of the truth.<br>
+        Other sources <em>might</em> have more data on a subject.
+        <ul>
+          <li>The absence of a fact does <em>not</em> imply its falsehood.</li>
+          <li>A fact has 2 possible states: <em>true</em> and <em>unknown</em>.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="popular-vocabularies">
+    <h2>
+      Several vocabularies are used frequently<br>
+      across different datasets.
+    </h2>
+    <ul>
+      <li>
+        modeling vocabularies
+        <ul class="inline">
+          <li><a href="#rdfs-vocabulary">RDFS</a></li>
+          <li><a href="#owl-concepts">OWL</a></li>
+          <li><a href="https://www.w3.org/TR/skos-primer/">SKOS</a></li>
+        </ul>
+      </li>
+      <li>
+        general-purpose vocabularies
+        <ul class="inline">
+          <li><a href="#dublin-core">Dublin Core</a></li>
+          <li>…</li>
+        </ul>
+      </li>
+      <li>
+        concept-specific vocabularies
+        <ul class="inline">
+          <li><a href="#schema-org">Schema.org</a></li>
+          <li><a href="http://dbpedia.org/services-resources/ontology">DBpedia ontology</a></li>
+          <li>…</li>
+        </ul>
+      </li>
+    </ul>
+    <p><em>Find the one you need at <a href="http://lov.okfn.org/">Linked Open Vocabularies</a>.</em></p>
+  </div>
+
+  <div class="slide" id="dublin-core">
+    <h2>
+      The <a href="http://dublincore.org/documents/2012/06/14/dcmi-terms/">Dublin Core terms</a> are a set of<br>
+      15 common metadata properties.
+    </h2>
+    <ul>
+      <li>
+        Each property is generic,<br>
+        and hence applicable in many cases.
+        <ul>
+          <li><a href="http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements#elements-title"><code>title</code></a></li>
+          <li><a href="http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements#elements-description"><code>description</code></a></li>
+          <li><a href="http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements#elements-date"><code>date</code></a></li>
+          <li><a href="http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements#elements-creator"><code>creator</code></a></li>
+          <li>…</li>
+        </ul>
+      </li>
+      <li>
+        Many applications use the Dublin Core terms.
+        <ul>
+          <li>good interoperability of high-level semantics</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="schema-org">
+    <h2>
+      <a href="http://schema.org/">Schema.org</a> is a single vocabulary<br>
+      that covers many different fields.
+    </h2>
+    <ul>
+      <li>
+        Created and maintained by major search engines,<br>
+        it mainly provides discovery data for search.
+      </li>
+      <li>
+        Its concepts are defined rather loosely.
+        <ul>
+          <li>This makes it flexible to use for developers.</li>
+          <li>Machines cannot <a href="#semantic-web-reasoning">derive</a> much knowledge from it.</li>
+        </ul>
+      </li>
+      <li>
+        Schema.org is manually curated<br>
+        and <a href="https://github.com/schemaorg/schemaorg">open for extension</a>.
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="popular-datasets">
+    <h2>
+      Billions of Linked Data facts are<br>
+      on the Web with an open license.
+    </h2>
+    <ul>
+      <li>
+        The most well-known dataset is <a href="http://dbpedia.org/">DBpedia</a>.
+        <ul>
+          <li>Data is extracted automatically from <a href="https://wikipedia.org/">Wikipedia</a>.</li>
+          <li>Like Wikipedia, it exists in several different languages.</li>
+          <li>Its quality is acceptable for many queries.</li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://www.wikidata.org/">Wikidata</a> is a manually curated alternative.
+        <ul>
+          <li>It has its own data model on top of <a href="#rdf-model">RDF</a>.</li>
+          <li class="opinion">It grows fast and might overtake DBpedia.</li>
+        </ul>
+      </li>
+      <li>
+        You can find many other datasets on <a href="https://datahub.io/">Datahub</a>.
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="rdf-syntaxes">
+    <h2>
+      Several standard syntaxes for RDF exist.<br>
+      XML was historically first.
+    </h2>
+    <ul>
+      <li>
+        independent syntaxes
+        <dl>
+          <dt>triple-based</dt>
+          <dd>N-Triples</dd>
+          <dd>Turtle</dd>
+          <dd>N-Quads</dd>
+          <dd>TriG</dd>
+
+          <dt>JSON-based</dt>
+          <dd>JSON-LD</dd>
+
+          <dt>XML-based</dt>
+          <dd>RDF/XML</dd>
+        </dl>
+      </li>
+      <li>
+        embeddable syntaxes
+        <dl>
+          <dt>for HTML/XML</dt>
+          <dd>RDFa</dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="rdfs-vocabulary">
+    <h2>
+      <a href="https://www.w3.org/TR/rdf-schema/">RDF Schema</a> is an RDF vocabulary<br>
+      to model other RDF vocabularies.
+    </h2>
+    <ul>
+      <li>
+        RDFS defines classes, properties, and datatypes<br>
+        that are used to define vocabularies.
+        <ul>
+          <li>
+            The RDFS vocabulary has a <a href="https://www.w3.org/TR/rdf-schema/">human-readable specification</a>.
+          </li>
+          <li>
+            It also has a <a href="https://www.w3.org/1999/02/22-rdf-syntax-ns#">machine-readable</a> <a href="https://www.w3.org/2000/01/rdf-schema#">vocabularies</a>,<br>
+            which define RDFS in terms of RDFS.
+          </li>
+        </ul>
+      </li>
+      <li>
+        RDFS defines concepts in two namespaces.
+        <ul>
+          <li><code>rdf</code>: <a href="https://www.w3.org/1999/02/22-rdf-syntax-ns#"><em>https://www.w3.org/1999/02/22-rdf-syntax-ns#</em></a></li>
+          <li><code>rdfs</code>: <a href="https://www.w3.org/2000/01/rdf-schema#"><em>https://www.w3.org/2000/01/rdf-schema#</em></a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="vocabulary-ontology">
+    <h2>
+      Practitioners in the RDF world often<br>
+      refer to vocabularies as <em>ontologies</em>.
+    </h2>
+    <ul>
+      <li>
+        Strictly speaking, a vocabulary is a <a href="http://www.oxforddictionaries.com/us/definition/american_english/vocabulary">set of words</a>;<br>
+        an ontology a <a href="http://www.oxforddictionaries.com/us/definition/american_english/ontology">set of concepts and their relations</a>.
+      </li>
+      <li>
+        The W3C <a href="https://www.w3.org/standards/semanticweb/ontology">states</a> that
+        there is “no clear division”.
+        <dl>
+          <dt>vocabulary</dt>
+          <dd>usually in less formal contexts</dd>
+          <dt>ontology</dt>
+          <dd>usually in more complex and/or formal contexts</dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="owl-concepts">
+    <h2>
+      The <a href="https://www.w3.org/TR/owl2-overview/">Web Ontology Language (OWL)</a>
+      provides concepts for ontologies.
+    </h2>
+    <ul>
+      <li>
+        <a href="#rdfs-vocabulary">RDFS</a> captures basic ontological relations,<br>
+        but lacks several common and important concepts.
+        <ul>
+          <li>cardinality restrictions on properties</li>
+          <li>inverse, symmetric, and transitive properties</li>
+          <li>equality and disjointness</li>
+          <li>…</li>
+        </ul>
+      </li>
+      <li>
+        OWL extends RDFS with advanced concepts.
+        <ul>
+          <li>RDFS and OWL are used side by side.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="sparql-language-protocol">
+    <h2>
+      <a href="https://www.w3.org/TR/sparql11-overview/">SPARQL Protocol And Query Language</a>:
+      query and update RDF datasets.
+    </h2>
+    <ul>
+      <li>
+        <a href="#sparql-query-forms">SPARQL</a> is a query language.
+        <ul>
+          <li>Select specific data from an RDF dataset.</li>
+          <li>Insert, change, or delete data in an RDF dataset.</li>
+        </ul>
+      </li>
+      <li>
+        The <a href="#sparql-protocol">SPARQL protocol</a>
+        is a <a href="../web-apis/#definition">Web API</a> definition<br>
+        for querying in the SPARQL language over HTTP.
+        <ul>
+          <li>
+            A <em>SPARQL endpoint</em> executes SPARQL queries by clients<br>
+            through HTTP, and replies with their results.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="sparql-query-forms">
+    <h2>
+      The <a href="https://www.w3.org/TR/sparql11-overview/">SPARQL language</a> defines<br>
+      forms a query can take.
+    </h2>
+    <p>There are currently 4 read-only query forms:</p>
+    <dl>
+      <dt><a href="https://www.w3.org/TR/sparql11-query/#select"><code>SELECT</code></a></dt>
+      <dd>find values that satisfy conditions</dd>
+      <dt><a href="https://www.w3.org/TR/sparql11-query/#construct"><code>CONSTRUCT</code></a></dt>
+      <dd>create triples that satisfy conditions</dd>
+      <dt><a href="https://www.w3.org/TR/sparql11-query/#ask"><code>ASK</code></a></dt>
+      <dd>check whether data exists</dd>
+      <dt><a href="https://www.w3.org/TR/sparql11-query/#describe"><code>DESCRIBE</code></a></dt>
+      <dd>show information about a resource</dd>
+    </dl>
+  </div>
+
+  <div class="slide" id="bgp">
+    <h2>
+      The main unit of a SPARQL query<br>
+      is a <a href="https://www.w3.org/TR/sparql11-query/#BasicGraphPatterns">Basic Graph Pattern (BGP)</a>.
+    </h2>
+    <ul>
+      <li>
+        A BGP is a set of <em>triple patterns</em>.
+        <ul>
+          <li>Their syntax is a superset of <a href="#turtle">Turtle</a>.</li>
+        </ul>
+      </li>
+      <li>
+        A <a href="https://www.w3.org/TR/sparql11-query/#QSynTriples">triple pattern</a>
+        is a triple in which<br>
+        each of the components can be a <a href="https://www.w3.org/TR/sparql11-query/#QSynVariables">variable</a>.
+        <ul>
+          <li>Variables start with a question mark (<code>?name</code>).</li>
+        </ul>
+      </li>
+      <li>
+        A SPARQL query engine finds <a href="https://www.w3.org/TR/sparql11-query/#sparqlSolutions">solution mappings</a>.
+        <ul>
+          <li>
+            Variables and blank nodes are mapped to IRIs,<br>
+            blank nodes, or literals according to dataset triples.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slide" id="sparql-example-dbpedia">
+    <h2>
+      This query searches DBpedia
+      for artists influenced by Picasso.
+    </h2>
+    <pre><code><span class="comment">PREFIX dbr: &lt;http://dbpedia.org/resource/&gt;</span>
+<span class="comment">PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;</span>
+SELECT DISTINCT ?person ?personLabel WHERE {
+  ?person a dbo:Artist.
+  ?person foaf:name ?personLabel.
+  ?person dbo:influencedBy dbr:Pablo_Picasso.
+}</code></pre>
+    <p>
+      Here is the <a href="http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=PREFIX+dbr%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0D%0APREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0D%0ASELECT+DISTINCT+%3Fperson+%3FpersonLabel+WHERE+%7B%0D%0A++%3Fperson+a+dbo%3AArtist.%0D%0A++%3Fperson+foaf%3Aname+%3FpersonLabel.%0D%0A++%3Fperson+dbo%3AinfluencedBy+dbr%3APablo_Picasso.%0D%0A%7D&format=text%2Fhtml">live result</a> of that query.
+    </p>
+  </div>
+
+  <div class="slide" id="sparql-example-wikidata">
+    <h2>
+      This query searches Wikidata
+      for artists influenced by Picasso.
+    </h2>
+    <pre class="scroll"><code><span class="comment">PREFIX wd: &lt;http://www.wikidata.org/entity/&gt;</span>
+<span class="comment">PREFIX wdt: &lt;http://www.wikidata.org/prop/direct/&gt;</span>
+SELECT DISTINCT ?person ?personLabel WHERE {
+  ?person wdt:P106/wdt:P279* wd:Q483501.
+  ?person wdt:P737 wd:Q5593.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+}</code></pre>
+    <p>
+      Here is the <a href="https://query.wikidata.org/#SELECT%20DISTINCT%20%3Fperson%20%3FpersonLabel%20WHERE%0A%7B%0A%20%20%3Fperson%20wdt%3AP106%2Fwdt%3AP279%2a%20wd%3AQ483501.%0A%20%20%3Fperson%20wdt%3AP737%20wd%3AQ5593.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20%7D%0A%7D">live result</a> of that query.
+    </p>
+  </div>
+
+  <div class="slide" id="dbpedia-wikidata">
+    <h2>
+      Why are the results<br>
+      <em>and</em> the queries different?
+    </h2>
+    <ul>
+      <li>
+        DBpedia and Wikidata contain different data.
+        <ul>
+          <li>So far, so good. This was expected.</li>
+        </ul>
+      </li>
+      <li>
+        DBpedia and Wikidata use different ontologies.
+        <ul>
+          <li>Ideally, the same SPARQL queries would suffice.</li>
+          <li>…and they can, when ontologies link to each other.</li>
+        </ul>
+      </li>
+      <li>
+        In practice, some bridging is still needed.
+      </li>
+    </ul>
+  </div>
+
   <div class="slide" id="heterogeneity">
     <figure class="cover">
       <img src="images/cars.jpg" alt="[cars in rainbow colors]" />
