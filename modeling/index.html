@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Data models</title>
+  <title>Understanding data models</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -9,47 +9,48 @@
 </head>
 <body class="shower list">
   <header class="caption">
-    <h1>
-      <a class="series" href="../">Linked Data for Librarians</a><br>
-      <a class="module" href="#title">Understanding Data Models</a>
-    </h1>
+    <h1><a class="series" href="#">Linked Data for Librarians</a></h1>
     <p>
-      <a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a>,
-      <a href="https://ruben.verborgh.org/">Ruben Verborgh</a>
+      by <a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a>
+      and <a href="https://ruben.verborgh.org/">Ruben Verborgh</a>
     </p>
+    <h2>Module 2: <em>Understanding data models</em></h2>
     <ul class="links">
-      <li class="prev">Previous topic: <a href="../">Introduction</a></li>
-      <li class="next">Next topic: <a href="../architecture/">Possibilities and Limits of RDF</a></li>
+      <li class="prev">Previous module: <a href="../">Introduction</a></li>
+      <li class="next">Next module: <a href="../possibilities/">Possibilities and limitations of RDF</a></li>
     </ul>
   </header>
 
   <nav>
-		<h2>Navigation</h2>
-		<ul>
-			<li><a href="../introduction/">Introduction</a></li>
-			<li><a href="../modeling/">Understanding data models</a></li>
-			<li><a href="../limitations/">Possibilities and limitations of RDF</a></li>
-			<li><a href="../quality/">Data quality</a></li>
-			<li><a href="../cleaning/">Data profiling and cleaning</a></li>
-			<li><a href="../reconciliation/">Vocabulary reconciliation</a></li>
-			<li><a href="../enrichment/">Metadata enriching</a></li>
-			<li><a href="../rest/">REST</a></li>
-			<li><a href="../decentralization/">Decentralization and federation</a></li>
-			<li><a href="../conclusions/">Conclusions</a></li>
-		</ul>
-	</nav>
+    <h2>Modules</h2>
+    <ul>
+      <li><a href="/introduction/">Introduction</a></li>
+      <li class="current"><a href="/modeling/">Understanding data models</a></li>
+      <li><a href="/possibilities/">Possibilities and limitations of RDF</a></li>
+      <li><a href="/quality/">Data quality</a></li>
+      <li><a href="/cleaning/">Data profiling and cleaning</a></li>
+      <li><a href="/reconciliation/">Vocabulary reconciliation</a></li>
+      <li><a href="/enrichment/">Metadata enriching</a></li>
+      <li><a href="/rest/">REST</a></li>
+      <li><a href="/decentralization/">Decentralization and federation</a></li>
+      <li><a href="/conclusions/">Conclusions</a></li>
+    </ul>
+  </nav>
 
   <div class="title slide" id="title">
-    <h2>
-      <a class="series" href="../">Linked Data for Librarians</a><br>
-      <a class="module" href="#title">Understanding Data Models</a>
-    </h2>
-    <p class="tweets"><a href="https://twitter.com/FreeMetadata">@FreeMetadata</a></p>
-    <p class="author"><a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a></p>
-    <p class="author"><a href="https://ruben.verborgh.org/">Ruben Verborgh</a></p>
+    <h2><a class="series" href="#">Linked Data for Librarians</a></h2>
+    <p>
+      by <a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a>
+      and <a href="https://ruben.verborgh.org/">Ruben Verborgh</a>
+    </p>
+    <h3>Module 2: <em>Understanding data models</em></h3>
+    <p class="logos">
+      <a href="https://www.imls.gov/"><img alt="Institute of Museum and Library Services" src="../images/imls.svg"></a>
+      <a href="http://drexel.edu/cci/"><img alt="Drexel University College of Computing &amp; Informatics" src="../images/drexel.png"></a>
+    </p>
     <p class="license">
-      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="../_shared/images/cc-by.svg" /></a>
-      Except where otherwise noted, the content of these slides is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="../images/cc-by.svg" /></a>
+      Except where otherwise noted, the content of these slides is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
     </p>
   </div>
 
@@ -299,15 +300,18 @@
         ©2014 <a href="http://book.metadata.org">Seth van Hooland and Ruben Verborgh</a>
       </figcaption>
     </figure>
-    <footer>Note how the data which were packed together in one flat file are now represented
+    <footer>
+      <p>
+      Note how the data which were packed together in one flat file are now represented
       in three distinct tables: Creator, Work and Collection.
       Relational databases allow us to move away from having simply one table with
-      a set of columns, and split out the values in seperate tables. Each table
+      a set of columns, and split out the values in separate tables. Each table
       groups together a set of attributes which define an entity. With the help of
       unique identifiers, relations are created in between the different tables.
     Now, we only need to encode once the values for the artist Pablo Picasso. If we
   describe a second work of his, we just need to refer to the ID of the record created
 previously. By doing so, we can ensure more consistency in our metadata.
+      </p>
     </footer>
   </div>
 
@@ -399,15 +403,15 @@ previously. By doing so, we can ensure more consistency in our metadata.
         ©2013 <a href="www.belgian-solutions.be/">David Helbich</a>
       </figcaption>
     </figure>
-    <footer>Using ductape to McGyver yourself out of a problem can be used as a methaphor for many
-    of the adhoc solutions found not to tamper with the schema of a database.
+    <footer><p>Using duct tape to McGyver yourself out of a problem can be used as a metaphor for many
+    of the ad hoc solutions found not to tamper with the schema of a database.
   For example, if there is a need to encode new information in the database, but
-there's no time to redesign the database schema to accomodate the new data, people
+there's no time to redesign the database schema to accommodate the new data, people
 often rely on external flat files, managed in excel for example, to keep track of
 new reference data in a quick and easy manner, based on the assumption that they will
-be integrated into the database in the future. However, in practice the adhoc solution
+be integrated into the database in the future. However, in practice the ad hoc solution
 often is used for a long period of time, leading to inconsistencies between the centralized
-reference data in the database and the local reference data in the spreadsheet. </footer>
+reference data in the database and the local reference data in the spreadsheet.</p></footer>
   </div>
 
   <div class="slide" id="sharing_db">
@@ -432,14 +436,14 @@ reference data in the database and the local reference data in the spreadsheet. 
         ©2010 <a href="https://flic.kr/p/8LkSmG">Mohamed Majid</a>
       </figcaption>
     </figure>
-    <footer>Relational databases are the working horses of our information economy. However,
-    they tend to keep both the data and the schema emprisoned.
+    <footer><p>Relational databases are the working horses of our information economy. However,
+    they tend to keep both the data and the schema imprisoned.
     Even if the party with whom you want to share your database has exactly the same
     version of the DBMS you are using, there is still a <em>semantic</em> barrier to
     overcome. Using someone else's database implies that you understand how tables are
     constructed and interconnected. ILS and metadata management software often contains hundreds
     of tables, so understanding how the data are structured might take days or weeks...
-  </footer>
+  </p></footer>
   </div>
 
   <div class="slide" id="tim-picture">
@@ -658,10 +662,10 @@ based on this hierarchical view.</p>
           </li>
         </ul>
     </ul>
-    <footer>The hierarchical structure of XML now becomes apparent:
+    <footer><p>The hierarchical structure of XML now becomes apparent:
     the <code>Work</code> element is a child of the <code>Art</code> element. However,
-    note how we've choosen to model the metadata of works as attributes. Is this a wise option ?
-    </footer>
+    note how we've chosen to model the metadata of works as attributes. Is this a wise option ?
+    </p></footer>
   </div>
 
  <div class="slide" id="elements">
@@ -682,10 +686,10 @@ based on this hierarchical view.</p>
 &lt;/Collection&gt;
 &lt;/Work&gt;
 &lt;/Art&gt;</code></pre>
-    <footer>This leaves maximum flexibility to extend the document at any point.
+    <footer><p>This leaves maximum flexibility to extend the document at any point.
     However, this also comes at a cost: the hierarchy is now relatively deep to express simple concepts,
     even for straightforward properties such as the year of creation.
-    </footer>
+    </p></footer>
   </div>
 
 
@@ -701,10 +705,10 @@ based on this hierarchical view.</p>
        <code>&lt;/Work&gt;</code><br>
        <code>&lt;/Art&gt;</code>
      </p>
-      <footer>In this example we've chosen to model all values that will not be decomposed
+      <footer><p>In this example we've chosen to model all values that will not be decomposed
     or require further properties as attributes. For instance, a work's <code>title</code>
     does not require further description, but we could add additional information to <code>creator</code>,
-    such as a date and place of birth.</footer>
+    such as a date and place of birth.</p></footer>
   </div>
 
 <div class="slide" id="xsd">
@@ -813,10 +817,10 @@ based on this hierarchical view.</p>
           Seutter Map of India, Pakistan, Tibet and Afghanistan</a>
       </figcaption>
     </figure>
-    <footer>Both relational databases and XML rely heavily on a local schema to actually
-    understand how the data are structured. If you want to use someone else's data,
-  you have to sit down and study the schema, like you need to analyze a map when you
-go into unknown territory. On top, you need to get a specific map for each trip you're making !
+    <footer><p>Both relational databases and XML rely heavily on a local schema to actually
+        understand how the data are structured. If you want to use someone else's data,
+        you have to sit down and study the schema, like you need to analyze a map when you
+        go into unknown territory. On top, you need to get a specific map for each trip you're making !</p>
 </footer>
   </div>
 
@@ -829,12 +833,12 @@ go into unknown territory. On top, you need to get a specific map for each trip 
           Public Domain Pictures</a>
       </figcaption>
     </figure>
-    <footer>Not only do you need to put effort into understanding, for each of your voyages,
-    how a specific map is drawn (its scale, the symbols used, etc), the information is often not
-   available publicly. As a data consumer, you don't want to have closed doors in front of your
- nose and needing to beg to get in. As a data producer who wants other people to reuse your data, you don't want to have
-people knocking on your door every other day and help them use and interpret your data.
-Our next data model will try to overcome these limits.</footer>
+    <footer><p>Not only do you need to put effort into understanding, for each of your voyages,
+        how a specific map is drawn (its scale, the symbols used, etc), the information is often not
+        available publicly. As a data consumer, you don't want to have closed doors in front of your
+        nose and needing to beg to get in. As a data producer who wants other people to reuse your data, you don't want to have
+        people knocking on your door every other day and help them use and interpret your data.
+        Our next data model will try to overcome these limits.</p></footer>
   </div>
 
 <div class="slide" id="rdf">
@@ -857,8 +861,8 @@ Our next data model will try to overcome these limits.</footer>
         ©2014 <a href="http://book.freeyourmetadata.org">Seth van Hooland and Ruben Verborgh</a>
       </figcaption>
     </figure>
-    <footer>Our art catalog represented in RDF triples. Notice how easy it is to integrate information and
-    create links in between resources. Picasso influenced Jeff Koons, about which we also have some metadata.</footer>
+    <footer><p>Our art catalog represented in RDF triples. Notice how easy it is to integrate information and
+        create links in between resources. Picasso influenced Jeff Koons, about which we also have some metadata.</p></footer>
   </div>
 
 <div class="slide" id="rdf-model">
@@ -986,10 +990,10 @@ Our next data model will try to overcome these limits.</footer>
         ©2014 <a href="http://book.freeyourmetadata.org">Seth van Hooland and Ruben Verborgh</a>
       </figcaption>
     </figure>
-    <footer>This module explained the differences between the different models. Depending on the
-    context and what you need, we hope you now understand when to opt for which type of model.
-  Read the <a href="">introduction chapter</a> of "Linked data for Libraries, Archives and Museums" for
-a more detailed description of the advantages and disadvantages of each model.</footer>
+    <footer><p>This module explained the differences between the different models. Depending on the
+        context and what you need, we hope you now understand when to opt for which type of model.
+        Read the <a href="">introduction chapter</a> of "Linked data for Libraries, Archives and Museums" for
+        a more detailed description of the advantages and disadvantages of each model.</p></footer>
   </div>
 
 <div class="slide" id="hammer">
@@ -1001,10 +1005,10 @@ a more detailed description of the advantages and disadvantages of each model.</
           Public Domain Pictures</a>
       </figcaption>
     </figure>
-    <footer>Don't be the boy with the hammer! Once people develop experience with one tool and model,
-    they tend to use it for everything. For example, it takes some time to develop skills to master the XML
-    suite (XSD, XPATH, XQUERY, etc) so after a while people squeze everything into hierarchical trees
-    to be processed as XML, even if it's not a natural fit.</footer>
+    <footer><p>Don't be the boy with the hammer! Once people develop experience with one tool and model,
+        they tend to use it for everything. For example, it takes some time to develop skills to master the XML
+        suite (XSD, XPATH, XQUERY, etc) so after a while people squeeze everything into hierarchical trees
+        to be processed as XML, even if it's not a natural fit.</p></footer>
   </div>
 
   <div class="slide" id="eval1">
@@ -1090,10 +1094,18 @@ of years, especially when acronyms are used -->
 </ul>
   </div>
 
-
-	<footer>
-		<p>Copyright © 2017 <a href="#">Yours Truly, Famous Inc.</a></p>
-	</footer>
+  <div class="progress"></div>
+  <footer>
+    <p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p>
+    <p class="logos">
+      <a href="https://www.imls.gov/"><img alt="Institute of Museum and Library Services" src="../images/imls.svg"></a>
+      <a href="http://drexel.edu/cci/"><img alt="Drexel University College of Computing &amp; Informatics" src="../images/drexel.png"></a>
+    </p>
+    <p class="license">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="../images/cc-by.svg" /></a>
+      Except where otherwise noted, the content of these slides is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </p>
+  </footer>
 	<script src="../scripts/shower.min.js"></script>
 	<script src="../scripts/enhancements.js"></script>
 </body>

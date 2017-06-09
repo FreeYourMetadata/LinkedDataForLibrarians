@@ -9,47 +9,47 @@
 </head>
 <body class="shower list">
   <header class="caption">
-    <h1>
-      <a class="series" href="../">Linked Data for Librarians</a><br>
-      <a class="module" href="#title">Introduction</a>
-    </h1>
+    <h1><a class="series" href="#">Linked Data for Librarians</a></h1>
     <p>
-      <a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a>,
-      <a href="https://ruben.verborgh.org/">Ruben Verborgh</a>
+      by <a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a>
+      and <a href="https://ruben.verborgh.org/">Ruben Verborgh</a>
     </p>
+    <h2>Module 1: <em>Introduction</em></h2>
     <ul class="links">
-      <li class="next">Next topic: <a href="../modeling/">Data modeling</a></li>
+      <li class="next">Next module: <a href="../modeling/">Understanding data models</a></li>
     </ul>
   </header>
 
   <nav>
-		<h2>Navigation</h2>
-		<ul>
-			<li><a href="../introduction/">Introduction</a></li>
-			<li><a href="../modeling/">Understanding data models</a></li>
-			<li><a href="../limitations/">Possibilities and limitations of RDF</a></li>
-			<li><a href="../quality/">Data quality</a></li>
-			<li><a href="../cleaning/">Data profiling and cleaning</a></li>
-			<li><a href="../reconciliation/">Vocabulary reconciliation</a></li>
-			<li><a href="../enrichment/">Metadata enriching</a></li>
-			<li><a href="../rest/">REST</a></li>
-			<li><a href="../decentralization/">Decentralization and federation</a></li>
-			<li><a href="../conclusions/">Conclusions</a></li>
-		</ul>
-	</nav>
+    <h2>Modules</h2>
+    <ul>
+      <li class="current"><a href="/introduction/">Introduction</a></li>
+      <li><a href="/modeling/">Understanding data models</a></li>
+      <li><a href="/possibilities/">Possibilities and limitations of RDF</a></li>
+      <li><a href="/quality/">Data quality</a></li>
+      <li><a href="/cleaning/">Data profiling and cleaning</a></li>
+      <li><a href="/reconciliation/">Vocabulary reconciliation</a></li>
+      <li><a href="/enrichment/">Metadata enriching</a></li>
+      <li><a href="/rest/">REST</a></li>
+      <li><a href="/decentralization/">Decentralization and federation</a></li>
+      <li><a href="/conclusions/">Conclusions</a></li>
+    </ul>
+  </nav>
 
   <div class="title slide" id="title">
-    <h2>
-      <a class="series" href="../">Linked Data for Librarians</a><br>
-      <a class="module" href="#title">Introduction</a>
-    </h2>
-    <p class="tweets"><a href="https://twitter.com/FreeMetadata">@FreeMetadata</a></p>
-    <p class="author"><a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a></p>
-    <p class="author"><a href="https://ruben.verborgh.org/">Ruben Verborgh</a></p>
+    <h2><a class="series" href="#">Linked Data for Librarians</a></h2>
+    <p>
+      by <a href="http://homepages.ulb.ac.be/~svhoolan/">Seth van Hooland</a>
+      and <a href="https://ruben.verborgh.org/">Ruben Verborgh</a>
+    </p>
+    <h3>Module 1: <em>Introduction</em></h3>
+    <p class="logos">
+      <a href="https://www.imls.gov/"><img alt="Institute of Museum and Library Services" src="../images/imls.svg"></a>
+      <a href="http://drexel.edu/cci/"><img alt="Drexel University College of Computing &amp; Informatics" src="../images/drexel.png"></a>
+    </p>
     <p class="license">
-      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="../_shared/images/cc-by.svg" /></a>
-      Except where otherwise noted, the content of these slides is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-			Creative Commons Attribution 4.0 International License</a>.
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="../images/cc-by.svg" /></a>
+      Except where otherwise noted, the content of these slides is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
     </p>
   </div>
 
@@ -57,16 +57,16 @@
     <iframe class="cover width height" src="https://www.youtube.com/embed/Rma_3JLQULw?hl=en&amp;color=white&amp;iv_load_policy=3&amp;disablekb=1&amp;rel=0&amp;showinfo=0&amp;autohide=1"></iframe>
   </div>
 
-	<div class="slide" id="party">
-	    <figure class="cover width">
-	        <img src="images/rusty.jpg"
-	             alt="[Red panda]">
-	      <figcaption>
-	        ©2013 <a href="Î">Abby Wood, Smithsonian National Zoo</a>
-	      </figcaption>
-	    </figure>
-	    <footer>
-	      <p>Red pandas are very cute animals, which are known to have a small
+  <div class="slide" id="party">
+      <figure class="cover width">
+          <img src="images/rusty.jpg"
+               alt="[Red panda]">
+        <figcaption>
+          ©2013 <a href="Î">Abby Wood, Smithsonian National Zoo</a>
+        </figcaption>
+      </figure>
+      <footer>
+        <p>Red pandas are very cute animals, which are known to have a small
           home range. Where are we at as librarians ? We have defined ourselves through
         a substantial body of cataloging rules and formats, developed and fine-tuned
         throughout the 20th century.
@@ -77,20 +77,20 @@
         citizens on the Web. However, when looking at <a href="https://www.loc.gov/bibframe/">
         BIBFRAME</a>, librarians often look like this anxious red panda...
 
-					</p>
-	    </footer>
-	  </div>
+          </p>
+      </footer>
+    </div>
 
-		<div class="slide" id="party_2">
-				<figure class="cover width">
-						<img src="images/fish.jpg"
-								 alt="[Nile perch]">
-					<figcaption>
-						©2016 <a href="https://www.flickr.com/photos/theworldfishcenter/25171601741">Ashley Halls</a>
-					</figcaption>
-				</figure>
-				<footer>
-					<p>The reaction is understandable. This fisher is holding up a Nile perch.
+    <div class="slide" id="party_2">
+        <figure class="cover width">
+            <img src="images/fish.jpg"
+                 alt="[Nile perch]">
+          <figcaption>
+            ©2016 <a href="https://www.flickr.com/photos/theworldfishcenter/25171601741">Ashley Halls</a>
+          </figcaption>
+        </figure>
+        <footer>
+          <p>The reaction is understandable. This fisher is holding up a Nile perch.
             The fish was artificially introduced in
             Lake Victoria and ended up eating all other fishes, wrecking its
             <a href="https://en.wikipedia.org/wiki/Darwin%27s_Nightmare">ecological balance</a>.
@@ -98,26 +98,26 @@
             The <a href="https://en.wikipedia.org/wiki/Open-world_assumption">
             "Open-world assumption"</a> underlying Linked Data and its radically decentralized
             architecture goes very much against traditional views on library metadata.
-						</p>
-				</footer>
-			</div>
+            </p>
+        </footer>
+      </div>
 
-			<div class="slide" id="party_3">
-					<figure class="cover width">
-							<img src="images/friends.jpg"
-									 alt="[Cat and dog]">
-						<figcaption>
-							©2016 <a href="https://www.flickr.com/photos/theworldfishcenter/25171601741">Ashley Halls</a>
-						</figcaption>
-					</figure>
-					<footer>
-						<p>However, can library metadata and Linked Data join hands in a happy marriage,
+      <div class="slide" id="party_3">
+          <figure class="cover width">
+              <img src="images/friends.jpg"
+                   alt="[Cat and dog]">
+            <figcaption>
+              ©2016 <a href="https://www.flickr.com/photos/theworldfishcenter/25171601741">Ashley Halls</a>
+            </figcaption>
+          </figure>
+          <footer>
+            <p>However, can library metadata and Linked Data join hands in a happy marriage,
               despite the apparent differences ? These ten modules will help you
               as a librarian develop a more nuanced perspective
-							on Linked Data by mastering some of the key methods and tools yourself !
-							</p>
-					</footer>
-				</div>
+              on Linked Data by mastering some of the key methods and tools yourself !
+              </p>
+          </footer>
+        </div>
 
 <div class="slide" id="overview">
 <h2>Libraries and Linked Data</h2>
@@ -154,7 +154,7 @@ fundamentally changes their profession</li></ul></li>
 </div>
 
 <div class="slide" id="intro-vid">
-	<h2>Seeing beyond the hype</h2>
+  <h2>Seeing beyond the hype</h2>
 <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/981_RC01/embed_loader.js">
 </script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"\"semantic web\"","geo":"","time":"all"},{"keyword":"\"linked data\"","geo":"","time":"all"}],"category":0,"property":""}, {"exploreQuery":"date=all&q=%22semantic%20web%22,%22linked%20data%22","guestPath":"https://trends.google.com:443/trends/embed/"}); </script>
 <footer>Gartner introduced the <a href="https://en.wikipedia.org/wiki/Hype_cycle">hype cycle</a>
@@ -191,8 +191,8 @@ data on the Web</p>
       based on the query "Drexel". On the
       right from the traditional search results, you can see structured and semantically
       meaningful information. Notice here how we can
-			identify the basic structure of the RDF data model: subject (Drexel), predicates (e.g. acceptance rate)
-		and objects (e.g. 75%). This demonstrates how Linked Data are already
+      identify the basic structure of the RDF data model: subject (Drexel), predicates (e.g. acceptance rate)
+    and objects (e.g. 75%). This demonstrates how Linked Data are already
     very much a part of our day to day information consumption.</p>
     </footer>
   </div>
@@ -223,7 +223,7 @@ is bumpy and uncertain, it is no option to just stick with our former practices 
   <div class="slide" id="bibframe">
     <h2>Progress with Linked Data in libraries
     </h2>
-  	<p>Important work on both the cataloging rules and the format has taken place
+    <p>Important work on both the cataloging rules and the format has taken place
     over the last few years :</p>
     <ul>
       <li>Resource Description Access (RDA)
@@ -318,11 +318,19 @@ own classes or workshops</li></ul></li>
     </footer>
   </div>
 
-	<div class="progress"></div>
-	<footer>
-		<p>Copyright © 2016 <a href="#">Yours Truly, Famous Inc.</a></p>
-	</footer>
-	<script src="../scripts/shower.min.js"></script>
-	<script src="../scripts/enhancements.js"></script>
+  <div class="progress"></div>
+  <footer>
+    <p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p>
+    <p class="logos">
+      <a href="https://www.imls.gov/"><img alt="Institute of Museum and Library Services" src="../images/imls.svg"></a>
+      <a href="http://drexel.edu/cci/"><img alt="Drexel University College of Computing &amp; Informatics" src="../images/drexel.png"></a>
+    </p>
+    <p class="license">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="../images/cc-by.svg" /></a>
+      Except where otherwise noted, the content of these slides is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </p>
+  </footer>
+  <script src="../scripts/shower.min.js"></script>
+  <script src="../scripts/enhancements.js"></script>
 </body>
 </html>
