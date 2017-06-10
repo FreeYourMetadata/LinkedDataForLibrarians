@@ -115,3 +115,8 @@ q:after,  cite:after  { content: "”"; }
 .slide > p:first-of-type {
   margin-top: 1em;
 }
+
+pre.scroll {
+  max-height: 17em;
+  overflow: scroll;
+}
