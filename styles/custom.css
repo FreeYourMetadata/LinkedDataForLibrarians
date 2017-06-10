@@ -3,37 +3,37 @@
   margin-left: 0;
 }
 
-.slide.evaluation ol > li {
+.slide.evaluation > ol > li {
   cursor: pointer;
 }
-.slide.evaluation ol > li:hover {
+.slide.evaluation > ol > li:hover {
   color: #CC4320;
 }
-.slide.evaluation ol > li > ul {
+.slide.evaluation > ol > li > ul {
   margin-left: 0;
   max-height: 0;
   overflow: hidden;
 }
-.slide.evaluation ol > li > ul {
+.slide.evaluation > ol > li > ul {
   margin-left: 0;
   max-height: 0;
   overflow: hidden;
   transition: max-height .3s;
 }
-.slide.evaluation ol > li.selected > ul {
+.slide.evaluation > ol > li.selected > ul {
   max-height: 7em;
   transition: max-height 1s;
 }
-.slide.evaluation ol > li.selected,
-.slide.evaluation ol > li > ul * {
+.slide.evaluation > ol > li.selected,
+.slide.evaluation > ol > li > ul * {
   color: #C40909;
 }
-.slide.evaluation ol > li.correct.selected,
-.slide.evaluation ol > li.correct > ul * {
+.slide.evaluation > ol > li.correct.selected,
+.slide.evaluation > ol > li.correct > ul * {
   color: #5A9310;
 }
-.slide.evaluation ol > li.half.correct.selected,
-.slide.evaluation ol > li.half.correct > ul * {
+.slide.evaluation > ol > li.half.correct.selected,
+.slide.evaluation > ol > li.half.correct > ul * {
   color: #CC4320;
 }
 

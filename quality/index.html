@@ -6,6 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
   <link rel="stylesheet" href="../styles/screen-16x10.css">
+  <link rel="stylesheet" href="../styles/custom.css">
 </head>
 <body class="shower list">
   <header class="caption">
@@ -328,11 +329,11 @@ reality ?</p>
   	<li>Simple SQL command to create a column of a table :
   		<ul><li><code>ALTER TABLE artwork ADD title VARCHAR;</code></li></ul>
   	</li>
-  	<li>It is suprising how much can go wrong with
+  	<li>It is surprising how much can go wrong with
   		<ul>
   		<li>Name of the column</li>
   		<li>Data type</li>
-  		<li>Lenght</li>
+  		<li>Length</li>
   		</ul>
   	</li>
   	</ul>
@@ -418,13 +419,13 @@ reality ?</p>
     	</div>
 
 
-  	<div class="slide" id="lenght">
-    <h2>Lenght of entries</h2>
+  	<div class="slide" id="length">
+    <h2>Length of entries</h2>
   	<ul>
   	<li>Seems to have lost its pertinence with decreasing storage costs</li>
  	<li>Text length of entries can be a very interesting parameter to analyse
     <ul><li>If you expect the name of an individual in a field and the average
-      text lenght is 250 characters, there might be an issue...</li>
+      text length is 250 characters, there might be an issue...</li>
       <li>Especially the outlier values, being the very short or long ones, can
      be a good place to start your analysis</li>
     </ul>
@@ -473,96 +474,83 @@ reality ?</p>
  	<p>Impacts search and retrieval but also limits data analysis and cleaning</p>
   	</div>
 
-      <div class="slide" id="eval1">
+  <div class="evaluation slide" id="eval1">
     <h2>Self-assessment 1</h2>
-    <ul>
-      <li>Why is the topic of data quality so relevant in the context of
-        Linked Data ?
-        <ul>
-          <li>The introduction of Linked Data will boost
-          the quality of library catalogs.</li>
-          <!-- It depends! Using data coming from very diverse and heterogeneous
-        sources might seriously undermine the quality of catalogs.  -->
-          <li>The closed-world assumption underlying the Linked Data paradigm limits
-            the amount of data available.</li>
-          <!-- No, Linked Data are based on the open world assumption, implying that no
-          one at a certain moment knows exactly what type of data are available and the type of
-          constraints they respect.  -->
-          <li>Linked Data holds the potential danger of introducing erroneous and conflicting
-            data.</li>
-          <!-- Yes, without specific efforts to clean original data sources and ensuring
-          standardised methods and tools to evaluate and compare data set published as
-          Linked Data, the issue of data quality might seriously undermine the potential
-          of Linked Data for libraries.  -->
-        </ul>
+    <p>Why is data quality so relevant in a Linked Data context?</p>
+    <ol>
+      <li>
+        The closed-world assumption of the Linked Data paradigm limits the amount of data available.
+        <ul><li>No, Linked Data is based on the open world assumption, implying that no one at a certain moment knows exactly what type of data are available and the type of constraints they respect.</li></ul>
       </li>
-    </ul>
-      </div>
+      <li class="correct">
+        Linked Data holds the potential danger of introducing erroneous and conflicting data.
+        <ul><li>Yes, without specific efforts to clean original data sources and ensuring standardised methods and tools to evaluate and compare data set published as Linked Data, the issue of data quality might seriously undermine the potential of Linked Data for libraries.</li></ul>
+      </li>
+      <li class="half correct">
+        The introduction of Linked Data will boost the quality of library catalogs.
+        <ul><li>It depends! Using data from very diverse and heterogeneous sources might seriously undermine the quality of catalogs.</li></ul>
+      </li>
+    </ol>
+  </div>
 
-      <div class="slide" id="eval2">
+  <div class="evaluation slide" id="eval2">
     <h2>Self-assessment 2</h2>
-    <ul>
-      <li>Why is it important to distinguish deterministic from empirical data when
-        talking about metadata quality ?
-        <ul>
-          <li>Contrary to deterministic data, there exist no formal theories
-          to validate empirical data</li>
-          <!-- Yes! For deterministic data there are fixed theories which no longer
-          evolve, such as is the case with algebra. 1 + 1 will always equal 2.  -->
-          <li>There are more issues with deterministic data.</li>
-          <!-- No, irrelevant answer.  -->
-          <li>Because empirical data can not be cleaned.</li>
-          <!-- No, it is not because we can not establish a direct correspondance
-        between the observable and the data that one can not identify errors and rectify them.  -->
-        </ul>
+    <p>Why is it important to distinguish deterministic from empirical data when talking about metadata quality?</p>
+    <ol>
+      <li class="correct">
+        Contrary to deterministic data, there exist no formal theories to validate empirical data
+        <ul><li>Yes! For deterministic data there are fixed theories which no longer evolve, such as is the case with algebra. 1 + 1 will always equal 2.</li></ul>
       </li>
-    </ul>
-      </div>
+      <li>
+        There are more issues with deterministic data.
+        <ul><li>No, irrelevant answer.</li></ul>
+      </li>
+      <li>
+        Because empirical data can not be cleaned.
+        <ul><li>No, it is not because we can not establish a direct correspondence between the observable and the data that one can not identify errors and rectify them.</li></ul>
+      </li>
+    </ol>
+  </div>
 
 
-      <div class="slide" id="eval3">
+  <div class="evaluation slide" id="eval3">
     <h2>Self-assessment 3</h2>
-    <ul>
-      <li>What is the issue of field overloading and why is it problematic ?
-        <ul>
-          <li>The issue rises when you go beyond the number of characters which
-          may be encoded in a field.</li>
-          <!-- No ! The lenght of an entry can definitively be an interesting
-        data quality indicator, but field overloading is not linked to the lenght
-        of an entry.
-         -->
-          <li>This issue mainly rises when you transfer data from a flat file to a database.</li>
-          <!-- No, it tends to be the other way around. Moving from a well-structured database,
-        with clear definitions of fields, to a flat file might result in packing together
-      related but different (e.g. surname and family name) fields.   -->
-          <li>Field overloading occurs when related (but different) data are put
-          together in the same field, which lowers the possibilities to clearly define
-        encoding constraints and structured search.</li>
-          <!-- Yes, this answer clearly defines field overloading. -->
-        </ul>
+    <p>What is field overloading and why is it problematic?</p>
+    <ol>
+      <li>
+        The issue rises when you go beyond the number of characters which may be encoded in a field.
+        <ul><li>No! The length of an entry can definitively be an interesting data quality indicator, but field overloading is not linked to the length of an entry.</li></ul>
       </li>
-    </ul>
+      <li>
+        This issue mainly rises when you transfer data from a flat file to a database.
+        <ul><li>No, it tends to be the other way around. Moving from a well-structured database, with clear definitions of fields, to a flat file might result in packing together related but different (e.g. surname and family name) fields.</li></ul>
+      </li>
+      <li class="correct">
+        Field overloading occurs when related data are put together in the same field.
+        <ul><li>Yes, this lowers the possibilities to clearly define encoding constraints and structured search.</li></ul>
+      </li>
+    </ol>
+
       </div>
 
-      <div class="slide" id="eval4">
+  <div class="evaluation slide" id="eval4">
     <h2>Self-assessment 4</h2>
-    <ul>
-      <li> Why is it important to think about how we communicate about absent values ?
-        <ul>
-          <li>In order to save space.</li>
-          <!-- No, this is not a relevant answer ! -->
-          <li>An empty field can be there for a large variety of reasons. Knowing
-          the reason can be important in order to know how to interpret the absence.</li>
-          <!-- Yes! A value might not be known or not applicable, or there simply might
-          not be enough resources to fill it in... -->
-          <li>In order to avoid them at all times.</li>
-          <!-- No ! Both for conceptual and operational reasons, it is impossible to avoid
-        empty fields. The important aspect is to document the reason behind the absence
-      of a value. -->
-        </ul>
+    <p>Why is it important to think about how we communicate about absent values?</p>
+    <ol>
+      <li>
+        In order to save space.
+        <ul><li>No, this is not a relevant answer.</li></ul>
       </li>
-    </ul>
-      </div>
+      <li>
+        In order to avoid them at all times.
+        <ul><li>No! Both for conceptual and operational reasons, it is impossible to avoid empty fields. The important aspect is to document the reason behind the absence of a value.</li></ul>
+      </li>
+      <li class="correct">
+        An empty field can be there for a large variety of reasons. Knowing the reason can be important in order to know how to interpret the absence.
+        <ul><li>Yes! A value might not be known or not applicable, or there simply might not be enough resources to fill it in.</li></ul>
+      </li>
+    </ol>
+  </div>
 
   <div class="progress"></div>
   <footer>
