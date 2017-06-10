@@ -21,16 +21,20 @@
   transition: max-height .3s;
 }
 .slide.evaluation ol > li.selected > ul {
-  max-height: 6em;
+  max-height: 7em;
   transition: max-height 1s;
 }
 .slide.evaluation ol > li.selected,
 .slide.evaluation ol > li > ul * {
-  color: #c40909;
+  color: #C40909;
 }
 .slide.evaluation ol > li.correct.selected,
 .slide.evaluation ol > li.correct > ul * {
-  color: #5a9310;
+  color: #5A9310;
+}
+.slide.evaluation ol > li.half.correct.selected,
+.slide.evaluation ol > li.half.correct > ul * {
+  color: #CC4320;
 }
 
 /* Do and dont's */

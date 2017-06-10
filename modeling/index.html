@@ -6,6 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="../styles/screen-16x10.css">
+	<link rel="stylesheet" href="../styles/custom.css">
 </head>
 <body class="shower list">
   <header class="caption">
@@ -1011,87 +1012,84 @@ based on this hierarchical view.</p>
         to be processed as XML, even if it's not a natural fit.</p></footer>
   </div>
 
-  <div class="slide" id="eval1">
-<h2>Self-assessment 1</h2>
-<ul>
-  <li>Creating metadata as tabular data is a bad idea :
-    <ul>
-      <li>If you want to share your metadata</li>
-      <!-- No, tabular data platform independent and very easy to exchange  -->
-      <li>If you want to avoid spelling mistakes</li>
-      <!-- Yes, flat files do not offer the possibility to ensure consistency when
-    encoding metadata  -->
-      <li>If you want to express hierarchy in your metadata</li>
-      <!-- Yes, tabular do not give the opportunity to express hierarchy. Relational
-    databases or XML seem then a better fit -->
-    </ul>
-  </li>
-</ul>
+  <div class="evaluation slide" id="eval1">
+    <h2>Self-assessment 1</h2>
+    <p>Creating metadata as tabular data is a bad idea:</p>
+    <ol>
+      <li>
+        If you want to share your metadata.
+        <ul><li>No, tabular data is platform-independent and very easy to exchange</li></ul>
+      </li>
+      <li class="correct">
+        If you want to avoid spelling mistakes.
+        <ul><li>Yes, flat files do not offer the possibility to ensure consistency when encoding metadata</li></ul>
+      </li>
+      <li class="correct">
+        If you want to express hierarchy in your metadata.
+        <ul><li>Yes, tabular do not give the opportunity to express hierarchy. Relational databases or XML seem then a better fit</li></ul>
+      </li>
+    </ol>
   </div>
 
-  <div class="slide" id="eval2">
-<h2>Self-assessment 2</h2>
-<ul>
-  <li>How to decide to represent something as an entity or as an
-    attribute within a database schema  ?
-    <ul>
-      <li>Opt for an attribute if it is an important aspect of the reality
-      you are modeling</li>
-      <!-- No! In that case an entity would be a better choice as you then can
-    further document the entity with the help of attributes -->
-      <li>It depends on how important that part of reality is within the
-      database. If you want to give additional information about something,
-    it will be better to model it as an entity, as you can attach extra information
-  to an entity with attributes.</li>
-      <!-- Yes! -->
-      <li>It depends on the amount of data you want to store in the database</li>
-      <!-- No, this is an irrelevant argument -->
-    </ul>
-  </li>
-</ul>
+  <div class="evaluation slide" id="eval2">
+    <h2>Self-assessment 2</h2>
+    <p>How to decide to represent something as an entity or as an attribute within a database schema?</p>
+    <ol>
+      <li>
+        Opt for an attribute if it is an important aspect of the reality
+        you are modeling.
+        <ul><li>No! In that case an entity would be a better choice as you can
+    further document the entity with the help of attributes.</li></ul>
+      </li>
+      <li class="correct">
+        It depends on how important that part of reality is within the database.
+        <ul><li>Yes! If you want to give additional information about something,
+      it will be better to model it as an entity, as you can attach extra information
+      to an entity with attributes.</li></ul>
+      </li>
+      <li class="correct">
+        It depends on the amount of data you want to store in the database.
+        <ul><li>No, this is an irrelevant argument.</li></ul>
+      </li>
+    </ol>
   </div>
 
-  <div class="slide" id="eval3">
-<h2>Self-assessment 3</h2>
-<ul>
-  <li>Why is XML interesting from a digital preservation point of view ?
-    <ul>
-      <li>XML files are non-binary files</li>
-      <!-- Yes, XML files are text files which can be opened and modified
-      by using a simple text editor and are independent of any particular software,
-      when compared for example with databases.
-     -->
-      <li>XML is self-describing</li>
-      <!-- Yes and no : XML tags allow to explicitely state the role of a specific
-    part of a document, but the interpretation of the name of a tag might be
-  problematic. The name of tag might quickly loose its meaning after a couple
-of years, especially when acronyms are used -->
-      <li>XML files take up less space then JSON</li>
-      <!-- No, JSON was actually developed as a reaction to the verbous
-    nature of XML and drastically reduces the amount of characters used to
-  represent data -->
-    </ul>
-  </li>
-</ul>
+  <div class="evaluation slide" id="eval3">
+    <h2>Self-assessment 3</h2>
+    <p>Why is XML interesting from a digital preservation point of view?</p>
+    <ol>
+      <li class="correct">
+        XML files are non-binary files.
+        <ul><li>Yes, XML files are text files which can be opened and modified with a simple text editor and are independent of any particular software.</li></ul>
+      </li>
+      <li class="half correct">
+        XML is self-describing.
+        <ul><li>Yes and no: XML tags allow to explicitly state the role of a specific part of a document, but the interpretation of the name of a tag might be problematic. The name of a tag might quickly lose its meaning after a couple of years, especially when acronyms are used.</li></ul>
+      </li>
+      <li>
+        XML files take up less space than JSON.
+        <ul><li>No, JSON was actually developed as a reaction to the verbose nature of XML and drastically reduces the amount of characters used to represent data.</li></ul>
+      </li>
+    </ol>
   </div>
 
-  <div class="slide" id="eval4">
-<h2>Self-assessment 4</h2>
-<ul>
-  <li> How is XML related to HTML ?
-    <ul>
-      <li>XML is a subset of HTML</li>
-      <!-- No, XML is a meta-markup language whereas HTML is simply a markup language -->
-      <li>Both are examples of a markup language</li>
-      <!-- The precise answer is no, as XML is a meta-markup language : you
-    have the possibility to define your own tags. HTML is simply a markup language
-  with pre-defined tags. -->
-      <li>XML was developed as a reaction to the evolution of HTML from markup to makeup</li>
-      <!-- Yes! Towards the end of the 1990s, browsers proposed tags such as <blink> which
-    merely had an esthetical role, undermining the potential for a smarter Web -->
-    </ul>
-  </li>
-</ul>
+  <div class="evaluation slide" id="eval4">
+    <h2>Self-assessment 4</h2>
+    <p>How is XML related to HTML?</p>
+    <ol>
+      <li>
+        XML is a subset of HTML.
+        <ul><li>No, XML is a meta-markup language whereas HTML is simply a markup language.</li></ul>
+      </li>
+      <li>
+        Both are examples of a markup language.
+        <ul><li>The precise answer is no, as XML is a meta-markup language: you have the possibility to define your own tags. HTML is simply a markup language with pre-defined tags.</li></ul>
+      </li>
+      <li class="correct">
+        XML was developed as a reaction to the evolution of HTML from markup to makeup.
+        <ul><li>Yes! Towards the end of the 1990s, browsers proposed tags such as <code>&lt;blink&gt;</code> which merely had an aesthetic role, undermining the potential for a smarter Web.</li></ul>
+        </li>
+    </ol>
   </div>
 
   <div class="progress"></div>
