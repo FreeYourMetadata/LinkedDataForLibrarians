@@ -488,7 +488,7 @@
       </li>
       <li>
         The W3C <a href="https://www.w3.org/standards/semanticweb/ontology">states</a> that
-        there is “no clear division”.
+        there is <q>no clear division</q>.
         <dl>
           <dt>vocabulary</dt>
           <dd>usually in less formal contexts</dd>
@@ -655,6 +655,10 @@ SELECT DISTINCT ?person ?personLabel WHERE {
       </li>
       <li>
         In practice, some bridging is still needed.
+        <ul>
+          <li>Semantic Web <em>reasoning</em> can bridge the gap,<br>
+              but is often not enabled on query endpoints.</li>
+        </ul>
       </li>
     </ul>
   </div>
@@ -808,7 +812,7 @@ SELECT DISTINCT ?person ?personLabel WHERE {
       <li>
         Reasoning can fill vocabulary gaps.
         <ul>
-          <li>I <a href="https://ruben.verborgh.org/articles/queryable-research-data/">apply this</a> to my own metadata.</li>
+          <li>You can <a href="https://ruben.verborgh.org/articles/queryable-research-data/">apply this</a> to your own metadata.</li>
         </ul>
       </li>
       <li>
@@ -845,6 +849,71 @@ SELECT DISTINCT ?person ?personLabel WHERE {
         </ul>
       </li>
     </ul>
+    <p>
+      See more in the <a href="../rest/">REST</a> module.
+    </p>
+  </div>
+
+  <div class="evaluation slide" id="eval1">
+    <h2>Self-assessment 1: HTTP URLs</h2>
+    <p>Why are HTTP URLs important for Linked Data?</p>
+    <ol>
+      <li>
+        HTTP URLs are <em>not</em> important for Linked Data.
+        <ul><li>No. While not necessary for the RDF data model itself,<br>
+                the Linked Data principles mandate HTTP URLs.</li></ul>
+      </li>
+      <li>
+        Because they guarantee consistent semantics.
+        <ul><li>No. Semantic consistency comes from
+            the reuse of <em>unique</em> concept identifiers (URIs),
+            not specifically from HTTP URLs.</li></ul>
+      </li>
+      <li class="correct">
+        So we can look up (un)known concepts.
+        <ul><li>Yes. HTTP URLs can be <em>dereferenced</em>:
+            to obtain more data about a concept, follow its URL.</li></ul>
+      </li>
+    </ol>
+  </div>
+
+  <div class="evaluation slide" id="eval2">
+    <h2>Self-assessment 2: SPARQL</h2>
+    <p>What is SPARQL?</p>
+    <ol>
+      <li>
+        A data model.
+        <ul><li>No. The data model is RDF.</li></ul>
+      </li>
+      <li class="correct">
+        A query language.
+        <ul><li>Yes, SPARQL is a query language for RDF.</li></ul>
+      </li>
+      <li class="correct">
+        An HTTP protocol.
+        <ul><li>Yes, SPARQL is a protocol to execute SPARQL queries over HTTP.</li></ul>
+      </li>
+    </ol>
+  </div>
+
+  <div class="evaluation slide" id="eval3">
+    <h2>Self-assessment 3: SPARQL queries</h2>
+    <p>Does the <em>same</em> SPARQL query return the <em>same</em> results<br>
+       on <em>different</em> sources about the <em>same</em> metadata?</p>
+    <ol>
+      <li class="correct">
+        In theory, but not in practice.
+        <ul><li>Yes: in theory, SPARQL queries should be interoperable across datasources. Even if different sources use different ontologies, reasoning can bridge the gap.</li></ul>
+      </li>
+      <li>
+        In practice, but not in theory.
+        <ul><li>No: in practice, datasets use different ontologies and most endpoints do not have reasoning enabled to bridge the gap.</li></ul>
+      </li>
+      <li>
+        In theory <em>and</em> in practice.
+        <ul><li>No: in practice, datasets use different ontologies and most endpoints do not have reasoning enabled to bridge the gap.</li></ul>
+      </li>
+    </ol>
   </div>
 
   <div class="progress"></div>
