@@ -205,15 +205,15 @@
     <ul>
       <li>
         An HTTP URI of a resource can be <a href="https://www.w3.org/2001/tag/doc/httpRange-14/2007-05-31/HttpRange-14.html">dereferenced</a>:<br>
-        use an HTTP client to retrieve a <a href="../web-apis/#representations">representation</a>.
+        use an HTTP client to retrieve a <a href="../rest/#representations">representation</a>.
         <ul>
-          <li><a href="../web-apis/#resources">Information resources</a> result in a representation.</li>
-          <li><a href="../web-apis/#resources">Non-information resources</a> result in a <a href="https://tools.ietf.org/html/rfc7231#section-6.4.4">303 redirect</a>.</li>
+          <li><a href="../rest/#resources">Information resources</a> result in a representation.</li>
+          <li><a href="../rest/#resources">Non-information resources</a> result in a <a href="https://tools.ietf.org/html/rfc7231#section-6.4.4">303 redirect</a>.</li>
         </ul>
       </li>
       <li>
         This relies on the double role of an HTTP URI<br>
-        as <a href="../architecture/#identification-location">identificator and locator</a>.
+        as <a href="#identification-location">identifier and locator</a>.
       </li>
       <li>
         Dereferencing is a core principle of Linked Data.
@@ -236,7 +236,7 @@
         “Useful” means the information is available<br>
         using standard technologies.
         <ul>
-          <li>Tim Berners-Lee <a href="https://www.w3.org/DesignIssues/LinkedData.html">mentions</a> <a href="#rdf-model">RDF</a> and <a href="#sparql-language-protocol">SPARQL</a>.</li>
+          <li>Tim Berners-Lee <a href="https://www.w3.org/DesignIssues/LinkedData.html">mentions</a> RDF and <a href="#sparql-language-protocol">SPARQL</a>.</li>
         </ul>
       </li>
       <li>
@@ -291,8 +291,8 @@
         can provide building blocks to model your data.
         <ul>
           <li>
-            They provide <a href="#rdf-property">properties</a>
-            and <a href="#rdfs-class">classes</a> to reuse.
+            They provide properties
+            and classes to reuse.
           </li>
           <li>
             Although not always counted as Linked Data<br>
@@ -302,7 +302,7 @@
       </li>
       <li>
         On the <em>content</em> level, <a href="https://datahub.io/">thousands of datasets</a><br>
-        provide identifiers and data of <a href="#rdfs-resource">individuals</a>.
+        provide identifiers and data of individuals.
         <ul>
           <li>Strive to reuse identifiers rather than to mint new ones.</li>
         </ul>
@@ -362,7 +362,7 @@
         concept-specific vocabularies
         <ul class="inline">
           <li><a href="#schema-org">Schema.org</a></li>
-          <li><a href="http://dbpedia.org/services-resources/ontology">DBpedia ontology</a></li>
+          <li><a href="http://wiki.dbpedia.org/services-resources/ontology">DBpedia ontology</a></li>
           <li>…</li>
         </ul>
       </li>
@@ -410,7 +410,7 @@
         Its concepts are defined rather loosely.
         <ul>
           <li>This makes it flexible to use for developers.</li>
-          <li>Machines cannot <a href="#semantic-web-reasoning">derive</a> much knowledge from it.</li>
+          <li>Machines cannot derive much knowledge from it.</li>
         </ul>
       </li>
       <li>
@@ -437,8 +437,8 @@
       <li>
         <a href="https://www.wikidata.org/">Wikidata</a> is a manually curated alternative.
         <ul>
-          <li>It has its own data model on top of <a href="#rdf-model">RDF</a>.</li>
-          <li class="opinion">It grows fast and might overtake DBpedia.</li>
+          <li>It has its own data model on top of RDF.</li>
+          <li>It grows fast and might overtake DBpedia.</li>
         </ul>
       </li>
       <li>
@@ -563,15 +563,14 @@
     </h2>
     <ul>
       <li>
-        <a href="#sparql-query-forms">SPARQL</a> is a query language.
+        SPARQL is a query language.
         <ul>
           <li>Select specific data from an RDF dataset.</li>
           <li>Insert, change, or delete data in an RDF dataset.</li>
         </ul>
       </li>
       <li>
-        The <a href="#sparql-protocol">SPARQL protocol</a>
-        is a <a href="../web-apis/#definition">Web API</a> definition<br>
+        The SPARQL protocol is a Web API definition<br>
         for querying in the SPARQL language over HTTP.
         <ul>
           <li>
@@ -610,7 +609,7 @@
       <li>
         A BGP is a set of <em>triple patterns</em>.
         <ul>
-          <li>Their syntax is a superset of <a href="#turtle">Turtle</a>.</li>
+          <li>Their syntax is a superset of Turtle.</li>
         </ul>
       </li>
       <li>
