@@ -6,6 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="../styles/screen-16x10.css">
+  <link rel="stylesheet" href="../styles/custom.css">
 </head>
 <body class="shower list">
   <header class="caption">
@@ -708,83 +709,81 @@ you'll need it later on! </p>
       links, but this complexity also explains why the project has never been implemented successfully.</footer>
     </div>
 
-         <div class="slide" id="eval1">
-       <h2>Self-assessment 1</h2>
-       <ul>
-         <li>What key aspect distinguishes thesauri from other forms of
-           controlled vocabularies ?
-           <ul>
-             <li>A formal standard exists to verify their well-formedness</li>
-             <!-- Yes, the ISO 25964 standard defines exactly how a thesaurus
-           should be constructed  -->
-             <li>A thesaurus provides description at a more granular level</li>
-             <!-- No, this does not depend on the type of vocabulary  -->
-             <li>Thesauri can be represented in SKOS</li>
-             <!-- Thesauri can indeed be represented in SKOS, but so can
-           other types of vocabularies, as illustrated by the LCSH -->
-           </ul>
-         </li>
-       </ul>
-         </div>
+  <div class="evaluation slide" id="eval1">
+    <h2>Self-assessment 1</h2>
+    <p>What key aspect distinguishes thesauri from other forms of controlled vocabularies?</p>
+    <ol>
+      <li class="correct">
+        A formal standard exists to verify their well-formedness.
+        <ul><li>Yes, the ISO 25964 standard defines exactly how a thesaurus should be constructed.</li></ul>
+      </li>
+      <li>
+        A thesaurus provides description at a more granular level.
+        <ul><li>No, this does not depend on the type of vocabulary.</li></ul>
+      </li>
+      <li>
+        Thesauri can be represented in SKOS.
+        <ul><li>Thesauri can indeed be represented in SKOS, but so can other types of vocabularies, as illustrated by the LCSH.</li></ul>
+      </li>
+    </ol>
+  </div>
 
-         <div class="slide" id="eval2">
-       <h2>Self-assessment 2</h2>
-       <ul>
-         <li>What is the advantage of adding non-preferred terms to a vocabulary ?
-           <ul>
-             <li>You can increase the success rate of the reconciliation process</li>
-             <!-- Yes ! That is, if you have configured the process to include the non-
-           preferred terms -->
-             <li>It reduces the negative effect of synonymy on search results</li>
-             <!-- Yes ! Even if an end-user performs a search on a synonym encoded as a non-preferred
-             term in regards to the preferred term used for indexing, the results are the same -->
-             <li>It reduces the negative effect of polysymy on search results</li>
-             <!-- No ! Adding too many and potentially even irrelevant non-preferred
-           terms will increase the negative impact of polysemy  -->
-           </ul>
-         </li>
-       </ul>
-         </div>
+  <div class="evaluation slide" id="eval2">
+    <h2>Self-assessment 2</h2>
+    <p>Why adding non-preferred terms to a vocabulary?</p>
+    <ol>
+      <li class="correct">
+        It reduces the negative effect of synonymy on search results.
+        <ul><li>Yes! Even if an end-user performs a search on a synonym encoded as a non-preferred term in regards to the preferred term used for indexing, the results are the same.</li></ul>
+      </li>
+      <li>
+        It reduces the negative effect of polysemy on search results.
+        <ul><li>No! Adding too many and potentially even irrelevant non-preferred terms will increase the negative impact of polysemy.</li></ul>
+      </li>
+      <li class="correct">
+        You can increase the success rate of the reconciliation process.
+        <ul><li>Yes! That is, if you have configured the process to include the non-preferred terms.</li></ul>
+      </li>
+    </ol>
+  </div>
 
-         <div class="slide" id="eval3">
-       <h2>Self-assessment 3</h2>
-       <ul>
-         <li>How do labels and concepts relate to each other in a SKOS vocabulary ?
-           <ul>
-             <li>Labels allow to define the structure whereas concepts can express
-             the specific terms used</li>
-             <!-- No ! Completely wrong.
-            -->
-             <li>Concepts are abstract units of thought and labels are strings of characters
-             that are associated with a concept.</li>
-             <!-- Yes !-->
-             <li>Labels are used to express semantic relations between concepts</li>
-             <!-- No, semantic relations are expressed by using properties such
-           as broader or narrower -->
-           </ul>
-         </li>
-       </ul>
-         </div>
+  <div class="evaluation slide" id="eval3">
+    <h2>Self-assessment 3</h2>
+    <p>How do labels and concepts relate to each other in a SKOS vocabulary?</p>
+    <ol>
+      <li>
+        Labels allow defining the structure whereas concepts can express the specific terms used.
+        <ul><li>No! Completely wrong.</li></ul>
+      </li>
+      <li>
+        Labels are used to express semantic relations between concepts.
+        <ul><li>No, semantic relations are expressed by using properties such as broader or narrower.</li></ul>
+      </li>
+      <li class="correct">
+        Concepts are abstract units of thought; labels are strings of characters associated with a concept.
+        <ul><li>Yes!</li></ul>
+      </li>
+    </ol>
+  </div>
 
-         <div class="slide" id="eval4">
-       <h2>Self-assessment 4</h2>
-       <ul>
-         <li>Why is it important to acknowledge uni-directionality when creating URLs ?
-           <ul>
-             <li>In order to prevent the creation of dead links</li>
-             <!-- No, but understanding uni-directionality helps us to realize why
-           dead links are unavoidable. -->
-             <li>It explains why we don't need SPARQL </li>
-             <!-- No, it's the opposite ! SPARQL exactly allows us to traverse links
-           in both ways across a graph.  -->
-             <li>It helps to understand why it isn't that straightforward to connect
-             all records together which point out to a central authority file</li>
-             <!-- Exactly! It's not because you link to the LCSH, that the LCSH, or other
-           people refering to the same heading, are made aware of its existence.-->
-           </ul>
-         </li>
-       </ul>
-         </div>
+  <div class="evaluation slide" id="eval4">
+    <h2>Self-assessment 4</h2>
+    <p>Why is it important to acknowledge uni-directionality when creating URLs?</p>
+    <ol>
+      <li>
+        It explains why we don't need SPARQL.
+        <ul><li>No, it's the opposite! SPARQL exactly allows us to traverse links in both ways across a graph.</li></ul>
+      </li>
+      <li class="correct">
+        It helps to understand why it isn't that straightforward to connect all records together which point out to a central authority file.
+        <ul><li>Exactly! It's not because you link to the LCSH, that the LCSH, or other people referring to the same heading, are made aware of its existence.</li></ul>
+      </li>
+      <li>
+        In order to prevent the creation of dead links.
+        <ul><li>No, but understanding uni-directionality helps us to realize why dead links are unavoidable.</li></ul>
+      </li>
+    </ol>
+  </div>
 
   <div class="progress"></div>
   <footer>
