@@ -71,7 +71,7 @@
       <p>Now forget about the Belgian beer or the chocolate.
         Imagine walking into a gallery and you can take everything you want.
         One rule: you first need to catalog the objects...
-      What would be the easiest and quickest way to create metadata for the artworks ?</p>
+      What would be the easiest and quickest way to create metadata for the artworks?</p>
     </footer>
   </div>
 
@@ -88,7 +88,7 @@
       <p>Let us now go through the four data models we announced in the video at a slower pace,
       taking into account the possibilities and limits of each model. From top to bottom,
       left to right, this image represents tabular data, relational databases, XML
-      and RDF. For each model, we'll ask ourselves the same set of questions, so that
+      and RDF. For each model, we’ll ask ourselves the same set of questions, so that
       you understand the characteristics of each model. </p>
     </footer>
   </div>
@@ -144,7 +144,7 @@
 
 <div class="slide" id="tabular-data">
     <h2>
-      First model : tabular data
+      First model: tabular data
     </h2>
     <ul>
       <li>Also referred to as <em>flat files</em></li>
@@ -162,7 +162,7 @@
 
  <div class="slide" id="tabular-data-example">
     <h2>
-      Tabular data - example
+      Tabular data—example
     </h2>
   	<table>
   	<tr>
@@ -199,7 +199,7 @@
     <p>Common serialization formats for tabular data include
       <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a>
       and <a href="https://en.wikipedia.org/wiki/Tab-separated_values">TSV</a></p>
-    <p>Example of our data in CSV :</p>
+    <p>Example of our data in CSV:</p>
     <p>
     <code>title,creator,date,collection</code><br>
     <code>Guernica,Pablo Picasso,1937,Reina Sofia</code><br>
@@ -230,12 +230,12 @@
   </div>
 
   <div class="slide" id="limits-tabular">
-    <h2>Limits and possibilities of tabular data ?</h2>
+    <h2>Limits and possibilities of tabular data?</h2>
     <ul>
-      <li>Data quality : prone to inconsistencies !</li>
-      <li>Search and retrieval : ineffective</li>
-      <li>Updates - change : easy</li>
-      <li>Distribution : easy</li>
+      <li>Data quality: prone to inconsistencies!</li>
+      <li>Search and retrieval: ineffective</li>
+      <li>Updates—change: easy</li>
+      <li>Distribution: easy</li>
     </ul>
     <p>How do we overcome the inconsistencies and poor search within tabular data?</p>
   </div>
@@ -247,7 +247,7 @@
    	 <li>First described by <a href="https://en.wikipedia.org/wiki/Relational_model">
        Edgar Codd</a> in 1969</li>
    	 <li>Rare to find an information system which is not driven by a relational database</li>
-   	 <li>Mature technology which is here to stay - don't believe the people
+   	 <li>Mature technology which is here to stay—don’t believe the people
      who claim <a href="https://en.wikipedia.org/wiki/NoSQL">NoSQL</a> or
      <a href="https://en.wikipedia.org/wiki/Triplestore">triple stores</a> will take over</li>
    	</ul>
@@ -273,7 +273,7 @@
     <h2>
       Mapping reality to a database
     </h2>
-    <p>Worldview consisting of three building blocks :</p>
+    <p>Worldview consisting of three building blocks:</p>
     <ul>
       <li>Entities: group of information which share properties and which vary
         independently from other groups</li>
@@ -290,7 +290,7 @@
   	<li>For every entity, create a table which will contain the properties of the entity</li>
   	<li>Establish the relationships in between the tables</li>
   </ol>
-  Is sometimes more an art than a science !
+  Is sometimes more an art than a science!
   </div>
 
   <div class="slide" id="design_pic">
@@ -333,7 +333,7 @@ previously. By doing so, we can ensure more consistency in our metadata.
     used to insert, query, update and delete data, for schema creation and data access control</li>
     <li>No need to become an SQL wizard, but mastering the basic commands
       can be very helpful to create exports from your cataloging back-end</li>
-    <li>Standardized in theory (ISO/IEC 9075) but not so much in pratice
+    <li>Standardized in theory (ISO/IEC 9075) but not so much in practice
     </ul>
   </div>
 
@@ -373,10 +373,10 @@ previously. By doing so, we can ensure more consistency in our metadata.
   </div>
 
   <div class="slide" id="sql-exercice">
-    <h2>Practice on your own !</h2>
+    <h2>Practice on your own!</h2>
     <ul><li>As a librarian, it can be useful to have a basic knowledge of SQL</li>
       <li>Websites such as <a href="http://sqlfiddle.com/">http://sqlfiddle.com</a>
-      allow you to experiment on your own !</li>
+      allow you to experiment on your own!</li>
       <li>Copy/paste the SQL code from the previous slides in order to create
         a table, insert metadata and query them</li>
     </ul>
@@ -407,7 +407,7 @@ previously. By doing so, we can ensure more consistency in our metadata.
     <footer><p>Using duct tape to McGyver yourself out of a problem can be used as a metaphor for many
     of the ad hoc solutions found not to tamper with the schema of a database.
   For example, if there is a need to encode new information in the database, but
-there's no time to redesign the database schema to accommodate the new data, people
+there’s no time to redesign the database schema to accommodate the new data, people
 often rely on external flat files, managed in excel for example, to keep track of
 new reference data in a quick and easy manner, based on the assumption that they will
 be integrated into the database in the future. However, in practice the ad hoc solution
@@ -420,10 +420,10 @@ reference data in the database and the local reference data in the spreadsheet.<
       Sharing your Data
     </h2>
     <p>Both data and the schema are locked up in a <em>binary</em> file,
-      coupled to a specific software - you can't just copy/paste a database and
-      give it to someone else !</p>
+      coupled to a specific software—you can’t just copy/paste a database and
+      give it to someone else!</p>
       <p>Leaving aside the technical issues of migrating and integrating
-      databases, the main complexity resides in the <em>semantics</em> :
+      databases, the main complexity resides in the <em>semantics</em>:
       a database schema is rarely well documented in practice, making it very
     complex to understand how sometimes hundreds of tables are connected
   </p>
@@ -441,7 +441,7 @@ reference data in the database and the local reference data in the spreadsheet.<
     they tend to keep both the data and the schema imprisoned.
     Even if the party with whom you want to share your database has exactly the same
     version of the DBMS you are using, there is still a <em>semantic</em> barrier to
-    overcome. Using someone else's database implies that you understand how tables are
+    overcome. Using someone else’s database implies that you understand how tables are
     constructed and interconnected. ILS and metadata management software often contains hundreds
     of tables, so understanding how the data are structured might take days or weeks...
   </p></footer>
@@ -468,7 +468,7 @@ model.</p>
 
   <div class="slide" id="markup">
     <h2>
-      Third model : markup
+      Third model: markup
     </h2>
     <p>Origins of markup lie in the tradition of typesetting,
         where an author marks up
@@ -476,20 +476,20 @@ model.</p>
       <p>Certain passages, such as the titles of chapters, should be printed in bold,
         whereas footnotes should be printed in a smaller font than the normal
         paragraphs</p>
-      <p>Two options : either you apply <em>makeup</em> or <em>markup</em> ...</p>
+      <p>Two options: either you apply <em>makeup</em> or <em>markup</em> ...</p>
   </div>
 
   <div class="slide" id="makeup">
     <h2>Applying makeup</h2>
     <ul>
       <li>The quick and dirty way ...</li>
-      <li>In the context of HTML, applying <em>makeup</em> would imply the following :
+      <li>In the context of HTML, applying <em>makeup</em> would imply the following:
       <ul><li>
       <code>&lt;font size&#61;&#34;20&#34;&gt;&lt;b&gt;Linked Data for
         librarians&lt;&#47;b&gt;&lt;&#47;font&gt;</code></li>
       </ul>
       <li>We simply indicate how that specific string
-      of characters should be displayed - it's makeup !</li>
+      of characters should be displayed—it’s makeup!</li>
     </ul>
   </div>
 
@@ -497,8 +497,8 @@ model.</p>
 <h2>Applying markup</h2>
 <ul>
   <li>Indicate the <em>role</em> a part of a document
-  plays and define seperately the aesthetics of that role</li>
-  <li>Let's use markup on our HTML example :
+  plays and define separately the aesthetics of that role</li>
+  <li>Let’s use markup on our HTML example:
     <ul><li>
   <code>h1 {font-size: 20pt; font-weight: bold}</code><br>
   <code>...</code><br>
@@ -562,7 +562,7 @@ based on this hierarchical view.</p>
       <li>1989: Tim Berners-Lee was inspired by <a href="https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language">SGML</a>
         but simplified it radically by proposing a fixed set
       of tags to represent the structural components of a Web page</li>
-      <li>Examples : <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>,
+      <li>Examples: <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>,
     <code>&lt;h1&gt;</code>, etc</li>
       <li>Most people forgot all about SGML, but its influence has been
       enormous ...</li>
@@ -578,9 +578,9 @@ based on this hierarchical view.</p>
       </figcaption>
     </figure>
     <footer>
-      <p>Bob Boiko compared the relationship between SGML and HTML by using the metaphore
-      of Robert Johnson and Eric Clapton : Johnson did all the hard work to define the blues genre,
-      while Clapton reaped commercial success with an easy-lisening version of Johnson's work.
+      <p>Bob Boiko compared the relationship between SGML and HTML by using the metaphor
+      of Robert Johnson and Eric Clapton: Johnson did all the hard work to define the blues genre,
+      while Clapton reaped commercial success with an easy-listening version of Johnson’s work.
       SGML was difficult to use and hardly a success story, but it defined
       many of the conceptual building blocks of the Web. HTML reused some of its concepts in a radically
       simplified manner, and resulted in the success story we all know.</p>
@@ -597,7 +597,7 @@ based on this hierarchical view.</p>
     </figure>
     <footer>
       <p>The rapid uptake of the Web throughout the 1990s was accompanied with rising
-        commercial interests. Around 1995, Netscape's Navigator was the most popular browser
+        commercial interests. Around 1995, Netscape’s Navigator was the most popular browser
         but Microsoft aggressively marketed their Internet Explorer (IE) in order to gain
         the biggest market share. Both browser constructors created custom tags
         in order to satisfy the growing base of graphic designers interested in the Web.
@@ -606,7 +606,7 @@ based on this hierarchical view.</p>
         <code>&lt;marquee&gt;</code>. This picture from 1997, at the height of the
         so-called <a href="https://en.wikipedia.org/wiki/Browser_wars">browser war</a>
         shows how, after the launch party of IE4, employees of Microsoft put the IE logo
-        in front of Netscape's offices. In turn, their employees flipped the logo and put Mozilla's dinosaur logo
+        in front of Netscape’s offices. In turn, their employees flipped the logo and put Mozilla’s dinosaur logo
         on top.
         </p>
     </footer>
@@ -619,10 +619,10 @@ based on this hierarchical view.</p>
     <ul>
       <li>End of the 1990s => desire to focus again on the structure and not the lay-out
       of the Web</li>
-      <li>XML 1.0 : W3C recommendation in 1998</li>
-      <li>Effort was made to maintain 80% of SGML's functionality
+      <li>XML 1.0: W3C recommendation in 1998</li>
+      <li>Effort was made to maintain 80% of SGML’s functionality
       with only 20% of its complexity</li>
-      <li>Big impact : open standard which is platform and application independent</li>
+      <li>Big impact: open standard which is platform and application independent</li>
     </ul>
   </div>
 
@@ -633,9 +633,9 @@ based on this hierarchical view.</p>
     <ul>
       <li>Structure documents with
         <ul>
-          <li>elements : serialized as tags surrounded by angle brackets
+          <li>elements: serialized as tags surrounded by angle brackets
           (<code>&lt;tag&gt;</code>)</li>
-          <li>attribute : key/value modifiers of a tag</li>
+          <li>attribute: key/value modifiers of a tag</li>
         </ul>
       </li>
       <li>Each document starts with a declaration:
@@ -649,10 +649,10 @@ based on this hierarchical view.</p>
 
  <div class="slide" id="adding_work">
     <h2>
-      Let's add a work to our XML catalog of art objects
+      Let’s add a work to our XML catalog of art objects
     </h2>
     <ul>
-      <li>Notice how we can model all of the metadata as attributes :
+      <li>Notice how we can model all of the metadata as attributes:
         <ul>
           <li>
           <code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code><br>
@@ -665,13 +665,13 @@ based on this hierarchical view.</p>
     </ul>
     <footer><p>The hierarchical structure of XML now becomes apparent:
     the <code>Work</code> element is a child of the <code>Art</code> element. However,
-    note how we've chosen to model the metadata of works as attributes. Is this a wise option ?
+    note how we’ve chosen to model the metadata of works as attributes. Is this a wise option?
     </p></footer>
   </div>
 
  <div class="slide" id="elements">
     <h2>
-      Let's model everything as child elements
+      Let’s model everything as child elements
     </h2>
 <pre class="scroll"><code>&lt;Art title="Modern art"/&gt;
 &lt;Work&gt;
@@ -696,7 +696,7 @@ based on this hierarchical view.</p>
 
 <div class="slide" id="compromise">
     <h2>
-      Let's go for a compromise !
+      Let’s go for a compromise!
     </h2>
     <p>
        <code>&lt;Art title="Modern art"/&gt;</code><br>
@@ -706,20 +706,20 @@ based on this hierarchical view.</p>
        <code>&lt;/Work&gt;</code><br>
        <code>&lt;/Art&gt;</code>
      </p>
-      <footer><p>In this example we've chosen to model all values that will not be decomposed
-    or require further properties as attributes. For instance, a work's <code>title</code>
+      <footer><p>In this example we’ve chosen to model all values that will not be decomposed
+    or require further properties as attributes. For instance, a work’s <code>title</code>
     does not require further description, but we could add additional information to <code>creator</code>,
     such as a date and place of birth.</p></footer>
   </div>
 
 <div class="slide" id="xsd">
     <h2>
-      Schema's
+      Schemas
     </h2>
     <ul>
-    <li>Different languages exist to express schema's (DTD, RELAX NG)
+    <li>Different languages exist to express schemas (DTD, RELAX NG)
     but XML Schema (XSD) is the most popular</li>
-    <li>Example for our catalog :
+    <li>Example for our catalog:
     <ul>
     <li>
       <pre class="scroll">
@@ -768,9 +768,9 @@ based on this hierarchical view.</p>
       Search and retrieval
     </h2>
     <ul>
-    <li>XML has its own query language : XPATH</li>
+    <li>XML has its own query language: XPATH</li>
     <li>Allows to traverse XML trees and collect element and attribute values</li>
-    <li>Examples :
+    <li>Examples:
     <ul>
     <li>
        <code>/Art/Work/Creator</code><br>
@@ -785,26 +785,26 @@ based on this hierarchical view.</p>
 
 <div class="slide" id="db_xml">
     <h2>
-      When to use a database or XML ?
+      When to use a database or XML?
     </h2>
-    <p>The quick answer is : it depends on the context</p>
+    <p>The quick answer is: it depends on the context</p>
     <p>Read this <a href="http://www.tandfonline.com/doi/abs/10.3200/HMTS.37.2.73-86">
-      paper</a> by a historian who explains the pro's and con's of
+      paper</a> by a historian who explains the pros and cons of
       each approach to model an inventory</p>
-    <p>XML is often critized for its verbose nature, and <a href="https://en.wikipedia.org/wiki/JSON">
+    <p>XML is often criticized for its verbose nature, and <a href="https://en.wikipedia.org/wiki/JSON">
       JSON</a> has become more popular
       to represent structured data</p>
   </div>
 
 <div class="slide" id="limits_xml">
     <h2>
-      Limits ?
+      Limits?
     </h2>
     <ul>
-    <li>Inconsistencies : usage of XML Schema to validate data is powerfull</li>
-    <li>Search and retrieval : less performant than relational databases</li>
-    <li>Updates - change : as painful as with relational databases</li>
-    <li>Distribution : open standard, but still one needs to understand
+    <li>Inconsistencies: usage of XML Schema to validate data is powerfull</li>
+    <li>Search and retrieval: less performant than relational databases</li>
+    <li>Updates—change: as painful as with relational databases</li>
+    <li>Distribution: open standard, but still one needs to understand
       the schema</li>
      </ul>
   </div>
@@ -819,9 +819,9 @@ based on this hierarchical view.</p>
       </figcaption>
     </figure>
     <footer><p>Both relational databases and XML rely heavily on a local schema to actually
-        understand how the data are structured. If you want to use someone else's data,
+        understand how the data are structured. If you want to use someone else’s data,
         you have to sit down and study the schema, like you need to analyze a map when you
-        go into unknown territory. On top, you need to get a specific map for each trip you're making !</p>
+        go into unknown territory. On top, you need to get a specific map for each trip you’re making!</p>
 </footer>
   </div>
 
@@ -836,15 +836,15 @@ based on this hierarchical view.</p>
     </figure>
     <footer><p>Not only do you need to put effort into understanding, for each of your voyages,
         how a specific map is drawn (its scale, the symbols used, etc), the information is often not
-        available publicly. As a data consumer, you don't want to have closed doors in front of your
-        nose and needing to beg to get in. As a data producer who wants other people to reuse your data, you don't want to have
+        available publicly. As a data consumer, you don’t want to have closed doors in front of your
+        nose and needing to beg to get in. As a data producer who wants other people to reuse your data, you don’t want to have
         people knocking on your door every other day and help them use and interpret your data.
         Our next data model will try to overcome these limits.</p></footer>
   </div>
 
 <div class="slide" id="rdf">
     <h2>
-      Fourth model : RDF
+      Fourth model: RDF
     </h2>
     <ul>
     <li>Resource Description Framework (RDF)</li>
@@ -881,7 +881,7 @@ based on this hierarchical view.</p>
 
   <div class="slide" id="rdf-serialization">
     <h2>
-      Serialization - different options
+      Serialization—different options
     </h2>
     <ul>
       <li>RDF/XML
@@ -904,8 +904,8 @@ based on this hierarchical view.</p>
     <h2>
       Turtle example
     </h2>
-    <p>Let's see how we can express the metadata explaining Jeff Koons created
-    the artwork "Puppy" :</p>
+    <p>Let’s see how we can express the metadata explaining Jeff Koons created
+    the artwork <cite>Puppy</cite>:</p>
     <p>
        <code>@prefix gh:&lt;http://www.guggenheim.org/new-york/collections/collection-online/artwork/&gt;.</code><br>
        <code>@prefix dc:&lt;http://purl.org/dc/terms/&gt;.</code><br>
@@ -933,10 +933,10 @@ based on this hierarchical view.</p>
     <h2>
       Turtle syntax
     </h2>
-    <p>RDF includes literal values ("Puppy") in its model as well, as some properties
+    <p>RDF includes literal values (<cite>Puppy</cite>) in its model as well, as some properties
     eventually do not point at another object but rather at a non-decomposable value.
     Also, not how <code>:influencedBy</code> has an empty namespace prefix,
-    which indicates that it is locally defined :
+    which indicates that it is locally defined:
     <p>
        <code>gh:48 dc:creator viaf:5035739;</code><br>
        <code>dc:title "Puppy".</code><br>
@@ -950,8 +950,8 @@ based on this hierarchical view.</p>
       Search and retrieval in RDF
     </h2>
 	<ul>
-	<li>SPARQL : recursive acronym for SPARQL Protocol and RDF Query Language</li>
-	<li>Example : let's retrieve all triples which have Picasso as the subject:
+	<li>SPARQL: recursive acronym for SPARQL Protocol and RDF Query Language</li>
+	<li>Example: let’s retrieve all triples which have Picasso as the subject:
 	<ul><li><code>SELECT ?predicate ?object WHERE {</code><br>
 	<code>&lt;http://dpbedia.org/resource/Pablo_Picasso&gt;</code><br>
 	<code>?predicate ?object.</code><br>
@@ -967,19 +967,19 @@ based on this hierarchical view.</p>
     Implementation
   </h2>
 <ul>
-<li>Triplestore : database used to store and query RDF triples</li>
+<li>Triple store: database used to store and query RDF triples</li>
 <li>Either natively built or on top of existing relational databases</li>
 <li>Despite recent developments, performance remains an issue</li>
 </ul>
   </div>
 
   <div class="slide" id="limits-rdf">
-    <h2>Limits of RDF ?</h2>
+    <h2>Limits of RDF?</h2>
     <ul>
-      <li>Inconsistencies : fantastic in theory, but often problematic in practice</li>
-      <li>Search and retrieval : tremendous possibilities, but complex to execute</li>
-      <li>Updates - change : new information can be added at any point</li>
-      <li>Distribution : where the model shines !</li>
+      <li>Inconsistencies: fantastic in theory, but often problematic in practice</li>
+      <li>Search and retrieval: tremendous possibilities, but complex to execute</li>
+      <li>Updates—change: new information can be added at any point</li>
+      <li>Distribution: where the model shines!</li>
     </ul>
   </div>
 
@@ -1006,10 +1006,10 @@ based on this hierarchical view.</p>
           Public Domain Pictures</a>
       </figcaption>
     </figure>
-    <footer><p>Don't be the boy with the hammer! Once people develop experience with one tool and model,
+    <footer><p>Don’t be the boy with the hammer! Once people develop experience with one tool and model,
         they tend to use it for everything. For example, it takes some time to develop skills to master the XML
         suite (XSD, XPATH, XQUERY, etc) so after a while people squeeze everything into hierarchical trees
-        to be processed as XML, even if it's not a natural fit.</p></footer>
+        to be processed as XML, even if it’s not a natural fit.</p></footer>
   </div>
 
   <div class="evaluation slide" id="eval1">

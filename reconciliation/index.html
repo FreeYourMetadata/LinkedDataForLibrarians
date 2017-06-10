@@ -62,13 +62,13 @@
   <div class="slide" id="ld-principles">
     <h2>Linked Data and Controlled Vocabularies</h2>
   	<ul>
-      <li>Let us come back to the 3rd and 4th Linked Data principle :
+      <li>Let us come back to the 3rd and 4th Linked Data principle:
   	<ul>
   	<li>When someone looks up an URI, to provide useful information using standards</li>
   	<li>Include links to other URIs so that more information can be discovered</li>
   	</ul>
   </li>
-  	<li>Controlled vocabularies can play a pivotal role to address these two principles !</li>
+  	<li>Controlled vocabularies can play a pivotal role to address these two principles!</li>
   </ul>
   </div>
 
@@ -83,7 +83,7 @@
       <footer>
         <p>The Library of Congress Subject Headings (LCSH) are without a doubt
           one of the biggest controlled vocabularies world wide. The LoC has published
-          them as Linked Data. Why is this relevant to you ? For example, <a href="http://id.loc.gov/authorities/subjects/sh85034652.html">
+          them as Linked Data. Why is this relevant to you? For example, <a href="http://id.loc.gov/authorities/subjects/sh85034652.html">
           http://id.loc.gov/authorities/subjects/sh85034652.html</a> allows us to
           look up more generic and specific terms related to cubism, but also includes
           pointers to other vocabularies in other languages, illustrated by the link at the
@@ -133,16 +133,16 @@
     <h2>Come in different flavours</h2>
   	<ul>
   	<li>Within the LIS community we can distinguish between three different types
-      of controlled vocabularies :
+      of controlled vocabularies:
   	<ul>
-  	<li>Classification schemes : for example the <a href="https://www.oclc.org/en/dewey.html">
+  	<li>Classification schemes: for example the <a href="https://www.oclc.org/en/dewey.html">
       Dewey Decimal Classification</a></li>
-  	<li>Subject headings : for example the <a href="http://id.loc.gov/authorities/subjects.html">
+  	<li>Subject headings: for example the <a href="http://id.loc.gov/authorities/subjects.html">
       Library of Congress Subject Headings</a></li>
-  	<li>Thesauri : for example <a href="http://www.getty.edu/research/tools/vocabularies/aat/">
+  	<li>Thesauri: for example <a href="http://www.getty.edu/research/tools/vocabularies/aat/">
       Arts and Architecture Thesaurus</a></li>
   	</ul></li>
-  	<li>Essential to understand their differences before using them as Linked Data ! </li>
+  	<li>Essential to understand their differences before using them as Linked Data! </li>
   	</ul>
   </div>
 
@@ -172,13 +172,13 @@
     regarding the same topic together</p>
     <p>Classes are represented by <em>notations</em> and <em>captions</em>
     provide a human-readable description of the scope of the class</p>
-    <p>Dewey's Decimal Classification (DDC) is the most wellknown example</p>
+    <p>Dewey’s Decimal Classification (DDC) is the most well known example</p>
    </div>
 
   <div class="slide" id="classification-example">
-    <h2>Example - Dewey Decimal Classification</h2>
+    <h2>Example: Dewey Decimal Classification</h2>
     <p>We can systematically drill down the DCC in order to locate the class for
-      <b>Cubism</b> : </p>
+      <b>Cubism</b>: </p>
     <table>
     <tr>
       <td>7</td>
@@ -226,7 +226,7 @@
    </div>
 
     <div class="slide" id="lcsh-example">
-      <h2>Example - Library of Congress Subject Headings</h2>
+      <h2>Example: Library of Congress Subject Headings</h2>
       <p>Cubism (May Subd Geog)</p>
         <table>
           <tr><td>BT</td><td>Aesthetics</td></tr>
@@ -271,7 +271,7 @@
          </div>
 
        <div class="slide" id="thesaurus-example">
-         <h2>Example - Arts and Architecture Thesaurus</h2>
+         <h2>Example: Arts and Architecture Thesaurus</h2>
          <p>Cubist</p>
            <ul>
              <li>Styles and periods
@@ -290,12 +290,12 @@
            <div class="slide" id="disadvantages">
              <h2>Drawbacks of Controlled Vocabularies</h2>
              <p>Despite their obvious advantages, controlled vocabularies also represent
-             a number of problems :</p>
+             a number of problems:</p>
              <ul>
-               <li>Money : terribly expensive to develop and maintain</li>
-               <li>Complexity : end-users have trouble using them</li>
-               <li>Evolve slowly : updating takes time</li>
-              <li>Subjectivity : express always a certain worldview</li>
+               <li>Money: terribly expensive to develop and maintain</li>
+               <li>Complexity: end-users have trouble using them</li>
+               <li>Evolve slowly: updating takes time</li>
+              <li>Subjectivity: express always a certain worldview</li>
              </uL>
             </div>
 
@@ -312,8 +312,8 @@
           <div class="slide" id="skos">
           <h2>Simple Knowledge Organization System (SKOS)</h2>
           <p>Data format to represent controlled vocabularies on the Web</p>
-          <p>Confusing relation with ontologies - what is the difference for
-            example between <code>skos:narrower</code> and <code>rdfs:subClassOf</code> ?</p>
+          <p>Confusing relation with ontologies: what is the difference for
+            example between <code>skos:narrower</code> and <code>rdfs:subClassOf</code>?</p>
           <p>Controlled vocabularies are hierarchically and associatively structured
             but they do not have the same rigor as formal axioms or facts about the world</p>
           </div>
@@ -323,8 +323,8 @@
           <ul><li>Concepts are expressed through concrete terms (=labels)
             and may have three properties:
             <ol>
-              <li>Labeling properties : <code>skos:prefLabel</code>, <code>skos:altLabel</code></li>
-              <li>Semantic properties : <code>skos:narrower</code>, <code>skos:broader</code>, <code>skos:related</code>,
+              <li>Labeling properties: <code>skos:prefLabel</code>, <code>skos:altLabel</code></li>
+              <li>Semantic properties: <code>skos:narrower</code>, <code>skos:broader</code>, <code>skos:related</code>,
                 <code>skos:narrowMatch</code>, etc
               </li>
               <li>Documentation properties: <code>skos:scopeNote</code>, <code>skos:definition</code>, <code>skos:historyNote</code></li>
@@ -369,10 +369,10 @@
               Let us look at a concrete example. Point your browser to
               <a href="http://id.loc.gov/authorities/subjects/sh85034652.html">
               http://id.loc.gov/authorities/subjects/sh85034652.html</a>
-              and see how the authority file for "Cubism" is structured
+              and see how the authority file for <em>Cubism</em> is structured
               and displayed for human consumption on the HTML page.
               Please scroll all the way down to the bottom of the page,
-              click on the button to download the SKOS - N-Triples
+              click on the button to download the SKOS/N-Triples
               representation, and open up the file. Here you find all
               of the same information as on the HTML representation,
               but in a more structured and therefore machine-processable
@@ -386,7 +386,7 @@
           </div>
 
           <div class="slide" id="thesaurus-creation">
-            <h2>Let's create our own thesaurus in SKOS !</h2>
+            <h2>Let’s create our own thesaurus in SKOS!</h2>
             <ul>
               <li>Domain analysis<ul><li>Analyze the Wikipedia page
                 on <a href="http://en.wikipedia.org/wiki/Art_periods#Modern-art">
@@ -421,7 +421,7 @@
     <div class="slide" id="top-concept">
       <h2>We need to add a title and a top concept</h2>
       <p>For convenience, stick to ASCII characters and avoid whitespaces or any
-        special tokens :</p>
+        special tokens:</p>
       <pre><code>
         art:ModernArtPeriodsThesaurus a skos:ConceptScheme;
           dc:title "Modern art periods thesaurus"@en;
@@ -431,7 +431,7 @@
 
   <div class="slide" id="adding-concepts">
     <h2>Adding concepts</h2>
-    <p>Adding the top concept :</p>
+    <p>Adding the top concept:</p>
     <pre><code>
       art:ModernArt a skos:Concept;
         skos:prefLabel "Modern art"@en;
@@ -469,11 +469,11 @@
 </div>
 
 <div class="slide" id="validation">
-<h2>Play on your own !</h2>
+<h2>Play on your own!</h2>
 <p>Download our <a href="http://book.freeyourmetadata.org/chapters/3/modern-art-skos.ttl">
-  mini-thesaurus</a> in SKOS/Turtle and add some extra concepts ! Keep the file,
-you'll need it later on! </p>
-<p>Validation and visualization tools :
+  mini-thesaurus</a> in SKOS/Turtle and add some extra concepts! Keep the file,
+you’ll need it later on! </p>
+<p>Validation and visualization tools:
 <ul>
   <li><a href="http://www.rdfabout.com/demo/validator">http://www.rdfabout.com/demo/validator</a></li>
   <li><a href="http://labs.sparna.fr/skos-play/">http://labs.sparna.fr/skos-play/</a></li>
@@ -489,12 +489,12 @@ you'll need it later on! </p>
       </figcaption>
     </figure>
     <footer>
-      Let us now create connections ! In the previous slides, we explained how to
-      create a controlled vocabulary by using SKOS. Now we'll see how we can use
+      Let us now create connections! In the previous slides, we explained how to
+      create a controlled vocabulary by using SKOS. Now we’ll see how we can use
       such a file as a <em>reconciliation source</em> in order to create automated
       connections between free-text keywords and the thesaurus. Obviously, our
-      mini-thesaurus we developed isn't exactly the most interesting controlled
-      vocabulary to work with. That's why we'll demonstrate in a second step how
+      mini-thesaurus we developed isn’t exactly the most interesting controlled
+      vocabulary to work with. That’s why we’ll demonstrate in a second step how
       to add LCSH as a reconciliation source in OpenRefine.
     </footer>
   </div>
@@ -502,7 +502,7 @@ you'll need it later on! </p>
   <div class="slide" id="rdf-extension">
     <h2>Install the RDF extension</h2>
       <p><a href="http://refine.deri.ie/">Download</a> the extension and place it in the
-        extensions folder (accessible by clicking on "Browse workspace directory" from
+        extensions folder (accessible by clicking on <em>Browse workspace directory</em> from
         the home page of OpenRefine)</p>
       <p>A new RDF button appears after the installation</p>
       <p>Detailed instructions can be found on <a href="http://refine.deri.ie/installlationDocs">
@@ -514,9 +514,9 @@ you'll need it later on! </p>
       <p>You can either create your own metadata, or download our
         <a href="http://book.freeyourmetadata.org/chapters/3/modern-art-collection.csv">test
       file</a> on modern art</p>
-      <p>After importing the file, OpenRefine's preview will show headers such
+      <p>After importing the file, OpenRefine’s preview will show headers such
       as <em>Title</em>, <em>Artist</em>, <em>Year</em> etc</p>
-      <p>As you'll see some corrupted accents, don't forget to set the
+      <p>As you’ll see some corrupted accents, don’t forget to set the
         encoding to UTF-8 by clicking on the <em>Encoding</em> field in Preview mode
       </p>
   </div>
@@ -532,10 +532,10 @@ you'll need it later on! </p>
       <footer>
         This screenshots showcases the test metadata we have uploaded in order
         to experiment with the mini-thesaurus on modern art we have downloaded
-        previously. We'll therefore focus on the field <em>Genre</em>. Notice how
-        this is very much an <em>artificial</em> excercice, in the sense that we
+        previously. We’ll therefore focus on the field <em>Genre</em>. Notice how
+        this is very much an <em>artificial</em> exercise, in the sense that we
         have both created the test metadata and test thesaurus, but we hope you
-        understand the pedagogical value of this step !
+        understand the pedagogical value of this step!
       </footer>
     </div>
 
@@ -548,7 +548,7 @@ you'll need it later on! </p>
       </figcaption>
     </figure>
     <footer>This screenshot demonstrates shows the pop-up allowing to identify a
-      local reconciliation file in RDF, for which we'll point out to our mini-thesaurus
+      local reconciliation file in RDF, for which we’ll point out to our mini-thesaurus
       available at
       http://book.freeyourmetadata.org/chapters/3/modern-art-skos.ttl.
       It is of utmost importance to tick the <code>!skos:prefLabel!</code> checkbox,
@@ -565,10 +565,10 @@ you'll need it later on! </p>
         <div class="slide" id="import">
           <h2>Reconciling the Powerhouse Museum metadata with the LCSH</h2>
           <p>After we played with our own mini-thesaurus and some dummy data,
-              let's work on a real-life case !</p>
+              let’s work on a real-life case!</p>
             <p>We have used the metadata set of the museum extensively for various
             cleaning and linking operations</p>
-            <p>For this exercice, make sure to download either the
+            <p>For this exercise, make sure to download either the
               <a href="http://data.freeyourmetadata.org/powerhouse-museum/phm-collection-cleaned.google-refine.tar.gz">
                 cleaned OpenRefine project</a> or create a new project
               using the <a href="http://data.freeyourmetadata.org/powerhouse-museum/phm-collection-cleaned.tsv">
@@ -584,7 +584,7 @@ you'll need it later on! </p>
               </figcaption>
             </figure>
             <footer>
-              For the reconciliation of keywords with the LCSH, we'll experiment
+              For the reconciliation of keywords with the LCSH, we’ll experiment
               with the metadata from the Powerhouse Museum, a big science and technology
               museum in Sydney
             </footer>
@@ -592,12 +592,12 @@ you'll need it later on! </p>
 
         <div class="slide" id="preprocess">
           <h2>Issues with LCSH we first need to solve</h2>
-          <p>OpenRefine can not make a choice if there's a match with different headings.
+          <p>OpenRefine can not make a choice if there’s a match with different headings.
             If one concept uses a label as its preferred term, and another uses
             the same label to designate a non-preferred term, OpenRefine can not choose</p>
             <p>For example, skating is an alternative label of the term with preferred label
-            Ice skating (sj96005713), but a seperate term with the preferred label Skating
-          (sj85123105) also exists !</p>
+            Ice skating (sj96005713), but a separate term with the preferred label Skating
+          (sj85123105) also exists!</p>
         </div>
 
         <div class="slide" id="lcsh2">
@@ -610,17 +610,17 @@ you'll need it later on! </p>
             </figure>
             <footer>
               Subdivision also negatively impact the reconciliation process.
-              This example demonstrates how the keyword "Specimen" from the Powerhouse
+              This example demonstrates how the keyword <em>Specimen</em> from the Powerhouse
               Museum can not be reconciled with
               the LCSH, because OpenRefine can not choose between the two labels which appear
-              actually both in the LCSH : once as a concept and once as a subdivision, which
+              actually both in the LCSH: once as a concept and once as a subdivision, which
               help to create more complex headings
             </footer>
           </div>
 
         <div class="slide" id="preprocess2">
           <h2>Preprocessing of the LCSH</h2>
-          <p>Some changes were made in our version of the LCSH :</p>
+          <p>Some changes were made in our version of the LCSH:</p>
             <ul><li>Subdivisions are only present if they do not conflict with
             an existing main heading with the same label</li>
             <li>Alternate labels were only added to the extent that they do not
@@ -633,7 +633,7 @@ you'll need it later on! </p>
     <h2>Configuring the LCSH as a reconciliation source</h2>
     <p>To add the new endpoint, click the RDF button,
     select Add reconciliation service, Based on SPARQL endpoint.
-    Its parameters are :</p>
+    Its parameters are:</p>
     <dl>
       <dt>Name</dt> <dd>LCSH (preprocessed)</dd>
       <dt>Endpoint URL</dt> <dd>http://sparql.freeyourmetadata.org/</dd>
@@ -644,14 +644,14 @@ you'll need it later on! </p>
   </div>
 
   <div class="slide" id="start-reconciliation">
-    <h2>Now let's reconcile!</h2>
+    <h2>Now let’s reconcile!</h2>
   <p>Start the reconciliation process for the Categories column with
   this new endpoint (Reconcile, Start reconciling, LCSH [preprocessed],
   Start Reconciling)</p>
   <p>IMPORTANT: Experiment first with a very little subset of the records,
     as in below 100. The process takes a lot of time and if you launch it on
     the entire data set, it will take at least a day on your laptop.
-    Create for example a filter on Record ID with "123" so that you have
+    Create for example a filter on Record ID with <em>123</em> so that you have
   results after a couple of seconds</p>
   </div>
 
@@ -676,22 +676,22 @@ you'll need it later on! </p>
       <h2>Impact of reconciliation</h2>
     <p>Creating a link between your catalog record and an entry of the LCSH
     unfortunately does not allow you to be connected automatically with all
-  other records which link to that heading !</p>
-    <p>Always keep in mind that URLs are <em>uni-directional</em> : you point to the LCSH,
+  other records which link to that heading!</p>
+    <p>Always keep in mind that URLs are <em>uni-directional</em>: you point to the LCSH,
     but the LoC is <em>agnostic</em> of the fact that you point to them</p>
     </div>
 
     <div class="slide" id="uni-dir-2">
      <blockquote class="long">
       <p>I wanted the act of adding a link to be trivial. So long
-      as I didn't introduce some central link database, everything
+      as I didn’t introduce some central link database, everything
     would scale nicely.</p>
       <cite><a href="https://www.w3.org/People/Berners-Lee/Weaving/Overview.html">
         Tim Berners-Lee</a>, Weaving the Web, 1999</cite>
      </blockquote>
      <p>The uni-directionality of links was an explicit design choice. Asking the
        the linked entity to confirm the link would create too much of a bottleneck
-       for the Web to grow. Imagine someone at LoC who's job it is to check each link created to the
+       for the Web to grow. Imagine someone at LoC who’s job it is to check each link created to the
        LCSH ... However, alternatives
      exist, such as <a href="https://en.wikipedia.org/wiki/Project_Xanadu">
        Xanadu</a> by <a href="https://en.wikipedia.org/wiki/Ted_Nelson">Ted Nelson</a>.</p>
@@ -702,9 +702,9 @@ you'll need it later on! </p>
       <footer>This video introduces you to two people who played a central role in the
         history of information technology in the 20st century. During this speech, Ted Nelson
         honours his deceased friend <a href="https://en.wikipedia.org/wiki/Douglas_Engelbart">
-          Douglas Engelbart</a>. Pay attention to what Nelson says around 0:57: "I continue Doug's
-        work by keeping the links outside the document." One of the base principles of Nelson's
-        Xanadu project was that "Links are visible and can be followed from all endpoints."
+        Douglas Engelbart</a>. Pay attention to what Nelson says around 0:57: <q>I continue Doug’s
+        work by keeping the links outside the document.</q> One of the base principles of Nelson’s
+        Xanadu project was that <q>Links are visible and can be followed from all endpoints.</q>
         This design choice theoretically allows to add a lot more semantics and value with
       links, but this complexity also explains why the project has never been implemented successfully.</footer>
     </div>
@@ -771,12 +771,12 @@ you'll need it later on! </p>
     <p>Why is it important to acknowledge uni-directionality when creating URLs?</p>
     <ol>
       <li>
-        It explains why we don't need SPARQL.
-        <ul><li>No, it's the opposite! SPARQL exactly allows us to traverse links in both ways across a graph.</li></ul>
+        It explains why we don’t need SPARQL.
+        <ul><li>No, it’s the opposite! SPARQL exactly allows us to traverse links in both ways across a graph.</li></ul>
       </li>
       <li class="correct">
-        It helps to understand why it isn't that straightforward to connect all records together which point out to a central authority file.
-        <ul><li>Exactly! It's not because you link to the LCSH, that the LCSH, or other people referring to the same heading, are made aware of its existence.</li></ul>
+        It helps to understand why it isn’t that straightforward to connect all records together which point out to a central authority file.
+        <ul><li>Exactly! It’s not because you link to the LCSH, that the LCSH, or other people referring to the same heading, are made aware of its existence.</li></ul>
       </li>
       <li>
         In order to prevent the creation of dead links.

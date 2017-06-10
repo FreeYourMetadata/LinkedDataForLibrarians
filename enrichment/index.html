@@ -72,7 +72,7 @@
 				through reconciliation. However, this practice only works when someone already
 				attached keywords to a resource. Large-scale digitization efforts are currently producing
 				digital resources at a massive scale which do not have keywords attached to them. Traditional
-				manual cataloging practices can't keep up with this pace, so we have to think about how to use
+				manual cataloging practices can’t keep up with this pace, so we have to think about how to use
 				algorithms which can <em>gold mine</em> for semantics within non-structured texts.</p>
     </footer>
   </div>
@@ -90,7 +90,7 @@
 	 <iframe class="cover width height" src="https://www.youtube.com/embed/Sjimio45vrE"></iframe>
 	 <footer>Companies such as <a href="http://www.tagasauris.com//">Tagasauris</a>
 		 for example are integrating machine learning for visual recognition and micro-tasks
-		 outsourced via Amazon's Mechanical Turk to provide metadata in a cheap and quick manner
+		 outsourced via Amazon’s Mechanical Turk to provide metadata in a cheap and quick manner
 		 for the media industry.</footer>
  </div>
 
@@ -114,15 +114,15 @@
  </div>
 
  <div class="slide" id="tm-ner">
-	 <h2>What can you experiment with as a librarian ?</h2>
+	 <h2>What can you experiment with as a librarian?</h2>
 	<p>Low hanging fruits from the information extraction field which are often
-    used in DH research :</p>
+    used in DH research:</p>
 		<ul>
 			<li>Named-Entity Recognition (NER)</li>
 			<li>Topic Modeling (TM)</li>
 		</ul>
 	<p>Both methods can be used with a minimum of resources and technical
-	experience. This module gives you the opportunity to experiment on your own !</p>
+	experience. This module gives you the opportunity to experiment on your own!</p>
  </div>
 
 
@@ -160,14 +160,14 @@
 			the OPAC of its library. When consulting the digitized monographs, readers can either
 			read page per page of the scans, or rely on various information extraction methods
 			to get a quick overview of the most common names, places and terms appearing
-			in the book. Here we've clicked on the term "Congo", which leads then to various
+			in the book. Here we’ve clicked on the term “Congo”, which leads then to various
 			links from Wikipedia giving more information about Congo.
 			 </footer>
 		 </div>
 
      <div class="slide" id="power">
         <blockquote class="next">
-          <p>With great power comes great responsability.</p>
+          <p>With great power comes great responsibility.</p>
           <cite><a href="https://www.iso.org/standard/42180.html">Spiderman, 1962</a></cite>
         </blockquote>
         <p>The increased availability of data and text-mining technologies has
@@ -200,10 +200,10 @@
 				 </figure>
 				 <footer>
 				At the hight of the DH hype, Stanley Fish published a widely read opinion
-				piece in the New York Times, in which he heavily critized the "tool-driven"
-				approach from the DH : "DH run the numbers, and then see if they prompt
+				piece in the New York Times, in which he heavily criticized the <q>tool-driven</q>
+        approach from the DH: <q>DH run the numbers, and then see if they prompt
 				an interpretive hypothesis. The method, if it can be called that, is dictated
-				by the capability of the tool". In order to be aware of both the possibilies
+        by the capability of the tool</q>. In order to be aware of both the possibilities
 				and limits of these methods and tools, the following slides will introduce
 				two approaches towards automated metadata creation with which you can experiment
 				on your own.
@@ -212,29 +212,29 @@
 
 	<div class="slide" id="defining-ner">
 	<h2>Named-Entity Recognition (NER)</h2>
-	<p>Consider the sentence :"On 25 September 2006, we visited Washington
-		to see the White House"</p>
-	<ul>
-		<li>First step => identification of entities
+  <p>Consider the sentence: <q>On 25 September 2006, we visited Washington
+     to see the White House.</q></p>
+	<ol>
+		<li>Identification of entities
 		<ul>
 			<li>25 September 2005</li>
 			<li>Washington</li>
 			<li>White House</li>
 		</ul></li>
-		<li>Second step => disambiguation
-		<ul><li>Washington: the state, the city, the jazz musician, etc ?</li></ul></li>
-	</ul>
+		<li>Disambiguation
+		<ul><li>Washington: the state, the city, the jazz musician, etc?</li></ul></li>
+	</ol>
 	</div>
 
 	<div class="slide" id="URL-disambiguation">
 	<h2>Disambiguation through URLs</h2>
 	<ul>
-		<li>Each entity is associated with a meaning :
+		<li>Each entity is associated with a meaning:
 			<ul>
         <li><a href="http://dbpedia.org/page/White_House">http://dbpedia.org/page/White_House</a></li>
 				<li><a href="http://dbpedia.org/page/Washington,_D.C.">http://dbpedia.org/page/Washington,_D.C.</a></li>
 			</ul></li>
-		<li>Distinguish recognition and disambiguation :
+		<li>Distinguish recognition and disambiguation:
 				<ul><li>Recognition is about <em>finding</em> the entities in a text fragment,
 				whereas disambiguation is about <em>mapping</em> those entities to a universal identifier</li>
 				</ul>
@@ -254,15 +254,15 @@
 			<ul><li>A home address allows to locate a person. However, multiple people
 			might be living at the same address. Also, an address can change over time</li>
 		</ul></li>
-		<li>URLs can do both !</li>
+		<li>URLs can do both!</li>
 </ul>
 </div>
 
 
 <div class="slide" id="url-role">
-<h2>But wait ... what does <a href="https://en.wikipedia.org/wiki/Jeff_Koons">https://en.wikipedia.org/wiki/Jeff_Koons</a> actually identify ?</h2>
+<h2>But wait ... what does <a href="https://en.wikipedia.org/wiki/Jeff_Koons">https://en.wikipedia.org/wiki/Jeff_Koons</a> actually identify?</h2>
 <ul>
-	<li>Wikipedia page about Jeff Koons ?
+	<li>Wikipedia page about Jeff Koons?
 		<ul>
 			<li>But which version? Wikipedia is constantly edited, so one would
 			have to use <a href="http://en.wikipedia.org/w/index.php?title=Jeff_Koons&oldid=569081712">
@@ -270,7 +270,7 @@
 			in order to refer to a specific version</li>
 			<li></li>
 		</ul></li>
-	<li>Jeff Koons himself ?
+	<li>Jeff Koons himself?
 			<ul><li>The URL can be used to identify him, but not to locate him as
 			we can not represent an individual electronically</li>
 		</ul></li>
@@ -278,7 +278,7 @@
 </div>
 
 <div class="slide" id="representation">
-<h2>Do URLs identify only electronic resources or also real-world objects ?</h2>
+<h2>Do URLs identify only electronic resources or also real-world objects?</h2>
 <ul>
 	<li>Information resource
 		<ul>
@@ -319,14 +319,14 @@ so it redirects you towards the page about Jeff Koons instead</p>
 <div class="slide" id="pipe">
 		<figure class="cover width">
 				<img src="images/pipe.jpg"
-						 alt="[Magritte's pipe]">
+						 alt="[Magritte’s pipe]">
 			<figcaption>
 				©1948 <a href="https://www.wikiart.org/en/rene-magritte/the-treachery-of-images-this-is-not-a-pipe-1948">
 					René Magritte</a>
 			</figcaption>
 		</figure>
 		<footer>
-			<p>What do you see : a pipe or a representation of a pipe? We can use this iconic image
+			<p>What do you see: a pipe or a representation of a pipe? We can use this iconic image
 			of René Magritte to talk about the dreaded <a href="https://en.wikipedia.org/wiki/HTTPRange-14">
 			HTTP Range-14</a> issue, in which the Web community debates on whether a URL
 			should be understood as a reference to a document or a resource.
@@ -344,7 +344,7 @@ so it redirects you towards the page about Jeff Koons instead</p>
 	<ul>
 		<li>Rapidly evolving marketspace
 			<ul><li>Start-ups sprout up and are acquired at a rapid pace by bigger players.
-				Some examples of NER services include :
+				Some examples of NER services include:
 			<ul>
         <li><a href="http://www.opencalais.com/">OpenCalais</a></li>
 				<li><a href="https://www.netowl.com/entity-extraction/">NetOwl</a></li>
@@ -370,16 +370,16 @@ so it redirects you towards the page about Jeff Koons instead</p>
 	    <footer>
 	      <p>NER services, especially the commercial services,
 					remain very much <em>black boxes</em>: we throw content at them
-				and they send back URLs with entities. From a LIS perspective, it's
+				and they send back URLs with entities. From a LIS perspective, it’s
 			essential to know how to evaluate the quality of these services.</p>
 	    </footer>
 	  </div>
 
 		<div class="slide" id="which-service">
-		<h2>Deciding which service to use - questions you should ask yourself :</h2>
-		<p>How to represent the entity <em>Library of Congress</em> for example ?
+		<h2>Deciding which service to use—questions you should ask yourself:</h2>
+		<p>How to represent the entity <em>Library of Congress</em> for example?
 			<ul>
-			<li>Custom versus Open URLs :
+			<li>Custom versus Open URLs:
 				<ul>
 					<li>Services can refer to recognised knowledge bases,
 					already well-integrated as Linked Data, will refer to for example
@@ -394,10 +394,10 @@ so it redirects you towards the page about Jeff Koons instead</p>
 		</div>
 
 		<div class="slide" id="which-service-2">
-		<h2>Deciding which service to use - questions you should ask yourself :</h2>
-		<p>How to represent the entity <em>Library of Congress</em> for example ?
+		<h2>Deciding which service to use—questions you should ask yourself:</h2>
+		<p>How to represent the entity <em>Library of Congress</em> for example?
 			<ul>
-			<li>Information versus non-information resources :
+			<li>Information versus non-information resources:
 				<ul>
 					<li>Services often refer to <em>documentation</em> about a resource,
 					such as the DBPedia page which represents all sorts of information about for
@@ -413,7 +413,7 @@ so it redirects you towards the page about Jeff Koons instead</p>
 		</div>
 
 		<div class="slide" id="ruben-screencast">
-			<h2>Ruben's screencast on NER extension in OpenRefine</h2>
+			<h2>Ruben’s screencast on NER extension in OpenRefine</h2>
 		</div>
 
 		<div class="slide" id="tm">
@@ -451,7 +451,7 @@ so it redirects you towards the page about Jeff Koons instead</p>
 			<h2>Second step: labeling the clusters</h2>
 			<p>In order to identify an appropriate label for a cluster, a good understanding
 				of the context of the corpus is often essential. For the three clusters from
-				the previous slide, we could come up with these labels :</p>
+				the previous slide, we could come up with these labels:</p>
 			<ol>
 				<li>food shortage</li>
 				<li>airstrikes</li>
@@ -460,7 +460,7 @@ so it redirects you towards the page about Jeff Koons instead</p>
 			</div>
 
 			<div class="slide" id="freudian">
-			<h2>TM understands the semantics ?</h2>
+			<h2>TM understands the semantics?</h2>
 			<blockquote class="long">
 				<p>The algorithm is constrained by the words used in the text;
 					if Freudian psychoanalysis is your thing, and you feed the algorithm a transcription

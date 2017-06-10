@@ -106,3 +106,8 @@
   left: 0;
   bottom: 10%;
 }
+
+/* Other */
+q, cite { font-style: italic; }
+q:before, cite:before { content: "“"; }
+q:after,  cite:after  { content: "”"; }
