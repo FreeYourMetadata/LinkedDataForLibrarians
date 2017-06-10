@@ -6,6 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
   <link rel="stylesheet" href="../styles/screen-16x10.css">
+  <link rel="stylesheet" href="../styles/custom.css">
 </head>
 <body class="shower list">
   <header class="caption">
@@ -481,81 +482,81 @@ so it redirects you towards the page about Jeff Koons instead</p>
 		 </div>
 
 
-       <div class="slide" id="eval1">
-     <h2>Self-assessment 1</h2>
-     <ul>
-       <li>The concept of distant reading :
-         <ul>
-           <li>Refers to the possibily to automatically create abstracts of books</li>
-           <!-- No, the concept refers to a generic approach of using quantitative methods to deal with
-         large volumes of data and does not represent one specific method or technique  -->
-           <li>Implies we no longer need to actually read texts</li>
-           <!-- No, distant and close reading practices complement one another and
-         are not mutually exclusive  -->
-           <li>can be helpful to librarians</li>
-           <!-- Yes ! Automated methods such as TM or NER can be applied to extract
-         metadata from large corpora and create navigational paths for end-users -->
-         </ul>
-       </li>
-     </ul>
-       </div>
+  <div class="evaluation slide" id="eval1">
+    <h2>Self-assessment 1</h2>
+    <p>The concept of <em>distant reading</em>…</p>
+    <ol>
+      <li>
+        …refers to the possibility to automatically create abstracts of books.
+        <ul><li>No, the concept refers to a generic approach of using quantitative methods to deal with large volumes of data and does not represent one specific method or technique.</li></ul>
+      </li>
+      <li>
+        …implies we no longer need to actually read texts.
+        <ul><li>No, distant and close reading practices complement one another and are not mutually exclusive.</li></ul>
+      </li>
+      <li class="correct">
+        …can be helpful to librarians.
+        <ul><li>Yes! Automated methods such as TM or NER can be applied to extract metadata from large corpora and create navigational paths for end-users.</li></ul>
+      </li>
+    </ol>
+  </div>
 
-       <div class="slide" id="eval2">
-     <h2>Self-assessment 2</h2>
-     <ul>
-       <li>What makes NER so interesting as an information extraction technique ?
-         <ul>
-           <li>Entities are identified with a URL</li>
-           <!-- Yes ! The URL allows to disambiguate and to obtain information about
-         the entity -->
-           <li>It allows to perform sentiment analysis on feedback by patrons</li>
-           <!-- No ! Sentiment analysis uses other techniques -->
-           <li>You can parse ambiguous dates to an ISO standardized data format</li>
-           <!-- No ! Certain scripts can do that, but they have nothing to do with NER  -->
-         </ul>
-       </li>
-     </ul>
-       </div>
+  <div class="evaluation slide" id="eval2">
+    <h2>Self-assessment 2</h2>
+    <p>What makes NER so interesting as an information extraction technique?</p>
+    <ol>
+      <li class="correct">
+        Entities are identified with a URL.
+        <ul><li>Yes! The URL allows to disambiguate and to obtain information about the entity.</li></ul>
+      </li>
+      <li>
+        It allows to perform sentiment analysis on feedback by patrons.
+        <ul><li>No! Sentiment analysis uses other techniques.</li></ul>
+      </li>
+      <li>
+        You can parse ambiguous dates to an ISO standardized data format.
+        <ul><li>No! Certain scripts can do that, but they have nothing to do with NER.</li></ul>
+      </li>
+    </ol>
+  </div>
 
-       <div class="slide" id="eval3">
-     <h2>Self-assessment 3</h2>
-     <ul>
-       <li>Why is it important to distinguish information and non-information
-         resources on the Web ?
-         <ul>
-           <li>They have different metadata !</li>
-           <!-- Yes ! For example, a Web page about a person (=information resource)
-           has a different creation date than the date of creation of the actual
-           individual (=non-information resource), which would be his or her date of birth
-          -->
-           <li>It is actually not so important </li>
-           <!-- Yes it is really important ! If not it becomes really difficult to refer
-         to actual objects, people, idea's etc on the Web -->
-           <li>It has an important impact on the design of URLs</li>
-           <!-- Yes, the URL has to allow to differentiate between the actual thing
-         and documentation about the thing -->
-         </ul>
-       </li>
-     </ul>
-       </div>
+  <div class="evaluation slide" id="eval3">
+    <h2>Self-assessment 3</h2>
+    <p>Why is it important to distinguish information and non-information resources on the Web?</p>
+    <ol>
+      <li class="correct">
+        They have different metadata.
+        <ul><li>Yes! For example, a Web page about a person (=information resource) has a different creation date than the date of creation of the actual individual (=non-information resource), which would be his or her date of birth.</li></ul>
+      </li>
+      <li>
+        It is actually not so important.
+        <ul><li>It is really important! If not it becomes really difficult to refer to actual objects, people, ideas etc on the Web.</li></ul>
+      </li>
+      <li class="correct">
+        It has an important impact on the design of URLs.
+        <ul><li>Yes, the URL needs to allow differentiating between the actual thing and documentation about the thing.</li></ul>
+      </li>
+    </ol>
+  </div>
 
-       <div class="slide" id="eval4">
-     <h2>Self-assessment 4</h2>
-     <ul>
-       <li>When is Topic Modeling particularly relevant for librarians ?
-         <ul>
-           <li>To extract key terms from metadata fields such as "description"</li>
-           <!-- No, TM requires a substantial volume of text and does not work
-         for a couple of paragraphs-->
-           <li>When you want to give end-users an overview of recurring theme's
-           in a collection of scanned literature for example</li>
-           <!-- Yes, this would potentially be a good application for TM -->
-           <li>When you want to identify all place names from a corpus</li>
-           <!-- No ! NER is the application you need for this type of task -->
-         </ul>
-       </li>
-     </ul>
-       </div>
+  <div class="evaluation slide" id="eval4">
+    <h2>Self-assessment 4</h2>
+    <p>When is Topic Modeling relevant for librarians?</p>
+    <ol>
+      <li>
+        To extract key terms from metadata fields such as <em>description</em>.
+        <ul><li>No, TM requires a substantial volume of text and does not work for a couple of paragraphs.</li></ul>
+      </li>
+      <li class="correct">
+        When you want to create an overview of recurring themes in a collection of scanned literature.
+        <ul><li>Yes, this would potentially be a good application for TM.</li></ul>
+      </li>
+      <li>
+        When you want to identify all place names from a corpus.
+        <ul><li>No! NER is the application you need for this type of task.</li></ul>
+      </li>
+    </ol>
+  </div>
 
   <div class="progress"></div>
   <footer>
