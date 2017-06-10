@@ -86,7 +86,7 @@
         </ul>
       </li>
       <li>
-        Reuse or mint an <a href="../architecture/#iri">IRI</a> for them.
+        Reuse or mint a <a href="#identification-location">URL</a> for them.
         <ul>
           <li><a href="http://dbpedia.org/resource/George_Washington">http://dbpedia.org/resource/George_Washington</a></li>
         </ul>
@@ -97,9 +97,109 @@
     </ul>
   </div>
 
+  <div class="slide" id="url-family">
+    <h2>
+      The URL is part of a broader family<br>
+      of technologies related to identification.
+    </h2>
+    <ul>
+      <li>
+        URL – Uniform Resource Locator
+        <ul>
+          <li>unique identification and location of resources</li>
+          <li><em>mailto:ruben.verborgh@ugent.be</em></li>
+        </ul>
+      </li>
+      <li>
+        URN – Uniform Resource Name
+        <ul>
+          <li>location-independent resource identifier</li>
+          <li><em>urn:isbn:0-83891251-6</em></li>
+        </ul>
+      </li>
+      <li>
+        URI – Uniform Resource Identifier
+        <ul>
+          <li>union of URLs and URNs</li>
+        </ul>
+      </li>
+    </ul>
+    <footer>
+      <p>
+        “U” stands for “Uniform” rather than “Unique”,
+        since <em>identifiers</em> are presumed unique—not necessarily uniform.
+      </p>
+    </footer>
+  </div>
+
+  <div class="slide" id="iri">
+    <h2>
+      The broadest family is IRI,<br>
+      which supports non-ASCII characters.
+    </h2>
+    <ul>
+      <li>
+        Not all characters are allowed in a URI.
+        <ul>
+          <li>
+            <a href="https://tools.ietf.org/html/rfc3986#section-2.1">Percent-encode</a> non-ASCII chars.
+            <ul>
+              <li><em><code>é</code> becomes <code>%C3%A9</code></em></li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://tools.ietf.org/html/rfc3986#section-2.1">Percent-encode</a> <a href="https://tools.ietf.org/html/rfc3986#section-2.2">chars with other meaning</a>.
+            <ul>
+              <li><em><code>?</code> becomes <code>%3F</code></em></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        IRI – Internationalized Resource Identifier
+        <ul>
+          <li>Non-ASCII chars don’t need to be encoded.</li>
+          <li>Chars with other meaning still need encoding.</li>
+        </ul>
+      </li>
+    </ul>
+    <footer>
+      <p>“URI” and “IRI” are typically used interchangeably.</p>
+    </footer>
+  </div>
+
+  <div class="slide" id="identification-location">
+    <h2>
+      An HTTP URL <em>identifies</em> and <em>locates</em>
+      a resource anywhere in the universe.
+    </h2>
+    <ul>
+      <li>
+        A string is a unique identifier if<br>
+        <em>at most one</em> entity corresponds to it.
+        <ul>
+          <li>
+            A national number uniquely identifies a person,<br>
+            but does not allow locating him or her.
+          </li>
+        </ul>
+      </li>
+      <li>
+        A string is a unique locator if<br>
+        <em>at most one</em> location corresponds to it.
+        <ul>
+          <li>
+            A street address uniquely identifies a location,<br>
+            but does not allow to identify a specific person.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
   <div class="slide" id="http-uris">
     <h2>
-      Using <a href="../architecture/#url-parts">HTTP URIs</a> ensures that<br>
+      Using HTTP URLs ensures that<br>
       anybody can look up the resource.
     </h2>
     <ul>
@@ -525,7 +625,7 @@
         A SPARQL query engine finds <a href="https://www.w3.org/TR/sparql11-query/#sparqlSolutions">solution mappings</a>.
         <ul>
           <li>
-            Variables and blank nodes are mapped to IRIs,<br>
+            Variables and blank nodes are mapped to URIs,<br>
             blank nodes, or literals according to dataset triples.
           </li>
         </ul>
