@@ -1,3 +1,38 @@
+/* Self-assessment */
+.slide.evaluation p {
+  margin-left: 0;
+}
+
+.slide.evaluation ol > li {
+  cursor: pointer;
+}
+.slide.evaluation ol > li:hover {
+  color: #CC4320;
+}
+.slide.evaluation ol > li > ul {
+  margin-left: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+.slide.evaluation ol > li > ul {
+  margin-left: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s;
+}
+.slide.evaluation ol > li.selected > ul {
+  max-height: 6em;
+  transition: max-height 1s;
+}
+.slide.evaluation ol > li.selected,
+.slide.evaluation ol > li > ul * {
+  color: #c40909;
+}
+.slide.evaluation ol > li.correct.selected,
+.slide.evaluation ol > li.correct > ul * {
+  color: #5a9310;
+}
+
 /* Do and dont's */
 .do, .dont {
   width: 48%;
