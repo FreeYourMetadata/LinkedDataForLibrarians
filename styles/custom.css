@@ -107,6 +107,28 @@
   bottom: 10%;
 }
 
+/* Twitter */
+.list #twitter {
+  display: none;
+}
+.full #twitter {
+  display: block;
+  position: absolute;
+  z-index: 1000;
+  right:  10px;
+  top:    10px;
+  width:  30px;
+  height: 30px;
+  font-size: 0pt;
+  color: rgba(255,255,255,0);
+  background: url(../images/twitter.svg) top left / contain no-repeat;
+  transition: width .3s, height .3s;
+}
+.full #twitter:hover {
+  width:  40px;
+  height: 40px;
+}
+
 /* Other */
 q, cite, blockquote { font-style: italic; }
 q:before, cite:before { content: "“"; }

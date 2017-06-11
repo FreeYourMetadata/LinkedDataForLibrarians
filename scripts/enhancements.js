@@ -26,5 +26,17 @@ shower.modules.require(['shower'], function (Shower) {
         });
       });
     });
+
+    // Twitter link
+    var twitter = document.getElementById('twitter');
+    shower.player.events.group().on('activate', showTwitter);
+    shower.container.events.group().on('slidemodeenter', showTwitter);
+    function showTwitter() {
+      var slide = shower.player.getCurrentSlide();
+      slide._content.appendChild(twitter);
+      twitter.href = twitter.href.replace(/([?&]url=)[^&]*/,
+                     '$1' + encodeURIComponent(document.location.href));
+    }
+    showTwitter();
   });
 });
