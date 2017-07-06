@@ -414,9 +414,94 @@ so it redirects you towards the page about Jeff Koons instead</p>
 		</ul>
 		</div>
 
-		<div class="slide" id="ruben-screencast">
-			<h2>Ruben’s screencast on NER extension in OpenRefine</h2>
-		</div>
+    <div class="slide" id="openrefine-ner">
+      <h2>You can perform NER directly in OpenRefine</h2>
+      <ul>
+        <li>
+          You will need to install the NER extension first.
+          <ul>
+            <li><a href="http://software.freeyourmetadata.org/ner-extension/ner-extension.zip">Download the extension from our website.</a></li>
+            <li><a href="http://freeyourmetadata.org/named-entity-extraction/">Follow the installation instructions.</a></li>
+          </ul>
+        </li>
+        <li>
+          We will use the metadata of the <a href="http://book.freeyourmetadata.org/chapters/4/british-library.zip">British Library</a>
+          to demonstrate NER in OpenRefine.
+          <ul>
+            <li><a href="/cleaning/#create-project">Create a project</a> with the <a href="http://book.freeyourmetadata.org/chapters/4/british-library.zip">British Library dataset</a>.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="slide" id="openrefine-ner-configuration">
+      <h2>Configure the NER services</h2>
+      <ul>
+        <li>
+          By default, DBpedia Spotlight is enabled.
+          <ul>
+            <li>provides good initial results</li>
+          </ul>
+        </li>
+        <li>
+          Other services might require an API key.
+          <ul>
+            <li>
+              Click the <em>Named-entity recognition</em> button
+              at the top right corner,
+              and choose <em>Configure services…</em>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  <div class="slide" id="openrefine-ner-configuration-screenshot">
+    <img src="images/ner-configuration.png" alt="[the NER configuration dialog]" class="cover" />
+  </div>
+
+    <div class="slide" id="openrefine-ner-start">
+      <h2>Start the NER process</h2>
+      <ul>
+        <li>
+          First, identify the relevant column.
+          <ul>
+            <li>
+              In contrast to <a href="/reconciliation/">reconciliation</a>,
+              for NER, fields with a lot of text are the best candidates.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Then, choose the services and start enriching.
+          <ul>
+            <li>
+              Click a column triangle
+              and choose <em>Extract named entities</em>.
+            </li>
+            <li>
+              Pick the services you want
+              and choose <em>Start extracting</em>.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Extracted entities are displayed in a new column.
+        </li>
+      </ul>
+    </div>
+
+  <div class="slide" id="openrefine-ner-menu">
+    <img src="images/ner-menu.png" alt="[the NER menu]" class="cover" />
+  </div>
+
+  <div class="slide" id="openrefine-ner-dialog">
+    <img src="images/ner-dialog.png" alt="[the NER dialog]" class="cover" />
+  </div>
+
+  <div class="slide" id="openrefine-ner-results">
+    <img src="images/ner-results.png" alt="[results of NER]" class="cover" />
+  </div>
 
 		<div class="slide" id="tm">
 		<h2>Topic Modeling (TM)</h2>
