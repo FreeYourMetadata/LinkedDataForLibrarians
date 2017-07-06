@@ -1,3 +1,24 @@
+/* Homepage */
+main {
+  font-size: 12pt;
+  line-height: 1.8;
+  margin: 0 3em 3em;
+  max-width: 820px;
+}
+main p {
+  margin-bottom: 1em;
+}
+main a {
+  color: #08719c;
+  font-weight: bold;
+}
+main em, main kbd {
+  font-style: italic;
+}
+main strong {
+  font-weight: bold;
+}
+
 /* Self-assessment */
 .slide.evaluation p {
   margin-left: 0;
