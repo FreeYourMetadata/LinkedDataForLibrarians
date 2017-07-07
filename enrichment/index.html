@@ -157,14 +157,14 @@
 					 ©2017 <a href="http://dh.crc.nd.edu/sandbox/cyl/catalog/">DH at Notre Dame University</a>
 				 </figcaption>
 			 </figure>
-			 <footer>
-			The DH team at Notre Dame University embedded Distant Reading options within
-			the OPAC of its library. When consulting the digitized monographs, readers can either
-			read page per page of the scans, or rely on various information extraction methods
-			to get a quick overview of the most common names, places and terms appearing
-			in the book. Here we’ve clicked on the term “Congo”, which leads then to various
-			links from Wikipedia giving more information about Congo.
-			 </footer>
+       <footer><p>
+           The DH team at Notre Dame University embedded Distant Reading options within
+           the OPAC of its library. When consulting the digitized monographs, readers can either
+           read page per page of the scans, or rely on various information extraction methods
+           to get a quick overview of the most common names, places and terms appearing
+           in the book. Here we’ve clicked on the term <em>Congo</em>, which leads then to various
+           links from Wikipedia giving more information about Congo.
+       </p></footer>
 		 </div>
 
      <div class="slide" id="power">
@@ -240,59 +240,46 @@
 				<ul><li>Recognition is about <em>finding</em> the entities in a text fragment,
 				whereas disambiguation is about <em>mapping</em> those entities to a universal identifier</li>
 				</ul>
+     <li>
+       However, recall that a URL serves the double purpose of
+       <a href="/possibilities/#identification-location"><em>identification</em> and <em>location</em></a>.
+     </li>
 	</ul>
 </div>
 
-<div class="slide" id="id-disamb">
-<h2>Purpose of a URL is twofold </h2>
-<ul>
-	<li>Identification
-		<ul>
-			<li>A social security number uniquely identifies a person,
-			but does not provide the means to locate a person directly</li>
-			<li></li>
-		</ul></li>
-	<li>Location
-			<ul><li>A home address allows to locate a person. However, multiple people
-			might be living at the same address. Also, an address can change over time</li>
-		</ul></li>
-		<li>URLs can do both!</li>
-</ul>
-</div>
-
-
 <div class="slide" id="url-role">
-<h2>But wait… what does <a href="https://en.wikipedia.org/wiki/Jeff_Koons">https://en.wikipedia.org/wiki/Jeff_Koons</a> actually identify?</h2>
+<h2>What is actually identified by <a href="https://en.wikipedia.org/wiki/Jeff_Koons">https://en.wikipedia.org/wiki/Jeff_Koons</a>?</h2>
 <ul>
 	<li>Wikipedia page about Jeff Koons?
 		<ul>
 			<li>But which version? Wikipedia is constantly edited, so one would
 			have to use <a href="http://en.wikipedia.org/w/index.php?title=Jeff_Koons&oldid=569081712">
 			http://en.wikipedia.org/w/index.php?title=Jeff_Koons&oldid=569081712</a>
-			in order to refer to a specific version</li>
+			in order to refer to a specific version.</li>
 			<li></li>
 		</ul></li>
 	<li>Jeff Koons himself?
-			<ul><li>The URL can be used to identify him, but not to locate him as
-			we can not represent an individual electronically</li>
+    <ul><li>The same URL <em>cannot</em> be used to also identify the person.
+        Another URL could identify him—but not locate him,
+        as we can not represent an individual electronically.</li>
 		</ul></li>
 </ul>
 </div>
 
-<div class="slide" id="representation">
+<div class="slide" id="information-resource">
 <h2>Do URLs identify only electronic resources or also real-world objects?</h2>
 <ul>
 	<li>Information resource
 		<ul>
-			<li>A Wikipedia article about Jeff Koons is clearly an information resource,
+			<li>A Wikipedia article about Jeff Koons is clearly an <em>information resource</em>,
 			as it can be represented in electronic form. Its URL can be used to identify,
-		locate and acces an electronic representation of it</li>
+		locate and access an electronic representation of it.</li>
 			<li></li>
 		</ul></li>
 	<li>Non-information resource
 			<ul><li>We can represent a document <em>about</em> Jeff Koons, but this would be
 			a different resource than the artist himself, as they have different properties (e.g.
-			date of creation). The artist is therefore a non-information resource</li>
+			date of creation). The artist is therefore a <em>non-information resource</em>.</li>
 		</ul></li>
 </ul>
 </div>
@@ -315,7 +302,7 @@
 the first URL will be used.
 Furthermore, if we visit the first URL in the browser,
 DBpedia is not able to represent Jeff Koons,
-so it redirects you towards the page about Jeff Koons instead</p>
+so it redirects you towards the page about Jeff Koons instead.</p>
 </div>
 
 <div class="slide" id="pipe">
@@ -344,7 +331,7 @@ so it redirects you towards the page about Jeff Koons instead</p>
 	<div class="slide" id="ner-services">
 	<h2>NER services</h2>
 	<ul>
-		<li>Rapidly evolving marketspace
+		<li>Rapidly evolving marketplace
 			<ul><li>Start-ups sprout up and are acquired at a rapid pace by bigger players.
 				Some examples of NER services include:
 			<ul>
@@ -379,43 +366,41 @@ so it redirects you towards the page about Jeff Koons instead</p>
 
 		<div class="slide" id="which-service">
 		<h2>Deciding which service to use—questions you should ask yourself:</h2>
-		<p>How to represent the entity <em>Library of Congress</em> for example?
+		<p>How to represent the entity <em>Library of Congress</em>?
 			<ul>
-			<li>Custom versus Open URLs:
+			<li>Reusing URLs versus minting URLs:
 				<ul>
 					<li>Services can refer to recognised knowledge bases,
 					already well-integrated as Linked Data, will refer to for example
-					<a href="http://dbpedia.org/page/Library_of_Congress">
-						http://dbpedia.org/page/Library_of_Congress</a></li>
+					<a href="http://dbpedia.org/page/Library_of_Congress">http://dbpedia.org/page/Library_of_Congress</a>.</li>
 					<li>Commercial services sometimes create custom URLs which are hardly used
 						outside their service. OpenCalais for example mints its own <a href="http://www.opencalais.com/open-permid-2/">
 						PermID</a>, which represents the LoC as <a href="https://permid.org/1-5037352201">
-						https://permid.org/1-5037352201</a></li>
+						https://permid.org/1-5037352201</a>.</li>
 				</ul></li>
 		</ul>
 		</div>
 
 		<div class="slide" id="which-service-2">
 		<h2>Deciding which service to use—questions you should ask yourself:</h2>
-		<p>How to represent the entity <em>Library of Congress</em> for example?
+		<p>How to represent the entity <em>Library of Congress</em>?
 			<ul>
 			<li>Information versus non-information resources:
 				<ul>
 					<li>Services often refer to <em>documentation</em> about a resource,
 					such as the DBPedia page which represents all sorts of information about for
 					example the LoC:
-					<a href="http://dbpedia.org/page/Library_of_Congress">
-						http://dbpedia.org/page/Library_of_Congress</a></li>
+					<a href="http://dbpedia.org/page/Library_of_Congress">http://dbpedia.org/page/Library_of_Congress</a>.</li>
 					<li>However, services such as Zemanta potentially identify the LoC
 						with <a href="https://www.loc.gov/">
 							https://www.loc.gov/</a> from where one has immediate access to
-						their services</li>
+						their services.</li>
 				</ul></li>
 		</ul>
 		</div>
 
     <div class="slide" id="openrefine-ner">
-      <h2>You can perform NER directly in OpenRefine</h2>
+      <h2>You can perform NER on you data<br> directly from within OpenRefine</h2>
       <ul>
         <li>
           You will need to install the NER extension first.
@@ -562,15 +547,15 @@ so it redirects you towards the page about Jeff Koons instead</p>
 
 			<div class="slide" id="lda-screencast">
 			 <iframe class="cover width height" src="https://www.youtube.com/embed/3mHy4OSyRf0"></iframe>
-			 <footer>This screencast gives an in-depth overview of all the pre-processing steps
-				 needed to apply LDA, one of the most popular specific approaches within the TM family by using the
-				 Wikipedia corpus.
-				 </footer>
+       <footer><p>This screencast gives an in-depth overview of all the pre-processing steps
+           needed to apply LDA, one of the most popular specific approaches within the TM family by using the
+           Wikipedia corpus.
+       </p></footer>
 		 </div>
 
 
   <div class="evaluation slide" id="eval1">
-    <h2>Self-assessment 1</h2>
+    <h2>Self-assessment 1: distant reading</h2>
     <p>The concept of <em>distant reading</em>…</p>
     <ol>
       <li>
@@ -589,11 +574,11 @@ so it redirects you towards the page about Jeff Koons instead</p>
   </div>
 
   <div class="evaluation slide" id="eval2">
-    <h2>Self-assessment 2</h2>
+    <h2>Self-assessment 2: NER</h2>
     <p>What makes NER so interesting as an information extraction technique?</p>
     <ol>
       <li class="correct">
-        Entities are identified with a URL.
+        Entities are identified by a URL.
         <ul><li>Yes! The URL allows to disambiguate and to obtain information about the entity.</li></ul>
       </li>
       <li>
@@ -608,12 +593,12 @@ so it redirects you towards the page about Jeff Koons instead</p>
   </div>
 
   <div class="evaluation slide" id="eval3">
-    <h2>Self-assessment 3</h2>
+    <h2>Self-assessment 3: (non-)information</h2>
     <p>Why is it important to distinguish information and non-information resources on the Web?</p>
     <ol>
       <li class="correct">
         They have different metadata.
-        <ul><li>Yes! For example, a Web page about a person (=information resource) has a different creation date than the date of creation of the actual individual (=non-information resource), which would be his or her date of birth.</li></ul>
+        <ul><li>Yes! For example, a Web page about a person <em>(information resource)</em> has a different creation date than the date of creation of the actual individual <em>(non-information resource)</em>, which would be his or her date of birth.</li></ul>
       </li>
       <li>
         It is actually not so important.
@@ -627,7 +612,7 @@ so it redirects you towards the page about Jeff Koons instead</p>
   </div>
 
   <div class="evaluation slide" id="eval4">
-    <h2>Self-assessment 4</h2>
+    <h2>Self-assessment 4: Topic Modeling</h2>
     <p>When is Topic Modeling relevant for librarians?</p>
     <ol>
       <li>
