@@ -168,3 +168,11 @@ pre.scroll {
 .slide li dl {
   color: black;
 }
+
+.slide dl.tight {
+  font-size: .7em;
+}
+.slide dl.tight > dt,
+.slide dl.tight > dd {
+  margin-top: 0;
+}
