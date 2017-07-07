@@ -163,3 +163,7 @@ pre.scroll {
   max-height: 17em;
   overflow: scroll;
 }
+
+.slide li dl {
+  color: black;
+}

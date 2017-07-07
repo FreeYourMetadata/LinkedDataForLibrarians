@@ -460,7 +460,7 @@
         that are used to define vocabularies.
         <ul>
           <li>
-            The RDFS vocabulary has a <a href="https://www.w3.org/TR/rdf-schema/">human-readable specification</a>.
+            The vocabulary has a <a href="https://www.w3.org/TR/rdf-schema/">human-readable specification</a>.
           </li>
           <li>
             It also has a <a href="https://www.w3.org/1999/02/22-rdf-syntax-ns#">machine-readable</a> <a href="https://www.w3.org/2000/01/rdf-schema#">vocabularies</a>,<br>
@@ -880,7 +880,31 @@ SELECT DISTINCT ?person ?personLabel WHERE {
   </div>
 
   <div class="evaluation slide" id="eval2">
-    <h2>Self-assessment 2: SPARQL</h2>
+    <h2>Self-assessment 2: OWL and RDFS</h2>
+    <p>Which of the following propositions are true?</p>
+    <ol>
+      <li>
+        RDFS and OWL are an answer to Schema.org.
+        <ul><li>No: Schema.org is (mainly) a vocabulary
+            with terms to describe concrete things,
+            such as books, people, articles, …
+            RDFS and OWL contain terms to model other ontologies or vocabularies
+            (such as Schema.org).</li></ul>
+      </li>
+      <li>
+        OWL replaces RDFS.
+        <ul><li>No: RDFS is still required to express basic ontological relations.
+            As such, RDFS and OWL are often used side by side.</li></ul>
+      </li>
+      <li class="correct">
+        OWL extends RDFS.
+        <ul><li>Yes: OWL extends RDFS with more advanced ontological concepts.</li></ul>
+      </li>
+    </ol>
+  </div>
+
+  <div class="evaluation slide" id="eval3">
+    <h2>Self-assessment 3: SPARQL</h2>
     <p>What is SPARQL?</p>
     <ol>
       <li>
@@ -892,14 +916,14 @@ SELECT DISTINCT ?person ?personLabel WHERE {
         <ul><li>Yes, SPARQL is a query language for RDF.</li></ul>
       </li>
       <li class="correct">
-        An HTTP protocol.
+        A protocol.
         <ul><li>Yes, SPARQL is a protocol to execute SPARQL queries over HTTP.</li></ul>
       </li>
     </ol>
   </div>
 
-  <div class="evaluation slide" id="eval3">
-    <h2>Self-assessment 3: SPARQL queries</h2>
+  <div class="evaluation slide" id="eval4">
+    <h2>Self-assessment 4: SPARQL queries</h2>
     <p>Does the <em>same</em> SPARQL query return the <em>same</em> results<br>
        on <em>different</em> sources about the <em>same</em> metadata?</p>
     <ol>
