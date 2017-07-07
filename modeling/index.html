@@ -104,13 +104,13 @@
         World view of each model
         <ul>
           <li>Models helps us to make abstraction of reality. You may think of a data model as a
-            particular pair of glasses, influencing the way in which you see the world</li>
+            particular pair of glasses, influencing the way in which you see the world.</li>
          </ul>
       </li>
       <li>
       	Implementation and serialization formats
         <ul>
-          <li>Models are made concrete through file formats, query languages and software</li>
+          <li>Models are made concrete through file formats, query languages and software.</li>
          </ul>
       </li>
       <li>
@@ -219,7 +219,7 @@
       </figcaption>
     </figure>
     <footer>
-      <p>Well, tabular data are super easy to use!!! Really?
+      <p>Are tabular data really easy to use?
         This cat makes the same face your IT crew would make if you propose
       to manage the library catalog with a CSV file. Flat files are bound to introduce
     inconsistencies in your metadata. Each time you want to represent a value which
@@ -251,7 +251,7 @@
    	 <li>Rare to find an information system which is not driven by a relational database</li>
    	 <li>Mature technology which is here to stay—don’t believe the people
      who claim <a href="https://en.wikipedia.org/wiki/NoSQL">NoSQL</a> or
-     <a href="https://en.wikipedia.org/wiki/Triplestore">triple stores</a> will take over</li>
+     <a href="https://en.wikipedia.org/wiki/Triplestore">triplestores</a> will take over</li>
    	</ul>
   </div>
 
@@ -276,12 +276,15 @@
       Mapping reality to a database
     </h2>
     <p>Worldview consisting of three building blocks:</p>
-    <ul>
-      <li>Entities: group of information which share properties and which vary
-        independently from other groups</li>
-      <li>Attributes: describe properties of entities</li>
-      <li>Relationships: create connections in between entities</li>
-     </ul>
+    <dl>
+      <dt>Entities</dt>
+      <dd>group of information which share properties and which vary
+        independently from other groups</dd>
+      <dt>Attributes</dt>
+      <dd>describe properties of entities</dd>
+      <dt>Relationships</dt>
+      <dd>create connections in between entities</dd>
+    </dl>
   </div>
   <div class="slide" id="design">
   <h2>
@@ -292,7 +295,7 @@
   	<li>For every entity, create a table which will contain the properties of the entity</li>
   	<li>Establish the relationships in between the tables</li>
   </ol>
-  Is sometimes more an art than a science!
+  It is sometimes more an art than a science!
   </div>
 
   <div class="slide" id="design_pic">
@@ -360,7 +363,7 @@ previously. By doing so, we can ensure more consistency in our metadata.
     <code>INSERT INTO Work (title, creator, collection, year, style)</code> <br>
     <code>VALUES ('Guernica',43, 20, 1937,'Cubism')</code>
     <p><br>
-    Please note that the values 43 and 20 refer to the primary keys from the tables <code>Creator</code> and
+    Note that the values 43 and 20 refer to the primary keys from the tables <code>Creator</code> and
     <code>Collection</code></p>
   	</div>
 
@@ -370,8 +373,8 @@ previously. By doing so, we can ensure more consistency in our metadata.
     <li>Relational model is extremely performant</li>
     <li>End-users interact with a GUI but it can be useful to know some basic SQL queries</li>
     </ul>
-    Example: find all the titles of the works by Picasso<br>
-    <p><br><code>SELECT title FROM Work WHERE creator=43</code></p>
+    <p>Example: find all the titles of the works by Picasso</p>
+    <p><code>SELECT title FROM Work WHERE creator=43</code></p>
   </div>
 
   <div class="slide" id="sql-exercice">
@@ -403,18 +406,17 @@ previously. By doing so, we can ensure more consistency in our metadata.
       <img src="images/belgian_solutions.jpg"
            alt="[Ducktaping]">
       <figcaption>
-        ©2013 <a href="www.belgian-solutions.be/">David Helbich</a>
+        ©2013 <a href="http://www.belgian-solutions.be/">David Helbich</a>
       </figcaption>
     </figure>
     <footer><p>Using duct tape to McGyver yourself out of a problem can be used as a metaphor for many
     of the ad hoc solutions found not to tamper with the schema of a database.
   For example, if there is a need to encode new information in the database, but
 there’s no time to redesign the database schema to accommodate the new data, people
-often rely on external flat files, managed in excel for example, to keep track of
+often rely on external flat files, managed in Excel for example, to keep track of
 new reference data in a quick and easy manner, based on the assumption that they will
 be integrated into the database in the future. However, in practice the ad hoc solution
-often is used for a long period of time, leading to inconsistencies between the centralized
-reference data in the database and the local reference data in the spreadsheet.</p></footer>
+often is used for a long period of time, leading to inconsistencies between the centralized database and the local spreadsheet.</p></footer>
   </div>
 
   <div class="slide" id="sharing_db">
@@ -565,7 +567,7 @@ based on this hierarchical view.</p>
         but simplified it radically by proposing a fixed set
       of tags to represent the structural components of a Web page</li>
       <li>Examples: <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>,
-    <code>&lt;h1&gt;</code>, etc</li>
+    <code>&lt;h1&gt;</code>, etc.</li>
       <li>Most people forgot all about SGML, but its influence has been
       enormous…</li>
     </ul>
@@ -654,17 +656,13 @@ based on this hierarchical view.</p>
       Let’s add a work to our XML catalog of art objects
     </h2>
     <ul>
-      <li>Notice how we can model all of the metadata as attributes:
-        <ul>
-          <li>
-          <code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code><br>
-          <code>&lt;Art title="Modern art"/&gt;</code><br>
-          <code>&lt;Work title="Guernica" year="1937" creator="Pablo Picasso"</code><br>
-          <code>collection="Reina Sofia" location="Madrid"/&gt;</code><br>
-          <code>&lt;/Art&gt;</code>
-          </li>
-        </ul>
+      <li>Note how we can model all of the metadata as attributes:</li>
     </ul>
+    <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;Art title="Modern art"/&gt;
+&lt;Work title="Guernica" year="1937" creator="Pablo Picasso"
+      collection="Reina Sofia" location="Madrid"/&gt;
+&lt;/Art&gt;</code></pre>
     <footer><p>The hierarchical structure of XML now becomes apparent:
     the <code>Work</code> element is a child of the <code>Art</code> element. However,
     note how we’ve chosen to model the metadata of works as attributes. Is this a wise option?
@@ -676,18 +674,18 @@ based on this hierarchical view.</p>
       Let’s model everything as child elements
     </h2>
 <pre class="scroll"><code>&lt;Art title="Modern art"/&gt;
-&lt;Work&gt;
-&lt;Title&gt;Guernica&lt;/Title&gt;
-&lt;CreationDate&gt;&lt;Year&gt;1937&lt;/Year&gt;&lt;/CreationDate&gt;
-&lt;Creator&gt;
-&lt;FirstName&gt;Pablo&lt;/FirstName&gt;
-&lt;LastName&gt;Picasso&lt;/LastName&gt;
-&lt;/Creator&gt;
-&lt;Collection&gt;
-&lt;Name&gt;Reina Sofia&lt;/Name&gt;
-&lt;Location&gt;Madrid&lt;/Location&gt;
-&lt;/Collection&gt;
-&lt;/Work&gt;
+  &lt;Work&gt;
+  &lt;Title&gt;Guernica&lt;/Title&gt;
+  &lt;CreationDate&gt;&lt;Year&gt;1937&lt;/Year&gt;&lt;/CreationDate&gt;
+  &lt;Creator&gt;
+    &lt;FirstName&gt;Pablo&lt;/FirstName&gt;
+    &lt;LastName&gt;Picasso&lt;/LastName&gt;
+  &lt;/Creator&gt;
+  &lt;Collection&gt;
+    &lt;Name&gt;Reina Sofia&lt;/Name&gt;
+    &lt;Location&gt;Madrid&lt;/Location&gt;
+  &lt;/Collection&gt;
+  &lt;/Work&gt;
 &lt;/Art&gt;</code></pre>
     <footer><p>This leaves maximum flexibility to extend the document at any point.
     However, this also comes at a cost: the hierarchy is now relatively deep to express simple concepts,
@@ -700,14 +698,12 @@ based on this hierarchical view.</p>
     <h2>
       Let’s go for a compromise!
     </h2>
-    <p>
-       <code>&lt;Art title="Modern art"/&gt;</code><br>
-       <code>&lt;Work title="Guernica" year="1937"&gt;</code><br>
-       <code>&lt;Creator firstName="Pablo" lastName="Picasso"/&gt;</code><br>
-       <code>&lt;Collection name="Reina Sofia" location="Madrid"/&gt;</code><br>
-       <code>&lt;/Work&gt;</code><br>
-       <code>&lt;/Art&gt;</code>
-     </p>
+<pre><code>&lt;Art title="Modern art"/&gt;
+  &lt;Work title="Guernica" year="1937"&gt;
+    &lt;Creator firstName="Pablo" lastName="Picasso"/&gt;
+    &lt;Collection name="Reina Sofia" location="Madrid"/&gt;
+  &lt;/Work&gt;
+&lt;/Art&gt;</code></pre>
       <footer><p>In this example we’ve chosen to model all values that will not be decomposed
     or require further properties as attributes. For instance, a work’s <code>title</code>
     does not require further description, but we could add additional information to <code>creator</code>,
@@ -719,26 +715,19 @@ based on this hierarchical view.</p>
       Schemas
     </h2>
     <ul>
-    <li>Different languages exist to express schemas (DTD, RELAX NG)
-    but XML Schema (XSD) is the most popular</li>
-    <li>Example for our catalog:
-    <ul>
-    <li>
-      <pre class="scroll">
-       <code>&lt;xsd:element name="Work"/&gt;</code>
-       <code>&lt;xsd:complexType&gt;</code>
-       <code>&lt;xsd:sequence&gt;</code>
-       <code>&lt;xsd:element name="CreatorRef" maxOccurs="unbounded"/&gt;</code>
-       <code>&lt;xsd:attribute name="title" type="xsd:string"/&gt;</code>
-       <code>&lt;attribute name="year" type="xsd:gYear"/&gt;</code>
-       <code>&lt;attribute name="collectionId" type="xsd:IDREF"/&gt;</code>
-       <code>&lt;/xsd:complexType&gt;</code>
-       <code>&lt;/xsd:element&gt;</code>
-     </pre>
-     </li>
-     </ul>
-     </li>
-     </ul>
+      <li>Different languages exist to express schemas,
+      but XML Schema (XSD) is the most popular</li>
+    </ul>
+    <pre class="scroll"><code>&lt;xsd:element name="Work"/&gt;
+  &lt;xsd:complexType&gt;
+    &lt;xsd:sequence&gt;
+      &lt;xsd:element name="CreatorRef" maxOccurs="unbounded"/&gt;
+      &lt;xsd:attribute name="title" type="xsd:string"/&gt;
+      &lt;attribute name="year" type="xsd:gYear"/&gt;
+      &lt;attribute name="collectionId" type="xsd:IDREF"/&gt;
+    &lt;/xsd:sequence&gt;
+  &lt;/xsd:complexType&gt;
+&lt;/xsd:element&gt;</code></pre>
   </div>
 
 <div class="slide" id="namespaces">
@@ -748,21 +737,16 @@ based on this hierarchical view.</p>
     <ul>
     <li>Mechanism to disambiguate the meaning of elements and attributes across schemas</li>
     <li>Namespaces are indicated with the help of the reserved XML attribute <code>xmlns</code>:
-    <ul>
-    <li>
-       <code>&lt;Art title="Modern art"</code><br>
-       <code>xmlns:dc="http://purl.org/dc/terms/"</code><br>
-       <code>xmlns:vra="http://www.vraweb.org/vracore4.htm"</code><br>
-       <code>&lt;Work&gt;</code><br>
-       <code>&lt;dc:creator&gt;Pablo Picasso&lt;/dc:creator&gt;</code>
-       <code>&lt;dc:title&gt;Guernica&lt;/dc:title&gt;</code><br>
-       <code>&lt;vra:technique&gt;Oil painting&lt;/vra:technique&gt;</code><br>
-       <code>&lt;/Work&gt;</code><br>
-       <code>&lt;/Art&gt;</code><br>
-     </li>
      </ul>
-     </li>
-     </ul>
+     <pre class="scroll"><code>&lt;Art title="Modern art" xmlns:dc="http://purl.org/dc/terms/"
+          xmlns:vra="http://www.vraweb.org/vracore4.htm"
+&lt;Work&gt;
+  &lt;dc:creator&gt;Pablo Picasso&lt;/dc:creator&gt;
+  &lt;dc:title&gt;Guernica&lt;/dc:title&gt;
+  &lt;vra:technique&gt;Oil painting&lt;/vra:technique&gt;
+&lt;/Work&gt;
+&lt;/Art&gt;
+</code></pre>
   </div>
 
 <div class="slide" id="xpath">
@@ -774,12 +758,10 @@ based on this hierarchical view.</p>
     <li>Allows to traverse XML trees and collect element and attribute values</li>
     <li>Examples:
     <ul>
-    <li>
-       <code>/Art/Work/Creator</code><br>
-       <code>Creator/LastName</code><br>
-       <code>Work/descendent::LastName</code><br>
-       <code>Work/@year</code><br>
-     </li>
+       <li><code>/Art/Work/Creator</code></li>
+       <li><code>Creator/LastName</code></li>
+       <li><code>Work/descendent::LastName</code></li>
+       <li><code>Work/@year</code></li>
      </ul>
      </li>
      </ul>
@@ -800,7 +782,7 @@ based on this hierarchical view.</p>
 
 <div class="slide" id="limits_xml">
     <h2>
-      Limits?
+      Limitations?
     </h2>
     <ul>
     <li>Inconsistencies: usage of XML Schema to validate data is powerful</li>
@@ -837,7 +819,7 @@ based on this hierarchical view.</p>
       </figcaption>
     </figure>
     <footer><p>Not only do you need to put effort into understanding, for each of your voyages,
-        how a specific map is drawn (its scale, the symbols used, etc), the information is often not
+        how a specific map is drawn (its scale, the symbols used, etc.), the information is often not
         available publicly. As a data consumer, you don’t want to have closed doors in front of your
         nose and needing to beg to get in. As a data producer who wants other people to reuse your data, you don’t want to have
         people knocking on your door every other day and help them use and interpret your data.
@@ -969,7 +951,7 @@ based on this hierarchical view.</p>
     Implementation
   </h2>
 <ul>
-<li>Triple store: database used to store and query RDF triples</li>
+<li>Triplestore: database used to store and query RDF triples</li>
 <li>Either natively built or on top of existing relational databases</li>
 <li>Despite recent developments, performance remains an issue</li>
 </ul>
@@ -1010,7 +992,7 @@ based on this hierarchical view.</p>
     </figure>
     <footer><p>Don’t be the boy with the hammer! Once people develop experience with one tool and model,
         they tend to use it for everything. For example, it takes some time to develop skills to master the XML
-        suite (XSD, XPath, XQuery, etc) so after a while people squeeze everything into hierarchical trees
+        suite (XSD, XPath, XQuery, etc.) so after a while people squeeze everything into hierarchical trees
         to be processed as XML, even if it’s not a natural fit.</p></footer>
   </div>
 
@@ -1049,7 +1031,7 @@ based on this hierarchical view.</p>
       it will be better to model it as an entity, as you can attach extra information
       to an entity with attributes.</li></ul>
       </li>
-      <li class="correct">
+      <li>
         It depends on the amount of data you want to store in the database.
         <ul><li>No, this is an irrelevant argument.</li></ul>
       </li>
