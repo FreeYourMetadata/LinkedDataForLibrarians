@@ -154,6 +154,7 @@ main strong {
 q, cite, blockquote { font-style: italic; }
 q:before, cite:before { content: "“"; }
 q:after,  cite:after  { content: "”"; }
+blockquote cite:after { content: "";  }
 
 .slide > p:first-of-type {
   margin-top: 1em;
