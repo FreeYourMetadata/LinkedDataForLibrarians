@@ -1099,6 +1099,82 @@
     </ul>
   </div>
 
+  <div class="evaluation slide" id="eval1">
+    <h2>Self-assessment 1: resources</h2>
+    <p>Which statements are true for REST APIs?</p>
+    <ol>
+      <li class="correct">
+        Resources do not always have a representation.
+        <ul><li>Yes: for instance, a non-information resource might not have a representation in the API.</li></ul>
+      </li>
+      <li>
+        Representations do not always belong to a resource.
+        <ul><li>No: REST APIs are resource-oriented, so every representation belongs to a resource.</li></ul>
+      </li>
+      <li class="correct">
+        Resources can have multiple representations.
+        <ul><li>Yes: for instance, a resource might have an HTML and an RDF representation.</li></ul>
+      </li>
+    </ol>
+  </div>
+
+  <div class="evaluation slide" id="eval2">
+    <h2>Self-assessment 2: representations</h2>
+    <p>Why are different representations useful?</p>
+    <ol>
+      <li>
+        To support different kinds of servers.
+        <ul><li>No, representations do not directly influence the type of server.</li></ul>
+      </li>
+      <li class="correct">
+        To support different kinds of clients.
+        <ul><li>Yes: different clients (browsers, Linked Data consumers, …) might have different needs.</li></ul>
+      </li>
+      <li>
+        To support different kinds of resources.
+        <ul><li>No, the question is rather why a single resource can have different representations.</li></ul>
+      </li>
+    </ol>
+  </div>
+
+  <div class="evaluation slide" id="eval3">
+    <h2>Self-assessment 3: hypermedia</h2>
+    <p>What does the hypermedia constraint of REST entail?</p>
+    <ol>
+      <li>
+        We should only use HTML representations.
+        <ul><li>No: HTML does support hypermedia controls, but others support this as well.</li></ul>
+      </li>
+      <li class="correct">
+        Servers should include links to next steps in their responses.
+        <ul><li>Yes: that way, the interaction can be completed through those links (as opposed to through external documentation).</li></ul>
+      </li>
+      <li class="correct">
+        Clients can follow their nose through the API.
+        <ul><li>Yes: clients do not need a previously agreed-on list of steps, but can just follow the links they receive.</li></ul>
+      </li>
+    </ol>
+  </div>
+
+  <div class="evaluation slide" id="eval4">
+    <h2>Self-assessment 4: consequences</h2>
+    <p>What makes the Europeana API more difficult than the website?</p>
+    <ol>
+      <li class="correct">
+        You need an API key.
+        <ul><li>Yes, even though both expose the same information.</li></ul>
+      </li>
+      <li class="correct">
+        You cannot use it without documentation.
+        <ul><li>Yes, even though you don’t need documentation for the website, which exposes the same information.</li></ul>
+      </li>
+      <li>
+        They use multiple representations.
+        <ul><li>No, only the website uses multiple representations.</li></ul>
+      </li>
+    </ol>
+  </div>
+
   <div class="progress"></div>
   <footer>
     <p class="badge"><a href="https://github.com/shower/shower">Fork me on GitHub</a></p>
