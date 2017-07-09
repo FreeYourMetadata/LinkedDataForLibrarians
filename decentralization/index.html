@@ -64,7 +64,7 @@
   <div class="slide" id="why-linked-data">
     <h2>
       Why are we publishing<br>
-      <em>Linked Data</em> again?
+      <em>Linked Data</em> on the Web?
     </h2>
     <ul>
       <li>
@@ -76,7 +76,7 @@
       <li>
         Linked Data facilitates metadata <em>integration</em>.
         <ul>
-          <li>preserving semantics</li>
+          <li>preserving semantics thanks to URIs</li>
         </ul>
       </li>
       <li>
@@ -91,7 +91,7 @@
   <div class="slide" id="why-us">
     <h2>
       Why are <em>we</em> publishing<br>
-      Linked Data again?
+      Linked Data on the Web?
     </h2>
     <ul>
       <li>
@@ -118,7 +118,7 @@
   <div class="slide" id="why-publishing">
     <h2>
       Why are we <em>publishing</em><br>
-      Linked Data again?
+      Linked Data on the Web?
     </h2>
     <ul>
       <li>
@@ -230,6 +230,9 @@
       <li>
         We own (our part of) the data,<br>
         but not the intelligence around it.
+        <ul>
+          <li>Data needs publication through appropriate interfaces.</li>
+        </ul>
       </li>
     </ul>
   </div>
@@ -241,16 +244,22 @@
     </h2>
     <ul>
       <li>
-        Web APIs do too much,<br>
-        and too much in their own way.
+        Web APIs expose metadata in very specific ways,<br>
+        often in custom, publisher-dependent interfaces.
+        <ul>
+          <li>Many APIs are tailored to a handful of use cases.</li>
+          <li>Integrating and/or using them can be expensive.</li>
+        </ul>
       </li>
       <li>
         We don’t need intelligent servers,<br>
         but servers that <em>enable</em> intelligence.
-      </li>
-      <li>
-        Client-side intelligence enables use cases<br>
-        we cannot foresee yet.
+        <ul>
+          <li>
+            Client-side intelligence can support use cases<br>
+            metadata publishers cannot foresee yet.
+          </li>
+        </ul>
       </li>
     </ul>
   </div>
@@ -282,19 +291,21 @@
     </ul>
   </div>
 
-  <div class="slide" id="serendipity">
+  <div class="slide" id="federation">
     <h2>
-      Reusing API building blocks<br>
-      enables serendipity in clients.
+      Evaluation a query over a <em>federation</em> of sources
+      shows the power of Linked Data.
     </h2>
     <ul>
       <li>
-        With <a href="http://linkeddatafragments.org/">Linked Data Fragments</a>,<br>
-        we search for interesting building blocks.
+        Querying multiple data sources at runtime
+        is called <em>federated querying</em>
+        or <em>virtual data integration</em>.
       </li>
       <li>
-        Clients can query different APIs simultaneously.
+        Clients can query different sources simultaneously.
         <ul>
+          <li>Example query with 3 sources:</li>
           <li>
             <a href="http://bit.ly/harvard-the-hague">
               <em>Which books in Harvard Library<br>
@@ -306,10 +317,114 @@
       <li>
         Decentralization is crucial for making this work.
         <ul>
-          <li>select your own sources</li>
+          <li>select the sources you want</li>
         </ul>
       </li>
     </ul>
+  </div>
+
+  <div class="slide" id="linked-data-apis">
+    <h2>
+      Linked Data supports federation well,<br>
+      but not all Web APIs are ready.
+    </h2>
+    <ul>
+      <li>
+        Linked Data is made for the Web.
+        <ul>
+          <li>Different sources, same data model.</li>
+        </ul>
+      </li>
+      <li>
+        A Web API ecosystem is not yet in place.
+        <ul>
+          <li>Different API, different access steps.</li>
+        </ul>
+      </li>
+      <li>
+        The success of federation on the public Web<br>
+        depends on a sustainable Web API ecosystem.
+        <ul>
+          <li>We need interoperable, flexible, low-cost interfaces.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="evaluation slide" id="eval1">
+    <h2>Self-assessment 1: decentralization</h2>
+    <p>How does Linked Data help decentralization?</p>
+    <ol>
+      <li>
+        It has a flexible data model.
+        <ul><li>No; although true, this is not directly related to decentralization.</li></ul>
+      </li>
+      <li class="correct">
+        It uses URIs.
+        <ul><li>Yes: URIs help establish shared concepts across sources.</li></ul>
+      </li>
+      <li class="correct">
+        It does not require a single source of truth.
+        <ul><li>Yes: this allows multiple sources to contain partial data.</li></ul>
+      </li>
+    </ol>
+  </div>
+
+  <div class="evaluation slide" id="eval2">
+    <h2>Self-assessment 2: aggregators</h2>
+    <p>What is a possible role for aggregators?</p>
+    <ol>
+      <li>
+        They should be the sole publishers of metadata.
+        <ul><li>No, this would give several problems, such as update frequency.</li></ul>
+      </li>
+      <li class="correct">
+        Aggregators can facilitate exploration across datasets.
+        <ul><li>Yes, since they have knowledge about how different datasets connect.</li></ul>
+      </li>
+      <li>
+        They can guarantee metadata quality.
+        <ul><li>No, automated aggregation comes with quality challenges.</li></ul>
+      </li>
+    </ol>
+  </div>
+
+  <div class="evaluation slide" id="eval3">
+    <h2>Self-assessment 3: Web APIs</h2>
+    <p>What is a problem with current Web APIs?</p>
+    <ol>
+      <li class="correct">
+        They often are highly custom implementations.
+        <ul><li>Yes, this makes integration costly.</li></ul>
+      </li>
+      <li>
+        They do not expose all data.
+        <ul><li>No, this is not a general problem.</li></ul>
+      </li>
+      <li class="correct">
+        They only support specific use cases.
+        <ul><li>Yes, APIs are often tailored to specific scenarios.</li></ul>
+      </li>
+    </ol>
+  </div>
+
+  <div class="evaluation slide" id="eval4">
+    <h2>Self-assessment 4: federation</h2>
+    <p>Federated querying means:</p>
+    <ol>
+      <li class="correct">
+        evaluating a query over multiple sources
+        <ul><li>Yes, this is the definition.</li></ul>
+      </li>
+      <li>
+        evaluating a query on the Web
+        <ul><li>No, non-federated queries can also happen on the Web.</li></ul>
+      </li>
+      <li>
+        evaluating a long-running query
+        <ul><li>No, while federated queries often take more time, it is not an inherent part of federation.</li></ul>
+      </li>
+    </ol>
   </div>
 
   <div class="progress"></div>
