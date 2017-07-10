@@ -5,6 +5,9 @@ main {
   margin: 0 3em 3em;
   max-width: 820px;
 }
+main h2 {
+  font-weight: bold;
+}
 main p {
   margin-bottom: 1em;
 }
